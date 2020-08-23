@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="defulte_txt_size">14dp</dimen>
+    <dimen name="large_txt_size">16dp</dimen>
+
+</resources>

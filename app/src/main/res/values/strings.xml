@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">sehaty</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="contact_us">إتصل بنا</string>
+    <string name="about_us">عن التطبيق</string>
+    <string name="prefrances">المفضلة</string>
+    <string name="log_out">تسجيل الخروج</string>
+    <string name="more_title">المزيد</string>
+    <string name="settings_title">الإعدادات</string>
+    <string name="appoint_now_txt">أحجز الآن</string>
+    <string name="register_txt">تسجيل الدخول</string>
+    <string name="search_item">أبحث</string>
+    <string name="offers_item">العروض</string>
+    <string name="date_item">المواعيد</string>
+    <string name="settings">الاعدادات</string>
+    <string name="edite_password">تعديل كلمة الرور</string>
+
+
+    <string name="search_by_name">ابحث بأسم الدكتور</string>
+    <string name="search_by_spicialist">بحث حسب التخصص</string>
+    <string name="pharmacy_search">بحث عن الصيدليات</string>
+    <string name="flag_txt" translatable="false">لأن صحتك تهمنا</string>
+    <string name="labs_search">بحث عن المختبرات</string>
+    <string name="registration_title">سجل الآن</string>
+    <string name="full_name">الأسم بالكامل</string>
+    <string name="mobile_number">رقم الجوال</string>
+    <string name="e_mail">البريد الإلكتروني</string>
+    <string name="e_mail_or_mobile"> البريد الإلكتروني أو رقم الجوال</string>
+
+    <string name="password">رمز الدخول</string>
+    <string name="date_of_birth">تاريخ الميلاد</string>
+    <string name="gender">الجنس</string>
+    <string name="female">أنثى</string>
+    <string name="male">ذكر</string>
+    <string name="save">سجل الآن</string>
+    <string name="login">دخول</string>
+    <string name="forget_password">هل نسيت كلمة السر؟</string>
+    <string name="rouls_conditions">الشروط والقوانين</string>
+    <string name="new_acount">إنشاء حساب جديد</string>
+    <string name="login_facebook">الدخول عن طريق الفيسبوك</string>
+    <string name="login_twitter">الدخول عن طريق تويتر</string>
+    <string name="login_google">الدخول عن طريق جوجل</string>
+    <string name="or">أو</string>
+    <string name="title_activity_settings">الاعدادات</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="how_it_work">كيف يعمل التطبيق</string>
+    <string name="change_language">تغيير اللغة</string>
+    <string name="change_password">تعديل كلمة المرور</string>
+    <string name="edit_profile">تعديل بيانات الحساب</string>
+    <string name="appointments">مواعيدي</string>
+    <string name="no_offers">لا يوجد لديك عروض</string>
+    <string name="no_appointments">لا يوجد لديك حجوزات</string>
+    <string name="chose_doctor">اختر الدكتور</string>
+    <string name="no_search_results">لا يوجد نتائج</string>
+    <string name="select_reagon">أختر المنطقة</string>
+
+</resources>

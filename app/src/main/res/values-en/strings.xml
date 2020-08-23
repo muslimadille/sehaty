@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">sehaty</string>
+    <string name="settings">settings</string>
+    <string name="edite_password">Edit Password</string>
+    <string name="contact_us">contact us</string>
+    <string name="about_us">about us</string>
+    <string name="prefrances">favorites</string>
+    <string name="log_out">log out</string>
+    <string name="more_title">more</string>
+    <string name="settings_title">settings</string>
+    <string name="appoint_now_txt">book now</string>
+    <string name="register_txt">log in</string>
+    <string name="search_item">search</string>
+    <string name="offers_item">offers</string>
+    <string name="date_item">appointments</string>
+    <string name="search_by_name">search by name</string>
+    <string name="search_by_spicialist">search by specialty</string>
+    <string name="pharmacy_search">search for pharmacies</string>
+    <string name="labs_search">Search for laboratories</string>
+    <string name="registration_title">register now</string>
+    <string name="full_name">full name</string>
+    <string name="mobile_number">mobile number</string>
+    <string name="e_mail">e-mail</string>
+    <string name="password">password</string>
+    <string name="date_of_birth">date of birth</string>
+    <string name="gender">gender</string>
+    <string name="female">female</string>
+    <string name="male">male</string>
+    <string name="save">register now</string>
+    <string name="e_mail_or_mobile">e-mail or mobile number</string>
+    <string name="login">login</string>
+    <string name="forget_password">did you forget password?</string>
+    <string name="rouls_conditions">terms and conditions</string>
+    <string name="new_acount">create new account</string>
+    <string name="login_facebook">login with facebook</string>
+    <string name="login_twitter">login with twitter</string>
+    <string name="login_google">login with google</string>
+    <string name="or">OR</string>
+    <string name="how_it_work">How the app works</string>
+    <string name="change_language">change language</string>
+    <string name="change_password">Edit your password</string>
+    <string name="edit_profile">Edit profile</string>
+    <string name="appointments">Appointments</string>
+    <string name="no_offers">there is no offers</string>
+    <string name="no_appointments">there is no appointments</string>
+    <string name="chose_doctor">Chose Doctor</string>
+    <string name="no_search_results">no results</string>
+    <string name="select_reagon">Chose region</string>
+
+
+</resources>
