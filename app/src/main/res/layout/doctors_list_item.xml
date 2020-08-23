@@ -9,6 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="5dp"
         android:layout_marginBottom="10dp"
         app:cardBackgroundColor="@color/cardview_light_background"
         app:cardElevation="8dp">
@@ -41,21 +42,24 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.163" />
                 <LinearLayout
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <LinearLayout
-                        android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <TextView
+                            android:id="@+id/doctor_gender"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="doctor" />
                         <TextView
+                            android:id="@+id/doctor_name"
                             android:textStyle="bold"
                             android:textColor="@color/blue"
                             android:layout_marginStart="5dp"
@@ -70,14 +74,13 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <TextView
+                            android:id="@+id/doctor_specialty"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="specialty" />
 
                     </LinearLayout>
                     <LinearLayout
-                        android:layout_marginTop="5dp"
-                        android:layout_marginBottom="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -97,6 +100,8 @@
                             android:stepSize=".1"
                             />
                         <TextView
+                            android:textSize="12dp"
+                            android:id="@+id/visitor_num"
                             android:layout_marginStart="5dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -119,6 +124,8 @@
                         android:layout_height="match_parent"
                         android:src="@drawable/person_ic"/>
                     <TextView
+                        android:textSize="12dp"
+                        android:id="@+id/description"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
@@ -135,6 +142,8 @@
                         android:layout_height="match_parent"
                         android:src="@drawable/person_ic"/>
                     <TextView
+                        android:textSize="12dp"
+                        android:id="@+id/address"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
@@ -151,6 +160,14 @@
                         android:layout_height="match_parent"
                         android:src="@drawable/person_ic"/>
                     <TextView
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent"
+                        android:text="@string/cost"/>
+                    <TextView
+                        android:textSize="12dp"
+                        android:id="@+id/cost"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
@@ -167,6 +184,14 @@
                         android:layout_height="match_parent"
                         android:src="@drawable/person_ic"/>
                     <TextView
+                        android:textSize="12dp"
+                        android:layout_width="wrap_content"
+                        android:gravity="center_vertical"
+                        android:layout_height="match_parent"
+                        android:text="@string/waiting"/>
+                    <TextView
+                        android:textSize="12dp"
+                        android:id="@+id/waiting"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center_vertical"
@@ -178,6 +203,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
                     <TextView
+                        android:id="@+id/avelable"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
                         android:layout_width="0dp"
@@ -185,13 +211,14 @@
                         android:gravity="center"
                         android:background="@color/gray_light"
                         android:layout_height="match_parent"
-                        android:text="waiting"
+                        android:text="المواعيد المتاحة"
                         android:layout_marginTop="2dp"
                         android:layout_marginBottom="2dp"/>
                     <Button
+                        android:id="@+id/booking_btn"
                         android:layout_marginEnd="10dp"
                         android:backgroundTint="@color/red"
-                        android:text="book now"
+                        android:text="@string/book_now"
                         android:textSize="14sp"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"

@@ -47,6 +47,9 @@
     <string name="chose_doctor">Chose Doctor</string>
     <string name="no_search_results">no results</string>
     <string name="select_reagon">Chose region</string>
+    <string name="cost">cost:</string>
+    <string name="waiting">waiting time:</string>
+    <string name="book_now">book now</string>
 
 
 </resources>

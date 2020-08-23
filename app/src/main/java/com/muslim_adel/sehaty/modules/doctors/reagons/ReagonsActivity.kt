@@ -26,17 +26,18 @@ class ReagonsActivity : BaseActivity() {
     private lateinit var apiClient: ApiClient
     private var reagonsList:MutableList<Reagons> = ArrayList()
     private var reagonsListAddapter: ReagonsAdapter?=null
+    var specialtyId:Int=0
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reagons)
         val current: Locale = resources.configuration.locales[0]
-
+        specialtyId=intent.getIntExtra("specialty_id",0)
 
 
         val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         reagons_rv.layoutManager = layoutManager
-        reagonsListAddapter = ReagonsAdapter(this, reagonsList)
+        reagonsListAddapter = ReagonsAdapter(this, reagonsList,specialtyId)
         reagons_rv.adapter = reagonsListAddapter
 
         apiClient = ApiClient()

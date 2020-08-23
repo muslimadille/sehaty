@@ -68,5 +68,8 @@
     <string name="chose_doctor">اختر الدكتور</string>
     <string name="no_search_results">لا يوجد نتائج</string>
     <string name="select_reagon">أختر المنطقة</string>
+    <string name="cost">التكلفة:</string>
+    <string name="waiting">مدة الإنتظار:</string>
+    <string name="book_now">احجز الان</string>
 
 </resources>

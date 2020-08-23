@@ -1,10 +1,7 @@
 package com.muslim_adel.sehaty.data.remote.apiServices
 
 import android.text.Editable
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.LoginResponce
-import com.muslim_adel.sehaty.data.remote.objects.Reagons
-import com.muslim_adel.sehaty.data.remote.objects.Specialties
+import com.muslim_adel.sehaty.data.remote.objects.*
 import com.muslim_adel.sehaty.utiles.Q
 import retrofit2.Call
 import retrofit2.http.*
@@ -27,4 +24,6 @@ interface ApiService {
     fun fitchSpecialitiesList():Call<BaseResponce<List<Specialties>>>
     @GET(Q.REAGONS_LIST_API)
     fun fitchReagonsList():Call<BaseResponce<List<Reagons>>>
+    @GET(Q.DOCTORS_LIST_API)
+    fun fitchDoctorsList(@Query("specialty_id")specialty_id:Int,@Query("area_id")area_id:Int):Call<BaseResponce<Search>>
 }

@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".modules.doctors.reagons.ReagonsActivity"></activity>
-        <activity android:name=".modules.doctors.SearchBySpecialityActivity"></activity>
+        <activity android:name=".modules.doctors.doctorsList.DoctorsListActivity"></activity>
+        <activity android:name=".modules.doctors.reagons.ReagonsActivity" />
+        <activity android:name=".modules.doctors.search.SearchBySpecialityActivity" />
         <activity android:name=".modules.doctors.specialties.SpecialtiesListActivity" />
-        <activity android:name=".modules.doctors.SearchByNameActivity" />
+        <activity android:name=".modules.doctors.search.SearchByNameActivity" />
         <activity
             android:name=".modules.settings.SettingsActivity"
             android:label="@string/title_activity_settings" />

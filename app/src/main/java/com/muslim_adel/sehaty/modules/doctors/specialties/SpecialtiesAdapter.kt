@@ -42,6 +42,7 @@ class SpecialtiesAdapter(
         GlideObject.GlideProfilePic(mContext, imageName, holder.specialtyImg)
         holder.specialtyLay.setOnClickListener {
             val intent = Intent(mContext, ReagonsActivity::class.java)
+            intent.putExtra("specialty_id",specialty.id)
             mContext.startActivity(intent)
         }
 

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors
+package com.muslim_adel.sehaty.modules.doctors.search
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.doctors.SearchBySpecialityActivity
+import com.muslim_adel.sehaty.modules.doctors.search.SearchBySpecialityActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors
+package com.muslim_adel.sehaty.modules.doctors.search
 
 import android.os.Bundle
 import android.widget.Toast
