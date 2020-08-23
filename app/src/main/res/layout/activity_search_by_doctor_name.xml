@@ -7,7 +7,7 @@
     android:background="#ddd"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".modules.doctors.SearchByDoctorNameActivity"
+    tools:context=".modules.doctors.SearchBySpecialityActivity"
     tools:replace="android:supportsRtl"
     >
     <LinearLayout

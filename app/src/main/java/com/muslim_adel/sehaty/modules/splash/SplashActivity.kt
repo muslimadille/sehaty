@@ -12,8 +12,10 @@ import com.muslim_adel.sehaty.data.remote.objects.LoginData
 import com.muslim_adel.sehaty.data.remote.objects.LoginRequest
 import com.muslim_adel.sehaty.data.remote.objects.LoginResponce
 import com.muslim_adel.sehaty.modules.base.BaseActivity
+import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.introSlider.IntroWizardActivity
 import com.muslim_adel.sehaty.modules.register.LoginActivity
+import com.muslim_adel.sehaty.utiles.Q
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,12 +27,21 @@ class SplashActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
+        val isFristTime=preferences!!.getBoolean(Q.IS_FIRST_TIME,Q.FIRST_TIME)
         preferences!!.putString("language","Arabic")
         preferences!!.commit()
+
         Handler().postDelayed({
-            val intent = Intent(this@SplashActivity, LoginActivity::class.java)
-            startActivity(intent)
-            finish()
+            if(isFristTime){
+                val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+                startActivity(intent)
+                finish()
+            }else{
+                val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                startActivity(intent)
+                finish()
+            }
+
         }, 2000)
 
 

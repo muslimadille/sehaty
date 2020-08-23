@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".modules.doctors.reagons.ReagonsActivity"></activity>
-        <activity android:name=".modules.doctors.SearchByDoctorNameActivity"></activity>
+        <activity android:name=".modules.doctors.SearchBySpecialityActivity"></activity>
         <activity android:name=".modules.doctors.specialties.SpecialtiesListActivity" />
         <activity android:name=".modules.doctors.SearchByNameActivity" />
         <activity

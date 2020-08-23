@@ -7,8 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.doctors.SearchByDoctorNameActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.muslim_adel.sehaty.modules.doctors.SearchBySpecialityActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment() {
@@ -17,20 +16,26 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         onNameSearchClicked()
+        onSpicialistSearchClicked()
+        onfarmacySearchClicked()
+        onLabsSearchClicked()
     }
     fun onNameSearchClicked(){
         search_name_btn.setOnClickListener {
-            val intent = Intent(context, SearchByDoctorNameActivity::class.java)
+            val intent = Intent(context, SearchBySpecialityActivity::class.java)
             startActivity(intent)
         }
     }
     fun onSpicialistSearchClicked(){
-        search_name_btn.setOnClickListener {  }
+        search_spicialist_btn.setOnClickListener {
+            val intent = Intent(context, SearchBySpecialityActivity::class.java)
+            startActivity(intent)
+        }
     }
     fun onfarmacySearchClicked(){
-        search_name_btn.setOnClickListener {  }
+        pharmacy_search_btn.setOnClickListener {  }
     }
     fun onLabsSearchClicked(){
-        search_name_btn.setOnClickListener {  }
+        labs_search_btn.setOnClickListener {  }
     }
 }

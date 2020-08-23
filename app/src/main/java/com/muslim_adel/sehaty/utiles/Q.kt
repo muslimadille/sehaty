@@ -29,6 +29,8 @@ object Q {
     const val LOCALE_AR_INDEX = 0
     const val LOCALE_EN_INDEX = 1
     var FIRST_TIME = true
+    var IS_FIRST_TIME = "first_time"
+
     const val FIRST_TIME_PREF = "ADW_first_time"
 
 

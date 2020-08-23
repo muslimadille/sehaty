@@ -9,6 +9,7 @@ import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
 import com.muslim_adel.sehaty.data.remote.objects.LoginResponce
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_login.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -46,10 +47,11 @@ class LoginActivity : BaseActivity() {
                                     username.text.clear()
                                     login_password.text.clear()
                                     sessionManager.saveAuthToken(loginResponse.data.token)
+                                    preferences!!.putBoolean(Q.IS_FIRST_TIME,false)
+                                    preferences!!.commit()
                                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                                     startActivity(intent)
                                     finish()
-                                } else {
                                 }
                             }else{
                                 username.text.clear()

@@ -255,6 +255,7 @@
             android:layout_marginBottom="10dp"
             >
             <LinearLayout
+                android:id="@+id/logout_btn"
                 android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
