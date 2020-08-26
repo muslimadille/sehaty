@@ -71,5 +71,17 @@
     <string name="cost">التكلفة:</string>
     <string name="waiting">مدة الإنتظار:</string>
     <string name="book_now">احجز الان</string>
+    <string name="chose_specialty">أختر التخصص</string>
+    <string name="progress_txt">برجاء الإنتظار</string>
+
+    <string name="no_internet">لا يوجد إتصال بشبكة الإنترنت</string>
+    <string name="exit">خروج</string>
+    <string name="dismiss">إخفاء</string>
+    <string name="search_doctor_hint">ابحث باسم الدكتور</string>
+    <string name="doctor">دكتور:</string>
+
+
+
+
 
 </resources>

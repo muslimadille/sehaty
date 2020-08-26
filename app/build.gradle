@@ -132,6 +132,8 @@ dependencies {
     implementation 'com.anton46:stepsview:0.0.2'
 // circular imag
     implementation 'de.hdodenhof:circleimageview:3.0.1'
+// progress bar
+    implementation 'com.github.rahatarmanahmed:circularprogressview:2.5.0'
 
 
     def multidex_version = "2.0.1"

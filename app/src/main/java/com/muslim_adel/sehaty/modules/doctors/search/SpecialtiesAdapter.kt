@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.specialties
+package com.muslim_adel.sehaty.modules.doctors.search
 
 import android.content.Context
 import android.content.Intent
@@ -8,16 +8,12 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.objects.Specialties
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
-import com.muslim_adel.sehaty.modules.register.LoginActivity
 import com.muslim_adel.sehaty.utiles.Q
-import com.squareup.picasso.Callback
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.specialties_list_item.view.*
 
 class SpecialtiesAdapter(
@@ -27,7 +23,9 @@ class SpecialtiesAdapter(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val convertView = inflater.inflate(R.layout.specialties_list_item, parent, false)
-        return ViewHolder(convertView)
+        return ViewHolder(
+            convertView
+        )
 
     }
 

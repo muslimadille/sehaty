@@ -26,4 +26,6 @@ interface ApiService {
     fun fitchReagonsList():Call<BaseResponce<List<Reagons>>>
     @GET(Q.DOCTORS_LIST_API)
     fun fitchDoctorsList(@Query("specialty_id")specialty_id:Int,@Query("area_id")area_id:Int):Call<BaseResponce<Search>>
+    @GET(Q.DOCTORS_LIST_API)
+    fun fitchDoctorsList(@Query("name")name:String):Call<BaseResponce<Search>>
 }

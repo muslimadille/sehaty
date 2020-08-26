@@ -4,23 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ddd"
-    android:gravity="center_horizontal"
     android:orientation="vertical"
-    tools:context=".modules.doctors.search.SearchBySpecialityActivity"
-    tools:replace="android:supportsRtl"
-    >
+    tools:context=".modules.doctors.doctorsList.DoctorsListActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimary">
+
 
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/chose_specialty"
+            android:text="@string/select_reagon"
             android:textColor="#fff"
             android:textSize="16sp"
             android:textStyle="bold" />
@@ -61,8 +58,11 @@
                 android:layout_weight="1"
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                android:textColor="@color/gray"
+                android:hint="@string/search_doctor_hint"
+                android:textColorHighlight="@color/gray_light"
+                />
 
 
 
@@ -71,12 +71,12 @@
 
     </androidx.cardview.widget.CardView>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/doctor_search_rv"
+        android:id="@+id/doctors_rv"
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:visibility="gone"
+        android:visibility="visible"
         />
     <include layout="@layout/no_search_layout"
         android:id="@+id/no_search_lay"
@@ -91,8 +91,5 @@
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:visibility="gone"/>
-
-
-
 
 </LinearLayout>

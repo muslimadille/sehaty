@@ -54,6 +54,8 @@ data class Doctor(
     var landmark_en: String,
     @SerializedName("landmark_ar")
     var landmark_ar: String,
+    @SerializedName("waiting_time")
+    var waiting_time: String,
     @SerializedName("area_id")
     var area_id: Long
 

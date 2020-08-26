@@ -33,17 +33,13 @@ class DoctorsListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val doctor = list[position]
-        holder.doctor_name.text = doctor.lastName_ar
-        holder.doctor_gender.text = doctor.firstName_ar
+        holder.doctor_name.text = "${doctor.firstName_ar} ${doctor.lastName_ar}"
+        holder.doctor_gender.text = mContext.getString(R.string.doctor)
         holder.doctor_specialty.text = doctor.profissionalTitle_ar
         holder.description.text = doctor.aboutDoctor_ar
         holder.address.text = doctor.streetName_ar
         holder.cost.text = doctor.price.toString()
-        holder.doctor_name.text = doctor.firstName_ar
-        holder.doctor_name.text = doctor.firstName_ar
-        holder.doctor_name.text = doctor.firstName_ar
-        holder.doctor_name.text = doctor.firstName_ar
-
+        holder.waiting.text=doctor.waiting_time
         holder.booking_btn.setOnClickListener {
             val intent = Intent(mContext, ReagonsActivity::class.java)
             //intent.putExtra("specialty_id",specialtyId)
