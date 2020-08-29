@@ -84,17 +84,22 @@ class DoctorsListActivity : BaseActivity() {
                 }
                 override fun onResponse(call: Call<BaseResponce<Search>>, response: Response<BaseResponce<Search>>) {
                     if(response!!.isSuccessful){
-                        response.body()!!.data!!.search.let {
-                            if (it.isNotEmpty()){
-                                doctorsList.addAll(it)
-                                filtereddoctorsList.addAll(it)
-                                doctorsListAddapter!!.notifyDataSetChanged()
-                                onObserveSuccess()
-                            }else{
-                                onObservefaled()
-                            }
+                        if(response.body()!!.success){
+                            response.body()!!.data!!.search.let {
+                                if (it.isNotEmpty()){
+                                    doctorsList.addAll(it)
+                                    filtereddoctorsList.addAll(it)
+                                    doctorsListAddapter!!.notifyDataSetChanged()
+                                    onObserveSuccess()
+                                }else{
+                                    onObservefaled()
+                                }
 
+                            }
+                        }else{
+                            onObservefaled()
                         }
+
                     }else{
                         onObservefaled()
                     }

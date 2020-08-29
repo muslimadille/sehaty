@@ -1,24 +1,26 @@
-package com.muslim_adel.sehaty.modules.doctors.doctorsList
+package com.muslim_adel.sehaty.modules.doctors.search
 
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.*
+import android.widget.Button
+import android.widget.ImageView
+import android.widget.RatingBar
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.objects.Doctor
-import com.muslim_adel.sehaty.data.remote.objects.Reagons
+import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
 import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
 import kotlinx.android.synthetic.main.doctors_list_item.view.*
-import kotlinx.android.synthetic.main.reagon_item.view.*
 
 
-class DoctorsListAdapter(
-    private val mContext: DoctorsListActivity,
+class SearchByNameAdapter(
+    private val mContext: SearchByNameActivity,
     private val list: MutableList<Doctor>
-) : RecyclerView.Adapter<DoctorsListAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<SearchByNameAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

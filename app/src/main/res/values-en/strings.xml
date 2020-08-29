@@ -57,9 +57,8 @@
     <string name="dismiss">Dismiss</string>
     <string name="search_doctor_hint">search by doctor name</string>
     <string name="doctor">Doctor:</string>
-
-
-
+    <string name="doctors_list">Doctors List</string>
+    <string name="visitors">زائر</string>
 
 
 

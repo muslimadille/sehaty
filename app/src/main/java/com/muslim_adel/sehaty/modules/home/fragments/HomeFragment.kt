@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.muslim_adel.sehaty.R
+import com.muslim_adel.sehaty.modules.doctors.search.SearchByNameActivity
 import com.muslim_adel.sehaty.modules.doctors.search.SearchBySpecialityActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
@@ -22,7 +23,7 @@ class HomeFragment : Fragment() {
     }
     fun onNameSearchClicked(){
         search_name_btn.setOnClickListener {
-            val intent = Intent(context, SearchBySpecialityActivity::class.java)
+            val intent = Intent(context, SearchByNameActivity::class.java)
             startActivity(intent)
         }
     }

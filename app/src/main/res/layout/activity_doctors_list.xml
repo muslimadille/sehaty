@@ -17,7 +17,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/select_reagon"
+            android:text="@string/doctors_list"
             android:textColor="#fff"
             android:textSize="16sp"
             android:textStyle="bold" />

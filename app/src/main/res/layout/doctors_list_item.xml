@@ -86,25 +86,25 @@
                         android:orientation="horizontal">
                         <RatingBar
                             android:id="@+id/ratingBar"
+                            android:theme="@style/RatingBar"
                             style="?android:attr/ratingBarStyleSmall"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_marginBottom="8dp"
                             android:layout_marginEnd="8dp"
                             android:layout_marginLeft="8dp"
                             android:layout_marginRight="8dp"
                             android:layout_marginTop="5dp"
-                            android:backgroundTint="@color/gold"
                             android:numStars="5"
-                            android:rating="3"
                             android:stepSize=".1"
                             />
                         <TextView
                             android:textSize="12dp"
                             android:id="@+id/visitor_num"
                             android:layout_marginStart="5dp"
+                            android:gravity="center_vertical"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:text="visitors" />
                     </LinearLayout>
                 </LinearLayout>
@@ -120,9 +120,9 @@
                     android:orientation="horizontal">
                     <ImageView
                         android:layout_margin="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/person_ic"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/doctor"/>
                     <TextView
                         android:textSize="12dp"
                         android:id="@+id/description"
@@ -139,9 +139,9 @@
                     android:orientation="horizontal">
                     <ImageView
                         android:layout_margin="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/person_ic"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/home"/>
                     <TextView
                         android:textSize="12dp"
                         android:id="@+id/address"
@@ -157,9 +157,9 @@
                     android:orientation="horizontal">
                     <ImageView
                         android:layout_margin="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/person_ic"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/money"/>
                     <TextView
                         android:textSize="12dp"
                         android:layout_width="wrap_content"
@@ -181,9 +181,9 @@
                     android:orientation="horizontal">
                     <ImageView
                         android:layout_margin="5dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/person_ic"/>
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/time"/>
                     <TextView
                         android:textSize="12dp"
                         android:layout_width="wrap_content"
@@ -213,8 +213,8 @@
                         android:background="@color/gray_light"
                         android:layout_height="match_parent"
                         android:text="المواعيد المتاحة"
-                        android:layout_marginTop="2dp"
-                        android:layout_marginBottom="2dp"/>
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"/>
                     <Button
                         android:id="@+id/booking_btn"
                         android:layout_marginEnd="10dp"
