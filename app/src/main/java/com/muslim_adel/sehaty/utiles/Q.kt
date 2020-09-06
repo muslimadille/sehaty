@@ -11,6 +11,8 @@ object Q {
     const val SPECIALTY_LIST_API = "specialties"
     const val REAGONS_LIST_API = "areas"
     const val DOCTORS_LIST_API = "search"
+    const val DOCTORS_DATES_API = "dates"
+
 
 
     const val AVATAR_PATH="https://www.obank.itcomunity.com/"

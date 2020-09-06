@@ -36,7 +36,7 @@ class SpecialtiesAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val specialty = list[position]
         holder.txtTitle.text = specialty.name_ar
-        val imageName = Q.AVATAR_PATH + specialty.icon
+        val imageName =specialty.icon
         GlideObject.GlideProfilePic(mContext, imageName, holder.specialtyImg)
         holder.specialtyLay.setOnClickListener {
             val intent = Intent(mContext, ReagonsActivity::class.java)

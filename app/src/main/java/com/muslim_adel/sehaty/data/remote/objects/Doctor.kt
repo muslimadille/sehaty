@@ -17,9 +17,8 @@ data class Doctor(
     var lastName_ar: String,
     @SerializedName("phonenumber")
     var phonenumber: Long,
-    @SerializedName("gender")
-    var gender: String,
-
+    @SerializedName("gender_id")
+    var gender_id: Int,
     @SerializedName("speciality_id")
     var speciality_id: Long,
     @SerializedName("prefixTitle_id")
@@ -59,9 +58,13 @@ data class Doctor(
     @SerializedName("rating")
     var rating: Float,
     @SerializedName("visitor_num")
-    var visitor_num: String,
+    var visitor_num: Int,
+    @SerializedName("num_of_day")
+    var num_of_day: Int,
     @SerializedName("area_id")
     var area_id: Long
+
+
 
 
 )

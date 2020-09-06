@@ -17,9 +17,9 @@ interface ApiService {
         @Field("name") name:String,
         @Field("email") email:String,
         @Field("password") password:String,
-        @Field("phonenumber") phonenumber: String,
+        @Field("phonenumber") phonenumber:Long,
         @Field("birthday") birthday: String,
-        @Field("gender") gender:String): Call<LoginResponce>
+        @Field("gender_id") gender_id:Int): Call<BaseResponce<LoginData>>
     @GET(Q.SPECIALTY_LIST_API)
     fun fitchSpecialitiesList():Call<BaseResponce<List<Specialties>>>
     @GET(Q.REAGONS_LIST_API)
@@ -28,4 +28,6 @@ interface ApiService {
     fun fitchDoctorsList(@Query("specialty_id")specialty_id:Int,@Query("area_id")area_id:Int):Call<BaseResponce<Search>>
     @GET(Q.DOCTORS_LIST_API)
     fun fitchDoctorsList(@Query("name")name:String):Call<BaseResponce<Search>>
+    @GET
+    fun fitchDoctorDatesList(@Url url:String):Call<BaseResponce<Dates>>
 }

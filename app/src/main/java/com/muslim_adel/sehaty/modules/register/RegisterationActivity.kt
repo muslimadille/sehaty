@@ -6,6 +6,8 @@ import android.widget.Toast
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
+import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
+import com.muslim_adel.sehaty.data.remote.objects.LoginData
 import com.muslim_adel.sehaty.data.remote.objects.LoginResponce
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
@@ -26,28 +28,46 @@ class RegisterationActivity : BaseActivity() {
             if (username.text.isNotEmpty()&&phon_num.text.isNotEmpty()&&email.text.isNotEmpty()&&password.text.isNotEmpty()&&date_of_birth.text.isNotEmpty()){
                 apiClient = ApiClient()
                 sessionManager = SessionManager(this)
-                apiClient.getApiService(this).userregister(username.text.toString(),email.text.toString(),password.text.toString(),phon_num.text.toString(),date_of_birth.text.toString(),"maile")
-                    .enqueue(object : Callback<LoginResponce> {
-                        override fun onFailure(call: Call<LoginResponce>, t: Throwable) {
-                            Toast.makeText(this@RegisterationActivity, "فشل في الاتصال", Toast.LENGTH_SHORT).show()
+                apiClient.getApiService(this).userregister(username.text.toString(),email.text.toString(),password.text.toString(),phon_num.text.toString().toLong(),date_of_birth.text.toString(),1)
+                    .enqueue(object : Callback<BaseResponce<LoginData>> {
+                        override fun onFailure(call: Call<BaseResponce<LoginData>>, t: Throwable) {
+                            Toast.makeText(
+                                this@RegisterationActivity,
+                                "فشل في الاتصال",
+                                Toast.LENGTH_SHORT
+                            ).show()
 
                         }
 
-                        override fun onResponse(call: Call<LoginResponce>, response: Response<LoginResponce>) {
+                        override fun onResponse(
+                            call: Call<BaseResponce<LoginData>>,
+                            response: Response<BaseResponce<LoginData>>
+                        ) {
                             val registerResponse = response.body()
-                            if(registerResponse!!.success){
-                                if (registerResponse?.data!!.status  == 200 && registerResponse.data.user!= null) {
-                                    sessionManager.saveAuthToken(registerResponse.data.token)
-                                    val intent = Intent(this@RegisterationActivity, MainActivity::class.java)
+                            if (registerResponse!!.success) {
+                                val s = response.body()!!.data.toString()
+                                Toast.makeText(this@RegisterationActivity, s, Toast.LENGTH_SHORT).show()
+                                if (registerResponse?.data!!.status == 200 && registerResponse.data!!.user!=null) {
+                                    sessionManager.saveAuthToken(registerResponse.data!!.token)
+                                    val intent =
+                                        Intent(this@RegisterationActivity, MainActivity::class.java)
                                     startActivity(intent)
                                     finish()
                                 } else {
-                                    Toast.makeText(this@RegisterationActivity, "البريد الالكتروني مستخدم من قبل", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(
+                                        this@RegisterationActivity,
+                                        "البريد الالكتروني مستخدم من قبل",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
                                 }
-                            }else{
+                            } else {
                                 //username.text.clear()
                                 //login_password.text.clear()
-                                Toast.makeText(this@RegisterationActivity, "فشل في التسجبل", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(
+                                    this@RegisterationActivity,
+                                    "فشل في التسجبل",
+                                    Toast.LENGTH_SHORT
+                                ).show()
                             }
 
                         }

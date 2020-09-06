@@ -58,8 +58,14 @@
     <string name="search_doctor_hint">search by doctor name</string>
     <string name="doctor">Doctor:</string>
     <string name="doctors_list">Doctors List</string>
-    <string name="visitors">زائر</string>
-
+    <string name="visitors">Visitor</string>
+    <string name="profile">Doctor Profile</string>
+    <string name="waiting_time">waiting time</string>
+    <string name="cost_amount">Cost</string>
+    <string name="date_hint">Entering the specified reservation time</string>
+    <string name="booking_hint">Book now and the details will be sent in full address and clinic number</string>
+    <string name="rating">Overall rating from</string>
+    <string name="seen">seen</string>
 
 
 </resources>
