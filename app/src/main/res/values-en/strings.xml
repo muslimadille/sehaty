@@ -66,6 +66,10 @@
     <string name="booking_hint">Book now and the details will be sent in full address and clinic number</string>
     <string name="rating">Overall rating from</string>
     <string name="seen">seen</string>
+    <string name="doctor_info">About doctor</string>
+    <string name="more">more</string>
+    <string name="less">less</string>
+
 
 
 </resources>

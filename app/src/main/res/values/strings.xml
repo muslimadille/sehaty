@@ -81,13 +81,17 @@
     <string name="doctor">دكتور:</string>
     <string name="doctors_list">قائمة الأطباء</string>
     <string name="visitors">زائر</string>
-    <string name="profile">profile</string>
+    <string name="profile">بيانات الدكتور</string>
     <string name="waiting_time">مدة الإنتظار</string>
     <string name="cost_amount">سعر الكشف</string>
     <string name="date_hint">الدخول في ميعاد الحجز المحدد</string>
     <string name="booking_hint">احجز الآن وسيتم أرسالتفاصيل العنوان بالكامل ورقم العيادة</string>
     <string name="rating">التقييم العام من</string>
     <string name="seen">مشاهدة</string>
+    <string name="doctor_info">معلومات عن الدكتور</string>
+    <string name="more">المزيد</string>
+    <string name="less">أقل</string>
+
 
 
 </resources>

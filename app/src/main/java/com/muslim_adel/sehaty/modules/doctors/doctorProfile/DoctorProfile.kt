@@ -61,8 +61,7 @@ class DoctorProfile : BaseActivity() {
         setContentView(R.layout.activity_doctor_profile)
         initRVAdapter()
         doctorsObserver()
-
-
+        setProfilrData()
     }
 
     private fun doctorsObserver() {
@@ -107,14 +106,12 @@ class DoctorProfile : BaseActivity() {
 
             })
     }
-
     private fun initRVAdapter() {
         val layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
         dates_rv.layoutManager = layoutManager
         doctorDatesListAddapter = DatesAdapter(this, doctorDatesList)
         dates_rv.adapter = doctorDatesListAddapter
     }
-
     private fun getIntentValues() {
         firstName_ar = intent.getStringExtra("firstName_ar")!!
         firstName_en = intent.getStringExtra("firstName_en")!!
@@ -157,5 +154,16 @@ class DoctorProfile : BaseActivity() {
         waiting_time_txt.text=waiting_time
         cost_txt.text=price.toString()
         street_txt.text=streetName_ar
+        doctor_info_txt.text=aboutDoctor_ar
+        see_more_txt.setOnClickListener {
+            if(see_more_txt.text==getString(R.string.more)){
+                doctor_info_txt.maxLines=20
+                see_more_txt.text=getString(R.string.less)
+            }else{
+                doctor_info_txt.maxLines=2
+                see_more_txt.text=getString(R.string.more)
+
+            }
+        }
     }
 }
