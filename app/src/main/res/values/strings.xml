@@ -94,6 +94,8 @@
     <string name="booking_dates">مواعيد الحجز</string>
     <string name="booking_order">طلب الحجز</string>
     <string name="booking_check">انا أقوم بالحجز لمريض أخر</string>
+    <string name="language_setting">ضبط اللغة</string>
+    <string name="lang_btn">حفظ</string>
 
 
 </resources>

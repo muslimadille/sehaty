@@ -13,7 +13,7 @@ class App : Application() {
 
         var change = ""
         preferences = ComplexPreferences.getComplexPreferences(this, Q.PREF_FILE, Q.MODE_PRIVATE)
-        val language = preferences!!.getString("language", "bak")
+        val language = preferences!!.getString("language", "en")
         if (language =="Arabic") {
             change="ar"
         } else if (language=="English" ) {

@@ -72,6 +72,8 @@
     <string name="booking_dates">Booking Dates</string>
     <string name="booking_order">Booking Order</string>
     <string name="booking_check">i am booking for another patient</string>
+    <string name="language_setting">ضبط اللغة</string>
+    <string name="lang_btn">Save</string>
 
 
 </resources>

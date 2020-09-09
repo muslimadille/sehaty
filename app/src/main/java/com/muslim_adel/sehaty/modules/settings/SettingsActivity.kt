@@ -18,7 +18,7 @@ class SettingsActivity : BaseActivity() {
     }
     private fun implementListeners(){
         stn_language_btn.setOnClickListener {
-            val intent = Intent(this@SettingsActivity, MainActivity::class.java)
+            val intent = Intent(this@SettingsActivity, ChangeLanguageActivity::class.java)
             startActivity(intent)
 
         }
