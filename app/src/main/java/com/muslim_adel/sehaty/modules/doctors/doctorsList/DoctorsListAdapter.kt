@@ -76,9 +76,6 @@ class DoctorsListAdapter(
             intent.putExtra("visitor_num",doctor.visitor_num)
             intent.putExtra("waiting_time",doctor.waiting_time)
             intent.putExtra("buildingNum_en",doctor.buildingNum_en)
-
-
-
             mContext.startActivity(intent)
 
         }

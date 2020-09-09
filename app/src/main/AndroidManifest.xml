@@ -12,8 +12,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".modules.doctors.doctorProfile.DoctorProfile"></activity>
-        <activity android:name=".modules.doctors.doctorsList.DoctorsListActivity"></activity>
+        <activity android:name=".modules.doctors.booking.BookingActivity"></activity>
+        <activity android:name=".modules.doctors.dates.DatesActivity" />
+        <activity android:name=".modules.doctors.doctorProfile.DoctorProfile" />
+        <activity android:name=".modules.doctors.doctorsList.DoctorsListActivity" />
         <activity android:name=".modules.doctors.reagons.ReagonsActivity" />
         <activity android:name=".modules.doctors.search.SearchBySpecialityActivity" />
         <activity android:name=".modules.doctors.search.SearchByNameActivity" />

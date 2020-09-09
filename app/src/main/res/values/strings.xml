@@ -91,7 +91,9 @@
     <string name="doctor_info">معلومات عن الدكتور</string>
     <string name="more">المزيد</string>
     <string name="less">أقل</string>
-
+    <string name="booking_dates">مواعيد الحجز</string>
+    <string name="booking_order">طلب الحجز</string>
+    <string name="booking_check">انا أقوم بالحجز لمريض أخر</string>
 
 
 </resources>

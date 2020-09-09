@@ -20,35 +20,35 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DoctorProfile : BaseActivity() {
-    private var firstName_ar = ""
-    private var firstName_en = ""
-    private var lastName_ar = ""
-    private var lastName_en = ""
-    private var aboutDoctor_ar = ""
-    private var aboutDoctor_en = ""
-    private var apartmentNum_ar = ""
-    private var apartmentNum_en = ""
-    private var area_id = -1L
-    private var buildingNum_ar = ""
-    private var featured = ""
-    private var gender_id = -1
-    private var id = -1L
-    private var landmark_ar = ""
-    private var landmark_en = ""
-    private var phonenumber = -1L
-    private var prefixTitle_id = -1L
-    private var price = -1L
-    private var profissionalDetails_id = -1L
-    private var profissionalTitle_ar = ""
-    private var profissionalTitle_en = ""
-    private var role = ""
-    private var rating = 0F
-    private var speciality_id = -1L
-    private var streetName_ar = ""
-    private var streetName_en = ""
-    private var visitor_num = -1
-    private var waiting_time = ""
-    private var buildingNum_en = ""
+     var firstName_ar = ""
+     var firstName_en = ""
+     var lastName_ar = ""
+     var lastName_en = ""
+     var aboutDoctor_ar = ""
+     var aboutDoctor_en = ""
+     var apartmentNum_ar = ""
+     var apartmentNum_en = ""
+     var area_id = -1L
+     var buildingNum_ar = ""
+     var featured = ""
+     var gender_id = -1
+     var id = -1L
+     var landmark_ar = ""
+     var landmark_en = ""
+     var phonenumber = -1L
+     var prefixTitle_id = -1L
+     var price = -1L
+     var profissionalDetails_id = -1L
+     var profissionalTitle_ar = ""
+     var profissionalTitle_en = ""
+     var role = ""
+     var rating = 0F
+     var speciality_id = -1L
+     var streetName_ar = ""
+     var streetName_en = ""
+     var visitor_num = -1
+     var waiting_time = ""
+     var buildingNum_en = ""
 
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
@@ -60,11 +60,11 @@ class DoctorProfile : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_doctor_profile)
         initRVAdapter()
-        doctorsObserver()
+        doctorDateObserver()
         setProfilrData()
     }
 
-    private fun doctorsObserver() {
+    private fun doctorDateObserver() {
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
         apiClient.getApiService(this).fitchDoctorDatesList(Q.DOCTORS_DATES_API + "/37")

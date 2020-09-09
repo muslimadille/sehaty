@@ -19,12 +19,14 @@ data class Date(
     @SerializedName("status")
     var status: Int,
     @SerializedName("times")
-    var times: java.util.ArrayList<time>
+    var times: java.util.ArrayList<Times>
 )
-data class time (
+data class Times (
     @SerializedName("time")
     var time: String,
+    var id:Int,
     @SerializedName("status")
     var status: String
+
 
 )
