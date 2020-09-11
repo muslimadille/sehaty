@@ -59,7 +59,7 @@ class DoctorsListAdapter(
             intent.putExtra("buildingNum_ar",doctor.buildingNum_ar)
             intent.putExtra("featured",doctor.featured)
             intent.putExtra("gender_id",doctor.gender_id)
-            intent.putExtra("id",doctor.id)
+            intent.putExtra("doctor_id",doctor.id)
             intent.putExtra("landmark_ar",doctor.landmark_ar)
             intent.putExtra("landmark_en",doctor.landmark_en)
             intent.putExtra("phonenumber",doctor.phonenumber)

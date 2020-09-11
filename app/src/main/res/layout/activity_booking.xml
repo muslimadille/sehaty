@@ -167,6 +167,7 @@
                                 </com.google.android.material.textfield.TextInputLayout>
 
                             </LinearLayout>
+
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -195,7 +196,39 @@
 
                                 </com.google.android.material.textfield.TextInputLayout>
 
+
                             </LinearLayout>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginBottom="10dp">
+
+                                <com.google.android.material.textfield.TextInputLayout
+                                    android:id="@+id/email_input_layout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:background="@color/white"
+                                    android:backgroundTint="@color/white"
+                                    >
+
+                                    <EditText
+                                        android:backgroundTint="@color/white"
+                                        android:id="@+id/mail_txt"
+                                        android:inputType="textEmailAddress"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerHorizontal="true"
+                                        android:layout_centerVertical="true"
+                                        android:hint="@string/e_mail" />
+
+                                </com.google.android.material.textfield.TextInputLayout>
+
+
+                            </LinearLayout>
+
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -374,6 +407,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <Button
+            android:id="@+id/booking_btn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/blue"

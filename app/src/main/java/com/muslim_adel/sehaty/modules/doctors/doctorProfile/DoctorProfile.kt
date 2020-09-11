@@ -54,20 +54,30 @@ class DoctorProfile : BaseActivity() {
     private lateinit var apiClient: ApiClient
 
     private var doctorDatesList: MutableList<Date> = ArrayList()
+    private var doctorRatesList: MutableList<Rates> = ArrayList()
+
 
     private var doctorDatesListAddapter: DatesAdapter? = null
+    private var doctorRatesListAddapter: RatesAdapter? = null
+    private var doctorServicesListAddapter: RatesAdapter? = null
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_doctor_profile)
         initRVAdapter()
         doctorDateObserver()
-        setProfilrData()
+        doctorRatesObserver()
+        onFavoritClicked()
     }
 
     private fun doctorDateObserver() {
+        setProfilrData()
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
-        apiClient.getApiService(this).fitchDoctorDatesList(Q.DOCTORS_DATES_API + "/37")
+        val url =Q.DOCTORS_DATES_API + "/${id}"
+        apiClient.getApiService(this).fitchDoctorDatesList(url)
             .enqueue(object : Callback<BaseResponce<Dates>> {
                 override fun onFailure(call: Call<BaseResponce<Dates>>, t: Throwable) {
                     alertNetwork(true)
@@ -81,7 +91,11 @@ class DoctorProfile : BaseActivity() {
                         if (response.body()!!.success) {
                             response.body()!!.data!!.dates.let {
                                 if (it.isNotEmpty()) {
-                                    doctorDatesList.addAll(it)
+                                    it.forEach {date:Date->
+                                        if(date.status==1){
+                                            doctorDatesList.add(date)
+                                        }
+                                    }
                                     doctorDatesListAddapter!!.notifyDataSetChanged()
                                 } else {
                                     Toast.makeText(
@@ -106,11 +120,60 @@ class DoctorProfile : BaseActivity() {
 
             })
     }
+    private fun doctorRatesObserver() {
+        val url =Q.DOCTORS_RATES_API + "/${id}"
+        apiClient.getApiService(this).fitchDoctorRatesList(url)
+            .enqueue(object : Callback<BaseResponce<List<Rates>>> {
+                override fun onFailure(call: Call<BaseResponce<List<Rates>>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<List<Rates>>>,
+                    response: Response<BaseResponce<List<Rates>>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response.body()!!.success) {
+                            response.body()!!.data!!.let {
+                                if (it.isNotEmpty()) {
+                                    doctorRatesList.addAll(it)
+                                    doctorRatesListAddapter!!.notifyDataSetChanged()
+                                } else {
+                                    Toast.makeText(
+                                        this@DoctorProfile,
+                                        "data empty",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+
+                                }
+
+                            }
+                        } else {
+                            Toast.makeText(this@DoctorProfile, "faild", Toast.LENGTH_SHORT).show()
+                        }
+
+                    } else {
+                        Toast.makeText(this@DoctorProfile, "faild", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+
+            })
+    }
     private fun initRVAdapter() {
-        val layoutManager = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
-        dates_rv.layoutManager = layoutManager
+        val layoutManager1 = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+        val layoutManager2 = LinearLayoutManager(this, RecyclerView.HORIZONTAL, false)
+
+        dates_rv.layoutManager = layoutManager1
         doctorDatesListAddapter = DatesAdapter(this, doctorDatesList)
         dates_rv.adapter = doctorDatesListAddapter
+
+        rates_rv.layoutManager = layoutManager2
+        doctorRatesListAddapter = RatesAdapter(this, doctorRatesList)
+        rates_rv.adapter = doctorRatesListAddapter
+
+
     }
     private fun getIntentValues() {
         firstName_ar = intent.getStringExtra("firstName_ar")!!
@@ -125,7 +188,7 @@ class DoctorProfile : BaseActivity() {
         area_id = intent.getLongExtra("area_id", -1)
         featured=intent.getStringExtra("featured")!!
         gender_id=intent.getIntExtra("gender_id", -1)
-        id=intent.getLongExtra("id", -1)
+        id=intent.getLongExtra("doctor_id", -1L)
         landmark_ar=intent.getStringExtra("landmark_ar")!!
         landmark_en=intent.getStringExtra("landmark_en")!!
         phonenumber=intent.getLongExtra("phonenumber", -1)
@@ -144,7 +207,14 @@ class DoctorProfile : BaseActivity() {
         buildingNum_en=intent.getStringExtra("buildingNum_en")!!
     }
     private fun setProfilrData(){
+
         getIntentValues()
+
+        if(id==preferences!!.getLong("$id",-1)){
+            favorit_btn.setImageResource(R.drawable.heart_solid)
+        }else{
+            favorit_btn.setImageResource(R.drawable.hart_border)
+        }
         GlideObject.GlideProfilePic(this,featured,circleImageView)
         viewed_num.text=visitor_num.toString()
         doc_name_txt.text=firstName_ar+" "+lastName_ar
@@ -164,6 +234,22 @@ class DoctorProfile : BaseActivity() {
                 see_more_txt.text=getString(R.string.more)
 
             }
+        }
+    }
+    private fun onFavoritClicked(){
+
+
+        favorit_btn.setOnClickListener {
+            if(id==preferences!!.getLong("$id",-1)){
+                preferences!!.putLong("$id",-1)
+                preferences!!.commit()
+                favorit_btn.setImageResource(R.drawable.hart_border)
+            }else{
+                preferences!!.putLong("$id",id)
+                preferences!!.commit()
+                favorit_btn.setImageResource(R.drawable.heart_solid)
+            }
+
         }
     }
 }

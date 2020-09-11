@@ -1,14 +1,21 @@
 package com.muslim_adel.sehaty.modules.doctors.booking
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import com.muslim_adel.sehaty.R
+import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
+import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
+import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
+import com.muslim_adel.sehaty.data.remote.objects.Booking
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.circleImageView
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_name_txt
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_specialty_txt
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class BookingActivity : BaseActivity() {
     var firstName_ar = ""
@@ -28,11 +35,15 @@ class BookingActivity : BaseActivity() {
     var datename = ""
     var time = ""
 
+    private lateinit var sessionManager: SessionManager
+    private lateinit var apiClient: ApiClient
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking)
         setProfilrData()
+        onBookingClicked()
 
     }
     private fun getIntentValues() {
@@ -64,5 +75,50 @@ class BookingActivity : BaseActivity() {
         time_txt.text=time
         street_txt.text=streetName_ar
         price_txt.text=price.toString()
+    }
+    private fun onBookingClicked(){
+        booking_btn.setOnClickListener {
+            doctorDateObserver()
+        }
+    }
+    private fun doctorDateObserver() {
+        var booking_date="2020-09-09 16:35"
+        var name=username.text.toString()
+        var phone=phone_num.text.toString()
+        var email=mail_txt.text.toString()
+        var chec=-1
+        if (book_check_box.isChecked){
+            chec=1
+        }else{
+            chec=0
+        }
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
+        apiClient.getApiService(this).sendBook(name,email,phone,doctor_id.toInt(),chec,booking_date)
+            .enqueue(object : Callback<BaseResponce<Booking>> {
+                override fun onFailure(call: Call<BaseResponce<Booking>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<Booking>>,
+                    response: Response<BaseResponce<Booking>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response.body()!!.success) {
+                            Toast.makeText(this@BookingActivity, "success", Toast.LENGTH_SHORT).show()
+
+                        } else {
+                            Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
+                        }
+
+                    } else {
+                        Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+
+            })
     }
 }

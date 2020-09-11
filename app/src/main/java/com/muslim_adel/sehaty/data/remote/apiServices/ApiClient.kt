@@ -1,6 +1,7 @@
 package com.muslim_adel.sehaty.data.remote.apiServices
 
 import android.content.Context
+import android.icu.util.TimeUnit
 import com.muslim_adel.sehaty.utiles.Q
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -30,6 +31,8 @@ class ApiClient {
      */
     private fun okhttpClient(context: Context): OkHttpClient {
         return OkHttpClient.Builder()
+            .readTimeout(60, java.util.concurrent.TimeUnit.SECONDS)
+            .connectTimeout(60, java.util.concurrent.TimeUnit.SECONDS)
             .addInterceptor(AuthInterceptor(context))
             .build()
     }

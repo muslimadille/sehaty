@@ -58,12 +58,11 @@ class DatesActivity : BaseActivity() {
     private fun doctorDateObserver() {
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
-        apiClient.getApiService(this).fitchDoctorDatesList(Q.DOCTORS_DATES_API + "/37")
+        apiClient.getApiService(this).fitchDoctorDatesList(Q.DOCTORS_DATES_API + "/${doctor_id}")
             .enqueue(object : Callback<BaseResponce<Dates>> {
                 override fun onFailure(call: Call<BaseResponce<Dates>>, t: Throwable) {
                     alertNetwork(true)
                 }
-
                 override fun onResponse(
                     call: Call<BaseResponce<Dates>>,
                     response: Response<BaseResponce<Dates>>

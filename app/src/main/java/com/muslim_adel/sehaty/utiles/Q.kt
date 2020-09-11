@@ -12,6 +12,10 @@ object Q {
     const val REAGONS_LIST_API = "areas"
     const val DOCTORS_LIST_API = "search"
     const val DOCTORS_DATES_API = "dates"
+    const val DOCTORS_RATES_API = "ratings"
+
+    const val BOOKING_API = "reservation"
+
 
 
 
