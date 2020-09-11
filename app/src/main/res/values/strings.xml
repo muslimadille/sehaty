@@ -97,6 +97,14 @@
     <string name="language_setting">ضبط اللغة</string>
     <string name="lang_btn">حفظ</string>
     <string name="ratings">التقييمات</string>
+    <string name="thanks">شكراً</string>
+    <string name="done">تم حجزك بنجاح</string>
+    <string name="derham">دينار</string>
+    <string name="building_num">مبنى رقم:</string>
+    <string name="Apartment_num">شقة رقم:</string>
+
+
+
 
 
 </resources>

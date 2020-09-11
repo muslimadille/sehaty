@@ -1,5 +1,6 @@
 package com.muslim_adel.sehaty.modules.doctors.booking
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import com.muslim_adel.sehaty.R
@@ -9,6 +10,7 @@ import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
 import com.muslim_adel.sehaty.data.remote.objects.Booking
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.base.GlideObject
+import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.circleImageView
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_name_txt
@@ -34,6 +36,14 @@ class BookingActivity : BaseActivity() {
     var streetName_en = ""
     var datename = ""
     var time = ""
+
+    var apartmentNum_ar = ""
+    var apartmentNum_en = ""
+    var landmark_ar = ""
+    var landmark_en = ""
+    var buildingNum_ar = ""
+    var role = ""
+    var buildingNum_en = ""
 
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
@@ -63,6 +73,14 @@ class BookingActivity : BaseActivity() {
         date_id=intent.getLongExtra("date_id", -1)
         datename=intent.getStringExtra("datename")!!
         time=intent.getStringExtra("timename")!!
+
+        apartmentNum_ar = intent.getStringExtra("apartmentNum_ar")!!
+        apartmentNum_en =intent.getStringExtra("apartmentNum_en")!!
+        landmark_ar = intent.getStringExtra("landmark_ar")!!
+        landmark_en = intent.getStringExtra("landmark_en")!!
+        buildingNum_ar = intent.getStringExtra("buildingNum_ar")!!
+        role =intent.getStringExtra("role")!!
+        buildingNum_en =intent.getStringExtra("buildingNum_en")!!
 
 
     }
@@ -106,11 +124,11 @@ class BookingActivity : BaseActivity() {
                 ) {
                     if (response!!.isSuccessful) {
                         if (response.body()!!.success) {
-                            Toast.makeText(this@BookingActivity, "success", Toast.LENGTH_SHORT).show()
-
+                            done()
                         } else {
                             Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
                         }
+
 
                     } else {
                         Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
@@ -120,5 +138,31 @@ class BookingActivity : BaseActivity() {
 
 
             })
+    }
+    private fun done(){
+        val intent = Intent(this@BookingActivity, BookingSuccessActivity::class.java)
+        intent.putExtra("firstName_ar",firstName_ar)
+        intent.putExtra("firstName_en",firstName_en)
+        intent.putExtra("lastName_ar",lastName_ar)
+        intent.putExtra("lastName_en",lastName_en)
+        intent.putExtra("apartmentNum_ar",apartmentNum_ar)
+        intent.putExtra("apartmentNum_en",apartmentNum_en)
+        intent.putExtra("buildingNum_ar",buildingNum_ar)
+        intent.putExtra("landmark_ar",landmark_ar)
+        intent.putExtra("landmark_en",landmark_en)
+        intent.putExtra("phonenumber",phonenumber)
+        intent.putExtra("price",price)
+        intent.putExtra("profissionalTitle_ar",profissionalTitle_ar)
+        intent.putExtra("profissionalTitle_en",profissionalTitle_en)
+        intent.putExtra("role",role)
+        intent.putExtra("streetName_ar",streetName_ar)
+        intent.putExtra("streetName_en",streetName_en)
+        intent.putExtra("buildingNum_en",buildingNum_en)
+        intent.putExtra("datename",datename)!!
+        intent.putExtra("timename",time)!!
+
+
+        startActivity(intent)
+
     }
 }

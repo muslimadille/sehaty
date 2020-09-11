@@ -61,8 +61,13 @@ class DatesAdabter(
                 intent.putExtra("streetName_en",mContext.streetName_en)
                 intent.putExtra("datename",mContext.datename)
                 intent.putExtra("timename",time.time)
-
-
+                intent.putExtra("apartmentNum_ar",mContext.apartmentNum_ar)
+                intent.putExtra("apartmentNum_en",mContext.apartmentNum_en)
+                intent.putExtra("landmark_ar",mContext.landmark_ar)
+                intent.putExtra("landmark_en",mContext.landmark_en)
+                intent.putExtra("buildingNum_ar",mContext.buildingNum_ar)
+                intent.putExtra("role",mContext.role)
+                intent.putExtra("buildingNum_en",mContext.buildingNum_en)
 
                 mContext.startActivity(intent)
             }

@@ -40,6 +40,15 @@ class DatesActivity : BaseActivity() {
     var streetName_en = ""
     var datename = ""
 
+
+    var apartmentNum_ar = ""
+    var apartmentNum_en = ""
+    var landmark_ar = ""
+    var landmark_en = ""
+    var buildingNum_ar = ""
+    var role = ""
+    var buildingNum_en = ""
+
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
 
@@ -125,6 +134,14 @@ class DatesActivity : BaseActivity() {
         streetName_ar= intent.getStringExtra("streetName_ar")!!
         streetName_en=intent.getStringExtra("streetName_en")!!
         date_id=intent.getLongExtra("date_id", -1)
+
+         apartmentNum_ar = intent.getStringExtra("apartmentNum_ar")!!
+         apartmentNum_en =intent.getStringExtra("apartmentNum_en")!!
+         landmark_ar = intent.getStringExtra("landmark_ar")!!
+         landmark_en = intent.getStringExtra("landmark_en")!!
+         buildingNum_ar = intent.getStringExtra("buildingNum_ar")!!
+         role =intent.getStringExtra("role")!!
+         buildingNum_en =intent.getStringExtra("buildingNum_en")!!
 
     }
 

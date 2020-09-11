@@ -75,6 +75,14 @@
     <string name="language_setting">ضبط اللغة</string>
     <string name="lang_btn">Save</string>
     <string name="ratings">Ratings</string>
+    <string name="thanks">Thanks</string>
+    <string name="done">Success</string>
+    <string name="derham">IQD</string>
+    <string name="building_num">Building num:</string>
+    <string name="Apartment_num">Apartment num:</string>
+
+
+
 
 
 </resources>
