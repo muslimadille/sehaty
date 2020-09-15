@@ -29,6 +29,9 @@ class IntroWizardActivity :BaseActivity() {
             window.decorView.systemUiVisibility =
                 View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
         }
+        if(intent.getBooleanExtra("key",false)){
+            intro_register_btn.visibility=View.GONE
+        }
 
         val adapter = IntroPagerAdapter(this)
         vpIntroSlider.adapter = adapter

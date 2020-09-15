@@ -43,5 +43,12 @@ interface ApiService {
                  @Query("booking_date") booking_date:String): Call<BaseResponce<Booking>>
     @GET
     fun fitchDoctorRatesList(@Url url:String):Call<BaseResponce<List<Rates>>>
+    @GET
+    fun fitchDoctorById(@Url url:String):Call<BaseResponce<Doctor>>
+
+    @GET(Q.GET_BOOKING_API)
+    fun fitchBookingList():Call<BaseResponce<Appointment>>
+    @GET
+    fun bookingCancel(@Url url:String):Call<BaseResponce<AppointmentData>>
 
 }

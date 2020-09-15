@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/settings_title"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="#fff"
             android:layout_height="match_parent"/>
@@ -36,9 +36,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -66,8 +66,8 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:text="@string/edit_profile"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                />
             <ImageView
                 tools:replace="android:supportsRtl"
                 android:layout_width="20dp"
@@ -91,9 +91,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -121,8 +121,8 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:text="@string/change_password"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                />
             <ImageView
 
                 android:layout_width="20dp"
@@ -146,9 +146,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -176,8 +176,8 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:text="@string/change_language"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                />
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
@@ -198,9 +198,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -228,8 +228,8 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:text="@string/how_it_work"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                />
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="match_parent"

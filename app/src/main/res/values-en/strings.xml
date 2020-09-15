@@ -57,6 +57,7 @@
     <string name="dismiss">Dismiss</string>
     <string name="search_doctor_hint">search by doctor name</string>
     <string name="doctor">Doctor:</string>
+    <string name="doctorah">دكتورة:</string>
     <string name="doctors_list">Doctors List</string>
     <string name="visitors">Visitor</string>
     <string name="profile">Doctor Profile</string>
@@ -80,9 +81,14 @@
     <string name="derham">IQD</string>
     <string name="building_num">Building num:</string>
     <string name="Apartment_num">Apartment num:</string>
-
-
-
+    <string name="help">help</string>
+    <string name="cancel">cancel</string>
+    <string name="map">map</string>
+    <string name="new_password">new password</string>
+    <string name="old_password">old password</string>
+    <string name="please_enter_new_password">please enter new password</string>
+    <string name="edit_password">edit password</string>
+    <string name="save_btn">save</string>
 
 
 </resources>

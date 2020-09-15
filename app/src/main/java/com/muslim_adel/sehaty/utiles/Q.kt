@@ -13,11 +13,11 @@ object Q {
     const val DOCTORS_LIST_API = "search"
     const val DOCTORS_DATES_API = "dates"
     const val DOCTORS_RATES_API = "ratings"
+    const val DOCTOR_BY_ID_API="doctor/show"
 
     const val BOOKING_API = "reservation"
-
-
-
+    const val GET_BOOKING_API="user/booking"
+    const val BOOKING_CANCEL_API="user/booking/cancle"
 
     const val AVATAR_PATH="https://www.obank.itcomunity.com/"
     /*****************************************************************/
@@ -25,9 +25,6 @@ object Q {
     val LOCALE_AR = Locale("ar")
     val LOCALE_EN = Locale.US!!
     var SELECTED_LOCALE =""
-
-
-
 
     const val MODE_PRIVATE = 0
     const val PREF_FILE = "sehaty_pref"
@@ -40,7 +37,5 @@ object Q {
     var IS_FIRST_TIME = "first_time"
 
     const val FIRST_TIME_PREF = "ADW_first_time"
-
-
 
 }

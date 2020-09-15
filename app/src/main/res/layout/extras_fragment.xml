@@ -17,7 +17,7 @@
             android:layout_weight="1"
             android:gravity="center"
             android:text="@string/more_title"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:textStyle="bold"
             android:textColor="#fff"
             android:layout_height="match_parent"/>
@@ -30,7 +30,7 @@
        <LinearLayout
            android:id="@+id/setting_btn"
            android:layout_width="match_parent"
-           android:layout_height="50dp"
+           android:layout_height="wrap_content"
            android:orientation="horizontal"
            android:layout_marginTop="10dp"
            android:layout_marginEnd="15dp"
@@ -40,12 +40,12 @@
                android:layout_width="wrap_content"
                android:layout_height="match_parent"
                android:orientation="vertical"
+               android:gravity="center"
                android:layout_marginStart="10dp"
                >
                <ImageView
-                   android:layout_width="wrap_content"
-                   android:layout_height="0dp"
-                   android:layout_weight="1"
+                   android:layout_width="24dp"
+                   android:layout_height="24dp"
                    android:src="@drawable/settings_blue_ic"/>
                <View
                    android:layout_width="match_parent"
@@ -62,8 +62,8 @@
                android:gravity="center_vertical"
                android:layout_height="match_parent"
                android:text="@string/settings"
-               android:textSize="16sp"
-               android:textStyle="bold"/>
+               android:textSize="14sp"
+               />
            <ImageView
                tools:replace="android:supportsRtl"
                android:layout_width="20dp"
@@ -85,7 +85,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
@@ -95,12 +95,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:gravity="center"
                 android:layout_marginStart="10dp"
                 >
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/phone_blue_ic"/>
                 <View
                     android:layout_width="match_parent"
@@ -117,8 +117,8 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:text="@string/contact_us"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                />
             <ImageView
 
                 android:layout_width="20dp"
@@ -140,7 +140,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
@@ -150,12 +150,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:gravity="center"
                 android:layout_marginStart="10dp"
                 >
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/about_us_blue_ic"/>
                 <View
                     android:layout_width="match_parent"
@@ -172,8 +172,8 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:text="@string/about_us"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                />
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
@@ -194,7 +194,7 @@
         android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
@@ -205,11 +205,12 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:layout_marginStart="10dp"
+                android:gravity="center"
                 >
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/stare_blue_ic"/>
                 <View
                     android:layout_width="match_parent"
@@ -226,8 +227,8 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:text="@string/prefrances"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                />
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="match_parent"
@@ -247,24 +248,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <LinearLayout
+            android:id="@+id/logout_btn"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="15dp"
             android:layout_marginBottom="10dp"
             >
             <LinearLayout
-                android:id="@+id/logout_btn"
                 android:layout_marginStart="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center_vertical">
+                android:gravity="center">
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
                     android:src="@drawable/logout_blue_ic"/>
                 <View
                     android:layout_width="match_parent"
@@ -281,8 +281,8 @@
                 android:gravity="center_vertical"
                 android:layout_height="match_parent"
                 android:text="@string/log_out"
-                android:textSize="16sp"
-                android:textStyle="bold"/>
+                android:textSize="14sp"
+                />
 
 
 

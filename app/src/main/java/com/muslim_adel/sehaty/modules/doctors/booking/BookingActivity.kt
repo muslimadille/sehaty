@@ -100,7 +100,7 @@ class BookingActivity : BaseActivity() {
         }
     }
     private fun doctorDateObserver() {
-        var booking_date="2020-09-09 16:35"
+        var booking_date=datename+time//"2020-09-09 16:35"
         var name=username.text.toString()
         var phone=phone_num.text.toString()
         var email=mail_txt.text.toString()

@@ -24,14 +24,15 @@ class SettingsActivity : BaseActivity() {
         }
         how_aap_works_btn.setOnClickListener {
             val intent = Intent(this@SettingsActivity, IntroWizardActivity::class.java)
+            intent.putExtra("key",true)
             startActivity(intent)
         }
         edit_profile_btn.setOnClickListener {
-            val intent = Intent(this@SettingsActivity, RegisterationActivity::class.java)
+            val intent = Intent(this@SettingsActivity, EditProfileActivity::class.java)
             startActivity(intent)
         }
         edit_password_btn.setOnClickListener {
-            val intent = Intent(this@SettingsActivity, MainActivity::class.java)
+            val intent = Intent(this@SettingsActivity, ChangePasswordActivity::class.java)
             startActivity(intent)
         }
     }

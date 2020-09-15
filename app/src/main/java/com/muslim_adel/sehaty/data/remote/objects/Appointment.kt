@@ -2,8 +2,7 @@ package com.muslim_adel.sehaty.data.remote.objects
 
 import com.google.gson.annotations.SerializedName
 
-data class Booking (
+data class Appointment (
     @SerializedName("booking")
-    var booking: AppointmentData
+    var booking: ArrayList<AppointmentData>
 )
-

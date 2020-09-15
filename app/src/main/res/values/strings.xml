@@ -35,7 +35,7 @@
     <string name="male">ذكر</string>
     <string name="save">سجل الآن</string>
     <string name="login">دخول</string>
-    <string name="forget_password">هل نسيت كلمة السر؟</string>
+    <string name="forget_password">هل نسيت كلمة المرور؟</string>
     <string name="rouls_conditions">الشروط والقوانين</string>
     <string name="new_acount">إنشاء حساب جديد</string>
     <string name="login_facebook">الدخول عن طريق الفيسبوك</string>
@@ -79,6 +79,8 @@
     <string name="dismiss">إخفاء</string>
     <string name="search_doctor_hint">ابحث باسم الدكتور</string>
     <string name="doctor">دكتور:</string>
+    <string name="doctorah">دكتورة:</string>
+
     <string name="doctors_list">قائمة الأطباء</string>
     <string name="visitors">زائر</string>
     <string name="profile">بيانات الدكتور</string>
@@ -102,9 +104,14 @@
     <string name="derham">دينار</string>
     <string name="building_num">مبنى رقم:</string>
     <string name="Apartment_num">شقة رقم:</string>
-
-
-
+    <string name="help">طلب المساعدة</string>
+    <string name="cancel">إلغاء</string>
+    <string name="map">الخريطة</string>
+    <string name="new_password">كلمة المرور الجديدة</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="please_enter_new_password">ادخل كلمة المرور الجديدة</string>
+    <string name="edit_password">نعديل كلمة المرور</string>
+    <string name="save_btn">حفظ</string>
 
 
 </resources>

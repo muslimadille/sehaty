@@ -23,7 +23,7 @@ class ChangeLanguageActivity : BaseActivity() {
             ar_check.isChecked=true
             en_check.isChecked=false
         }else{
-            lang_name_txt.text="عربي"
+            lang_name_txt.text="English"
             ar_check.isChecked=false
             en_check.isChecked=true
         }
