@@ -11,8 +11,8 @@ data class User (
     var phonenumber: Long,
     @SerializedName("email")
     var email: String,
-    @SerializedName("gender")
-    var gender: String,
+    @SerializedName("gender_id")
+    var gender_id: Int,
     @SerializedName("birthday")
     var birthday: String,
     @SerializedName("created_at")

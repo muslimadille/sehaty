@@ -45,6 +45,8 @@ interface ApiService {
     fun fitchDoctorRatesList(@Url url:String):Call<BaseResponce<List<Rates>>>
     @GET
     fun fitchDoctorById(@Url url:String):Call<BaseResponce<Doctor>>
+    @GET
+    fun fitchUserById(@Url url:String):Call<BaseResponce<User>>
 
     @GET(Q.GET_BOOKING_API)
     fun fitchBookingList():Call<BaseResponce<Appointment>>

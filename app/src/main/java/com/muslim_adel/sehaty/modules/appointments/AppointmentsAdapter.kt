@@ -24,9 +24,7 @@ import retrofit2.Response
 
 class AppointmentsAdapter(
     private val mContext: MainActivity,
-    private val appointmentList: MutableList<AppointmentData>,
-    private val doctorList: MutableList<Doctor>
-
+    private val appointmentList: MutableList<AppointmentData>
 
 ) : RecyclerView.Adapter<AppointmentsAdapter.ViewHolder>() {
     private lateinit var sessionManager: SessionManager
@@ -45,57 +43,23 @@ class AppointmentsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val appointmentData = appointmentList[position]
-        val doctorData = doctorList.let {
-            it[position]
-        }
+
 
         holder.date_name_txt.text=appointmentData.booking_date
-        holder.name_txt.text=doctorData.firstName_ar+" "+doctorData.lastName_ar
-        if(doctorData.gender_id==1){
+        holder.name_txt.text=appointmentData.doctor.firstName_ar+" "+appointmentData.doctor.lastName_ar
+        if(appointmentData.doctor.gender_id==1){
             holder.gendare_txt.text=mContext!!.getString(R.string.doctor)
         }else{
             holder.gendare_txt.text=mContext!!.getString(R.string.doctorah)
         }
-        holder.speciality_txt.text=doctorData.profissionalTitle_ar
-        holder.location_txt.text=doctorData.apartmentNum_ar+","+doctorData.buildingNum_ar+","+doctorData.streetName_ar+","+doctorData.landmark_ar
-        GlideObject.GlideProfilePic(mContext,doctorData.featured,holder.image_doc)
+        holder.speciality_txt.text=appointmentData.doctor.profissionalTitle_ar
+        holder.location_txt.text=appointmentData.doctor.apartmentNum_ar+","+appointmentData.doctor.buildingNum_ar+","+appointmentData.doctor.streetName_ar+","+appointmentData.doctor.landmark_ar
+        GlideObject.GlideProfilePic(mContext,appointmentData.doctor.featured,holder.image_doc)
         holder.cancel_btn.setOnClickListener {
             bookingCancelObserver(appointmentData.id.toInt())
+            removeMember(position)
         }
-        /*holder.booking_btn.setOnClickListener {
-            val intent = Intent(mContext, DoctorProfile::class.java)
-            intent.putExtra("firstName_ar",doctor.firstName_ar)
-            intent.putExtra("firstName_en",doctor.firstName_en)
-            intent.putExtra("lastName_ar",doctor.lastName_ar)
-            intent.putExtra("lastName_en",doctor.lastName_en)
-            intent.putExtra("aboutDoctor_ar",doctor.aboutDoctor_ar)
-            intent.putExtra("aboutDoctor_en",doctor.aboutDoctor_en)
-            intent.putExtra("apartmentNum_ar",doctor.apartmentNum_ar)
-            intent.putExtra("apartmentNum_en",doctor.apartmentNum_en)
-            intent.putExtra("area_id",doctor.area_id)
-            intent.putExtra("buildingNum_ar",doctor.buildingNum_ar)
-            intent.putExtra("featured",doctor.featured)
-            intent.putExtra("gender_id",doctor.gender_id)
-            intent.putExtra("doctor_id",doctor.id)
-            intent.putExtra("landmark_ar",doctor.landmark_ar)
-            intent.putExtra("landmark_en",doctor.landmark_en)
-            intent.putExtra("phonenumber",doctor.phonenumber)
-            intent.putExtra("prefixTitle_id",doctor.prefixTitle_id)
-            intent.putExtra("price",doctor.price)
-            intent.putExtra("profissionalDetails_id",doctor.profissionalDetails_id)
-            intent.putExtra("profissionalTitle_ar",doctor.profissionalTitle_ar)
-            intent.putExtra("profissionalTitle_en",doctor.profissionalTitle_en)
-            intent.putExtra("role",doctor.role)
-            intent.putExtra("rating",doctor.rating)
-            intent.putExtra("speciality_id",doctor.speciality_id)
-            intent.putExtra("streetName_ar",doctor.streetName_ar)
-            intent.putExtra("streetName_en",doctor.streetName_en)
-            intent.putExtra("visitor_num",doctor.visitor_num)
-            intent.putExtra("waiting_time",doctor.waiting_time)
-            intent.putExtra("buildingNum_en",doctor.buildingNum_en)
-            mContext.startActivity(intent)
 
-        }*/
 
     }
 
@@ -118,7 +82,6 @@ class AppointmentsAdapter(
         val url = Q.BOOKING_CANCEL_API +"/${id}"
         apiClient = ApiClient()
         sessionManager = SessionManager(mContext!!)
-        //onObserveStart()
         apiClient.getApiService(mContext!!).bookingCancel(url)
             .enqueue(object : Callback<BaseResponce<AppointmentData>> {
                 override fun onFailure(call: Call<BaseResponce<AppointmentData>>, t: Throwable) {
@@ -129,9 +92,10 @@ class AppointmentsAdapter(
                         if(response.body()!!.success){
                             response.body()!!.data!!.let {
 
-                                for(n in 0 until mContext!!.appointmentsList.size){
-                                    if (it.id==mContext!!.appointmentsList[n].id){
-                                        mContext!!.appointmentsList.removeAt(n)
+                                for(n in 0 until appointmentList.size){
+                                    if (it.id==appointmentList[n].id){
+                                        appointmentList.removeAt(n)
+                                        notifyDataSetChanged()
                                     }
                                 }
                             }
@@ -147,5 +111,9 @@ class AppointmentsAdapter(
 
 
             })
+    }
+    fun removeMember(position: Int) {
+        this.appointmentList.removeAt(position)
+        notifyDataSetChanged()
     }
 }

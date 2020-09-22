@@ -1,10 +1,12 @@
 package com.muslim_adel.sehaty.modules.doctors.booking
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.base.GlideObject
+import com.muslim_adel.sehaty.modules.home.MainActivity
 import kotlinx.android.synthetic.main.activity_booking_success.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
 
@@ -72,7 +74,9 @@ class BookingSuccessActivity : BaseActivity() {
     }
     private fun onAppointmentsClicked(){
         appointments_btn.setOnClickListener {
-
+            val intent= Intent(this,MainActivity::class.java)
+            intent.putExtra("key",true)
+            startActivity(intent)
         }
     }
 

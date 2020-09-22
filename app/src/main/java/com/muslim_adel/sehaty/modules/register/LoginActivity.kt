@@ -16,6 +16,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginActivity : BaseActivity() {
+    private var isLogin=false
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +49,16 @@ class LoginActivity : BaseActivity() {
                                     login_password.text.clear()
                                     sessionManager.saveAuthToken(loginResponse.data.token)
                                     preferences!!.putBoolean(Q.IS_FIRST_TIME,false)
+                                    preferences!!.putBoolean(Q.IS_LOGIN,true)
+                                    preferences!!.putInteger(Q.USER_ID,loginResponse.data.user.id.toInt())
+
+                                    preferences!!.putString(Q.USER_NAME,loginResponse.data.user.name)
+                                    preferences!!.putString(Q.USER_EMAIL,loginResponse.data.user.email)
+                                    preferences!!.putString(Q.USER_PHONE,loginResponse.data.user.phonenumber.toString())
+                                    preferences!!.putInteger(Q.USER_GENDER,loginResponse.data.user.gender_id)
+                                    preferences!!.putString(Q.USER_BIRTH,loginResponse.data.user.birthday)
+
+
                                     preferences!!.commit()
                                     val intent = Intent(this@LoginActivity, MainActivity::class.java)
                                     startActivity(intent)

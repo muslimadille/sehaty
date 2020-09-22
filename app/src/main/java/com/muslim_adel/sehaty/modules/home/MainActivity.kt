@@ -1,6 +1,7 @@
 package com.muslim_adel.sehaty.modules.home
 
 import android.os.Bundle
+import androidx.core.view.get
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode.LABEL_VISIBILITY_LABELED
 import com.muslim_adel.sehaty.R
@@ -23,16 +24,12 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class MainActivity : BaseActivity() {
-
-    var appointmentsList:MutableList<AppointmentData> = ArrayList()
-
-    private lateinit var sessionManager: SessionManager
-    private lateinit var apiClient: ApiClient
+    var key=false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        appointmentsObserver()
+        key=intent.getBooleanExtra("key",false)
         if (savedInstanceState == null) {
             val fragment = HomeFragment()
             supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
@@ -77,46 +74,11 @@ class MainActivity : BaseActivity() {
         }
         bottomNavigationView.labelVisibilityMode=LABEL_VISIBILITY_LABELED
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        if(key){
+            bottomNavigationView.selectedItemId = R.id.navigation_appointment
+        }
     }
-    private fun appointmentsObserver(){
-        apiClient = ApiClient()
-        sessionManager = SessionManager(this)
-        //onObserveStart()
-        apiClient.getApiService(this).fitchBookingList()
-            .enqueue(object : Callback<BaseResponce<Appointment>> {
-                override fun onFailure(call: Call<BaseResponce<Appointment>>, t: Throwable) {
-                    //alertNetwork(true)
-                }
-                override fun onResponse(call: Call<BaseResponce<Appointment>>, response: Response<BaseResponce<Appointment>>) {
-                    if(response!!.isSuccessful){
-                        if(response.body()!!.success){
-                            response.body()!!.data!!.booking.let {
-                                if (it.isNotEmpty()){
 
-                                    it.forEach { appointment: AppointmentData ->
-                                        appointmentsList.add(appointment)
-
-                                    }
-
-                                   // onObserveSuccess()
-                                }else{
-                                  //  onObservefaled()
-                                }
-
-                            }
-                        }else{
-                            //onObservefaled()
-                        }
-
-                    }else{
-                       // onObservefaled()
-                    }
-
-                }
-
-
-            })
-    }
 
 
 }

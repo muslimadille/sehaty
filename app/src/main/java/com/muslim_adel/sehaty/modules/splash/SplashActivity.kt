@@ -15,6 +15,7 @@ import java.util.*
 
 class SplashActivity : BaseActivity() {
     private var change=""
+    private var isLogin=false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
