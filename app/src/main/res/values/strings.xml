@@ -41,6 +41,10 @@
     <string name="login_facebook">الدخول عن طريق الفيسبوك</string>
     <string name="login_twitter">الدخول عن طريق تويتر</string>
     <string name="login_google">الدخول عن طريق جوجل</string>
+    <string name="fav_doc">الأطباء</string>
+    <string name="fav_offers">العروض</string>
+
+
     <string name="or">أو</string>
     <string name="title_activity_settings">الاعدادات</string>
 
@@ -63,6 +67,8 @@
     <string name="change_password">تعديل كلمة المرور</string>
     <string name="edit_profile">تعديل بيانات الحساب</string>
     <string name="appointments">مواعيدي</string>
+    <string name="favorites">المفضلة</string>
+
     <string name="no_offers">لا يوجد لديك عروض</string>
     <string name="no_appointments">لا يوجد لديك حجوزات</string>
     <string name="chose_doctor">اختر الدكتور</string>

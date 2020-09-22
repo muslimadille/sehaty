@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.search
+package com.muslim_adel.sehaty.modules.favorits
 
 import android.content.Context
 import android.content.Intent
@@ -15,16 +15,13 @@ import com.muslim_adel.sehaty.data.remote.objects.Doctor
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
 import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
-import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
 import kotlinx.android.synthetic.main.doctors_list_item.view.*
 
 
-
-
-class SearchByNameAdapter(
-    private val mContext: SearchByNameActivity,
+class FavDoctorAdapter(
+    private val mContext: FavoritsActivity,
     private val list: MutableList<Doctor>
-) : RecyclerView.Adapter<SearchByNameAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<FavDoctorAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater

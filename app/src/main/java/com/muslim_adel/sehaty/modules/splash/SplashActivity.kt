@@ -9,6 +9,7 @@ import androidx.core.os.ConfigurationCompat
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.muslim_adel.sehaty.modules.introSlider.IntroWizardActivity
 import com.muslim_adel.sehaty.modules.register.LoginActivity
 import com.muslim_adel.sehaty.utiles.Q
 import java.util.*
@@ -41,7 +42,7 @@ class SplashActivity : BaseActivity() {
         val isFristTime=preferences!!.getBoolean(Q.IS_FIRST_TIME, Q.FIRST_TIME)
         Handler().postDelayed({
             if (isFristTime) {
-                val intent = Intent(this@SplashActivity, LoginActivity::class.java)
+                val intent = Intent(this@SplashActivity, IntroWizardActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {

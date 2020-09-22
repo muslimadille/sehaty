@@ -42,6 +42,10 @@
     <string name="change_password">Edit your password</string>
     <string name="edit_profile">Edit profile</string>
     <string name="appointments">Appointments</string>
+    <string name="favorites">favorites</string>
+    <string name="fav_doc">Doctors</string>
+    <string name="fav_offers">Offers</string>
+
     <string name="no_offers">there is no offers</string>
     <string name="no_appointments">there is no appointments</string>
     <string name="chose_doctor">Chose Doctor</string>

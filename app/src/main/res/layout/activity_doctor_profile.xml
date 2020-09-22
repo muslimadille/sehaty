@@ -104,10 +104,11 @@
                                 android:layout_weight="1" />
 
                             <ImageView
+
                                 android:id="@+id/favorit_btn"
                                 android:layout_width="24dp"
                                 android:layout_height="24dp"
-                                android:layout_margin="5dp"
+                                android:layout_margin="10dp"
                                 android:src="@drawable/hart_border" />
 
                         </LinearLayout>
