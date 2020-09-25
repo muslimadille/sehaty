@@ -18,6 +18,10 @@ object Q {
     const val BOOKING_API = "reservation"
     const val GET_BOOKING_API="user/booking"
     const val BOOKING_CANCEL_API="user/booking/cancle"
+    const val ABOUT_US_API="admin/aboutUs"
+    const val OFFER_SLIDER_IMAGES_API="offer/slideshow"
+
+
 
     const val AVATAR_PATH="https://www.obank.itcomunity.com/"
     /*****************************************************************/

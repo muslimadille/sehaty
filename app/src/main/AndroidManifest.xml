@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".modules.favorits.FavoritsActivity"></activity>
+        <activity android:name=".modules.contactUs.AboutUsActivity"></activity>
+        <activity android:name=".modules.contactUs.ContactUsActivity" />
+        <activity android:name=".modules.favorits.FavoritsActivity" />
         <activity android:name=".modules.settings.EditProfileActivity" />
         <activity android:name=".modules.settings.ChangePasswordActivity" />
         <activity android:name=".modules.doctors.booking.BookingSuccessActivity" />

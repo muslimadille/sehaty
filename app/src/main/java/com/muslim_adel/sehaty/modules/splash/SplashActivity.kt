@@ -17,11 +17,18 @@ import java.util.*
 class SplashActivity : BaseActivity() {
     private var change=""
     private var isLogin=false
+    var isFristTime=true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        isFristTime=preferences!!.getBoolean(Q.IS_FIRST_TIME, Q.FIRST_TIME)
+        if (isFristTime) {
+            preferences!!.putString("language", "Arabic")
+            preferences!!.commit()
+
+        }
         setLocalization()
         handelSpalash()
 
@@ -39,9 +46,11 @@ class SplashActivity : BaseActivity() {
 
     }
     private fun handelSpalash(){
-        val isFristTime=preferences!!.getBoolean(Q.IS_FIRST_TIME, Q.FIRST_TIME)
+
         Handler().postDelayed({
             if (isFristTime) {
+                preferences!!.putString("language", "Arabic")
+                preferences!!.commit()
                 val intent = Intent(this@SplashActivity, IntroWizardActivity::class.java)
                 startActivity(intent)
                 finish()

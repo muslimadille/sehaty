@@ -59,9 +59,6 @@ class DoctorProfile : BaseActivity() {
 
     private var doctorDatesListAddapter: DatesAdapter? = null
     private var doctorRatesListAddapter: RatesAdapter? = null
-    private var doctorServicesListAddapter: RatesAdapter? = null
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

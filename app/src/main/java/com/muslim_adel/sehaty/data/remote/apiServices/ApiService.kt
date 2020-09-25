@@ -54,5 +54,9 @@ interface ApiService {
     fun bookingCancel(@Url url:String):Call<BaseResponce<AppointmentData>>
     @GET(Q.DOCTORS_LIST_API)
     fun fitchAllDoctorsList():Call<BaseResponce<Search>>
+    @GET(Q.ABOUT_US_API)
+    fun fitchAboutUs():Call<BaseResponce<List<AboutUsData>>>
+    @GET(Q.OFFER_SLIDER_IMAGES_API)
+    fun fitchOffersSLiderImages():Call<BaseResponce<List<OfferSlider>>>
 
 }

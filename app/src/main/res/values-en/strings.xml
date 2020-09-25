@@ -20,6 +20,8 @@
     <string name="labs_search">Search for laboratories</string>
     <string name="registration_title">register now</string>
     <string name="full_name">full name</string>
+    <string name="add_message">add message</string>
+
     <string name="mobile_number">mobile number</string>
     <string name="e_mail">e-mail</string>
     <string name="password">password</string>
@@ -93,6 +95,10 @@
     <string name="please_enter_new_password">please enter new password</string>
     <string name="edit_password">edit password</string>
     <string name="save_btn">save</string>
+    <string name="contactus_txt">We are happy to receive your inquiries and suggestions.</string>
+    <string name="formorcontact">for more connect</string>
+    <string name="send_message">Send</string>
+    <string name="cu">contact us</string>
 
 
 </resources>

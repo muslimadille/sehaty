@@ -9,6 +9,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
+import com.muslim_adel.sehaty.modules.contactUs.AboutUsActivity
+import com.muslim_adel.sehaty.modules.contactUs.ContactUsActivity
 import com.muslim_adel.sehaty.modules.favorits.FavoritsActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.register.LoginActivity
@@ -29,6 +31,8 @@ class ExstarsFragment : Fragment() {
         onLogoutClicked()
         onSettingsClicked()
         onFavoritesClicked()
+        onContactUsClicked()
+        onAboutUsClicked()
     }
 
 
@@ -57,6 +61,18 @@ class ExstarsFragment : Fragment() {
     private fun onFavoritesClicked(){
         favorites_btn.setOnClickListener {
             val intent = Intent(context, FavoritsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun onContactUsClicked(){
+        contact_us_btn.setOnClickListener {
+            val intent = Intent(context, ContactUsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun onAboutUsClicked(){
+        about_us_btn.setOnClickListener {
+            val intent = Intent(context, AboutUsActivity::class.java)
             startActivity(intent)
         }
     }

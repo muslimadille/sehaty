@@ -14,6 +14,7 @@ import com.muslim_adel.sehaty.modules.introSlider.fragments.Intro1Fragment
 import com.muslim_adel.sehaty.modules.introSlider.fragments.Intro2Fragment
 import com.muslim_adel.sehaty.modules.introSlider.fragments.Intro3Fragment
 import com.muslim_adel.sehaty.modules.register.LoginActivity
+import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_intro_wizerd.*
 import java.util.*
 import kotlin.collections.ArrayList
@@ -59,11 +60,15 @@ class IntroWizardActivity :BaseActivity() {
         }, 3500, 3500)
 
         intro_start_btn.setOnClickListener {
+            preferences!!.putBoolean(Q.IS_FIRST_TIME, false)
+            preferences!!.commit()
             val intent = Intent(this@IntroWizardActivity, MainActivity::class.java)
             startActivity(intent)
             finish()
         }
         intro_register_btn.setOnClickListener {
+            preferences!!.putBoolean(Q.IS_FIRST_TIME, false)
+            preferences!!.commit()
             val intent = Intent(this@IntroWizardActivity, LoginActivity::class.java)
             startActivity(intent)
             finish()

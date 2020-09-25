@@ -24,6 +24,8 @@
     <string name="labs_search">بحث عن المختبرات</string>
     <string name="registration_title">سجل الآن</string>
     <string name="full_name">الأسم بالكامل</string>
+    <string name="add_message">أضف رسالة</string>
+
     <string name="mobile_number">رقم الجوال</string>
     <string name="e_mail">البريد الإلكتروني</string>
     <string name="e_mail_or_mobile"> البريد الإلكتروني أو رقم الجوال</string>
@@ -118,6 +120,10 @@
     <string name="please_enter_new_password">ادخل كلمة المرور الجديدة</string>
     <string name="edit_password">نعديل كلمة المرور</string>
     <string name="save_btn">حفظ</string>
+    <string name="contactus_txt">نحن سعداء لتلقي إستفساراتكم وإقتراحاتكم</string>
+    <string name="formorcontact">للمزيد اتصل ب</string>
+    <string name="send_message">إرسال</string>
+    <string name="cu">إتصل بنا</string>
 
 
 </resources>
