@@ -39,6 +39,8 @@ class DatesActivity : BaseActivity() {
     var streetName_ar = ""
     var streetName_en = ""
     var datename = ""
+    var key =0
+
 
 
     var apartmentNum_ar = ""
@@ -48,6 +50,7 @@ class DatesActivity : BaseActivity() {
     var buildingNum_ar = ""
     var role = ""
     var buildingNum_en = ""
+    var id=0L
 
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
@@ -60,14 +63,71 @@ class DatesActivity : BaseActivity() {
         setContentView(R.layout.activity_dates)
         getIntentValues()
         dateId = intent.getIntExtra("date_id", -1)
+        key = intent.getIntExtra("key", 0)
+        if(key==1){
+            offerDateObserver()
+        }else{
+            doctorDateObserver()
+        }
+
         initRVAdapter()
-        doctorDateObserver()
+
     }
 
     private fun doctorDateObserver() {
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
         apiClient.getApiService(this).fitchDoctorDatesList(Q.DOCTORS_DATES_API + "/${doctor_id}")
+            .enqueue(object : Callback<BaseResponce<Dates>> {
+                override fun onFailure(call: Call<BaseResponce<Dates>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+                override fun onResponse(
+                    call: Call<BaseResponce<Dates>>,
+                    response: Response<BaseResponce<Dates>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response.body()!!.success) {
+                            response.body()!!.data!!.dates.let {
+                                if (it.isNotEmpty()) {
+                                    it.forEach {date:Date->
+                                        if(date.id==dateId){
+                                            datename=date.day_ar+" "+date.date
+                                            day_name.text=date.day_ar+" "+date.date
+                                            timesList.addAll(date.times)
+                                            doctorDatesListAddapter!!.notifyDataSetChanged()
+                                        }
+                                    }
+
+                                } else {
+                                    Toast.makeText(
+                                        this@DatesActivity,
+                                        "data empty",
+                                        Toast.LENGTH_SHORT
+                                    ).show()
+
+                                }
+
+                            }
+                        } else {
+                            Toast.makeText(this@DatesActivity, "faild", Toast.LENGTH_SHORT).show()
+                        }
+
+                    } else {
+                        Toast.makeText(this@DatesActivity, "faild", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+
+            })
+    }
+    private fun offerDateObserver() {
+         id =intent.getLongExtra("offer_id",-1)
+        val url = Q.GET_OFFER_DATES_API +"/${id}"
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
+        apiClient.getApiService(this).fitchOfferrDatesList(url)
             .enqueue(object : Callback<BaseResponce<Dates>> {
                 override fun onFailure(call: Call<BaseResponce<Dates>>, t: Throwable) {
                     alertNetwork(true)
@@ -142,6 +202,7 @@ class DatesActivity : BaseActivity() {
          buildingNum_ar = intent.getStringExtra("buildingNum_ar")!!
          role =intent.getStringExtra("role")!!
          buildingNum_en =intent.getStringExtra("buildingNum_en")!!
+
 
     }
 

@@ -14,12 +14,18 @@ object Q {
     const val DOCTORS_DATES_API = "dates"
     const val DOCTORS_RATES_API = "ratings"
     const val DOCTOR_BY_ID_API="doctor/show"
-
     const val BOOKING_API = "reservation"
     const val GET_BOOKING_API="user/booking"
     const val BOOKING_CANCEL_API="user/booking/cancle"
     const val ABOUT_US_API="admin/aboutUs"
     const val OFFER_SLIDER_IMAGES_API="offer/slideshow"
+    const val OFFER_CATEGORIES_API="offer/categories"
+    const val OFFERS_MOST_REQUEST_API="offer/mostrequest"
+    const val GET_OFFER_BY_ID_API="offers"
+    const val GET_OFFER_DATES_API="offer/dates"
+    const val OFFER_BOOKING_API = "offer/reservation"
+    const val MAIN_CATEGORY_OFFERS_API = "offer-category"
+    const val SUB_CATEGORY_OFFERS_API = "offer-subcategory"
 
 
 

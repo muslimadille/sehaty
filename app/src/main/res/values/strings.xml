@@ -124,6 +124,13 @@
     <string name="formorcontact">للمزيد اتصل ب</string>
     <string name="send_message">إرسال</string>
     <string name="cu">إتصل بنا</string>
+    <string name="by_gategory">ابحث حسب الفئة</string>
+    <string name="show_all">شاهد الكل</string>
+    <string name="most_viewed">الأكثر طلباً</string>
+    <string name="offer_details">بيانات العرض</string>
+    <string name="info">معلومات</string>
+    <string name="offer_provider_data">بيانات مقدم الخدمة</string>
+    <string name="all_categoris_title">ابحث حسب الفئة</string>
 
 
 </resources>

@@ -44,6 +44,9 @@ class BookingActivity : BaseActivity() {
     var buildingNum_ar = ""
     var role = ""
     var buildingNum_en = ""
+    var key = 0
+
+
 
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
@@ -81,6 +84,8 @@ class BookingActivity : BaseActivity() {
         buildingNum_ar = intent.getStringExtra("buildingNum_ar")!!
         role =intent.getStringExtra("role")!!
         buildingNum_en =intent.getStringExtra("buildingNum_en")!!
+        buildingNum_en =intent.getStringExtra("buildingNum_en")!!
+        key=intent.getIntExtra("key",0)!!
 
 
     }
@@ -96,7 +101,12 @@ class BookingActivity : BaseActivity() {
     }
     private fun onBookingClicked(){
         booking_btn.setOnClickListener {
-            doctorDateObserver()
+            if(key==1){
+                offerDateObserver()
+
+            }else{
+                doctorDateObserver()
+            }
         }
     }
     private fun doctorDateObserver() {
@@ -113,6 +123,47 @@ class BookingActivity : BaseActivity() {
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
         apiClient.getApiService(this).sendBook(name,email,phone,doctor_id.toInt(),chec,booking_date)
+            .enqueue(object : Callback<BaseResponce<Booking>> {
+                override fun onFailure(call: Call<BaseResponce<Booking>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<Booking>>,
+                    response: Response<BaseResponce<Booking>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response.body()!!.success) {
+                            done()
+                        } else {
+                            Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
+                        }
+
+
+                    } else {
+                        Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+
+            })
+    }
+    private fun offerDateObserver() {
+        var id=intent.getLongExtra("offer_id",0)
+        var booking_date=datename.split(" ")[1]+" "+time//"2020-09-09 16:35"
+        var name=username.text.toString()
+        var phone=phone_num.text.toString()
+        var email=mail_txt.text.toString()
+        var chec=-1
+        if (book_check_box.isChecked){
+            chec=1
+        }else{
+            chec=0
+        }
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
+        apiClient.getApiService(this).sendOfferBook(name,email,phone,id.toInt(),chec,booking_date)
             .enqueue(object : Callback<BaseResponce<Booking>> {
                 override fun onFailure(call: Call<BaseResponce<Booking>>, t: Throwable) {
                     alertNetwork(true)

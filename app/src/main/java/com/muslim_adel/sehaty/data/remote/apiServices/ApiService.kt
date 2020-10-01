@@ -41,6 +41,14 @@ interface ApiService {
                  @Query("doctor_id") doctor_id:Int,
                  @Query("checkbox") checkbox:Int,
                  @Query("booking_date") booking_date:String): Call<BaseResponce<Booking>>
+
+    @POST(Q.OFFER_BOOKING_API)
+    fun sendOfferBook(@Query("name") name:String,
+                 @Query("email") email:String,
+                 @Query("phonenumber") phonenumber: String,
+                 @Query("offer_id") offer_id:Int,
+                 @Query("checkbox") checkbox:Int,
+                 @Query("booking_date") booking_date:String): Call<BaseResponce<Booking>>
     @GET
     fun fitchDoctorRatesList(@Url url:String):Call<BaseResponce<List<Rates>>>
     @GET
@@ -58,5 +66,18 @@ interface ApiService {
     fun fitchAboutUs():Call<BaseResponce<List<AboutUsData>>>
     @GET(Q.OFFER_SLIDER_IMAGES_API)
     fun fitchOffersSLiderImages():Call<BaseResponce<List<OfferSlider>>>
+    @GET(Q.OFFER_CATEGORIES_API)
+    fun fitchOffersSGategories():Call<BaseResponce<List<OffersCategory>>>
+
+    @GET(Q.OFFERS_MOST_REQUEST_API)
+    fun fitchOffersMostRequest():Call<BaseResponce<List<Offer>>>
+
+    @GET
+    fun fitchOfferById(@Url url:String):Call<BaseResponce<Offer>>
+
+    @GET
+    fun fitchOfferrDatesList(@Url url:String):Call<BaseResponce<Dates>>
+    @GET
+    fun fitchMainCategoryOffersList(@Url url:String):Call<BaseResponce<List<Offer>>>
 
 }

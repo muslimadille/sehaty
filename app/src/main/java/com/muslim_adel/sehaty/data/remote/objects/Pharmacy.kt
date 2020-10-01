@@ -2,39 +2,29 @@ package com.muslim_adel.sehaty.data.remote.objects
 
 import com.google.gson.annotations.SerializedName
 
-data class Doctor(
+data class Pharmacy (
     @SerializedName("id")
     var id: Long,
+    @SerializedName("user_type_id")
+    var user_type_id: Long,
     @SerializedName("featured")
     var featured: String,
     @SerializedName("firstName_en")
     var firstName_en: String,
     @SerializedName("firstName_ar")
     var firstName_ar: String,
-    @SerializedName("lastName_en")
-    var lastName_en: String,
     @SerializedName("lastName_ar")
     var lastName_ar: String,
-    @SerializedName("phonenumber")
-    var phonenumber: Long,
-    @SerializedName("gender_id")
-    var gender_id: Int,
-    @SerializedName("speciality_id")
-    var speciality_id: Long,
-    @SerializedName("prefixTitle_id")
-    var prefixTitle_id: Long,
-    @SerializedName("profissionalDetails_id")
-    var profissionalDetails_id: Long,
-    @SerializedName("profissionalTitle_en")
-    var profissionalTitle_en: String,
-    @SerializedName("profissionalTitle_ar")
-    var profissionalTitle_ar: String,
-    @SerializedName("aboutDoctor_ar")
-    var aboutDoctor_ar: String,
-    @SerializedName("aboutDoctor_en")
-    var aboutDoctor_en: String,
-    @SerializedName("price")
-    var price: Long,
+    @SerializedName("lastName_en")
+    var lastName_en: String,
+    @SerializedName("pharmacy_name_en")
+    var pharmacy_name_en: String,
+    @SerializedName("pharmacy_name_ar")
+    var pharmacy_name_ar: String,
+    @SerializedName("about_ar")
+    var about_ar: String,
+    @SerializedName("about_en")
+    var about_en: String,
     @SerializedName("streetName_en")
     var streetName_en: String,
     @SerializedName("streetName_ar")
@@ -53,19 +43,10 @@ data class Doctor(
     var landmark_en: String,
     @SerializedName("landmark_ar")
     var landmark_ar: String,
-    @SerializedName("waiting_time")
-    var waiting_time: String,
-    @SerializedName("rating")
-    var rating: Float,
-    @SerializedName("visitor_num")
-    var visitor_num: Int,
-    @SerializedName("num_of_day")
-    var num_of_day: Int,
     @SerializedName("area_id")
-    var area_id: Long,
+    var area_id:Int,
     @SerializedName("lat")
     var lat: Double,
     @SerializedName("lng")
     var lng: Double
-
 )

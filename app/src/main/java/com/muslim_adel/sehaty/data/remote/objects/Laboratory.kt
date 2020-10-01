@@ -2,7 +2,7 @@ package com.muslim_adel.sehaty.data.remote.objects
 
 import com.google.gson.annotations.SerializedName
 
-data class Doctor(
+class Laboratory (
     @SerializedName("id")
     var id: Long,
     @SerializedName("featured")
@@ -67,5 +67,4 @@ data class Doctor(
     var lat: Double,
     @SerializedName("lng")
     var lng: Double
-
 )

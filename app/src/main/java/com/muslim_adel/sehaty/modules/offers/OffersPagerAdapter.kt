@@ -11,7 +11,7 @@ import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.home.MainActivity
 
-class OffersPagerAdapter(mContext:MainActivity,list:MutableList<String>) :PagerAdapter(){
+class OffersPagerAdapter(mContext:Context,list:MutableList<String>) :PagerAdapter(){
     private val mContext=mContext
     private var imagesList=list
     override fun getCount(): Int {

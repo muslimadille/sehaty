@@ -68,6 +68,12 @@ class DatesAdabter(
                 intent.putExtra("buildingNum_ar",mContext.buildingNum_ar)
                 intent.putExtra("role",mContext.role)
                 intent.putExtra("buildingNum_en",mContext.buildingNum_en)
+                intent.putExtra("offer_id",mContext.id)
+                if(mContext.key==1){
+                    intent.putExtra("key",1)
+                }else{
+                    intent.putExtra("key",0)
+                }
 
                 mContext.startActivity(intent)
             }

@@ -3,6 +3,7 @@ package com.muslim_adel.sehaty.modules.home.fragments
 import android.app.Activity
 import android.content.Context
 import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
@@ -11,19 +12,27 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.Appointment
-import com.muslim_adel.sehaty.data.remote.objects.AppointmentData
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.OfferSlider
+import com.muslim_adel.sehaty.data.remote.objects.*
+import com.muslim_adel.sehaty.data.remote.objects.Date
 import com.muslim_adel.sehaty.modules.appointments.AppointmentsAdapter
+import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DatesAdapter
+import com.muslim_adel.sehaty.modules.doctors.doctorProfile.RatesAdapter
 import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.introSlider.adapters.IntroPagerAdapter
+import com.muslim_adel.sehaty.modules.offers.AllCtegoriesActivity
+import com.muslim_adel.sehaty.modules.offers.CategoriesAdapter
+import com.muslim_adel.sehaty.modules.offers.OfferAdapter
 import com.muslim_adel.sehaty.modules.offers.OffersPagerAdapter
+import kotlinx.android.synthetic.main.activity_doctor_profile.*
+import kotlinx.android.synthetic.main.activity_doctors_list.*
 import kotlinx.android.synthetic.main.activity_intro_wizerd.*
 import kotlinx.android.synthetic.main.offers_fragment.*
+import kotlinx.android.synthetic.main.offers_fragment.progrss_lay
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,6 +45,14 @@ class OffersFragment : Fragment() {
     private var sliderAddapter: OffersPagerAdapter? = null
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
+    private var categoriesList: MutableList<OffersCategory> = ArrayList()
+    private var categoriesListAddapter: CategoriesAdapter? = null
+
+    private var offersList: MutableList<Offer> = ArrayList()
+    private var offersListAddapter: OfferAdapter? = null
+
+
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.offers_fragment, container, false)
@@ -43,12 +60,20 @@ class OffersFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
+
     }
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         sliderImagesObserver()
         initSlider()
+        initRVAdapter()
+        categoriesObserver()
+        offersObserver()
+        show_all_btn.setOnClickListener {
+            mContext!!.intent= Intent(mContext,AllCtegoriesActivity::class.java)
+            mContext!!.startActivity(mContext!!.intent)
+        }
         super.onViewCreated(view, savedInstanceState)
 
 
@@ -86,6 +111,86 @@ class OffersFragment : Fragment() {
                                         imagesList.add(offer.featured_ar)
                                         sliderAddapter!!.notifyDataSetChanged()
                                     }
+                                } else {
+                                    Toast.makeText(mContext, "empty", Toast.LENGTH_SHORT).show()
+                                }
+
+                            }
+                        } else {
+                            Toast.makeText(mContext, "faid", Toast.LENGTH_SHORT).show()
+
+                        }
+
+                    } else {
+                        Toast.makeText(mContext, "connect faid", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                }
+
+
+            })
+    }
+    private fun categoriesObserver() {
+        onObserveStart()
+        apiClient = ApiClient()
+        sessionManager = SessionManager(mContext!!)
+        apiClient.getApiService(mContext!!).fitchOffersSGategories()
+            .enqueue(object : Callback<BaseResponce<List<OffersCategory>>> {
+                override fun onFailure(call: Call<BaseResponce<List<OffersCategory>>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<List<OffersCategory>>>,
+                    response: Response<BaseResponce<List<OffersCategory>>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response.body()!!.success) {
+                            response.body()!!.data!!.let {
+                                if (it.isNotEmpty()) {
+                                    categoriesList.addAll(it)
+                                    categoriesListAddapter!!.notifyDataSetChanged()
+                                } else {
+                                    Toast.makeText(mContext, "empty", Toast.LENGTH_SHORT).show()
+                                }
+
+                            }
+                        } else {
+                            Toast.makeText(mContext, "faid", Toast.LENGTH_SHORT).show()
+
+                        }
+
+                    } else {
+                        Toast.makeText(mContext, "connect faid", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                }
+
+
+            })
+    }
+    private fun offersObserver() {
+        apiClient = ApiClient()
+        sessionManager = SessionManager(mContext!!)
+        apiClient.getApiService(mContext!!).fitchOffersMostRequest()
+            .enqueue(object : Callback<BaseResponce<List<Offer>>> {
+                override fun onFailure(call: Call<BaseResponce<List<Offer>>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<List<Offer>>>,
+                    response: Response<BaseResponce<List<Offer>>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response.body()!!.success) {
+                            response.body()!!.data!!.let {
+                                if (it.isNotEmpty()) {
+                                    offersList.addAll(it)
+                                    offersListAddapter!!.notifyDataSetChanged()
+                                    onObserveSuccess()
                                 } else {
                                     Toast.makeText(mContext, "empty", Toast.LENGTH_SHORT).show()
                                 }
@@ -148,5 +253,32 @@ class OffersFragment : Fragment() {
             }
         }, 2500, 2500)
 
+    }
+    private fun initRVAdapter() {
+        val layoutManager = LinearLayoutManager(mContext, RecyclerView.HORIZONTAL, false)
+        val offersLayoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
+
+        categories_rv.layoutManager = layoutManager
+        categoriesListAddapter= CategoriesAdapter(mContext!!, categoriesList)
+        categories_rv.adapter = categoriesListAddapter
+
+        offers_rv.layoutManager = offersLayoutManager
+        offersListAddapter= OfferAdapter(mContext!!, offersList)
+        offers_rv.adapter = offersListAddapter
+
+
+    }
+
+    private fun onObserveStart(){
+        progrss_lay.visibility= View.VISIBLE
+        offer_lay.visibility= View.GONE
+    }
+    private fun onObserveSuccess(){
+        progrss_lay.visibility= View.GONE
+        offer_lay.visibility= View.VISIBLE
+    }
+    private fun onObservefaled(){
+        progrss_lay.visibility= View.GONE
+        offer_lay.visibility= View.GONE
     }
 }

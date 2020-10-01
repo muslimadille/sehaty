@@ -99,6 +99,13 @@
     <string name="formorcontact">for more connect</string>
     <string name="send_message">Send</string>
     <string name="cu">contact us</string>
+    <string name="by_gategory">Search by category</string>
+    <string name="show_all">Show All</string>
+    <string name="most_viewed">most ordered</string>
+    <string name="offer_details">Offer Details</string>
+    <string name="info">Information</string>
+    <string name="offer_provider_data">Service Provider Info</string>
+    <string name="all_categoris_title">Search by category</string>
 
 
 </resources>
