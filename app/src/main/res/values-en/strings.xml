@@ -85,6 +85,8 @@
     <string name="thanks">Thanks</string>
     <string name="done">Success</string>
     <string name="derham">IQD</string>
+    <string name="price">price</string>
+
     <string name="building_num">Building num:</string>
     <string name="Apartment_num">Apartment num:</string>
     <string name="help">help</string>
@@ -106,6 +108,7 @@
     <string name="info">Information</string>
     <string name="offer_provider_data">Service Provider Info</string>
     <string name="all_categoris_title">Search by category</string>
+    <string name="pharmacy_offers_title">Pharmacy offers</string>
 
 
 </resources>

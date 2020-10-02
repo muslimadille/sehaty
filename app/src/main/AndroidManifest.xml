@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".modules.offers.AllCtegoriesActivity"></activity>
+        <activity android:name=".modules.pharmacy.PharmacyOffersActivity"></activity>
+        <activity android:name=".modules.offers.AllCtegoriesActivity" />
         <activity android:name=".modules.offers.CategoryOffersListActivity" />
         <activity android:name=".modules.offers.OfferDetailsActivity" />
         <activity android:name=".modules.contactUs.AboutUsActivity" />

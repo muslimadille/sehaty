@@ -80,4 +80,7 @@ interface ApiService {
     @GET
     fun fitchMainCategoryOffersList(@Url url:String):Call<BaseResponce<List<Offer>>>
 
+    @GET(Q.PARMACY_OFFERS_API)
+    fun fitchPharmacyOffers():Call<BaseResponce<List<PharmacyOffer>>>
+
 }

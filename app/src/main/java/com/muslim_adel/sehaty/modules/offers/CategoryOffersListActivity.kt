@@ -33,14 +33,16 @@ class CategoryOffersListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category_offers_list)
         key=intent.getIntExtra("key",0)
+        intent.getStringExtra("title_ar")?.let {
+            title=it
+        }
+        page_title.text=title
+
 
         if(key==0){
             offersObserver()
         }else{
-            intent.getStringExtra("title_ar")?.let {
-                title=it
-            }
-            page_title.text=title
+
             subOffersObserver()
         }
         initRVAdapter()

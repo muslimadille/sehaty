@@ -26,6 +26,9 @@ object Q {
     const val OFFER_BOOKING_API = "offer/reservation"
     const val MAIN_CATEGORY_OFFERS_API = "offer-category"
     const val SUB_CATEGORY_OFFERS_API = "offer-subcategory"
+    const val PARMACY_OFFERS_API = "pharmacy/offers"
+
+
 
 
 

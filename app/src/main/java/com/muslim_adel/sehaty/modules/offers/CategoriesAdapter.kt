@@ -55,6 +55,8 @@ class CategoriesAdapter(
             lastPosition=position
             holder.category_img!!.setOnClickListener {
                 mContext.intent=Intent(mContext,CategoryOffersListActivity::class.java)
+                mContext. intent.putExtra("title_ar",category.name_ar)
+                mContext.intent.putExtra("title_en",category.name_en)
                 mContext.intent.putExtra("category_id",category.id)
                 mContext.startActivity(mContext.intent)
             }
@@ -69,11 +71,13 @@ class CategoriesAdapter(
             holder.category_title_txt?.text=category.name_ar
             }
         else if (viewType==2){
-
-            if (lastPosition<=list.size-2){
+            lastPosition += 1
+            if (lastPosition<=list.size-1){
                 holder.category1_img!!.setOnClickListener {
                     mContext.intent=Intent(mContext,CategoryOffersListActivity::class.java)
-                    mContext.intent.putExtra("category_id",list[lastPosition+1].id)
+                    mContext. intent.putExtra("title_ar",list[lastPosition].name_ar)
+                    mContext.intent.putExtra("title_en",list[lastPosition].name_en)
+                    mContext.intent.putExtra("category_id",list[lastPosition].id)
                     mContext.startActivity(mContext.intent)
                 }
                 /*GlideObject.GlideProfilePic(mContext,list[lastPosition+1].efeaturedl,holder.category1_img!!)*/
@@ -84,11 +88,13 @@ class CategoriesAdapter(
                     .load(list[lastPosition+1].efeaturedl)
                     .centerCrop()
                     .into(holder.category1_img!!)
-                holder.category1_title_txt?.text=list[lastPosition+1].name_ar
-                if(lastPosition<list.size-3){
+                holder.category1_title_txt?.text=list[lastPosition].name_ar
+                if(lastPosition<=list.size-3){
                     holder.category2_img!!.setOnClickListener {
                         mContext.intent=Intent(mContext,CategoryOffersListActivity::class.java)
-                        mContext.intent.putExtra("category_id",list[lastPosition+2].id)
+                        mContext.intent.putExtra("category_id",list[lastPosition+1].id)
+                        mContext. intent.putExtra("title_ar",list[lastPosition+1].name_ar)
+                        mContext.intent.putExtra("title_en",list[lastPosition+1].name_en)
                         mContext.startActivity(mContext.intent)
                     }
                     /*GlideObject.GlideProfilePic(mContext,list[lastPosition+2].efeaturedl,holder.category2_img!!)*/
@@ -99,11 +105,12 @@ class CategoriesAdapter(
                         .load(list[lastPosition+2].efeaturedl)
                         .centerCrop()
                         .into(holder.category2_img!!)
-                    holder.category2_title_txt?.text=list[lastPosition+2].name_ar
+                    holder.category2_title_txt?.text=list[lastPosition+1].name_ar
+                    lastPosition += 1
+
                 }
 
             }
-            lastPosition += 2
 
 
 
