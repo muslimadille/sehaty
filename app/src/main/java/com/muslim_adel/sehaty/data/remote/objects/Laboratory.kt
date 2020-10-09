@@ -5,6 +5,10 @@ import com.google.gson.annotations.SerializedName
 class Laboratory (
     @SerializedName("id")
     var id: Long,
+    @SerializedName("gender_id")
+    var gender_id: Int,
+    @SerializedName("user_type_id")
+    var user_type_id: Int,
     @SerializedName("featured")
     var featured: String,
     @SerializedName("firstName_en")
@@ -15,26 +19,12 @@ class Laboratory (
     var lastName_en: String,
     @SerializedName("lastName_ar")
     var lastName_ar: String,
-    @SerializedName("phonenumber")
-    var phonenumber: Long,
-    @SerializedName("gender_id")
-    var gender_id: Int,
     @SerializedName("speciality_id")
     var speciality_id: Long,
-    @SerializedName("prefixTitle_id")
-    var prefixTitle_id: Long,
-    @SerializedName("profissionalDetails_id")
-    var profissionalDetails_id: Long,
-    @SerializedName("profissionalTitle_en")
-    var profissionalTitle_en: String,
-    @SerializedName("profissionalTitle_ar")
-    var profissionalTitle_ar: String,
-    @SerializedName("aboutDoctor_ar")
-    var aboutDoctor_ar: String,
-    @SerializedName("aboutDoctor_en")
-    var aboutDoctor_en: String,
-    @SerializedName("price")
-    var price: Long,
+    @SerializedName("laboratory_name_en")
+    var laboratory_name_en: String,
+    @SerializedName("laboratory_name_ar")
+    var laboratory_name_ar: String,
     @SerializedName("streetName_en")
     var streetName_en: String,
     @SerializedName("streetName_ar")
@@ -53,18 +43,31 @@ class Laboratory (
     var landmark_en: String,
     @SerializedName("landmark_ar")
     var landmark_ar: String,
-    @SerializedName("waiting_time")
-    var waiting_time: String,
-    @SerializedName("rating")
-    var rating: Float,
-    @SerializedName("visitor_num")
-    var visitor_num: Int,
-    @SerializedName("num_of_day")
-    var num_of_day: Int,
-    @SerializedName("area_id")
-    var area_id: Long,
     @SerializedName("lat")
     var lat: Double,
     @SerializedName("lng")
-    var lng: Double
+    var lng: Double,
+    @SerializedName("area_id")
+    var area_id: Int,
+    @SerializedName("num_of_day")
+    var num_of_day: Int,
+    @SerializedName("area")
+    var area: Reagons,
+    @SerializedName("ratings")
+    var ratings: ArrayList<Rates>,
+    @SerializedName("laboratory_photos")
+    var laboratory_photos: ArrayList<LaboratoryPhotos>,
+    @SerializedName("laboratory_services")
+    var laboratory_services: ArrayList<LaboratoryServices>,
+    @SerializedName("rating")
+    var rating: Int,
+    @SerializedName("address_en")
+    var address_en: String,
+    @SerializedName("address_ar")
+    var address_ar: String,
+    @SerializedName("dates")
+    var dates: ArrayList<Date>,
+    @SerializedName("visitor_num")
+    var visitor_num: Int
+
 )

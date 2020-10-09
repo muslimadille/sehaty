@@ -24,9 +24,19 @@ object Q {
     const val GET_OFFER_BY_ID_API="offers"
     const val GET_OFFER_DATES_API="offer/dates"
     const val OFFER_BOOKING_API = "offer/reservation"
+    const val LAB_BOOKING_API = "laboratory/reservation"
+
     const val MAIN_CATEGORY_OFFERS_API = "offer-category"
     const val SUB_CATEGORY_OFFERS_API = "offer-subcategory"
     const val PARMACY_OFFERS_API = "pharmacy/offers"
+    const val ALL_LABS_API = "laboratories"
+    const val LABS_SEARCH_API = "laboratory/search"
+    const val GET_LAB_BY_ID_API="laboratory/show"
+
+
+
+
+
 
 
 

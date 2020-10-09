@@ -270,15 +270,21 @@ class OffersFragment : Fragment() {
     }
 
     private fun onObserveStart(){
-        progrss_lay.visibility= View.VISIBLE
+        progrss_lay?.let {
+            it.visibility= View.VISIBLE
+        }
         offer_lay.visibility= View.GONE
     }
     private fun onObserveSuccess(){
-        progrss_lay.visibility= View.GONE
+        progrss_lay?.let {
+            it.visibility= View.GONE
+        }
         offer_lay.visibility= View.VISIBLE
     }
     private fun onObservefaled(){
-        progrss_lay.visibility= View.GONE
+        progrss_lay?.let {
+            it.visibility= View.GONE
+        }
         offer_lay.visibility= View.GONE
     }
 }

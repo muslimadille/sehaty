@@ -151,7 +151,9 @@ class bookingsFragments : Fragment() {
         } else {
             alertBuilder.setPositiveButton(R.string.dismiss) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
         }
-        alertBuilder.show()
+        if (!mContext!!.isFinishing){
+            alertBuilder.show()
+        }
     }
 
     var mContext: MainActivity? = null
@@ -163,6 +165,7 @@ class bookingsFragments : Fragment() {
     override fun onAttach(activity: Activity) {
         super.onAttach(activity)
         mContext = activity as MainActivity
+
     }
 
 

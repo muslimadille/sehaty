@@ -16,6 +16,7 @@
     <string name="settings">الاعدادات</string>
     <string name="edite_password">تعديل كلمة الرور</string>
 
+    <string name="search">البحث</string>
 
     <string name="search_by_name">ابحث بأسم الدكتور</string>
     <string name="search_by_spicialist">بحث حسب التخصص</string>
@@ -88,6 +89,8 @@
     <string name="search_doctor_hint">ابحث باسم الدكتور</string>
     <string name="doctor">دكتور:</string>
     <string name="doctorah">دكتورة:</string>
+    <string name="lab_search_hint">ابحث باسم المختبر</string>
+
 
     <string name="doctors_list">قائمة الأطباء</string>
     <string name="visitors">زائر</string>
@@ -134,6 +137,12 @@
     <string name="offer_provider_data">بيانات مقدم الخدمة</string>
     <string name="all_categoris_title">ابحث حسب الفئة</string>
     <string name="pharmacy_offers_title">عروض الصيدليات</string>
+    <string name="labs_lists">قائمة المختبرات</string>
+    <string name="search_by_reagon">بحث حسب المنطقة</string>
+    <string name="search_for_labs">البحث عن مختبر</string>
+    <string name="search_by_nam_labs">ابحث باسم المختبر</string>
+    <string name="address">العنوان:</string>
+    <string name="laboratory_details">بيانات المختبر</string>
 
 
 </resources>

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.utiles.ComplexPreferences
 import com.muslim_adel.sehaty.utiles.Q
+import java.lang.Error
 import java.util.*
 
 open class BaseActivity : AppCompatActivity() {
@@ -41,6 +42,11 @@ open class BaseActivity : AppCompatActivity() {
         } else {
             alertBuilder.setPositiveButton(R.string.dismiss) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
         }
-        alertBuilder.show()
+        try {
+            if(!this.isFinishing){
+                alertBuilder.show()
+            }
+
+        }catch (e:Error){}
     }
 }

@@ -9,10 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.Doctor
-import com.muslim_adel.sehaty.data.remote.objects.Search
+import com.muslim_adel.sehaty.data.remote.objects.*
 import com.muslim_adel.sehaty.modules.base.BaseActivity
+import com.muslim_adel.sehaty.modules.labs.LabsListAdaptor
 import kotlinx.android.synthetic.main.activity_doctors_list.doctors_rv
 import kotlinx.android.synthetic.main.activity_doctors_list.no_search_lay
 import kotlinx.android.synthetic.main.activity_doctors_list.progrss_lay
@@ -30,13 +29,27 @@ class SearchByNameActivity : BaseActivity() {
     private var filtereddoctorsList:MutableList<Doctor> = ArrayList()
     private var doctorsListAddapter: SearchByNameAdapter?=null
 
+    private var labsList:MutableList<Laboratory> = ArrayList()
+    private var filteredLabsList:MutableList<Laboratory> = ArrayList()
+    private var labsListAddapter: LabsListAdaptor?=null
+    var key=0
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_by_name)
+        key=intent.getIntExtra("key",0)
+        if(key==1){
+            specialty_search_txt.hint=getString(R.string.search_by_nam_labs)
+            initLabsRVAdapter()
+            labsSearch()
+        }else{
+            initRVAdapter()
+            search()
+        }
 
-        initRVAdapter()
-        search()
+
+
     }
 
     private fun search() {
@@ -50,6 +63,28 @@ class SearchByNameActivity : BaseActivity() {
                     when (keyCode) {
                         KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_ENTER -> {
                             doctorsObserver(specialty_search_txt.text.toString())
+                            return true
+                        }
+                        else -> {
+                        }
+                    }
+                }
+                return false
+            }
+        })
+
+    }
+    private fun labsSearch() {
+        search_btn.setOnClickListener {
+            labsObserver(specialty_search_txt.text.toString())
+        }
+
+        specialty_search_txt.setOnKeyListener(object : View.OnKeyListener{
+            override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
+                if (event.action == KeyEvent.ACTION_DOWN) {
+                    when (keyCode) {
+                        KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_ENTER -> {
+                            labsObserver(specialty_search_txt.text.toString())
                             return true
                         }
                         else -> {
@@ -103,11 +138,60 @@ class SearchByNameActivity : BaseActivity() {
 
             })
     }
+    private fun labsObserver(name: String){
+        filteredLabsList.clear()
+        labsListAddapter!!.notifyDataSetChanged()
+        onObserveStart()
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
+        apiClient.getApiService(this).fitchLabsByNameList(name)
+            .enqueue(object : Callback<BaseResponce<LabsSearch>> {
+                override fun onFailure(call: Call<BaseResponce<LabsSearch>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<LabsSearch>>,
+                    response: Response<BaseResponce<LabsSearch>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response!!.body()!!.success) {
+                            response.body()!!.data!!.search.let {
+                                if (it.isNotEmpty()) {
+                                    labsList.addAll(it)
+                                    filteredLabsList.addAll(it)
+                                    labsListAddapter!!.notifyDataSetChanged()
+                                    onObserveSuccess()
+                                } else {
+                                    onObservefaled()
+                                }
+
+                            }
+                        } else {
+                            onObservefaled()
+                        }
+
+                    } else {
+                        onObservefaled()
+                    }
+
+                }
+
+
+            })
+    }
+
     private fun initRVAdapter(){
         val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         doctors_rv.layoutManager = layoutManager
         doctorsListAddapter = SearchByNameAdapter(this, filtereddoctorsList)
         doctors_rv.adapter = doctorsListAddapter
+    }
+    private fun initLabsRVAdapter(){
+        val layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        doctors_rv.layoutManager = layoutManager
+        labsListAddapter = LabsListAdaptor(this, filteredLabsList)
+        doctors_rv.adapter = labsListAddapter
     }
     private fun onObserveStart(){
         progrss_lay.visibility= View.VISIBLE

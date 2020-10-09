@@ -5,6 +5,8 @@
     <string name="edite_password">Edit Password</string>
     <string name="contact_us">contact us</string>
     <string name="about_us">about us</string>
+    <string name="search">Search</string>
+
     <string name="prefrances">favorites</string>
     <string name="log_out">log out</string>
     <string name="more_title">more</string>
@@ -64,6 +66,7 @@
     <string name="search_doctor_hint">search by doctor name</string>
     <string name="doctor">Doctor:</string>
     <string name="doctorah">دكتورة:</string>
+    <string name="lab_search_hint">search by lab name</string>
     <string name="doctors_list">Doctors List</string>
     <string name="visitors">Visitor</string>
     <string name="profile">Doctor Profile</string>
@@ -109,6 +112,12 @@
     <string name="offer_provider_data">Service Provider Info</string>
     <string name="all_categoris_title">Search by category</string>
     <string name="pharmacy_offers_title">Pharmacy offers</string>
+    <string name="labs_lists">Labs lists</string>
+    <string name="search_by_reagon">Search by region</string>
+    <string name="search_for_labs">Search for labs</string>
+    <string name="search_by_nam_labs">Search by name</string>
+    <string name="address">Address: </string>
+    <string name="laboratory_details">Laboratory Details</string>
 
 
 </resources>

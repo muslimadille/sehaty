@@ -14,13 +14,14 @@ import com.muslim_adel.sehaty.data.remote.objects.Reagons
 import com.muslim_adel.sehaty.data.remote.objects.Specialties
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
+import com.muslim_adel.sehaty.modules.labs.LabsListActivity
 import com.muslim_adel.sehaty.modules.register.LoginActivity
 import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.reagon_item.view.*
 import kotlinx.android.synthetic.main.specialties_list_item.view.*
 
 class ReagonsAdapter(
-    private val mContext: Context,
+    private val mContext: ReagonsActivity,
     private val list: MutableList<Reagons>,
     private val specialtyId:Int=0
 ) : RecyclerView.Adapter<ReagonsAdapter.ViewHolder>() {
@@ -40,10 +41,18 @@ class ReagonsAdapter(
         val reagons = list[position]
         holder.txtTitle.text = reagons.area_ar
         holder.reagonsLay.setOnClickListener {
-            val intent = Intent(mContext, DoctorsListActivity::class.java)
-            intent.putExtra("specialty_id",specialtyId)
-            intent.putExtra("region_id",reagons.id)
-            mContext.startActivity(intent)
+            if(mContext.key==1){
+                val intent = Intent(mContext, LabsListActivity::class.java)
+                intent.putExtra("region_id",reagons.id)
+                intent.putExtra("key",1)
+                mContext.startActivity(intent)
+            }else{
+                val intent = Intent(mContext, DoctorsListActivity::class.java)
+                intent.putExtra("specialty_id",specialtyId)
+                intent.putExtra("region_id",reagons.id)
+                mContext.startActivity(intent)
+            }
+
 
         }
 

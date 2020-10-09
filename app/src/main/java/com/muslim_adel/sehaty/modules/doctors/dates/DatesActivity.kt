@@ -10,10 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.Date
-import com.muslim_adel.sehaty.data.remote.objects.Dates
-import com.muslim_adel.sehaty.data.remote.objects.Times
+import com.muslim_adel.sehaty.data.remote.objects.*
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DatesAdapter
 import com.muslim_adel.sehaty.utiles.Q
@@ -40,6 +37,7 @@ class DatesActivity : BaseActivity() {
     var streetName_en = ""
     var datename = ""
     var key =0
+    var dateVal=""
 
 
 
@@ -52,21 +50,33 @@ class DatesActivity : BaseActivity() {
     var buildingNum_en = ""
     var id=0L
 
+    var lab_id =0L
+    var service_id =0L
+
+
+
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
 
     private var timesList: MutableList<Times> = ArrayList()
-    private var dateId = -1
+    var dateId = -1
     private var doctorDatesListAddapter: DatesAdabter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_dates)
-        getIntentValues()
         dateId = intent.getIntExtra("date_id", -1)
         key = intent.getIntExtra("key", 0)
         if(key==1){
             offerDateObserver()
-        }else{
+            getIntentValues()
+
+        }else if(key==2){
+            lab_id=intent.getLongExtra("lab_id",0L)
+            service_id=intent.getLongExtra("service_id",0L)
+            labsDateObserver()
+        }
+        else{
+            getIntentValues()
             doctorDateObserver()
         }
 
@@ -172,6 +182,50 @@ class DatesActivity : BaseActivity() {
 
             })
     }
+    private fun labsDateObserver() {
+        val id =intent.getLongExtra("lab_id",-1)
+        val url = Q.GET_LAB_BY_ID_API +"/${id}"
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
+        apiClient.getApiService(this).fitchLabById(url)
+            .enqueue(object : Callback<BaseResponce<Laboratory>> {
+                override fun onFailure(call: Call<BaseResponce<Laboratory>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<Laboratory>>,
+                    response: Response<BaseResponce<Laboratory>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response.body()!!.success) {
+                            response.body()!!.data!!.let {
+                                it.dates.forEach {date: Date ->
+                                    if(date.id==dateId){
+                                        datename=date.day_ar+" "+date.date
+                                        day_name.text=date.day_ar+" "+date.date
+                                        dateVal=date.date
+                                        timesList.addAll(date.times)
+                                        doctorDatesListAddapter!!.notifyDataSetChanged()
+                                    }
+
+                                }
+                            }
+                        } else {
+                            Toast.makeText(this@DatesActivity, "faid", Toast.LENGTH_SHORT).show()
+
+                        }
+
+                    } else {
+                        Toast.makeText(this@DatesActivity, "connect faid", Toast.LENGTH_SHORT).show()
+
+                    }
+
+                }
+
+
+            })
+    }
 
     private fun initRVAdapter() {
         doctorDatesListAddapter = DatesAdabter(this, timesList)
@@ -205,5 +259,6 @@ class DatesActivity : BaseActivity() {
 
 
     }
+
 
 }

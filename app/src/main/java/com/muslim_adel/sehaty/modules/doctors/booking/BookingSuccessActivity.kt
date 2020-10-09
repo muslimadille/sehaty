@@ -3,6 +3,7 @@ package com.muslim_adel.sehaty.modules.doctors.booking
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.base.GlideObject
@@ -35,12 +36,29 @@ class BookingSuccessActivity : BaseActivity() {
     var buildingNum_ar = ""
     var role = ""
     var buildingNum_en = ""
+    var key=0
+
+    var booking_date=""
+    var dayName=""
+    var date=""
+    var laboratoryServices=""
+    var lab_location=""
+    var lab_name=""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_booking_success)
-        getIntentValues()
-        setData()
-        onAppointmentsClicked()
+
+        key=intent.getIntExtra("key",0)
+        if(key!=2){
+            getIntentValues()
+            setData()
+            onAppointmentsClicked()
+        }else{
+            getLabIntentValues()
+            setLabData()
+            onDoneClicked()
+        }
+
     }
     private fun getIntentValues() {
         firstName_ar = intent.getStringExtra("firstName_ar")!!
@@ -65,6 +83,14 @@ class BookingSuccessActivity : BaseActivity() {
 
 
     }
+    private fun getLabIntentValues() {
+        booking_date = intent.getStringExtra("booking_date")!!
+        dayName = intent.getStringExtra("dayName")!!
+        date = intent.getStringExtra("date")!!
+        laboratoryServices = intent.getStringExtra("laboratoryServices")!!
+        lab_name=intent.getStringExtra("lab_name")!!
+        lab_location=intent.getStringExtra("lab_location")!!
+    }
     private fun setData(){
         doc_name.text=firstName_ar+" "+lastName_ar
         time_txt.text=time
@@ -72,10 +98,28 @@ class BookingSuccessActivity : BaseActivity() {
         address_txt.text=streetName_ar+"-"+landmark_ar+"-"+getString(R.string.building_num)+buildingNum_ar+"-"+getString(R.string.Apartment_num)+apartmentNum_ar
         costt_txt.text=price.toString()+" "+getString(R.string.derham)
     }
+    private fun setLabData(){
+        doc_name.text=lab_name
+        service_name.text=laboratoryServices
+        service_name.visibility=View.VISIBLE
+        cost_lay.visibility=View.GONE
+        appointments_btn.setText(getString(R.string.done))
+        time_txt.text=time
+        date_txt.text=dayName+" "+date
+        address_txt.text=lab_location
+
+    }
     private fun onAppointmentsClicked(){
         appointments_btn.setOnClickListener {
             val intent= Intent(this,MainActivity::class.java)
             intent.putExtra("key",true)
+            startActivity(intent)
+        }
+    }
+    private fun onDoneClicked(){
+        appointments_btn.setOnClickListener {
+            val intent= Intent(this,MainActivity::class.java)
+            intent.putExtra("key",false)
             startActivity(intent)
         }
     }

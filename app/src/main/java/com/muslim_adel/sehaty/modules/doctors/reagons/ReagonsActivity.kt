@@ -30,11 +30,13 @@ class ReagonsActivity : BaseActivity() {
     private var reagonsList:MutableList<Reagons> = ArrayList()
     private var reagonsListAddapter: ReagonsAdapter?=null
     var specialtyId:Int=0
+    var key=0
     @RequiresApi(Build.VERSION_CODES.N)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reagons)
-        val current: Locale = resources.configuration.locales[0]
+        key=intent.getIntExtra("key",0)
+
         getIntents()
         initRVAdapter()
         regonObserver()

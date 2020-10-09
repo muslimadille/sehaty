@@ -21,9 +21,13 @@ import kotlinx.android.synthetic.main.offers_second_item.view.*
 class CategoriesAdapter(
     private val mContext: MainActivity,
     private val list: MutableList<OffersCategory>
+
 ) : RecyclerView.Adapter<CategoriesAdapter.ViewHolder>() {
     var viewType=-1
     var lastPosition=0
+    var r1p: MutableList<Int> = ArrayList()
+    var r2p: MutableList<Int> = ArrayList()
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
@@ -51,8 +55,8 @@ class CategoriesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val category = list[position]
+
         if (viewType==1){
-            lastPosition=position
             holder.category_img!!.setOnClickListener {
                 mContext.intent=Intent(mContext,CategoryOffersListActivity::class.java)
                 mContext. intent.putExtra("title_ar",category.name_ar)
@@ -71,13 +75,20 @@ class CategoriesAdapter(
             holder.category_title_txt?.text=category.name_ar
             }
         else if (viewType==2){
-            lastPosition += 1
+            if(position==1){
+                lastPosition=position
+                r1p.add(lastPosition)
+            }
+            else{
+                lastPosition=lastPosition+1
+                r1p.add(lastPosition)
+            }
             if (lastPosition<=list.size-1){
                 holder.category1_img!!.setOnClickListener {
                     mContext.intent=Intent(mContext,CategoryOffersListActivity::class.java)
-                    mContext. intent.putExtra("title_ar",list[lastPosition].name_ar)
-                    mContext.intent.putExtra("title_en",list[lastPosition].name_en)
-                    mContext.intent.putExtra("category_id",list[lastPosition].id)
+                    mContext. intent.putExtra("title_ar",list[r1p[position-1]].name_ar)
+                    mContext.intent.putExtra("title_en",list[r1p[position-1]].name_en)
+                    mContext.intent.putExtra("category_id",list[r1p[position-1]].id)
                     mContext.startActivity(mContext.intent)
                 }
                 /*GlideObject.GlideProfilePic(mContext,list[lastPosition+1].efeaturedl,holder.category1_img!!)*/
@@ -85,16 +96,19 @@ class CategoriesAdapter(
                     RequestOptions()
                         .placeholder(R.drawable.person_ic)
                         .error(R.drawable.person_ic))
-                    .load(list[lastPosition+1].efeaturedl)
+                    .load(list[lastPosition].efeaturedl)
                     .centerCrop()
                     .into(holder.category1_img!!)
                 holder.category1_title_txt?.text=list[lastPosition].name_ar
-                if(lastPosition<=list.size-3){
+
+                lastPosition=lastPosition+1
+                if(lastPosition<=list.size-1){
+                    r2p.add(lastPosition)
                     holder.category2_img!!.setOnClickListener {
                         mContext.intent=Intent(mContext,CategoryOffersListActivity::class.java)
-                        mContext.intent.putExtra("category_id",list[lastPosition+1].id)
-                        mContext. intent.putExtra("title_ar",list[lastPosition+1].name_ar)
-                        mContext.intent.putExtra("title_en",list[lastPosition+1].name_en)
+                        mContext.intent.putExtra("category_id",list[r2p[position-1]].id)
+                        mContext. intent.putExtra("title_ar",list[r2p[position-1]].name_ar)
+                        mContext.intent.putExtra("title_en",list[r2p[position-1]].name_en)
                         mContext.startActivity(mContext.intent)
                     }
                     /*GlideObject.GlideProfilePic(mContext,list[lastPosition+2].efeaturedl,holder.category2_img!!)*/
@@ -102,12 +116,10 @@ class CategoriesAdapter(
                         RequestOptions()
                             .placeholder(R.drawable.person_ic)
                             .error(R.drawable.person_ic))
-                        .load(list[lastPosition+2].efeaturedl)
+                        .load(list[lastPosition].efeaturedl)
                         .centerCrop()
                         .into(holder.category2_img!!)
-                    holder.category2_title_txt?.text=list[lastPosition+1].name_ar
-                    lastPosition += 1
-
+                    holder.category2_title_txt?.text=list[lastPosition].name_ar
                 }
 
             }
