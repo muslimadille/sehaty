@@ -3,6 +3,8 @@ package com.muslim_adel.sehaty.modules.labs
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
@@ -46,6 +48,7 @@ class LabBookActivity : BaseActivity() {
         getIntentValues()
         labObserver()
         onBookingClicked()
+        setUserData()
     }
     private fun getIntentValues() {
         lab_id=intent.getLongExtra("lab_id",0L)
@@ -174,9 +177,34 @@ class LabBookActivity : BaseActivity() {
         intent.putExtra("lab_name",lab_name.toString())
         intent.putExtra("lab_location",lab_location.toString())
         intent.putExtra("laboratoryServices",laboratoryServices.toString())
-
-
         startActivity(intent)
 
+    }
+    private fun setUserData(){
+        if(preferences!!.getBoolean(Q.IS_LOGIN,false)){
+            book_check_box.visibility= View.VISIBLE
+
+            username.setText(preferences!!.getString(Q.USER_NAME, ""), TextView.BufferType.EDITABLE)
+            phone_num.setText(preferences!!.getString(Q.USER_PHONE, ""), TextView.BufferType.EDITABLE)
+            mail_txt.setText(preferences!!.getString(Q.USER_EMAIL, ""), TextView.BufferType.EDITABLE)
+            book_check_box.setOnClickListener {
+                if(book_check_box.isChecked){
+                    book_check_box.isChecked=false
+                    username.setText(preferences!!.getString(Q.USER_NAME, ""), TextView.BufferType.EDITABLE)
+                    phone_num.setText(preferences!!.getString(Q.USER_PHONE, ""), TextView.BufferType.EDITABLE)
+                    mail_txt.setText(preferences!!.getString(Q.USER_EMAIL, ""), TextView.BufferType.EDITABLE)
+                }else{
+                    book_check_box.isChecked=true
+                    username.setText("", TextView.BufferType.EDITABLE)
+                    phone_num.setText("", TextView.BufferType.EDITABLE)
+                    mail_txt.setText("", TextView.BufferType.EDITABLE)
+                }
+            }
+
+
+        }else{
+            book_check_box.visibility= View.GONE
+
+        }
     }
 }

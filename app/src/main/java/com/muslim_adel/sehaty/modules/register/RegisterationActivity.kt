@@ -3,7 +3,9 @@ package com.muslim_adel.sehaty.modules.register
 import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
@@ -13,6 +15,8 @@ import com.muslim_adel.sehaty.data.remote.objects.LoginData
 import com.muslim_adel.sehaty.data.remote.objects.LoginResponce
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_doctors_list.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_registeration.*
 import kotlinx.android.synthetic.main.activity_registeration.username
@@ -25,24 +29,55 @@ import java.util.*
 class RegisterationActivity : BaseActivity() {
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
+    private var gender=-1
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registeration)
         datePicker()
+        onRegisterClicked()
+        handelRdioStates()
 
+    }
+    private fun handelRdioStates(){
+        gender_male.isChecked=true
+        gender=1
+        gender_male.setOnClickListener {
+            gender_male.isChecked=true
+            gender_female.isChecked=false
+            gender=1
+            if(gender_male.isChecked){
+                gender=1
+                gender_female.isChecked=false
+            }else if(gender_female.isChecked){
+                gender=2
+                gender_male.isChecked=false
+            }
+        }
+        gender_female.setOnClickListener {
+            gender_female.isChecked=true
+            gender_male.isChecked=false
+            gender=2
+            if(gender_male.isChecked){
+                gender=1
+                gender_female.isChecked=false
+            }else if(gender_female.isChecked){
+                gender=2
+                gender_male.isChecked=false
+            }
+        }
+
+    }
+
+    private fun onRegisterClicked(){
         register_btn.setOnClickListener {
-            if (username.text.isNotEmpty()&&phon_num.text.isNotEmpty()&&email.text.isNotEmpty()&&password.text.isNotEmpty()&&date_of_birth.text.isNotEmpty()){
+            if (username.text.isNotEmpty()&&phon_num.text.isNotEmpty()&&email.text.isNotEmpty()&&password.text.isNotEmpty()&&date_of_birth.text.isNotEmpty()&& gender!=-1){
+                onObserveStart()
                 apiClient = ApiClient()
                 sessionManager = SessionManager(this)
-                apiClient.getApiService(this).userregister(username.text.toString(),email.text.toString(),password.text.toString(),phon_num.text.toString(),date_of_birth.text.toString(),1.toString())
+                apiClient.getApiService(this).userregister(username.text.toString(),email.text.toString(),password.text.toString(),phon_num.text.toString(),date_of_birth.text.toString(),gender.toString())
                     .enqueue(object : Callback<BaseResponce<LoginData>> {
                         override fun onFailure(call: Call<BaseResponce<LoginData>>, t: Throwable) {
-                            Toast.makeText(
-                                this@RegisterationActivity,
-                                "فشل في الاتصال",
-                                Toast.LENGTH_SHORT
-                            ).show()
-
+                            alertNetwork(true)
                         }
 
                         override fun onResponse(
@@ -52,14 +87,25 @@ class RegisterationActivity : BaseActivity() {
                             val registerResponse = response.body()
                             if (registerResponse!!.success) {
                                 val s = response.body()!!.data.toString()
-                                Toast.makeText(this@RegisterationActivity, s, Toast.LENGTH_SHORT).show()
+                                //Toast.makeText(this@RegisterationActivity, s, Toast.LENGTH_SHORT).show()
                                 if (registerResponse?.data!!.status == 200 && registerResponse.data!!.user!=null) {
                                     sessionManager.saveAuthToken(registerResponse.data!!.token)
+                                    preferences!!.putBoolean(Q.IS_FIRST_TIME,false)
+                                    preferences!!.putBoolean(Q.IS_LOGIN,true)
+                                    preferences!!.putInteger(Q.USER_ID,registerResponse.data!!.user.id.toInt())
+                                    preferences!!.putString(Q.USER_NAME,registerResponse.data!!.user.name)
+                                    preferences!!.putString(Q.USER_EMAIL,registerResponse.data!!.user.email)
+                                    preferences!!.putString(Q.USER_PHONE,registerResponse.data!!.user.phonenumber.toString())
+                                    preferences!!.putInteger(Q.USER_GENDER,registerResponse.data!!.user.gender_id)
+                                    preferences!!.putString(Q.USER_BIRTH,registerResponse.data!!.user.birthday)
+                                    preferences!!.commit()
+                                    onObserveSuccess()
                                     val intent =
                                         Intent(this@RegisterationActivity, MainActivity::class.java)
                                     startActivity(intent)
                                     finish()
                                 } else {
+                                    onObservefaled()
                                     Toast.makeText(
                                         this@RegisterationActivity,
                                         "البريد الالكتروني مستخدم من قبل",
@@ -69,6 +115,7 @@ class RegisterationActivity : BaseActivity() {
                             } else {
                                 //username.text.clear()
                                 //login_password.text.clear()
+                                onObservefaled()
                                 Toast.makeText(
                                     this@RegisterationActivity,
                                     "فشل في التسجبل",
@@ -80,12 +127,18 @@ class RegisterationActivity : BaseActivity() {
 
 
                     })
+            }else{
+                Toast.makeText(
+                    this@RegisterationActivity,
+                    "من فضلك أكمل البيانات ",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
     fun datePicker(){
-        val textView: EditText  = findViewById(R.id.date_of_birth)
-        textView.setText(SimpleDateFormat("yyyy-dd-MM").format(System.currentTimeMillis()))
+        val textView: TextView  = findViewById(R.id.date_of_birth)
+        //textView.text = SimpleDateFormat("yyyy-dd-MM").format(System.currentTimeMillis())
 
         var cal = Calendar.getInstance()
 
@@ -100,11 +153,23 @@ class RegisterationActivity : BaseActivity() {
 
         }
 
-        textView.setOnClickListener {
+        date_lay.setOnClickListener {
             DatePickerDialog(this@RegisterationActivity, dateSetListener,
                 cal.get(Calendar.YEAR),
                 cal.get(Calendar.MONTH),
                 cal.get(Calendar.DAY_OF_MONTH)).show()
         }
+    }
+    private fun onObserveStart(){
+        register_progrss_lay.visibility= View.VISIBLE
+        register_lay.visibility= View.GONE
+    }
+    private fun onObserveSuccess(){
+        register_progrss_lay.visibility= View.GONE
+        register_lay.visibility= View.VISIBLE
+    }
+    private fun onObservefaled(){
+        register_progrss_lay.visibility= View.GONE
+        register_lay.visibility= View.GONE
     }
 }

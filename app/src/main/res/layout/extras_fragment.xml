@@ -191,6 +191,7 @@
             android:background="#DDB5AFAF"/>
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/fav_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -277,6 +278,7 @@
                     android:background="@color/red"/>
             </LinearLayout>
             <TextView
+                android:id="@+id/logout_txt"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="5dp"
                 android:layout_width="0dp"

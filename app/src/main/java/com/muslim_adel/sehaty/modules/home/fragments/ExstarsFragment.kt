@@ -18,6 +18,7 @@ import com.muslim_adel.sehaty.modules.settings.SettingsActivity
 import com.muslim_adel.sehaty.modules.splash.SplashActivity
 import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.extras_fragment.*
+import kotlinx.android.synthetic.main.settings_activity.*
 
 
 class ExstarsFragment : Fragment() {
@@ -33,9 +34,19 @@ class ExstarsFragment : Fragment() {
         onFavoritesClicked()
         onContactUsClicked()
         onAboutUsClicked()
+        initLay()
     }
 
+    private fun initLay(){
+        if(!mContext!!.preferences!!.getBoolean(Q.IS_LOGIN,true)){
+            logout_txt.text=mContext!!.getString(R.string.login)
+            fav_lay.visibility=View.GONE
+        }else{
+            fav_lay.visibility=View.VISIBLE
+            logout_txt.text=mContext!!.getString(R.string.log_out)
+        }
 
+    }
     private fun onLogoutClicked(){
         logout_btn.setOnClickListener {
             sessionManager.saveAuthToken("")

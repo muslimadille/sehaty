@@ -2,6 +2,8 @@ package com.muslim_adel.sehaty.modules.doctors.booking
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
@@ -11,10 +13,13 @@ import com.muslim_adel.sehaty.data.remote.objects.Booking
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
+import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_booking.*
+import kotlinx.android.synthetic.main.activity_booking.username
 import kotlinx.android.synthetic.main.activity_doctor_profile.circleImageView
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_name_txt
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_specialty_txt
+import kotlinx.android.synthetic.main.activity_edit_profile.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -57,6 +62,7 @@ class BookingActivity : BaseActivity() {
         setContentView(R.layout.activity_booking)
         setProfilrData()
         onBookingClicked()
+        setUserData()
 
     }
     private fun getIntentValues() {
@@ -215,5 +221,30 @@ class BookingActivity : BaseActivity() {
 
         startActivity(intent)
 
+    }
+    private fun setUserData(){
+        if(preferences!!.getBoolean(Q.IS_LOGIN,false)){
+            book_check_box.visibility=View.VISIBLE
+
+            username.setText(preferences!!.getString(Q.USER_NAME, ""), TextView.BufferType.EDITABLE)
+            phone_num.setText(preferences!!.getString(Q.USER_PHONE, ""), TextView.BufferType.EDITABLE)
+            mail_txt.setText(preferences!!.getString(Q.USER_EMAIL, ""), TextView.BufferType.EDITABLE)
+            book_check_box.setOnClickListener {
+                if(!book_check_box.isChecked){
+                    username.setText(preferences!!.getString(Q.USER_NAME, ""), TextView.BufferType.EDITABLE)
+                    phone_num.setText(preferences!!.getString(Q.USER_PHONE, ""), TextView.BufferType.EDITABLE)
+                    mail_txt.setText(preferences!!.getString(Q.USER_EMAIL, ""), TextView.BufferType.EDITABLE)
+                }else{
+                    username.setText("", TextView.BufferType.EDITABLE)
+                    phone_num.setText("", TextView.BufferType.EDITABLE)
+                    mail_txt.setText("", TextView.BufferType.EDITABLE)
+                }
+            }
+
+
+        }else{
+            book_check_box.visibility=View.GONE
+
+        }
     }
 }
