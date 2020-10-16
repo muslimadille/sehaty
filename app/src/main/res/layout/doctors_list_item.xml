@@ -212,7 +212,7 @@
                         android:gravity="center"
                         android:background="@color/gray_light"
                         android:layout_height="match_parent"
-                        android:text="المواعيد المتاحة"
+                        android:text="@string/avilable_dates"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"/>
                     <Button

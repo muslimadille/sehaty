@@ -136,7 +136,7 @@ class bookingsFragments : Fragment() {
             it.visibility = View.GONE
             appointment_rv.visibility = View.GONE
             no_search_lay.visibility = View.VISIBLE
-            no_data_txt.text="لايوجد لديك مواعيد"
+            no_data_txt.text=getString(R.string.no_appointments)
             no_data_img.setImageResource(R.drawable.calendar_ic)
         }
 

@@ -15,6 +15,7 @@ import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.booking.BookingSuccessActivity
 import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_booking.*
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.circleImageView
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_name_txt
@@ -57,12 +58,22 @@ class LabBookActivity : BaseActivity() {
         service_id=intent.getLongExtra("service_id",0)
     }
     private fun setProfilrData(laboratory: Laboratory,dayName:String,date:String,time:String,laboratoryServices:String){
-        GlideObject.GlideProfilePic(this,laboratory.featured,circleImageView)
-        doc_name_txt.text=laboratory.laboratory_name_ar
-        doc_specialty_txt.text=laboratoryServices
-        date_name_txt.text=dayName+" "+date
-        time_txt.text=time
-        street_txt.text=laboratory.streetName_ar
+        if (preferences!!.getString("language","")=="Arabic"){
+            GlideObject.GlideProfilePic(this,laboratory.featured,circleImageView)
+            doc_name_txt.text=laboratory.laboratory_name_ar
+            doc_specialty_txt.text=laboratoryServices
+            date_name_txt.text=dayName+" "+date
+            time_txt.text=time
+            street_txt.text=laboratory.streetName_ar
+        }else{
+            GlideObject.GlideProfilePic(this,laboratory.featured,circleImageView)
+            doc_name_txt.text=laboratory.laboratory_name_en
+            doc_specialty_txt.text=laboratoryServices
+            date_name_txt.text=dayName+" "+date
+            time_txt.text=time
+            street_txt.text=laboratory.streetName_en
+        }
+
     }
     private fun onBookingClicked(){
         booking_btn.setOnClickListener {
@@ -126,31 +137,58 @@ class LabBookActivity : BaseActivity() {
                 ) {
                     if (response!!.isSuccessful) {
                         if (response.body()!!.success) {
-
-                            response.body()!!.data!!.let {
-                                 lab_name=it.laboratory_name_ar
-                                 lab_location=it.address_ar
-                                it.dates.forEach {date:Date->
-                                    if(date.id==date_id){
-                                        dayName=date.day_ar
-                                        date.times.forEach { tim:Times->
-                                            if(tim.id==time_id){
-                                                time=tim.time
-                                                booking_date=date.date+" "+time
+                            if (preferences!!.getString("language","")=="Arabic"){
+                                response.body()!!.data!!.let {
+                                    lab_name=it.laboratory_name_ar
+                                    lab_location=it.address_ar
+                                    it.dates.forEach {date:Date->
+                                        if(date.id==date_id){
+                                            dayName=date.day_ar
+                                            date.times.forEach { tim:Times->
+                                                if(tim.id==time_id){
+                                                    time=tim.time
+                                                    booking_date=date.date+" "+time
+                                                }
                                             }
                                         }
                                     }
-                                }
-                                it.laboratory_services.forEach { ser:LaboratoryServices->
-                                    if(ser.id==service_id){
-                                        laboratoryServices=ser.name_ar
+                                    it.laboratory_services.forEach { ser:LaboratoryServices->
+                                        if(ser.id==service_id){
+                                            laboratoryServices=ser.name_ar
+                                        }
                                     }
+                                    setProfilrData(it,dayName,date,time,laboratoryServices)
+
+
+
                                 }
-                                setProfilrData(it,dayName,date,time,laboratoryServices)
+                            }else{
+                                response.body()!!.data!!.let {
+                                    lab_name=it.laboratory_name_en
+                                    lab_location=it.address_en
+                                    it.dates.forEach {date:Date->
+                                        if(date.id==date_id){
+                                            dayName=date.day_en
+                                            date.times.forEach { tim:Times->
+                                                if(tim.id==time_id){
+                                                    time=tim.time
+                                                    booking_date=date.date+" "+time
+                                                }
+                                            }
+                                        }
+                                    }
+                                    it.laboratory_services.forEach { ser:LaboratoryServices->
+                                        if(ser.id==service_id){
+                                            laboratoryServices=ser.name_en
+                                        }
+                                    }
+                                    setProfilrData(it,dayName,date,time,laboratoryServices)
 
 
 
+                                }
                             }
+
                         } else {
                             Toast.makeText(this@LabBookActivity, "faid", Toast.LENGTH_SHORT).show()
 

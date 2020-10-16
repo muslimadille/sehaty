@@ -193,7 +193,7 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="الدفع نقداً في العيادة"
+                                    android:text="@string/pay_cash_in_clinic"
                                     android:textColor="@color/gray"/>
                             </LinearLayout>
                         </LinearLayout>

@@ -10,10 +10,11 @@ import android.widget.TextView
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.objects.OffersCategory
 import com.muslim_adel.sehaty.data.remote.objects.OffersSubGategory
+import kotlinx.android.synthetic.main.activity_change_language.*
 
 import java.util.HashMap
 
-class AllCtegoriesAdapter internal constructor(private val context: Context, private val titleList: List<OffersCategory>, private val dataList: HashMap<String, List<OffersSubGategory>>) : BaseExpandableListAdapter() {
+class AllCtegoriesAdapter internal constructor(private val context: AllCtegoriesActivity, private val titleList: List<OffersCategory>, private val dataList: HashMap<String, List<OffersSubGategory>>) : BaseExpandableListAdapter() {
 
     override fun getChild(listPosition: Int, expandedListPosition: Int): Any {
         return this.dataList[this.titleList[listPosition].name_ar]!![expandedListPosition]
@@ -31,7 +32,12 @@ class AllCtegoriesAdapter internal constructor(private val context: Context, pri
             convertView = layoutInflater.inflate(R.layout.main_categoriy_item, null)
         }
         val expandedListTextView = convertView!!.findViewById<TextView>(R.id.main_cat_txt)
-        expandedListTextView.text = expandedListText.name_ar
+        if (context.preferences!!.getString("language","")=="Arabic"){
+            expandedListTextView.text = expandedListText.name_ar
+        }else{
+            expandedListTextView.text = expandedListText.name_en
+        }
+
         return convertView
     }
 
@@ -60,7 +66,11 @@ class AllCtegoriesAdapter internal constructor(private val context: Context, pri
         }
         val listTitleTextView = convertView!!.findViewById<TextView>(R.id.continent)
         listTitleTextView.setTypeface(null, Typeface.BOLD)
-        listTitleTextView.text = listTitle.name_ar
+        if (context.preferences!!.getString("language","")=="Arabic"){
+            listTitleTextView.text = listTitle.name_ar
+        }else{
+            listTitleTextView.text = listTitle.name_en
+        }
         return convertView
     }
 

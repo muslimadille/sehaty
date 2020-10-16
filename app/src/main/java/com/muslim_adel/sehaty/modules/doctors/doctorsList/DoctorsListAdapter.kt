@@ -13,6 +13,7 @@ import com.muslim_adel.sehaty.data.remote.objects.Reagons
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
 import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.doctors_list_item.view.*
 import kotlinx.android.synthetic.main.reagon_item.view.*
 
@@ -35,15 +36,28 @@ class DoctorsListAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val doctor = list[position]
-        holder.doctor_name.text = "${doctor.firstName_ar} ${doctor.lastName_ar}"
-        holder.doctor_gender.text = mContext.getString(R.string.doctor)
-        holder.doctor_specialty.text = doctor.profissionalTitle_ar
-        holder.description.text = doctor.aboutDoctor_ar
-        holder.address.text = doctor.streetName_ar
-        holder.cost.text = doctor.price.toString()
-        holder.waiting.text=doctor.waiting_time
-        holder.ratingBar.rating=doctor.rating.toFloat()
-        holder.visitor_num.text=doctor.visitor_num.toString()+mContext.getString(R.string.visitors)
+        if (mContext.preferences!!.getString("language","")=="Arabic"){
+            holder.doctor_name.text = "${doctor.firstName_ar} ${doctor.lastName_ar}"
+            holder.doctor_gender.text = mContext.getString(R.string.doctor)
+            holder.doctor_specialty.text = doctor.profissionalTitle_ar
+            holder.description.text = doctor.aboutDoctor_ar
+            holder.address.text = doctor.streetName_ar
+            holder.cost.text = doctor.price.toString()
+            holder.waiting.text=doctor.waiting_time
+            holder.ratingBar.rating=doctor.rating.toFloat()
+            holder.visitor_num.text=doctor.visitor_num.toString()+mContext.getString(R.string.visitors)
+        }else{
+            holder.doctor_name.text = "${doctor.firstName_en} ${doctor.lastName_en}"
+            holder.doctor_gender.text = mContext.getString(R.string.doctor)
+            holder.doctor_specialty.text = doctor.profissionalTitle_en
+            holder.description.text = doctor.aboutDoctor_en
+            holder.address.text = doctor.streetName_en
+            holder.cost.text = doctor.price.toString()
+            holder.waiting.text=doctor.waiting_time
+            holder.ratingBar.rating=doctor.rating.toFloat()
+            holder.visitor_num.text=doctor.visitor_num.toString()+mContext.getString(R.string.visitors)
+        }
+
         GlideObject.GlideProfilePic(mContext,doctor.featured,holder.doctor_image)
         holder.booking_btn.setOnClickListener {
             val intent = Intent(mContext, DoctorProfile::class.java)

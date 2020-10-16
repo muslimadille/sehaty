@@ -17,6 +17,9 @@ import com.muslim_adel.sehaty.data.remote.objects.Offer
 import com.muslim_adel.sehaty.data.remote.objects.OffersCategory
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.muslim_adel.sehaty.utiles.ComplexPreferences
+import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.offer_category_first_item.view.*
 import kotlinx.android.synthetic.main.offer_item.view.*
 import kotlinx.android.synthetic.main.offers_second_item.view.*
@@ -27,6 +30,10 @@ class OfferAdapter(
     private val mContext: Context,
     private val list: MutableList<Offer>
 ) : RecyclerView.Adapter<OfferAdapter.ViewHolder>() {
+    var preferences: ComplexPreferences? = null
+    init {
+        preferences = ComplexPreferences.getComplexPreferences(mContext, Q.PREF_FILE, Q.MODE_PRIVATE)
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -48,20 +55,39 @@ class OfferAdapter(
         }else{
             docGendar=mContext.getString(R.string.doctorah)
         }
-        holder.descound_txt!!.text=" خصم ${offer.discount.toString()}"+"%"
-        holder.doc_data_txt!!.text=docGendar+" "+offer.doctor.firstName_ar +" "+ offer.doctor.lastName_ar +"-"+offer.doctor.streetName_ar
-        holder.offer_title_txt!!.text=offer.title_ar
-        holder.offer_subtitle_txt!!.text=offer.device_name_ar
-        holder.offer_ratingBar!!.rating=offer.rating.toFloat()
-        holder.initial_cost!!.paintFlags = holder.initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-        holder.initial_cost!!.text=offer.price.toString()+" "+mContext.getString(R.string.derham)
-        holder.final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+mContext.getString(R.string.derham)
+        if (preferences!!.getString("language","")=="Arabic"){
+            holder.descound_txt!!.text=" خصم ${offer.discount.toString()}"+"%"
+            holder.doc_data_txt!!.text=docGendar+" "+offer.doctor.firstName_ar +" "+ offer.doctor.lastName_ar +"-"+offer.doctor.streetName_ar
+            holder.offer_title_txt!!.text=offer.title_ar
+            holder.offer_subtitle_txt!!.text=offer.device_name_ar
+            holder.offer_ratingBar!!.rating=offer.rating.toFloat()
+            holder.initial_cost!!.paintFlags = holder.initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            holder.initial_cost!!.text=offer.price.toString()+" "+mContext.getString(R.string.derham)
+            holder.final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+mContext.getString(R.string.derham)
+        }else{
+            holder.descound_txt!!.text=" ${mContext.getString(R.string.discount)} ${offer.discount.toString()}"+"%"
+            holder.doc_data_txt!!.text=docGendar+" "+offer.doctor.firstName_en +" "+ offer.doctor.lastName_en +"-"+offer.doctor.streetName_en
+            holder.offer_title_txt!!.text=offer.title_en
+            holder.offer_subtitle_txt!!.text=offer.device_name_en
+            holder.offer_ratingBar!!.rating=offer.rating.toFloat()
+            holder.initial_cost!!.paintFlags = holder.initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            holder.initial_cost!!.text=offer.price.toString()+" "+mContext.getString(R.string.derham)
+            holder.final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+mContext.getString(R.string.derham)
 
+        }
+
+
+        var offerImage=""
+        if(offer.images.isNotEmpty()){
+            offerImage=offer.images[0].featured
+        }else{
+            offerImage=""
+        }
         Glide.with(mContext).applyDefaultRequestOptions(
             RequestOptions()
                 .placeholder(R.drawable.person_ic)
                 .error(R.drawable.person_ic))
-            .load(offer.images[0].featured)
+            .load(offerImage)
             .centerCrop()
             .into(holder.offer_img!!)
         Glide.with(mContext).applyDefaultRequestOptions(

@@ -19,6 +19,7 @@ import com.muslim_adel.sehaty.modules.offers.OfferDatesAdapter
 import com.muslim_adel.sehaty.modules.offers.OfferRatingsAdapter
 import com.muslim_adel.sehaty.modules.offers.OffersPagerAdapter
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_lab_details.*
 import kotlinx.android.synthetic.main.activity_offer_details.*
 import kotlinx.android.synthetic.main.activity_offer_details.dates_rv
@@ -90,10 +91,16 @@ class LabDetailsActivity : BaseActivity() {
     }
 
     private fun setPageData(lab:Laboratory){
+        if (preferences!!.getString("language","")=="Arabic"){
+            lab_name_txt!!.text=lab.laboratory_name_ar
+            lab_address_txt!!.text=lab.address_ar
+            lab_ratingBar!!.rating=lab.rating.toFloat()
+        }else{
+            lab_name_txt!!.text=lab.laboratory_name_en
+            lab_address_txt!!.text=lab.address_en
+            lab_ratingBar!!.rating=lab.rating.toFloat()
+        }
 
-        lab_name_txt!!.text=lab.laboratory_name_ar
-        lab_address_txt!!.text=lab.address_ar
-        lab_ratingBar!!.rating=lab.rating.toFloat()
 
         lab_show_more_txt.setOnClickListener {
             if(lab_show_more_txt.text==getString(R.string.more)){

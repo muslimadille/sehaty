@@ -17,6 +17,7 @@ import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
 import com.muslim_adel.sehaty.modules.labs.LabsListActivity
 import com.muslim_adel.sehaty.modules.register.LoginActivity
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.reagon_item.view.*
 import kotlinx.android.synthetic.main.specialties_list_item.view.*
 
@@ -39,7 +40,13 @@ class ReagonsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val reagons = list[position]
-        holder.txtTitle.text = reagons.area_ar
+        if (mContext.preferences!!.getString("language","")=="Arabic"){
+            holder.txtTitle.text = reagons.area_ar
+        }else{
+            holder.txtTitle.text = reagons.area_en
+        }
+
+
         holder.reagonsLay.setOnClickListener {
             if(mContext.key==1){
                 val intent = Intent(mContext, LabsListActivity::class.java)

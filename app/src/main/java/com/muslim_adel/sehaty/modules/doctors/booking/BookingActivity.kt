@@ -16,10 +16,12 @@ import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
 import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_booking.username
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.circleImageView
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_name_txt
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_specialty_txt
 import kotlinx.android.synthetic.main.activity_edit_profile.*
+import org.koin.ext.isInt
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -98,12 +100,22 @@ class BookingActivity : BaseActivity() {
     private fun setProfilrData(){
         getIntentValues()
         GlideObject.GlideProfilePic(this,featured,circleImageView)
-        doc_name_txt.text=firstName_ar+" "+lastName_ar
-        doc_specialty_txt.text=profissionalTitle_ar
-        date_name_txt.text=datename
-        time_txt.text=time
-        street_txt.text=streetName_ar
-        price_txt.text=price.toString()
+        if (preferences!!.getString("language","")=="Arabic"){
+            doc_name_txt.text=firstName_ar+" "+lastName_ar
+            doc_specialty_txt.text=profissionalTitle_ar
+            date_name_txt.text=datename
+            time_txt.text=time
+            street_txt.text=streetName_ar
+            price_txt.text=price.toString()
+        }else{
+            doc_name_txt.text=firstName_en+" "+lastName_en
+            doc_specialty_txt.text=profissionalTitle_en
+            date_name_txt.text=datename
+            time_txt.text=time
+            street_txt.text=streetName_en
+            price_txt.text=price.toString()+" "+getString(R.string.derham)
+        }
+
     }
     private fun onBookingClicked(){
         booking_btn.setOnClickListener {
@@ -126,34 +138,39 @@ class BookingActivity : BaseActivity() {
         }else{
             chec=0
         }
-        apiClient = ApiClient()
-        sessionManager = SessionManager(this)
-        apiClient.getApiService(this).sendBook(name,email,phone,doctor_id.toInt(),chec,booking_date)
-            .enqueue(object : Callback<BaseResponce<Booking>> {
-                override fun onFailure(call: Call<BaseResponce<Booking>>, t: Throwable) {
-                    alertNetwork(true)
-                }
+        if(!name.isInt()&&name.isNotEmpty()&&phone.isInt()&&phone.length==10){
+            apiClient = ApiClient()
+            sessionManager = SessionManager(this)
+            apiClient.getApiService(this).sendBook(name,email,phone,doctor_id.toInt(),chec,booking_date)
+                .enqueue(object : Callback<BaseResponce<Booking>> {
+                    override fun onFailure(call: Call<BaseResponce<Booking>>, t: Throwable) {
+                        alertNetwork(true)
+                    }
 
-                override fun onResponse(
-                    call: Call<BaseResponce<Booking>>,
-                    response: Response<BaseResponce<Booking>>
-                ) {
-                    if (response!!.isSuccessful) {
-                        if (response.body()!!.success) {
-                            done()
+                    override fun onResponse(
+                        call: Call<BaseResponce<Booking>>,
+                        response: Response<BaseResponce<Booking>>
+                    ) {
+                        if (response!!.isSuccessful) {
+                            if (response.body()!!.success) {
+                                done()
+                            } else {
+                                Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
+                            }
+
+
                         } else {
                             Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
                         }
 
-
-                    } else {
-                        Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
                     }
 
-                }
 
+                })
+        }else{
+            Toast.makeText(this, "الرجاء أدخل بيانات صحيحة", Toast.LENGTH_SHORT).show()
+        }
 
-            })
     }
     private fun offerDateObserver() {
         var id=intent.getLongExtra("offer_id",0)
@@ -167,34 +184,40 @@ class BookingActivity : BaseActivity() {
         }else{
             chec=0
         }
-        apiClient = ApiClient()
-        sessionManager = SessionManager(this)
-        apiClient.getApiService(this).sendOfferBook(name,email,phone,id.toInt(),chec,booking_date)
-            .enqueue(object : Callback<BaseResponce<Booking>> {
-                override fun onFailure(call: Call<BaseResponce<Booking>>, t: Throwable) {
-                    alertNetwork(true)
-                }
+        if(!name.isInt()&&name.isNotEmpty()&&phone.isInt()&&phone.length==10){
+            apiClient = ApiClient()
+            sessionManager = SessionManager(this)
+            apiClient.getApiService(this).sendOfferBook(name,email,phone,id.toInt(),chec,booking_date)
+                .enqueue(object : Callback<BaseResponce<Booking>> {
+                    override fun onFailure(call: Call<BaseResponce<Booking>>, t: Throwable) {
+                        alertNetwork(true)
+                    }
 
-                override fun onResponse(
-                    call: Call<BaseResponce<Booking>>,
-                    response: Response<BaseResponce<Booking>>
-                ) {
-                    if (response!!.isSuccessful) {
-                        if (response.body()!!.success) {
-                            done()
+                    override fun onResponse(
+                        call: Call<BaseResponce<Booking>>,
+                        response: Response<BaseResponce<Booking>>
+                    ) {
+                        if (response!!.isSuccessful) {
+                            if (response.body()!!.success) {
+                                done()
+                            } else {
+                                Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
+                            }
+
+
                         } else {
                             Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
                         }
 
-
-                    } else {
-                        Toast.makeText(this@BookingActivity, "faild", Toast.LENGTH_SHORT).show()
                     }
 
-                }
 
+                })
 
-            })
+        }else{
+            Toast.makeText(this, "الرجاء أدخل بيانات صحيحة", Toast.LENGTH_SHORT).show()
+        }
+
     }
     private fun done(){
         val intent = Intent(this@BookingActivity, BookingSuccessActivity::class.java)

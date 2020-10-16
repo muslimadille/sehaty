@@ -14,6 +14,7 @@ import com.muslim_adel.sehaty.data.remote.objects.*
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DatesAdapter
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_dates.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
 import retrofit2.Call
@@ -102,8 +103,14 @@ class DatesActivity : BaseActivity() {
                                 if (it.isNotEmpty()) {
                                     it.forEach {date:Date->
                                         if(date.id==dateId){
-                                            datename=date.day_ar+" "+date.date
-                                            day_name.text=date.day_ar+" "+date.date
+                                            if (preferences!!.getString("language","")=="Arabic"){
+                                                datename=date.day_ar+" "+date.date
+                                                day_name.text=date.day_ar+" "+date.date
+                                            }else{
+                                                datename=date.day_en+" "+date.date
+                                                day_name.text=date.day_en+" "+date.date
+                                            }
+
                                             timesList.addAll(date.times)
                                             doctorDatesListAddapter!!.notifyDataSetChanged()
                                         }
@@ -152,8 +159,13 @@ class DatesActivity : BaseActivity() {
                                 if (it.isNotEmpty()) {
                                     it.forEach {date:Date->
                                         if(date.id==dateId){
-                                            datename=date.day_ar+" "+date.date
-                                            day_name.text=date.day_ar+" "+date.date
+                                            if (preferences!!.getString("language","")=="Arabic"){
+                                                datename=date.day_ar+" "+date.date
+                                                day_name.text=date.day_ar+" "+date.date
+                                            }else{
+                                                datename=date.day_en+" "+date.date
+                                                day_name.text=date.day_en+" "+date.date
+                                            }
                                             timesList.addAll(date.times)
                                             doctorDatesListAddapter!!.notifyDataSetChanged()
                                         }
@@ -202,8 +214,14 @@ class DatesActivity : BaseActivity() {
                             response.body()!!.data!!.let {
                                 it.dates.forEach {date: Date ->
                                     if(date.id==dateId){
-                                        datename=date.day_ar+" "+date.date
-                                        day_name.text=date.day_ar+" "+date.date
+                                        if (preferences!!.getString("language","")=="Arabic"){
+                                            datename=date.day_ar+" "+date.date
+                                            day_name.text=date.day_ar+" "+date.date
+                                        }else{
+                                            datename=date.day_en+" "+date.date
+                                            day_name.text=date.day_en+" "+date.date
+                                        }
+
                                         dateVal=date.date
                                         timesList.addAll(date.times)
                                         doctorDatesListAddapter!!.notifyDataSetChanged()

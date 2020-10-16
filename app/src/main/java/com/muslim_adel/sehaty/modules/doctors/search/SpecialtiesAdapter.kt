@@ -14,10 +14,11 @@ import com.muslim_adel.sehaty.data.remote.objects.Specialties
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.specialties_list_item.view.*
 
 class SpecialtiesAdapter(
-    private val mContext: Context,
+    private val mContext: SearchBySpecialityActivity,
     private val list: MutableList<Specialties>
 ) : RecyclerView.Adapter<SpecialtiesAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -35,14 +36,26 @@ class SpecialtiesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val specialty = list[position]
-        holder.txtTitle.text = specialty.name_ar
-        val imageName =specialty.icon
-        GlideObject.GlideProfilePic(mContext, imageName, holder.specialtyImg)
-        holder.specialtyLay.setOnClickListener {
-            val intent = Intent(mContext, ReagonsActivity::class.java)
-            intent.putExtra("specialty_id",specialty.id)
-            mContext.startActivity(intent)
+        if (mContext.preferences!!.getString("language","")=="Arabic"){
+            holder.txtTitle.text = specialty.name_ar
+            val imageName =specialty.icon
+            GlideObject.GlideProfilePic(mContext, imageName, holder.specialtyImg)
+            holder.specialtyLay.setOnClickListener {
+                val intent = Intent(mContext, ReagonsActivity::class.java)
+                intent.putExtra("specialty_id",specialty.id)
+                mContext.startActivity(intent)
+            }
+        }else{
+            holder.txtTitle.text = specialty.name_en
+            val imageName =specialty.icon
+            GlideObject.GlideProfilePic(mContext, imageName, holder.specialtyImg)
+            holder.specialtyLay.setOnClickListener {
+                val intent = Intent(mContext, ReagonsActivity::class.java)
+                intent.putExtra("specialty_id",specialty.id)
+                mContext.startActivity(intent)
+            }
         }
+
 
     }
 

@@ -18,6 +18,7 @@ import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DatesAdapter
 import com.muslim_adel.sehaty.modules.doctors.doctorProfile.RatesAdapter
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
 import kotlinx.android.synthetic.main.activity_offer_details.*
 import kotlinx.android.synthetic.main.activity_offer_details.dates_rv
@@ -56,17 +57,32 @@ class OfferDetailsActivity : BaseActivity() {
         }else{
             gendar=getString(R.string.doctorah)
         }
-        descound_txt!!.text=" خصم ${offer.discount.toString()}"+"%"
-        offer_title_txt!!.text=offer.title_ar
-        offer_subtitle_txt!!.text=offer.device_name_ar
-        offer_ratingBar!!.rating=offer.rating.toFloat()
-        initial_cost!!.paintFlags =initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-        initial_cost!!.text=offer.price.toString()+" "+getString(R.string.derham)
-        final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+getString(R.string.derham)
-        offer_info_txt.text=offer.description_ar
-        GlideObject.GlideProfilePic(this,offer.doctor.featured,offer_doc_img)
-        offer_doc_name.text=gendar+" "+offer.doctor.firstName_ar+" "+offer.doctor.lastName_ar
-        offer_doc_speciality.text=offer.doctor.profissionalTitle_ar
+        if (preferences!!.getString("language","")=="Arabic"){
+            descound_txt!!.text=" خصم ${offer.discount.toString()}"+"%"
+            offer_title_txt!!.text=offer.title_ar
+            offer_subtitle_txt!!.text=offer.device_name_ar
+            offer_ratingBar!!.rating=offer.rating.toFloat()
+            initial_cost!!.paintFlags =initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            initial_cost!!.text=offer.price.toString()+" "+getString(R.string.derham)
+            final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+getString(R.string.derham)
+            offer_info_txt.text=offer.description_ar
+            GlideObject.GlideProfilePic(this,offer.doctor.featured,offer_doc_img)
+            offer_doc_name.text=gendar+" "+offer.doctor.firstName_ar+" "+offer.doctor.lastName_ar
+            offer_doc_speciality.text=offer.doctor.profissionalTitle_ar
+        }else{
+            descound_txt!!.text=" ${getString(R.string.discount)} ${offer.discount.toString()}"+"%"
+            offer_title_txt!!.text=offer.title_en
+            offer_subtitle_txt!!.text=offer.device_name_en
+            offer_ratingBar!!.rating=offer.rating.toFloat()
+            initial_cost!!.paintFlags =initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
+            initial_cost!!.text=offer.price.toString()+" "+getString(R.string.derham)
+            final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+getString(R.string.derham)
+            offer_info_txt.text=offer.description_en
+            GlideObject.GlideProfilePic(this,offer.doctor.featured,offer_doc_img)
+            offer_doc_name.text=gendar+" "+offer.doctor.firstName_en+" "+offer.doctor.lastName_en
+            offer_doc_speciality.text=offer.doctor.profissionalTitle_en
+        }
+
         show_more_txt.setOnClickListener {
             if(show_more_txt.text==getString(R.string.more)){
                 offer_info_txt.maxLines=20

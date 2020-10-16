@@ -39,11 +39,11 @@ class AppointmentsFragment : Fragment() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
                 0 -> {
-                    tab.text ="الحجوزات"
+                    tab.text =getString(R.string.appointments)
 
                 }
                 1 -> {
-                    tab.text = "العروض"
+                    tab.text = getString(R.string.offers_item)
 
                 }
 

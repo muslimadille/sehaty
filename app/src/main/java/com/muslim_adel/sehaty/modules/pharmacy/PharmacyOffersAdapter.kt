@@ -15,11 +15,13 @@ import com.bumptech.glide.request.RequestOptions
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.objects.Offer
 import com.muslim_adel.sehaty.data.remote.objects.PharmacyOffer
+import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.offers.OfferDetailsActivity
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.offer_item.view.*
 
 class PharmacyOffersAdapter(
-    private val mContext: Context,
+    private val mContext: PharmacyOffersActivity,
     private val list: MutableList<PharmacyOffer>
 ) : RecyclerView.Adapter<PharmacyOffersAdapter.ViewHolder>() {
 
@@ -37,9 +39,16 @@ class PharmacyOffersAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val offer = list[position]
-        holder.doc_data_txt!!.text="صيدلية/"+offer.pharmacy.pharmacy_name_ar
-        holder.offer_title_txt!!.text="الصنف: "+offer.title_ar+"-"+offer.title_en
-        holder.final_cost!!.text=mContext.getString(R.string.price)+" :"+offer.price.toString()+" "+ mContext.getString(R.string.derham)
+        if (mContext.preferences!!.getString("language","")=="Arabic"){
+            holder.doc_data_txt!!.text=mContext.getString(R.string.pharmacy_offers_title)+offer.pharmacy.pharmacy_name_ar
+            holder.offer_title_txt!!.text=mContext.getString(R.string.type)+offer.title_ar+"-"+offer.title_ar
+            holder.final_cost!!.text=mContext.getString(R.string.price)+" :"+offer.price.toString()+" "+ mContext.getString(R.string.derham)
+        }else{
+            holder.doc_data_txt!!.text=mContext.getString(R.string.pharmacy_offers_title)+offer.pharmacy.pharmacy_name_en
+            holder.offer_title_txt!!.text=mContext.getString(R.string.type)+offer.title_en+"-"+offer.title_en
+            holder.final_cost!!.text=mContext.getString(R.string.price)+" :"+offer.price.toString()+" "+ mContext.getString(R.string.derham)
+        }
+
 
 
         Glide.with(mContext).applyDefaultRequestOptions(

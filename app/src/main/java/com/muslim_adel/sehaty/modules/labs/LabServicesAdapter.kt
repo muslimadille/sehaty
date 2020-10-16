@@ -14,6 +14,7 @@ import com.muslim_adel.sehaty.data.remote.objects.Reagons
 import com.muslim_adel.sehaty.modules.doctors.dates.DatesActivity
 import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
 import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.reagon_item.view.*
 
 
@@ -38,7 +39,11 @@ class LabServicesAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val service = list[position]
-        holder.txtTitle.text = service.name_ar
+        if (mContext.preferences!!.getString("language","")=="Arabic"){
+            holder.txtTitle.text = service.name_ar
+        }else{
+            holder.txtTitle.text = service.name_en
+        }
         holder.reagonsLay.setOnClickListener {
             val intent = Intent(mContext, DatesActivity::class.java)
             intent.putExtra("date_id", dateId)

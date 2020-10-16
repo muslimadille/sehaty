@@ -5,7 +5,7 @@ import java.util.*
 object Q {
     /*************** Locales  ***********/
     /**..................api......................................***/
-    const val BASE_URL = "https://obank.itcomunity.com/api/"
+    const val BASE_URL = "https://laravelapi.sehakhanah.com/api/"
     const val LOGIN_API = "login"
     const val REGISTER_API = "register"
     const val SPECIALTY_LIST_API = "specialties"

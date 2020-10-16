@@ -9,6 +9,7 @@ import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.home.MainActivity
 import kotlinx.android.synthetic.main.activity_booking_success.*
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
 
 class BookingSuccessActivity : BaseActivity() {
@@ -92,11 +93,20 @@ class BookingSuccessActivity : BaseActivity() {
         lab_location=intent.getStringExtra("lab_location")!!
     }
     private fun setData(){
-        doc_name.text=firstName_ar+" "+lastName_ar
-        time_txt.text=time
-        date_txt.text=datename
-        address_txt.text=streetName_ar+"-"+landmark_ar+"-"+getString(R.string.building_num)+buildingNum_ar+"-"+getString(R.string.Apartment_num)+apartmentNum_ar
-        costt_txt.text=price.toString()+" "+getString(R.string.derham)
+        if (preferences!!.getString("language","")=="Arabic"){
+            doc_name.text=firstName_ar+" "+lastName_ar
+            time_txt.text=time
+            date_txt.text=datename
+            address_txt.text=streetName_ar+"-"+landmark_ar+"-"+getString(R.string.building_num)+buildingNum_ar+"-"+getString(R.string.Apartment_num)+apartmentNum_ar
+            costt_txt.text=price.toString()+" "+getString(R.string.derham)
+        }else{
+            doc_name.text=firstName_en+" "+lastName_en
+            time_txt.text=time
+            date_txt.text=datename
+            address_txt.text=streetName_en+"-"+landmark_en+"-"+getString(R.string.building_num)+buildingNum_en+"-"+getString(R.string.Apartment_num)+apartmentNum_en
+            costt_txt.text=price.toString()+" "+getString(R.string.derham)
+        }
+
     }
     private fun setLabData(){
         doc_name.text=lab_name

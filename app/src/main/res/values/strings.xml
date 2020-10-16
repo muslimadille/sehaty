@@ -21,7 +21,7 @@
     <string name="search_by_name">ابحث بأسم الدكتور</string>
     <string name="search_by_spicialist">بحث حسب التخصص</string>
     <string name="pharmacy_search">بحث عن الصيدليات</string>
-    <string name="flag_txt" translatable="false">لأن صحتك تهمنا</string>
+    <string name="flag_txt">لأن صحتك تهمنا</string>
     <string name="labs_search">بحث عن المختبرات</string>
     <string name="registration_title">سجل الآن</string>
     <string name="full_name">الأسم بالكامل</string>
@@ -49,22 +49,22 @@
 
 
     <string name="or">أو</string>
-    <string name="title_activity_settings">الاعدادات</string>
+    <string name="title_activity_settings" translatable="false">الاعدادات</string>
 
     <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
+    <string name="messages_header" translatable="false">Messages</string>
+    <string name="sync_header" translatable="false">Sync</string>
 
     <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
+    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="reply_title" translatable="false">Default reply action</string>
 
     <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
     </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
     <string name="how_it_work">كيف يعمل التطبيق</string>
     <string name="change_language">تغيير اللغة</string>
     <string name="change_password">تعديل كلمة المرور</string>
@@ -90,6 +90,8 @@
     <string name="doctor">دكتور:</string>
     <string name="doctorah">دكتورة:</string>
     <string name="lab_search_hint">ابحث باسم المختبر</string>
+    <string name="discount">خصم</string>
+
 
 
     <string name="doctors_list">قائمة الأطباء</string>
@@ -137,6 +139,10 @@
     <string name="offer_provider_data">بيانات مقدم الخدمة</string>
     <string name="all_categoris_title">ابحث حسب الفئة</string>
     <string name="pharmacy_offers_title">عروض الصيدليات</string>
+    <string name="pharmacy">صيدلية: </string>
+    <string name="type">الصنف: </string>
+
+
     <string name="labs_lists">قائمة المختبرات</string>
     <string name="search_by_reagon">بحث حسب المنطقة</string>
     <string name="search_for_labs">البحث عن مختبر</string>
@@ -144,6 +150,9 @@
     <string name="address">العنوان:</string>
     <string name="laboratory_details">بيانات المختبر</string>
     <string name="test_typs">اختر نوع االتحليل</string>
+    <string name="avilable_dates">المواعيد المتاحة</string>
+    <string name="to">الي</string>
+    <string name="pay_cash_in_clinic">الدفع نقداً في العيادة</string>
 
 
 </resources>

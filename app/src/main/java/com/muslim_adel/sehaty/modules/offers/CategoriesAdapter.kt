@@ -14,6 +14,7 @@ import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.objects.OffersCategory
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.home.MainActivity
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.offer_category_first_item.view.*
 import kotlinx.android.synthetic.main.offers_second_item.view.*
 
@@ -72,7 +73,13 @@ class CategoriesAdapter(
                 .load(category.efeaturedl)
                 .centerCrop()
                 .into(holder.category_img!!)
-            holder.category_title_txt?.text=category.name_ar
+            if (mContext.preferences!!.getString("language","")=="Arabic"){
+                holder.category_title_txt?.text=category.name_ar
+
+            }else{
+                holder.category_title_txt?.text=category.name_en
+
+            }
             }
         else if (viewType==2){
             if(position==1){
@@ -99,7 +106,13 @@ class CategoriesAdapter(
                     .load(list[lastPosition].efeaturedl)
                     .centerCrop()
                     .into(holder.category1_img!!)
-                holder.category1_title_txt?.text=list[lastPosition].name_ar
+                if (mContext.preferences!!.getString("language","")=="Arabic"){
+                    holder.category1_title_txt?.text=list[lastPosition].name_ar
+
+                }else{
+                    holder.category1_title_txt?.text=list[lastPosition].name_en
+
+                }
 
                 lastPosition=lastPosition+1
                 if(lastPosition<=list.size-1){
@@ -119,7 +132,11 @@ class CategoriesAdapter(
                         .load(list[lastPosition].efeaturedl)
                         .centerCrop()
                         .into(holder.category2_img!!)
-                    holder.category2_title_txt?.text=list[lastPosition].name_ar
+                    if (mContext.preferences!!.getString("language","")=="Arabic"){
+                        holder.category2_title_txt?.text=list[lastPosition].name_ar
+                    }else{
+                        holder.category2_title_txt?.text=list[lastPosition].name_en
+                    }
                 }
 
             }

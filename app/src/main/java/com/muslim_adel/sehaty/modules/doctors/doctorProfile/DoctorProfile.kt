@@ -13,6 +13,7 @@ import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListAdapter
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
 import kotlinx.android.synthetic.main.activity_doctors_list.*
 import retrofit2.Call
@@ -213,15 +214,29 @@ class DoctorProfile : BaseActivity() {
             favorit_btn.setImageResource(R.drawable.hart_border)
         }
         GlideObject.GlideProfilePic(this,featured,circleImageView)
-        viewed_num.text=visitor_num.toString()
-        doc_name_txt.text=firstName_ar+" "+lastName_ar
-        doc_specialty_txt.text=profissionalTitle_ar
-        ratingBar.rating=rating
-        visitors.text=visitor_num.toString()
-        waiting_time_txt.text=waiting_time
-        cost_txt.text=price.toString()
-        street_txt.text=streetName_ar
-        doctor_info_txt.text=aboutDoctor_ar
+        if (preferences!!.getString("language","")=="Arabic"){
+            viewed_num.text=visitor_num.toString()
+            doc_name_txt.text=firstName_ar+" "+lastName_ar
+            doc_specialty_txt.text=profissionalTitle_ar
+            ratingBar.rating=rating
+            visitors.text=visitor_num.toString()
+            waiting_time_txt.text=waiting_time
+            cost_txt.text=price.toString()
+            street_txt.text=streetName_ar
+            doctor_info_txt.text=aboutDoctor_ar
+        }else{
+            viewed_num.text=visitor_num.toString()
+            doc_name_txt.text=firstName_en+" "+lastName_en
+            doc_specialty_txt.text=profissionalTitle_en
+            ratingBar.rating=rating
+            visitors.text=visitor_num.toString()
+            waiting_time_txt.text=waiting_time
+            cost_txt.text=price.toString()
+            street_txt.text=streetName_en
+            doctor_info_txt.text=aboutDoctor_en
+        }
+
+
         see_more_txt.setOnClickListener {
             if(see_more_txt.text==getString(R.string.more)){
                 doctor_info_txt.maxLines=20

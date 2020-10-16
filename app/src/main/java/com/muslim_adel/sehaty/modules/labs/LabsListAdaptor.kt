@@ -16,6 +16,9 @@ import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.objects.Doctor
 import com.muslim_adel.sehaty.data.remote.objects.Laboratory
 import com.muslim_adel.sehaty.modules.base.GlideObject
+import com.muslim_adel.sehaty.utiles.ComplexPreferences
+import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.labs_item.view.*
 
 
@@ -23,7 +26,10 @@ class LabsListAdaptor(
     private val mContext: Context,
     private val list: MutableList<Laboratory>
 ) : RecyclerView.Adapter<LabsListAdaptor.ViewHolder>() {
-
+    var preferences: ComplexPreferences? = null
+    init {
+        preferences = ComplexPreferences.getComplexPreferences(mContext, Q.PREF_FILE, Q.MODE_PRIVATE)
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
         val convertView = inflater.inflate(R.layout.labs_item, parent, false)
@@ -44,9 +50,17 @@ class LabsListAdaptor(
              imgUrl=""
 
         }
-        holder.lab_name.text = "${lab.laboratory_name_ar}"
-        holder.lab_address.text =  "${lab.address_ar}"
-        holder.ratingBar.rating=lab.rating.toFloat()
+
+        if (preferences!!.getString("language","")=="Arabic"){
+            holder.lab_name.text = "${lab.laboratory_name_ar}"
+            holder.lab_address.text =  "${lab.address_ar}"
+            holder.ratingBar.rating=lab.rating.toFloat()
+        }else{
+            holder.lab_name.text = "${lab.laboratory_name_en}"
+            holder.lab_address.text =  "${lab.address_en}"
+            holder.ratingBar.rating=lab.rating.toFloat()
+        }
+
         GlideObject.GlideProfilePic(mContext,lab.featured,holder.lad_image)
         Glide.with(mContext).applyDefaultRequestOptions(
             RequestOptions()

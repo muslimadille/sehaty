@@ -11,6 +11,7 @@ import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.objects.Date
 import com.muslim_adel.sehaty.modules.doctors.dates.DatesActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.doctor_dates_item.view.*
 
 
@@ -33,9 +34,16 @@ class DatesAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val date = list[position]
         if (date.status==1){
-            holder.day_txt.text=date.day_ar+"\n ${date.date}"
-            holder.start_time_txt.text=date.times[0].time
-            holder.end_time_txt.text=date.times[date.times.size-1].time
+            if (mContext.preferences!!.getString("language","")=="Arabic"){
+                holder.day_txt.text=date.day_ar+"\n ${date.date}"
+                holder.start_time_txt.text=date.times[0].time
+                holder.end_time_txt.text=date.times[date.times.size-1].time
+            }else{
+                holder.day_txt.text=date.day_en+"\n ${date.date}"
+                holder.start_time_txt.text=date.times[0].time
+                holder.end_time_txt.text=date.times[date.times.size-1].time
+            }
+
             holder.book_btn.setOnClickListener {
                 val intent = Intent(mContext, DatesActivity::class.java)
                 intent.putExtra("date_id",date.id)

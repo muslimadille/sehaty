@@ -14,6 +14,7 @@ import com.muslim_adel.sehaty.data.remote.objects.Offer
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_category_offers_list.*
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.offers_fragment.*
 import kotlinx.android.synthetic.main.offers_fragment.offer_lay
 import kotlinx.android.synthetic.main.offers_fragment.progrss_lay
@@ -33,9 +34,16 @@ class CategoryOffersListActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category_offers_list)
         key=intent.getIntExtra("key",0)
-        intent.getStringExtra("title_ar")?.let {
-            title=it
+        if (preferences!!.getString("language","")=="Arabic"){
+            intent.getStringExtra("title_ar")?.let {
+                title=it
+            }
+        }else{
+            intent.getStringExtra("title_en")?.let {
+                title=it
+            }
         }
+
         page_title.text=title
 
 
