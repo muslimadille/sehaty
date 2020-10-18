@@ -98,5 +98,11 @@ interface ApiService {
     fun fitchLabsByRegionList(@Query("area_id")area_id:Int):Call<BaseResponce<LabsSearch>>
     @GET
     fun fitchLabById(@Url url:String):Call<BaseResponce<Laboratory>>
+    @POST(Q.UPDATE_PROFILE_API)
+    fun updateProfile(@Query("name") name:String,
+                      @Query("email") email:String,
+                      @Query("phonenumber") phonenumber: String,
+                      @Query("gender_id") gender_id:String,
+                      @Query("birthday") birthday:String): Call<BaseResponce<User>>
 
 }

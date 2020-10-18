@@ -22,6 +22,7 @@
 
     </LinearLayout>
     <LinearLayout
+        android:id="@+id/edite_lay"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -148,33 +149,33 @@
 
         </LinearLayout>
         <LinearLayout
+            android:id="@+id/edit_date_lay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="10dp">
+            android:padding="15dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputLayout
+            <ImageView
                 android:id="@+id/dateofbirth_input_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="match_parent"
                 android:background="@color/white"
-                android:backgroundTint="@color/white"
-                app:startIconDrawable="@drawable/calendar_ic">
+                android:src="@drawable/calendar_ic"
+                android:layout_marginEnd="10dp"
+                />
 
-                <EditText
-                    android:backgroundTint="@color/white"
-                    android:id="@+id/date_of_birth"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:inputType="text"
-                    android:layout_centerVertical="true"
-                    android:ems="10"
-                    android:hint="@string/date_of_birth" />
+            <TextView
+                android:textSize="14sp"
+                android:id="@+id/date_of_birth"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:hint="@string/date_of_birth"
+                />
 
-            </com.google.android.material.textfield.TextInputLayout>
+
 
         </LinearLayout>
         <LinearLayout
@@ -219,7 +220,7 @@
 
 
         <Button
-            android:id="@+id/register_btn"
+            android:id="@+id/edite_save_btn"
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:padding="10dp"
@@ -230,5 +231,11 @@
             android:textStyle="bold"
             android:textColor="#fff"/>
     </LinearLayout>
+    <include layout="@layout/progress_layout"
+        android:id="@+id/edite_progrss_lay"
+        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:visibility="gone"/>
 
 </LinearLayout>
