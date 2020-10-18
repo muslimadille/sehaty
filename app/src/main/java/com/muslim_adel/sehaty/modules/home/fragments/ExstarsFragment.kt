@@ -13,6 +13,7 @@ import com.muslim_adel.sehaty.modules.contactUs.AboutUsActivity
 import com.muslim_adel.sehaty.modules.contactUs.ContactUsActivity
 import com.muslim_adel.sehaty.modules.favorits.FavoritsActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.muslim_adel.sehaty.modules.introSlider.IntroWizardActivity
 import com.muslim_adel.sehaty.modules.register.LoginActivity
 import com.muslim_adel.sehaty.modules.settings.SettingsActivity
 import com.muslim_adel.sehaty.modules.splash.SplashActivity
@@ -34,6 +35,7 @@ class ExstarsFragment : Fragment() {
         onFavoritesClicked()
         onContactUsClicked()
         onAboutUsClicked()
+        onHowAppWorkClicked()
         initLay()
     }
 
@@ -81,6 +83,15 @@ class ExstarsFragment : Fragment() {
             startActivity(intent)
         }
     }
+    private fun onHowAppWorkClicked(){
+        how_aap_works_btn.setOnClickListener {
+            val intent = Intent(context, IntroWizardActivity::class.java)
+            intent.putExtra("key",true)
+            startActivity(intent)
+        }
+    }
+
+
     private fun onAboutUsClicked(){
         about_us_btn.setOnClickListener {
             val intent = Intent(context, AboutUsActivity::class.java)

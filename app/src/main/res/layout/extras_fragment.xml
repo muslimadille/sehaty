@@ -191,6 +191,61 @@
             android:background="#DDB5AFAF"/>
     </LinearLayout>
     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/how_aap_works_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="10dp"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginStart="10dp"
+                >
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/blue_refresh_ic"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginStart="5dp"
+                    android:background="@color/red"/>
+            </LinearLayout>
+            <TextView
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:text="@string/how_it_work"
+                android:textSize="14sp"
+                />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/arrow"/>
+
+
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginEnd="15dp"
+            android:background="#DDB5AFAF"/>
+    </LinearLayout>
+    <LinearLayout
         android:id="@+id/fav_lay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
