@@ -35,11 +35,7 @@ class SettingsActivity : BaseActivity() {
             startActivity(intent)
 
         }
-        how_aap_works_btn.setOnClickListener {
-            val intent = Intent(this@SettingsActivity, IntroWizardActivity::class.java)
-            intent.putExtra("key",true)
-            startActivity(intent)
-        }
+       
         edit_profile_btn.setOnClickListener {
             val intent = Intent(this@SettingsActivity, EditProfileActivity::class.java)
             startActivity(intent)

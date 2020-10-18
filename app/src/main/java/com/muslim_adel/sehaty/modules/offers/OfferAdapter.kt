@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -116,7 +117,7 @@ class OfferAdapter(
         val offer_ratingBar: RatingBar? =view.offer_ratingBar
         val final_cost: TextView? =view.final_cost
         val initial_cost: TextView? =view.initial_cost
-        val booking_btb:TextView?=view.booking_btb
+        val booking_btb:CardView?=view.offer_lay
 
 
     }

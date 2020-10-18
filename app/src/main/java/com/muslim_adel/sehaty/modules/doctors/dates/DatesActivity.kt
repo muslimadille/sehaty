@@ -111,7 +111,11 @@ class DatesActivity : BaseActivity() {
                                                 day_name.text=date.day_en+" "+date.date
                                             }
 
-                                            timesList.addAll(date.times)
+                                            date.times.forEach {time:Times->
+                                                if(time.status=="1"){
+                                                    timesList.add(time)
+                                                }
+                                            }
                                             doctorDatesListAddapter!!.notifyDataSetChanged()
                                         }
                                     }
@@ -166,7 +170,14 @@ class DatesActivity : BaseActivity() {
                                                 datename=date.day_en+" "+date.date
                                                 day_name.text=date.day_en+" "+date.date
                                             }
-                                            timesList.addAll(date.times)
+
+                                            date.times.forEach {time:Times->
+                                                if(time.status=="1"){
+                                                    timesList.add(time)
+                                                }
+
+                                            }
+
                                             doctorDatesListAddapter!!.notifyDataSetChanged()
                                         }
                                     }
@@ -223,7 +234,13 @@ class DatesActivity : BaseActivity() {
                                         }
 
                                         dateVal=date.date
-                                        timesList.addAll(date.times)
+                                        date.times.forEach {time:Times->
+                                            if(time.status=="1"){
+                                                timesList.add(time)
+                                            }
+
+                                        }
+
                                         doctorDatesListAddapter!!.notifyDataSetChanged()
                                     }
 
