@@ -16,6 +16,7 @@ import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.appointment_item.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -44,16 +45,28 @@ class AppointmentsAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val appointmentData = appointmentList[position]
 
-
-        holder.date_name_txt.text=appointmentData.booking_date
-        holder.name_txt.text=appointmentData.doctor.firstName_ar+" "+appointmentData.doctor.lastName_ar
-        if(appointmentData.doctor.gender_id==1){
-            holder.gendare_txt.text=mContext!!.getString(R.string.doctor)
-        }else{
-            holder.gendare_txt.text=mContext!!.getString(R.string.doctorah)
+        if (mContext.preferences!!.getString("language","")=="Arabic"){
+            holder.date_name_txt.text=appointmentData.booking_date
+            holder.name_txt.text=appointmentData.doctor.firstName_ar+" "+appointmentData.doctor.lastName_ar
+            if(appointmentData.doctor.gender_id==1){
+                holder.gendare_txt.text=mContext!!.getString(R.string.doctor)
+            }else{
+                holder.gendare_txt.text=mContext!!.getString(R.string.doctorah)
+            }
+            holder.speciality_txt.text=appointmentData.doctor.profissionalTitle_ar
+            holder.location_txt.text=appointmentData.doctor.apartmentNum_ar+","+appointmentData.doctor.buildingNum_ar+","+appointmentData.doctor.streetName_ar+","+appointmentData.doctor.landmark_ar
         }
-        holder.speciality_txt.text=appointmentData.doctor.profissionalTitle_ar
-        holder.location_txt.text=appointmentData.doctor.apartmentNum_ar+","+appointmentData.doctor.buildingNum_ar+","+appointmentData.doctor.streetName_ar+","+appointmentData.doctor.landmark_ar
+        else{
+            holder.date_name_txt.text=appointmentData.booking_date
+            holder.name_txt.text=appointmentData.doctor.firstName_en+" "+appointmentData.doctor.lastName_en
+            if(appointmentData.doctor.gender_id==1){
+                holder.gendare_txt.text=mContext!!.getString(R.string.doctor)
+            }else{
+                holder.gendare_txt.text=mContext!!.getString(R.string.doctorah)
+            }
+            holder.speciality_txt.text=appointmentData.doctor.profissionalTitle_en
+            holder.location_txt.text=appointmentData.doctor.apartmentNum_en+","+appointmentData.doctor.buildingNum_en+","+appointmentData.doctor.streetName_en+","+appointmentData.doctor.landmark_en
+        }
         GlideObject.GlideProfilePic(mContext,appointmentData.doctor.featured,holder.image_doc)
         holder.cancel_btn.setOnClickListener {
             bookingCancelObserver(appointmentData.id.toInt())
