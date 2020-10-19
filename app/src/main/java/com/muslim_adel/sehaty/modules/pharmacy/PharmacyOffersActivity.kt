@@ -24,6 +24,7 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class PharmacyOffersActivity : BaseActivity() {
+    var region_id=0
     private var offersList: MutableList<PharmacyOffer> = ArrayList()
     private var offersListAddapter: PharmacyOffersAdapter? = null
 
@@ -32,6 +33,7 @@ class PharmacyOffersActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pharmacy_offers)
+        region_id=intent.getIntExtra("region_id",0)
         initRVAdapter()
         pharmacyOffersObserver()
     }
@@ -39,7 +41,7 @@ class PharmacyOffersActivity : BaseActivity() {
         onObserveStart()
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
-        apiClient.getApiService(this).fitchPharmacyOffers()
+        apiClient.getApiService(this).fitchPharmacyOffers(region_id)
             .enqueue(object : Callback<BaseResponce<List<PharmacyOffer>>> {
                 override fun onFailure(call: Call<BaseResponce<List<PharmacyOffer>>>, t: Throwable) {
                     alertNetwork(true)

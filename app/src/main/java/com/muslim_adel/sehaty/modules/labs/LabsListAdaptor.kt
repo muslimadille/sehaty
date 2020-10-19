@@ -9,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -84,7 +85,7 @@ class LabsListAdaptor(
         val lab_name: TextView =view.lab_name_txt
         val lab_address: TextView =view.lab_address_txt
         val ratingBar: RatingBar =view.lab_ratingBar
-        val booking_btn: TextView =view.booking_btn
+        val booking_btn: CardView =view.offer_lay
 
 
 

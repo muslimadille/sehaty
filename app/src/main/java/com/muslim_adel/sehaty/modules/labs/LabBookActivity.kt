@@ -52,12 +52,15 @@ class LabBookActivity : BaseActivity() {
         setUserData()
     }
     private fun getIntentValues() {
+        intent.getStringExtra("time")?.let {
+            time=it
+        }
         lab_id=intent.getLongExtra("lab_id",0L)
         date_id=intent.getIntExtra("date_id",0)
         time_id=intent.getIntExtra("time_id",0)
         service_id=intent.getLongExtra("service_id",0)
     }
-    private fun setProfilrData(laboratory: Laboratory,dayName:String,date:String,time:String,laboratoryServices:String){
+    private fun setProfilrData(laboratory: Laboratory,dayName:String,date:String,tim:String,laboratoryServices:String){
         if (preferences!!.getString("language","")=="Arabic"){
             GlideObject.GlideProfilePic(this,laboratory.featured,circleImageView)
             doc_name_txt.text=laboratory.laboratory_name_ar
@@ -144,12 +147,7 @@ class LabBookActivity : BaseActivity() {
                                     it.dates.forEach {date:Date->
                                         if(date.id==date_id){
                                             dayName=date.day_ar
-                                            date.times.forEach { tim:Times->
-                                                if(tim.id==time_id){
-                                                    time=tim.time
-                                                    booking_date=date.date+" "+time
-                                                }
-                                            }
+                                            booking_date=date.date+" "+time
                                         }
                                     }
                                     it.laboratory_services.forEach { ser:LaboratoryServices->

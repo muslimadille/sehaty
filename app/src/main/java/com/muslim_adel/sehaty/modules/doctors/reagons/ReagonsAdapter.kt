@@ -15,6 +15,7 @@ import com.muslim_adel.sehaty.data.remote.objects.Specialties
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
 import com.muslim_adel.sehaty.modules.labs.LabsListActivity
+import com.muslim_adel.sehaty.modules.pharmacy.PharmacyOffersActivity
 import com.muslim_adel.sehaty.modules.register.LoginActivity
 import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_change_language.*
@@ -53,7 +54,12 @@ class ReagonsAdapter(
                 intent.putExtra("region_id",reagons.id)
                 intent.putExtra("key",1)
                 mContext.startActivity(intent)
-            }else{
+            }else if(mContext.key==2){
+                val intent = Intent(mContext, PharmacyOffersActivity::class.java)
+                intent.putExtra("region_id",reagons.id)
+                mContext.startActivity(intent)
+            }
+            else{
                 val intent = Intent(mContext, DoctorsListActivity::class.java)
                 intent.putExtra("specialty_id",specialtyId)
                 intent.putExtra("region_id",reagons.id)

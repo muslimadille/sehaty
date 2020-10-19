@@ -89,6 +89,7 @@ class DatesAdabter(
                     intent.putExtra("date_id",mContext.dateId)
                     intent.putExtra("lab_id",mContext.lab_id)
                     intent.putExtra("time_id",time.id)
+                    intent.putExtra("time",time.time.toString())
                     intent.putExtra("service_id",mContext.service_id)
                     mContext.startActivity(intent)
                 }

@@ -39,7 +39,8 @@ class HomeFragment : Fragment() {
     }
     fun onfarmacySearchClicked(){
         pharmacy_search_btn.setOnClickListener {
-            val intent = Intent(context, PharmacyOffersActivity::class.java)
+            val intent = Intent(context, ReagonsActivity::class.java)
+            intent.putExtra("key",2)
             startActivity(intent)
         }
     }
