@@ -1,17 +1,22 @@
 package com.muslim_adel.sehaty.modules.doctors.search
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.KeyEvent
 import android.view.View
 import android.widget.EditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
 import com.muslim_adel.sehaty.data.remote.objects.*
 import com.muslim_adel.sehaty.modules.base.BaseActivity
+import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.labs.LabsListAdaptor
+import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_doctors_list.doctors_rv
 import kotlinx.android.synthetic.main.activity_doctors_list.no_search_lay
 import kotlinx.android.synthetic.main.activity_doctors_list.progrss_lay
@@ -38,6 +43,7 @@ class SearchByNameActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_by_name)
+        initBottomNavigation()
         key=intent.getIntExtra("key",0)
         if(key==1){
             specialty_search_txt.hint=getString(R.string.search_by_nam_labs)
@@ -208,5 +214,35 @@ class SearchByNameActivity : BaseActivity() {
         doctors_rv.visibility= View.GONE
         no_search_lay.visibility= View.VISIBLE
     }
+    private fun initBottomNavigation(){
 
+        val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",0)
+                    startActivity(intent)
+                }
+                R.id.navigation_offers -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",1)
+                    startActivity(intent)
+                }
+                R.id.navigation_appointment -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",2)
+                    startActivity(intent)
+                }
+                R.id.navigation_extras->{
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",3)
+                    startActivity(intent)
+                }
+            }
+            false
+        }
+        bottomNavigationView5.labelVisibilityMode= LabelVisibilityMode.LABEL_VISIBILITY_LABELED
+        bottomNavigationView5.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+    }
 }

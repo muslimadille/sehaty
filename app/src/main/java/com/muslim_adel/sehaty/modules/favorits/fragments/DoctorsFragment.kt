@@ -120,7 +120,7 @@ class DoctorsFragment : Fragment() {
     }
 
     private fun onObservefaled() {
-        progrss_lay.let {
+        progrss_lay?.let {
             it.visibility = View.GONE
             favorite_doctors_rv.visibility = View.GONE
             no_search_lay.visibility = View.VISIBLE

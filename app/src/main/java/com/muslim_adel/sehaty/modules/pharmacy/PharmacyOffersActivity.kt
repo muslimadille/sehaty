@@ -1,10 +1,13 @@
 package com.muslim_adel.sehaty.modules.pharmacy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
@@ -12,8 +15,10 @@ import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
 import com.muslim_adel.sehaty.data.remote.objects.Offer
 import com.muslim_adel.sehaty.data.remote.objects.PharmacyOffer
 import com.muslim_adel.sehaty.modules.base.BaseActivity
+import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.offers.OfferAdapter
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_category_offers_list.*
 import kotlinx.android.synthetic.main.activity_category_offers_list.no_search_lay
 import kotlinx.android.synthetic.main.activity_category_offers_list.progrss_lay
@@ -36,6 +41,7 @@ class PharmacyOffersActivity : BaseActivity() {
         region_id=intent.getIntExtra("region_id",0)
         initRVAdapter()
         pharmacyOffersObserver()
+        initBottomNavigation()
     }
     private fun pharmacyOffersObserver() {
         onObserveStart()
@@ -101,5 +107,36 @@ class PharmacyOffersActivity : BaseActivity() {
         no_search_lay.visibility = View.VISIBLE
         progrss_lay.visibility = View.GONE
         pharmacy_offers_rv.visibility = View.GONE
+    }
+    private fun initBottomNavigation(){
+
+        val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",0)
+                    startActivity(intent)
+                }
+                R.id.navigation_offers -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",1)
+                    startActivity(intent)
+                }
+                R.id.navigation_appointment -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",2)
+                    startActivity(intent)
+                }
+                R.id.navigation_extras->{
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",3)
+                    startActivity(intent)
+                }
+            }
+            false
+        }
+        bottomNavigationView16.labelVisibilityMode= LabelVisibilityMode.LABEL_VISIBILITY_LABELED
+        bottomNavigationView16.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
     }
 }

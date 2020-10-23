@@ -25,11 +25,14 @@ import retrofit2.Response
 
 class MainActivity : BaseActivity() {
     var key=false
+    var navK=0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         key=intent.getBooleanExtra("key",false)
+        navK=intent.getIntExtra("navK",0)
+
         if (savedInstanceState == null) {
             val fragment = HomeFragment()
             supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
@@ -76,6 +79,20 @@ class MainActivity : BaseActivity() {
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
         if(key){
             bottomNavigationView.selectedItemId = R.id.navigation_appointment
+        }
+        when (navK) {
+            0 -> {
+                bottomNavigationView.selectedItemId = R.id.navigation_home
+            }
+            1 -> {
+                bottomNavigationView.selectedItemId = R.id.navigation_offers
+            }
+            2 -> {
+                bottomNavigationView.selectedItemId = R.id.navigation_appointment
+            }
+            3 -> {
+                bottomNavigationView.selectedItemId = R.id.navigation_extras
+            }
         }
     }
 

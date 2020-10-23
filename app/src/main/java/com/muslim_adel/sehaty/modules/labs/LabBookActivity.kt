@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
@@ -13,14 +15,24 @@ import com.muslim_adel.sehaty.data.remote.objects.*
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.base.GlideObject
 import com.muslim_adel.sehaty.modules.doctors.booking.BookingSuccessActivity
+import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.utiles.Q
+import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_booking.*
+import kotlinx.android.synthetic.main.activity_booking.book_check_box
+import kotlinx.android.synthetic.main.activity_booking.booking_btn
+import kotlinx.android.synthetic.main.activity_booking.date_name_txt
+import kotlinx.android.synthetic.main.activity_booking.mail_txt
+import kotlinx.android.synthetic.main.activity_booking.phone_num
+import kotlinx.android.synthetic.main.activity_booking.time_txt
+import kotlinx.android.synthetic.main.activity_booking.username
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.circleImageView
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_name_txt
 import kotlinx.android.synthetic.main.activity_doctor_profile.doc_specialty_txt
 import kotlinx.android.synthetic.main.activity_doctor_profile.street_txt
+import kotlinx.android.synthetic.main.activity_lab_book.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,6 +58,7 @@ class LabBookActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lab_book)
+        initBottomNavigation()
         getIntentValues()
         labObserver()
         onBookingClicked()
@@ -242,5 +255,36 @@ class LabBookActivity : BaseActivity() {
             book_check_box.visibility= View.GONE
 
         }
+    }
+    private fun initBottomNavigation(){
+
+        val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.navigation_home -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",0)
+                    startActivity(intent)
+                }
+                R.id.navigation_offers -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",1)
+                    startActivity(intent)
+                }
+                R.id.navigation_appointment -> {
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",2)
+                    startActivity(intent)
+                }
+                R.id.navigation_extras->{
+                    intent= Intent(this, MainActivity::class.java)
+                    intent.putExtra("navK",3)
+                    startActivity(intent)
+                }
+            }
+            false
+        }
+        bottomNavigationView8.labelVisibilityMode= LabelVisibilityMode.LABEL_VISIBILITY_LABELED
+        bottomNavigationView8.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
     }
 }

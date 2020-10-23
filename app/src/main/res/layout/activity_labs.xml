@@ -157,17 +157,20 @@
                     android:src="@drawable/solid_arrow"
                     android:layout_marginEnd="10dp"/>
 
-
-
-
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-
-
-
-
-
     </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView10"
+        app:labelVisibilityMode="unlabeled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
 
 </LinearLayout>
