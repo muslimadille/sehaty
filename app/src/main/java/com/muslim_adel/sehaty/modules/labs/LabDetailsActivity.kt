@@ -2,6 +2,7 @@ package com.muslim_adel.sehaty.modules.labs
 
 import android.content.Intent
 import android.graphics.Paint
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -25,6 +26,7 @@ import com.muslim_adel.sehaty.modules.offers.OffersPagerAdapter
 import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_change_language.*
+import kotlinx.android.synthetic.main.activity_doctor_profile.*
 import kotlinx.android.synthetic.main.activity_lab_details.*
 import kotlinx.android.synthetic.main.activity_offer_details.*
 import kotlinx.android.synthetic.main.activity_offer_details.dates_rv
@@ -52,6 +54,9 @@ class LabDetailsActivity : BaseActivity() {
     private var offersList: MutableList<Laboratory> = ArrayList()
     private var labRatesList: MutableList<Rates> = ArrayList()
     private var labRatesListAddapter: LabRatesAdapter? = null
+    var lat=0.0
+    var lng=0.0
+    var labName=""
 
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
@@ -62,6 +67,7 @@ class LabDetailsActivity : BaseActivity() {
         initSlider()
         initRVAdapter()
         labObserver()
+        navToMap()
     }
     private fun initSlider(){
         var count=0
@@ -138,6 +144,9 @@ class LabDetailsActivity : BaseActivity() {
                     if (response!!.isSuccessful) {
                         if (response.body()!!.success) {
                             response.body()!!.data!!.let {
+                                lat=it.lat
+                                lng=it.lng
+                                labName=it.laboratory_name_ar
                                 it.laboratory_photos.forEach {image: LaboratoryPhotos ->
                                     imagesList.add(image.featured)
                                     sliderAddapter!!.notifyDataSetChanged()
@@ -220,5 +229,16 @@ class LabDetailsActivity : BaseActivity() {
         bottomNavigationView9.labelVisibilityMode= LabelVisibilityMode.LABEL_VISIBILITY_LABELED
         bottomNavigationView9.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+    }
+    private fun navToMap(){
+        val zoom=10
+        var lable=labName
+        val intent= Intent(Intent.ACTION_VIEW)
+        lab_location_btn.setOnClickListener {
+            intent.data= Uri.parse("geo:0,0?z=$zoom&q=$lat,$lng,$lable")
+            if(intent.resolveActivity(packageManager)!=null){
+                startActivity(intent)
+            }
+        }
     }
 }

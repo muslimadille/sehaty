@@ -1,6 +1,7 @@
 package com.muslim_adel.sehaty.modules.doctors.doctorProfile
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -56,6 +57,8 @@ class DoctorProfile : BaseActivity() {
      var visitor_num = -1
      var waiting_time = ""
      var buildingNum_en = ""
+    var lat=0.0
+    var lng=0.0
 
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
@@ -75,6 +78,7 @@ class DoctorProfile : BaseActivity() {
         doctorDateObserver()
         doctorRatesObserver()
         onFavoritClicked()
+        navToMap()
     }
 
     private fun doctorDateObserver() {
@@ -210,11 +214,11 @@ class DoctorProfile : BaseActivity() {
         visitor_num=intent.getIntExtra("visitor_num", -1)
         waiting_time=intent.getStringExtra("waiting_time")!!
         buildingNum_en=intent.getStringExtra("buildingNum_en")!!
+        lat=intent.getDoubleExtra("lat",0.0)
+        lng=intent.getDoubleExtra("lng",0.0)
     }
     private fun setProfilrData(){
-
         getIntentValues()
-
         if(id==preferences!!.getLong("$id",-1)){
             favorit_btn.setImageResource(R.drawable.heart_solid)
         }else{
@@ -301,5 +305,16 @@ class DoctorProfile : BaseActivity() {
         bottomNavigationView.labelVisibilityMode= LabelVisibilityMode.LABEL_VISIBILITY_LABELED
         bottomNavigationView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
+    }
+    private fun navToMap(){
+        val zoom=10
+        var lable=firstName_ar
+        val intent= Intent(Intent.ACTION_VIEW)
+        doc_location_btn.setOnClickListener {
+            intent.data= Uri.parse("geo:0,0?z=$zoom&q=$lat,$lng,$lable")
+            if(intent.resolveActivity(packageManager)!=null){
+                startActivity(intent)
+            }
+        }
     }
 }

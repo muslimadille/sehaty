@@ -90,6 +90,10 @@ class DoctorsListAdapter(
             intent.putExtra("visitor_num",doctor.visitor_num)
             intent.putExtra("waiting_time",doctor.waiting_time)
             intent.putExtra("buildingNum_en",doctor.buildingNum_en)
+            intent.putExtra("lat",doctor.lat)
+            intent.putExtra("lng",doctor.lng)
+
+
             mContext.startActivity(intent)
 
         }

@@ -119,7 +119,6 @@
     <string name="pharmacy">Pharmacy: </string>
     <string name="type">Type: </string>
 
-
     <string name="labs_lists">Labs Lists</string>
     <string name="search_by_reagon">Search By Region</string>
     <string name="search_for_labs">Search For Labs</string>
@@ -130,6 +129,7 @@
     <string name="avilable_dates">Available Dates</string>
     <string name="to">To</string>
     <string name="pay_cash_in_clinic">Pay Cash In Clinic</string>
+    <string name="go_to_location">Go To Location</string>
 
 
 </resources>

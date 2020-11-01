@@ -54,6 +54,8 @@
                     app:layout_constraintStart_toStartOf="@+id/offer_img"
                     app:layout_constraintTop_toTopOf="@+id/offer_img" />
 
+
+
                 <TextView
 
                     android:id="@+id/doc_data_txt"
@@ -108,6 +110,27 @@
                             android:layout_height="wrap_content"
                             android:text="600 Le"
                             android:textColor="@color/blue" />
+
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:id="@+id/location_btn"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_marginEnd="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_location"/>
+                        <TextView
+                            android:id="@+id/pharm_location"
+                            android:text="@string/go_to_location"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
 
 
                     </LinearLayout>

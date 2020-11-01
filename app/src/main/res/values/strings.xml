@@ -153,6 +153,7 @@
     <string name="avilable_dates">المواعيد المتاحة</string>
     <string name="to">إلى</string>
     <string name="pay_cash_in_clinic">الدفع نقداً في العيادة</string>
+    <string name="go_to_location">الذهاب للموقع</string>
 
 
 </resources>

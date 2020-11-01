@@ -1,6 +1,8 @@
 package com.muslim_adel.sehaty.modules.appointments
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -44,6 +46,18 @@ class AppointmentsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val appointmentData = appointmentList[position]
+        var lat=appointmentData.doctor.lat
+        var lng=appointmentData.doctor.lng
+        val zoom=10
+        var lable=appointmentData.doctor.firstName_ar
+        val intent= Intent(Intent.ACTION_VIEW)
+        holder.map_btn.setOnClickListener {
+            intent.data= Uri.parse("geo:0,0?z=$zoom&q=$lat,$lng,$lable")
+            if(intent.resolveActivity(mContext.packageManager)!=null){
+                mContext.startActivity(intent)
+            }
+        }
+
 
         if (mContext.preferences!!.getString("language","")=="Arabic"){
             holder.date_name_txt.text=appointmentData.booking_date
