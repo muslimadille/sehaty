@@ -51,9 +51,6 @@ class OffersFragment : Fragment() {
     private var offersList: MutableList<Offer> = ArrayList()
     private var offersListAddapter: OfferAdapter? = null
 
-
-
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.offers_fragment, container, false)
 

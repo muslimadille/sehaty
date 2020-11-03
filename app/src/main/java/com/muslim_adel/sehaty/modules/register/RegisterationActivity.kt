@@ -74,7 +74,14 @@ class RegisterationActivity : BaseActivity() {
                 onObserveStart()
                 apiClient = ApiClient()
                 sessionManager = SessionManager(this)
-                apiClient.getApiService(this).userregister(username.text.toString(),email.text.toString(),password.text.toString(),phon_num.text.toString(),date_of_birth.text.toString(),gender.toString())
+                apiClient.getApiService(this).userregister(
+                    username.text.toString(),
+                    email.text.toString(),
+                    password.text.toString(),
+                    "+${ phon_num.text}",
+                    date_of_birth.text.toString(),
+                    gender.toString()
+                )
                     .enqueue(object : Callback<BaseResponce<LoginData>> {
                         override fun onFailure(call: Call<BaseResponce<LoginData>>, t: Throwable) {
                             alertNetwork(true)
@@ -101,7 +108,9 @@ class RegisterationActivity : BaseActivity() {
                                     preferences!!.commit()
                                     onObserveSuccess()
                                     val intent =
-                                        Intent(this@RegisterationActivity, MainActivity::class.java)
+                                        Intent(this@RegisterationActivity, VerivicationActivity::class.java)
+                                    intent.putExtra("phone",registerResponse.data!!.user.phonenumber.toString())
+                                    intent.putExtra("type","client")
                                     startActivity(intent)
                                     finish()
                                 } else {

@@ -93,7 +93,6 @@
     <string name="discount">خصم</string>
 
 
-
     <string name="doctors_list">قائمة الأطباء</string>
     <string name="visitors">زائر</string>
     <string name="profile">بيانات الدكتور</string>
@@ -154,6 +153,19 @@
     <string name="to">إلى</string>
     <string name="pay_cash_in_clinic">الدفع نقداً في العيادة</string>
     <string name="go_to_location">الذهاب للموقع</string>
+    <string name="title_activity_verivication" translatable="false">VerivicationActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="verivication">تفعيل الحساب</string>
+    <string name="try_again">أعد المحاولة</string>
+    <string name="not_recieved">لم يتم إستلام الرسالة</string>
+    <string name="ver_hint">سيتم ارسال رمز التأكيد في رسالة قصيرة</string>
 
 
 </resources>

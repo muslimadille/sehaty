@@ -20,6 +20,12 @@ interface ApiService {
         @Field("birthday") birthday: String,
         @Field("gender_id") gender_id:String): Call<BaseResponce<LoginData>>
 
+    @POST(Q.VERIFICATION_API)
+    @FormUrlEncoded
+    fun userVerification(
+        @Field("phonenumber") phonenumber:String,
+        @Field("user_type") user_type:String): Call<BaseResponce<Verification>>
+
     @GET(Q.SPECIALTY_LIST_API)
     fun fitchSpecialitiesList():Call<BaseResponce<List<Specialties>>>
 
@@ -104,5 +110,9 @@ interface ApiService {
                       @Query("phonenumber") phonenumber: String,
                       @Query("gender_id") gender_id:String,
                       @Query("birthday") birthday:String): Call<BaseResponce<User>>
+    @POST(Q.SEND_CODE_API)
+    fun sendVerificationNum(@Query("phonenumber") phonenumber:String,
+                      @Query("user_type") user_type:String,
+                      @Query("code") code:String): Call<BaseResponce<Verification>>
 
 }

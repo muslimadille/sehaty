@@ -130,6 +130,10 @@
     <string name="to">To</string>
     <string name="pay_cash_in_clinic">Pay Cash In Clinic</string>
     <string name="go_to_location">Go To Location</string>
+    <string name="verivication">Verification</string>
+    <string name="try_again">Try Again</string>
+    <string name="not_recieved">The message was not received? </string>
+    <string name="ver_hint">A confirmation code will be sent in an SMS </string>
 
 
 </resources>

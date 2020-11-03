@@ -8,6 +8,8 @@ object Q {
     const val BASE_URL = "https://laravelapi.sehakhanah.com/api/"
     const val LOGIN_API = "login"
     const val REGISTER_API = "register"
+    const val VERIFICATION_API = "send-message"
+
     const val SPECIALTY_LIST_API = "specialties"
     const val REAGONS_LIST_API = "areas"
     const val DOCTORS_LIST_API = "search"
@@ -32,6 +34,9 @@ object Q {
     const val LABS_SEARCH_API = "laboratory/search"
     const val GET_LAB_BY_ID_API="laboratory/show"
     const val UPDATE_PROFILE_API="user/update"
+    const val SEND_CODE_API="verify-user"
+
+
 
 
 
