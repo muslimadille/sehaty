@@ -22,21 +22,27 @@
             android:textStyle="bold" />
 
     </LinearLayout>
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/reagons_rv"
-        android:background="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:visibility="visible"
-        />
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1"
+       android:orientation="vertical">
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/reagons_rv"
+           android:background="@color/white"
+           android:layout_width="match_parent"
+           android:layout_height="0dp"
+           android:layout_weight="1"
+           android:visibility="visible"
+           />
 
-    <include layout="@layout/progress_layout"
-        android:id="@+id/regon_progrss_lay"
-        android:layout_height="0dp"
-        android:layout_width="match_parent"
-        android:layout_weight="1"
-        android:visibility="gone"/>
+       <include layout="@layout/progress_layout"
+           android:id="@+id/regon_progrss_lay"
+           android:layout_height="0dp"
+           android:layout_width="match_parent"
+           android:layout_weight="1"
+           android:visibility="gone"/>
+   </LinearLayout>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView4"
         app:labelVisibilityMode="unlabeled"

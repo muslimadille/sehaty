@@ -24,7 +24,7 @@ class SettingsActivity : BaseActivity() {
         initLay()
     }
     private fun initLay(){
-        if(!preferences!!.getBoolean(Q.IS_LOGIN,true)){
+        if(!preferences!!.getBoolean(Q.IS_LOGIN,false)){
             edit_profile_btn.visibility=View.GONE
             edit_password_btn.visibility=View.GONE
         }else{

@@ -134,6 +134,8 @@
     <string name="try_again">Try Again</string>
     <string name="not_recieved">The message was not received? </string>
     <string name="ver_hint">A confirmation code will be sent in an SMS </string>
+    <string name="Shift">Shift: </string>
+    <string name="houre"> Hour</string>
 
 
 </resources>

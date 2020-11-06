@@ -166,6 +166,8 @@
     <string name="try_again">أعد المحاولة</string>
     <string name="not_recieved">لم يتم إستلام الرسالة</string>
     <string name="ver_hint">سيتم ارسال رمز التأكيد في رسالة قصيرة</string>
+    <string name="Shift">الغافرة:</string>
+    <string name="houre"> ساعة</string>
 
 
 </resources>

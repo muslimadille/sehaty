@@ -69,6 +69,12 @@ class PharmacyOffersAdapter(
                 mContext.startActivity(intent)
             }
         }
+        if(offer.pharmacy.shift==1){
+            holder.shift_lay!!.visibility=View.VISIBLE
+            holder.duration!!.text="24"
+        }else{
+            holder.shift_lay!!.visibility=View.GONE
+        }
 
 
 
@@ -96,6 +102,10 @@ class PharmacyOffersAdapter(
         val offer_title_txt: TextView? =view.offer_title_txt
         val final_cost: TextView? =view.final_cost
         val location_btn:LinearLayout?=view.location_btn
+        val shift_lay:LinearLayout?=view.shift_lay
+        val duration: TextView? =view.duration
+
+
 
 
 

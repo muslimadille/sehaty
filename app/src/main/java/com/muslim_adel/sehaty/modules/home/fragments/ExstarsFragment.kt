@@ -40,7 +40,7 @@ class ExstarsFragment : Fragment() {
     }
 
     private fun initLay(){
-        if(!mContext!!.preferences!!.getBoolean(Q.IS_LOGIN,true)){
+        if(!mContext!!.preferences!!.getBoolean(Q.IS_LOGIN,false)){
             logout_txt.text=mContext!!.getString(R.string.login)
             fav_lay.visibility=View.GONE
         }else{

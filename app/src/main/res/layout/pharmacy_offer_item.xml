@@ -115,6 +115,34 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/shift_lay"
+                        android:visibility="gone"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_marginEnd="10dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_location"/>
+                        <TextView
+                            android:text="@string/Shift"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:id="@+id/duration"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+                        <TextView
+                            android:text="@string/houre"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"/>
+
+
+                    </LinearLayout>
+                    <LinearLayout
                         android:id="@+id/location_btn"
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"
@@ -134,6 +162,7 @@
 
 
                     </LinearLayout>
+
                 </LinearLayout>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
