@@ -34,7 +34,7 @@ class AppointmentsFragment : Fragment() {
         val adapter = AppointmentesPagerAddapter(context as FragmentActivity, listFragments)
         viewPager.adapter = adapter
 
-        val tabLayout = view!!.findViewById<TabLayout>(R.id.tabLayout)
+        val tabLayout = requireView().findViewById<TabLayout>(R.id.tabLayout)
 
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {

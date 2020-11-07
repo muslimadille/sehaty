@@ -48,11 +48,11 @@ class PharmacyOffersAdapter(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val offer = list[position]
         if (mContext.preferences!!.getString("language","")=="Arabic"){
-            holder.doc_data_txt!!.text=mContext.getString(R.string.pharmacy_offers_title)+offer.pharmacy.pharmacy_name_ar
+            holder.doc_data_txt!!.text=mContext.getString(R.string.pharmacy)+offer.pharmacy.pharmacy_name_ar
             holder.offer_title_txt!!.text=mContext.getString(R.string.type)+offer.title_ar+"-"+offer.title_ar
             holder.final_cost!!.text=mContext.getString(R.string.price)+" :"+offer.price.toString()+" "+ mContext.getString(R.string.derham)
         }else{
-            holder.doc_data_txt!!.text=mContext.getString(R.string.pharmacy_offers_title)+offer.pharmacy.pharmacy_name_en
+            holder.doc_data_txt!!.text=mContext.getString(R.string.pharmacy)+offer.pharmacy.pharmacy_name_en
             holder.offer_title_txt!!.text=mContext.getString(R.string.type)+offer.title_en+"-"+offer.title_en
             holder.final_cost!!.text=mContext.getString(R.string.price)+" :"+offer.price.toString()+" "+ mContext.getString(R.string.derham)
         }
@@ -71,7 +71,6 @@ class PharmacyOffersAdapter(
         }
         if(offer.pharmacy.shift==1){
             holder.shift_lay!!.visibility=View.VISIBLE
-            holder.duration!!.text="24"
         }else{
             holder.shift_lay!!.visibility=View.GONE
         }
