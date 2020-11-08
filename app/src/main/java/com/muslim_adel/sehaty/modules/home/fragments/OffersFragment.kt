@@ -2,37 +2,38 @@ package com.muslim_adel.sehaty.modules.home.fragments
 
 import android.app.Activity
 import android.content.Context
+import android.content.Context.LAYOUT_INFLATER_SERVICE
 import android.content.DialogInterface
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
 import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.*
-import com.muslim_adel.sehaty.data.remote.objects.Date
-import com.muslim_adel.sehaty.modules.appointments.AppointmentsAdapter
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DatesAdapter
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.RatesAdapter
+import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
+import com.muslim_adel.sehaty.data.remote.objects.Offer
+import com.muslim_adel.sehaty.data.remote.objects.OfferSlider
+import com.muslim_adel.sehaty.data.remote.objects.OffersCategory
 import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.modules.introSlider.adapters.IntroPagerAdapter
 import com.muslim_adel.sehaty.modules.offers.AllCtegoriesActivity
 import com.muslim_adel.sehaty.modules.offers.CategoriesAdapter
 import com.muslim_adel.sehaty.modules.offers.OfferAdapter
 import com.muslim_adel.sehaty.modules.offers.OffersPagerAdapter
-import kotlinx.android.synthetic.main.activity_doctor_profile.*
-import kotlinx.android.synthetic.main.activity_doctors_list.*
-import kotlinx.android.synthetic.main.activity_intro_wizerd.*
 import kotlinx.android.synthetic.main.offers_fragment.*
-import kotlinx.android.synthetic.main.offers_fragment.progrss_lay
+import me.relex.circleindicator.CircleIndicator
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -51,7 +52,11 @@ class OffersFragment : Fragment() {
     private var offersList: MutableList<Offer> = ArrayList()
     private var offersListAddapter: OfferAdapter? = null
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? =
         inflater.inflate(R.layout.offers_fragment, container, false)
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
@@ -61,6 +66,7 @@ class OffersFragment : Fragment() {
     }
 
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         sliderImagesObserver()
         initSlider()
@@ -68,7 +74,7 @@ class OffersFragment : Fragment() {
         categoriesObserver()
         offersObserver()
         show_all_btn.setOnClickListener {
-            mContext!!.intent= Intent(mContext,AllCtegoriesActivity::class.java)
+            mContext!!.intent= Intent(mContext, AllCtegoriesActivity::class.java)
             mContext!!.startActivity(mContext!!.intent)
         }
         super.onViewCreated(view, savedInstanceState)
@@ -134,7 +140,10 @@ class OffersFragment : Fragment() {
         sessionManager = SessionManager(mContext!!)
         apiClient.getApiService(mContext!!).fitchOffersSGategories()
             .enqueue(object : Callback<BaseResponce<List<OffersCategory>>> {
-                override fun onFailure(call: Call<BaseResponce<List<OffersCategory>>>, t: Throwable) {
+                override fun onFailure(
+                    call: Call<BaseResponce<List<OffersCategory>>>,
+                    t: Throwable
+                ) {
                     alertNetwork(true)
                 }
 
@@ -219,24 +228,28 @@ class OffersFragment : Fragment() {
         mContext = activity as MainActivity
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     private fun initSlider(){
-        var count=0
-        sliderAddapter = OffersPagerAdapter(mContext!!,imagesList)
+
+
+        sliderAddapter = OffersPagerAdapter(mContext!!, imagesList)
         offers_pager_Slider.adapter=sliderAddapter
+        val indicator: CircleIndicator = requireView().findViewById(R.id.indicator) as CircleIndicator
+        indicator.setViewPager(offers_pager_Slider)
+        sliderAddapter!!.registerDataSetObserver(indicator.getDataSetObserver());
+
         val handler = Handler()
         val update = Runnable {
             if(offers_pager_Slider!=null){
-
+                var count=0
 
                 if (offers_pager_Slider.getCurrentItem() == 0) {
-
                     offers_pager_Slider.currentItem = count+1
                     count += 1
                 } else if (offers_pager_Slider.getCurrentItem() == imagesList.size-1) {
                     count=0
                     offers_pager_Slider.currentItem = count
                 } else {
-
                     offers_pager_Slider.currentItem = count
                     count+=1
                 }
@@ -288,4 +301,14 @@ class OffersFragment : Fragment() {
             it.visibility= View.GONE
         }
     }
-}
+    var dotsCount: Int = 0
+    var dots = ArrayList<RadioButton>()
+    var mLastPositionOffset = 0f
+
+
+    }
+    fun convertDpToPixel(dp: Int, cont: Context): Int {
+        val resources = cont.resources
+        val metrics = resources.displayMetrics
+        return (dp * (metrics.densityDpi / 160f)).toInt()
+    }

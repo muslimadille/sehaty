@@ -168,6 +168,8 @@
     <string name="ver_hint">سيتم ارسال رمز التأكيد في رسالة قصيرة</string>
     <string name="Shift">صيدلية خافرة</string>
     <string name="houre"> ساعة</string>
+    <string name="search_for_pharmacy">البحث عن الصيدليات</string>
+    <string name="ph_search_name">ابحث بأسم الصيدلية</string>
 
 
 </resources>

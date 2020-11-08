@@ -16,11 +16,13 @@ import com.muslim_adel.sehaty.data.remote.objects.*
 import com.muslim_adel.sehaty.modules.base.BaseActivity
 import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.labs.LabsListAdaptor
+import com.muslim_adel.sehaty.modules.pharmacy.PharmacyOffersAdapter
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_doctors_list.doctors_rv
 import kotlinx.android.synthetic.main.activity_doctors_list.no_search_lay
 import kotlinx.android.synthetic.main.activity_doctors_list.progrss_lay
 import kotlinx.android.synthetic.main.activity_doctors_list.specialty_search_txt
+import kotlinx.android.synthetic.main.activity_pharmacy_offers.*
 import kotlinx.android.synthetic.main.activity_search_by_name.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -37,6 +39,9 @@ class SearchByNameActivity : BaseActivity() {
     private var labsList:MutableList<Laboratory> = ArrayList()
     private var filteredLabsList:MutableList<Laboratory> = ArrayList()
     private var labsListAddapter: LabsListAdaptor?=null
+
+    private var offersList: MutableList<PharmacyOffer> = ArrayList()
+    private var offersListAddapter: PharmacyOffersAdapter? = null
     var key=0
 
 
@@ -49,6 +54,11 @@ class SearchByNameActivity : BaseActivity() {
             specialty_search_txt.hint=getString(R.string.search_by_nam_labs)
             initLabsRVAdapter()
             labsSearch()
+        }else if(key==2){
+            specialty_search_txt.hint=getString(R.string.ph_search_name)
+            initPhRVAdapter()
+            pharmacySearch()
+
         }else{
             initRVAdapter()
             search()
@@ -91,6 +101,28 @@ class SearchByNameActivity : BaseActivity() {
                     when (keyCode) {
                         KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_ENTER -> {
                             labsObserver(specialty_search_txt.text.toString())
+                            return true
+                        }
+                        else -> {
+                        }
+                    }
+                }
+                return false
+            }
+        })
+
+    }
+    private fun pharmacySearch() {
+        search_btn.setOnClickListener {
+            pharmacyOffersObserver(specialty_search_txt.text.toString())
+        }
+
+        specialty_search_txt.setOnKeyListener(object : View.OnKeyListener{
+            override fun onKey(v: View?, keyCode: Int, event: KeyEvent): Boolean {
+                if (event.action == KeyEvent.ACTION_DOWN) {
+                    when (keyCode) {
+                        KeyEvent.KEYCODE_DPAD_CENTER, KeyEvent.KEYCODE_ENTER -> {
+                            pharmacyOffersObserver(specialty_search_txt.text.toString())
                             return true
                         }
                         else -> {
@@ -243,6 +275,52 @@ class SearchByNameActivity : BaseActivity() {
         }
         bottomNavigationView5.labelVisibilityMode= LabelVisibilityMode.LABEL_VISIBILITY_LABELED
         bottomNavigationView5.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+
+    }
+    private fun pharmacyOffersObserver(name: String) {
+        onObserveStart()
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
+        apiClient.getApiService(this).fitchPharmacyOffersByName(name)
+            .enqueue(object : Callback<BaseResponce<List<PharmacyOffer>>> {
+                override fun onFailure(call: Call<BaseResponce<List<PharmacyOffer>>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<List<PharmacyOffer>>>,
+                    response: Response<BaseResponce<List<PharmacyOffer>>>
+                ) {
+                    if (response!!.isSuccessful) {
+                        if (response.body()!!.success) {
+                            response.body()!!.data!!.let {
+                                if (it.isNotEmpty()) {
+                                    offersList.addAll(it)
+                                    offersListAddapter!!.notifyDataSetChanged()
+                                    onObserveSuccess()
+                                } else {
+                                    onObservefaled()
+                                }
+
+                            }
+                        } else {
+                            onObservefaled()
+                        }
+
+                    } else {
+                        onObservefaled()
+                    }
+
+                }
+
+
+            })
+    }
+    private fun initPhRVAdapter() {
+        val offersLayoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
+        doctors_rv.layoutManager = offersLayoutManager
+        offersListAddapter = PharmacyOffersAdapter(this, offersList)
+        doctors_rv.adapter = offersListAddapter
 
     }
 }

@@ -13,6 +13,7 @@ import com.muslim_adel.sehaty.modules.doctors.search.SearchBySpecialityActivity
 import com.muslim_adel.sehaty.modules.labs.LabsActivity
 import com.muslim_adel.sehaty.modules.labs.LabsListActivity
 import com.muslim_adel.sehaty.modules.pharmacy.PharmacyOffersActivity
+import com.muslim_adel.sehaty.modules.pharmacy.PharmaySearchActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment() {
@@ -39,8 +40,7 @@ class HomeFragment : Fragment() {
     }
     fun onfarmacySearchClicked(){
         pharmacy_search_btn.setOnClickListener {
-            val intent = Intent(context, ReagonsActivity::class.java)
-            intent.putExtra("key",2)
+            val intent = Intent(context, PharmaySearchActivity::class.java)
             startActivity(intent)
         }
     }

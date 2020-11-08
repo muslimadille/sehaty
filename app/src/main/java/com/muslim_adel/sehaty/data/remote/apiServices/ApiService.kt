@@ -95,6 +95,10 @@ interface ApiService {
 
     @GET(Q.PARMACY_OFFERS_API)
     fun fitchPharmacyOffers(@Query("area_id")area_id:Int):Call<BaseResponce<List<PharmacyOffer>>>
+    @GET(Q.PARMACY_OFFERS_API)
+    fun fitchAllPharmacyOffers():Call<BaseResponce<List<PharmacyOffer>>>
+    @GET(Q.PARMACY_OFFERS_API)
+    fun fitchPharmacyOffersByName(@Query("name")name:String):Call<BaseResponce<List<PharmacyOffer>>>
 
     @GET(Q.ALL_LABS_API)
     fun fitchAllLabsList():Call<BaseResponce<LabsSearch>>

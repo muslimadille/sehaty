@@ -136,6 +136,8 @@
     <string name="ver_hint">A confirmation code will be sent in an SMS </string>
     <string name="Shift">24 Hours </string>
     <string name="houre"> Hour</string>
+    <string name="search_for_pharmacy">Search for Pharmacies</string>
+    <string name="ph_search_name">Search By Pharmacy Name</string>
 
 
 </resources>

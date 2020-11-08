@@ -19,6 +19,8 @@ import com.muslim_adel.sehaty.data.remote.objects.Offer
 import com.muslim_adel.sehaty.data.remote.objects.PharmacyOffer
 import com.muslim_adel.sehaty.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.offers.OfferDetailsActivity
+import com.muslim_adel.sehaty.utiles.ComplexPreferences
+import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.offer_item.view.*
 import kotlinx.android.synthetic.main.offer_item.view.doc_data_txt
@@ -29,9 +31,11 @@ import kotlinx.android.synthetic.main.offer_item.view.offer_title_txt
 import kotlinx.android.synthetic.main.pharmacy_offer_item.view.*
 
 class PharmacyOffersAdapter(
-    private val mContext: PharmacyOffersActivity,
+    private val mContext: Context,
     private val list: MutableList<PharmacyOffer>
 ) : RecyclerView.Adapter<PharmacyOffersAdapter.ViewHolder>() {
+   private var preferences: ComplexPreferences? = null
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -46,8 +50,10 @@ class PharmacyOffersAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        preferences = ComplexPreferences.getComplexPreferences(mContext, Q.PREF_FILE, Q.MODE_PRIVATE)
+
         val offer = list[position]
-        if (mContext.preferences!!.getString("language","")=="Arabic"){
+        if (preferences!!.getString("language","")=="Arabic"){
             holder.doc_data_txt!!.text=mContext.getString(R.string.pharmacy)+offer.pharmacy.pharmacy_name_ar
             holder.offer_title_txt!!.text=mContext.getString(R.string.type)+offer.title_ar+"-"+offer.title_ar
             holder.final_cost!!.text=mContext.getString(R.string.price)+" :"+offer.price.toString()+" "+ mContext.getString(R.string.derham)

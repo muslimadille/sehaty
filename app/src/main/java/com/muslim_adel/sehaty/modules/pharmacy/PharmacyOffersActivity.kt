@@ -30,6 +30,7 @@ import retrofit2.Response
 
 class PharmacyOffersActivity : BaseActivity() {
     var region_id=0
+    var key=0
     private var offersList: MutableList<PharmacyOffer> = ArrayList()
     private var offersListAddapter: PharmacyOffersAdapter? = null
 

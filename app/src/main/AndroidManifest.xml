@@ -12,10 +12,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".modules.pharmacy.PharmaySearchActivity"></activity>
         <activity
             android:name=".modules.register.VerivicationActivity"
             android:label="@string/title_activity_verivication"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".modules.labs.LabBookActivity" />
         <activity android:name=".modules.labs.LabServicesActivity" />
         <activity android:name=".modules.labs.LabDetailsActivity" />
