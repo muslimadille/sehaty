@@ -26,24 +26,28 @@ class HomeFragment : Fragment() {
         onfarmacySearchClicked()
         onLabsSearchClicked()
     }
+
     fun onNameSearchClicked(){
         search_name_btn.setOnClickListener {
             val intent = Intent(context, SearchByNameActivity::class.java)
             startActivity(intent)
         }
     }
+
     fun onSpicialistSearchClicked(){
         search_spicialist_btn.setOnClickListener {
             val intent = Intent(context, SearchBySpecialityActivity::class.java)
             startActivity(intent)
         }
     }
+
     fun onfarmacySearchClicked(){
         pharmacy_search_btn.setOnClickListener {
             val intent = Intent(context, PharmaySearchActivity::class.java)
             startActivity(intent)
         }
     }
+
     fun onLabsSearchClicked(){
         labs_search_btn.setOnClickListener {
             val intent = Intent(context, LabsActivity::class.java)

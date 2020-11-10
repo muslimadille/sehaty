@@ -138,6 +138,7 @@
     <string name="houre"> Hour</string>
     <string name="search_for_pharmacy">Search for Pharmacies</string>
     <string name="ph_search_name">Search By Pharmacy Name</string>
+    <string name="pharmacy_details">Pharmacy Details</string>
 
 
 </resources>

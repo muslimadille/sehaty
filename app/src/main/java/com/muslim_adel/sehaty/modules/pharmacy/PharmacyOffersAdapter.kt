@@ -11,6 +11,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
@@ -18,6 +19,7 @@ import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.data.remote.objects.Offer
 import com.muslim_adel.sehaty.data.remote.objects.PharmacyOffer
 import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.muslim_adel.sehaty.modules.labs.LabsActivity
 import com.muslim_adel.sehaty.modules.offers.OfferDetailsActivity
 import com.muslim_adel.sehaty.utiles.ComplexPreferences
 import com.muslim_adel.sehaty.utiles.Q
@@ -80,6 +82,11 @@ class PharmacyOffersAdapter(
         }else{
             holder.shift_lay!!.visibility=View.GONE
         }
+        holder.offer_lay!!.setOnClickListener {
+            val intent = Intent(mContext, PharmacyProfileActivity::class.java)
+            intent.putExtra("pharm_id",offer.id)
+            mContext.startActivity(intent)
+        }
 
 
 
@@ -109,6 +116,7 @@ class PharmacyOffersAdapter(
         val location_btn:LinearLayout?=view.location_btn
         val shift_lay:LinearLayout?=view.shift_lay
         val duration: TextView? =view.duration
+        val offer_lay:CardView? =view.offer_lay_item
 
 
 

@@ -35,6 +35,8 @@ object Q {
     const val GET_LAB_BY_ID_API="laboratory/show"
     const val UPDATE_PROFILE_API="user/update"
     const val SEND_CODE_API="verify-user"
+    const val GET_PHARM_BY_ID_API="pharmacy/offer/show"
+
 
 
 

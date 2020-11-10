@@ -18,7 +18,7 @@
 
     <string name="search">البحث</string>
 
-    <string name="search_by_name">ابحث بأسم الدكتور</string>
+    <string name="search_by_name">ابحث بأسم الطبيب</string>
     <string name="search_by_spicialist">بحث حسب التخصص</string>
     <string name="pharmacy_search">بحث عن الصيدليات</string>
     <string name="flag_txt">لأن صحتك تهمنا</string>
@@ -74,7 +74,7 @@
 
     <string name="no_offers">لا يوجد لديك عروض</string>
     <string name="no_appointments">لا يوجد لديك حجوزات</string>
-    <string name="chose_doctor">اختر الدكتور</string>
+    <string name="chose_doctor">اختر الطبيب</string>
     <string name="no_search_results">لا يوجد نتائج</string>
     <string name="select_reagon">أختر المنطقة</string>
     <string name="cost">التكلفة:</string>
@@ -86,7 +86,7 @@
     <string name="no_internet">لا يوجد إتصال بشبكة الإنترنت</string>
     <string name="exit">خروج</string>
     <string name="dismiss">إخفاء</string>
-    <string name="search_doctor_hint">ابحث باسم الدكتور</string>
+    <string name="search_doctor_hint">ابحث باسم الطبيب</string>
     <string name="doctor">دكتور:</string>
     <string name="doctorah">دكتورة:</string>
     <string name="lab_search_hint">ابحث باسم المختبر</string>
@@ -95,14 +95,14 @@
 
     <string name="doctors_list">قائمة الأطباء</string>
     <string name="visitors">زائر</string>
-    <string name="profile">بيانات الدكتور</string>
+    <string name="profile">بيانات الطبيب</string>
     <string name="waiting_time">مدة الإنتظار</string>
     <string name="cost_amount">سعر الكشف</string>
     <string name="date_hint">الدخول في ميعاد الحجز المحدد</string>
     <string name="booking_hint">احجز الآن وسيتم أرسالتفاصيل العنوان بالكامل ورقم العيادة</string>
     <string name="rating">التقييم العام من</string>
     <string name="seen">مشاهدة</string>
-    <string name="doctor_info">معلومات عن الدكتور</string>
+    <string name="doctor_info">معلومات عن الطبيب</string>
     <string name="more">المزيد</string>
     <string name="less">أقل</string>
     <string name="booking_dates">مواعيد الحجز</string>
@@ -170,6 +170,7 @@
     <string name="houre"> ساعة</string>
     <string name="search_for_pharmacy">البحث عن الصيدليات</string>
     <string name="ph_search_name">ابحث بأسم الصيدلية</string>
+    <string name="pharmacy_details">تفاصيل الصيدلية</string>
 
 
 </resources>

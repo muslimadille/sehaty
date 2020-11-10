@@ -108,6 +108,8 @@ interface ApiService {
     fun fitchLabsByRegionList(@Query("area_id")area_id:Int):Call<BaseResponce<LabsSearch>>
     @GET
     fun fitchLabById(@Url url:String):Call<BaseResponce<Laboratory>>
+    @GET
+    fun fitchPharmacyById(@Url url:String):Call<BaseResponce<PharmacyOffer>>
     @POST(Q.UPDATE_PROFILE_API)
     fun updateProfile(@Query("name") name:String,
                       @Query("email") email:String,

@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".modules.pharmacy.PharmaySearchActivity"></activity>
+        <activity android:name=".modules.pharmacy.PharmacyProfileActivity"></activity>
+        <activity android:name=".modules.pharmacy.PharmaySearchActivity" />
         <activity
             android:name=".modules.register.VerivicationActivity"
             android:label="@string/title_activity_verivication"

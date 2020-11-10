@@ -5,49 +5,44 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".modules.register.VerivicationActivity">
+    tools:context=".modules.contactUs.ContactUsActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="@color/colorPrimary">
-
-
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="@string/verivication"
+            android:text="@string/cu"
             android:textColor="#fff"
             android:textSize="16sp"
             android:textStyle="bold" />
-
     </LinearLayout>
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/vr_lay"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="vertical">
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical">
 
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
                     <androidx.cardview.widget.CardView
                         android:padding="10dp"
                         android:layout_width="match_parent"
@@ -72,7 +67,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginBottom="10dp"
-                                android:text="@string/ver_hint"/>
+                                android:text="@string/contactus_txt"/>
                             <com.google.android.material.textfield.TextInputLayout
                                 android:id="@+id/message_layout"
                                 android:layout_width="match_parent"
@@ -90,7 +85,7 @@
                                     android:layout_centerHorizontal="true"
                                     android:layout_centerVertical="true"
                                     android:ems="10"
-                                    android:hint="أدخل رمز التأكيد" />
+                                    android:hint="@string/add_message" />
 
                             </com.google.android.material.textfield.TextInputLayout>
                             <LinearLayout
@@ -106,20 +101,19 @@
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal"
                                     android:gravity="center">
-
                                     <TextView
                                         android:layout_width="wrap_content"
-                                        android:layout_height="match_parent"
+                                        android:layout_height="wrap_content"
                                         android:gravity="center"
-                                        android:text="@string/not_recieved" />
+                                        android:text="@string/formorcontact"/>
                                     <TextView
-                                        android:id="@+id/retry_btn"
+                                        android:id="@+id/phone_num_btn"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:gravity="center"
                                         android:textColor="@color/blue"
                                         android:textStyle="bold"
-                                        android:text="@string/try_again"/>
+                                        android:text="16711"/>
                                 </LinearLayout>
 
 
@@ -127,30 +121,43 @@
 
                         </LinearLayout>
                     </androidx.cardview.widget.CardView>
+                </ScrollView>
 
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-                    <Button
-                        android:id="@+id/send_message_btn"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="@color/blue"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginEnd="30dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/send_message"/>
-                </LinearLayout>
             </LinearLayout>
-            <include layout="@layout/progress_layout"
-                android:id="@+id/ver_progrss_lay"
-                android:layout_height="match_parent"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:visibility="gone"/>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/send_message_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/blue"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="@string/send_message"/>
+            </LinearLayout>
+        </LinearLayout>
+        <include layout="@layout/progress_layout"
+            android:id="@+id/progrss_lay"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:visibility="gone"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
+        app:labelVisibilityMode="unlabeled"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:menu="@menu/navigation" />
+
+
 
 
 </LinearLayout>

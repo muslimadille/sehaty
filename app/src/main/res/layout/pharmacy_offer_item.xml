@@ -11,7 +11,7 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/offer_lay"
+        android:id="@+id/offer_lay_item"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:cardCornerRadius="8dp"
