@@ -58,9 +58,10 @@ class OffersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? =
         inflater.inflate(R.layout.offers_fragment, container, false)
-
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+
+
 
 
     }
@@ -241,17 +242,11 @@ class OffersFragment : Fragment() {
         val handler = Handler()
         val update = Runnable {
             if(offers_pager_Slider!=null){
-                var count=0
 
-                if (offers_pager_Slider.getCurrentItem() == 0) {
-                    offers_pager_Slider.currentItem = count+1
-                    count += 1
-                } else if (offers_pager_Slider.getCurrentItem() == imagesList.size-1) {
-                    count=0
-                    offers_pager_Slider.currentItem = count
-                } else {
-                    offers_pager_Slider.currentItem = count
-                    count+=1
+                if(offers_pager_Slider.currentItem<(imagesList.size-1)){
+                    offers_pager_Slider.currentItem=offers_pager_Slider.currentItem+1
+                }else{
+                    offers_pager_Slider.currentItem=0
                 }
             }
 

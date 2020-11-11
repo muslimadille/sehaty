@@ -47,31 +47,14 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="40dp"
-                    android:background="@color/white"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/arrow"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="40dp"
-                    android:background="@color/white"
-                    android:layout_margin="10dp"
-                    android:src="@drawable/ic_left_arrow"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+
                 <me.relex.circleindicator.CircleIndicator
                     android:id="@+id/indicator"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_width="match_parent"
-                    android:backgroundTint="@color/blue"
+                    android:background="#568E8E8E"
                     android:layout_height="48dp"/>
 
             </androidx.constraintlayout.widget.ConstraintLayout>
