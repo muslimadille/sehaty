@@ -21,21 +21,47 @@
             android:layout_height="match_parent"/>
 
     </LinearLayout>
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayout"
+    <LinearLayout
+        android:id="@+id/bookings_lay"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:tabIndicatorHeight="2dp"
-        android:layout_gravity="fill"
-        app:tabGravity="fill"
-        app:tabMode="fixed">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabIndicatorHeight="2dp"
+            android:layout_gravity="fill"
+            app:tabGravity="fill"
+            app:tabMode="fixed">
 
-    </com.google.android.material.tabs.TabLayout>
+        </com.google.android.material.tabs.TabLayout>
 
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPager"
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/booking_alet_lay"
+        android:visibility="gone"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+        <ImageView
+            android:id="@+id/login_nave"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_login_24"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bookin_alert"/>
+    </LinearLayout>
 
 </LinearLayout>

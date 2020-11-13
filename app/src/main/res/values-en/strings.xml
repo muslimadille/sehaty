@@ -139,6 +139,7 @@
     <string name="search_for_pharmacy">Search for Pharmacies</string>
     <string name="ph_search_name">Search By Pharmacy Name</string>
     <string name="pharmacy_details">Pharmacy Details</string>
+    <string name="bookin_alert">To view reservations please log in</string>
 
 
 </resources>

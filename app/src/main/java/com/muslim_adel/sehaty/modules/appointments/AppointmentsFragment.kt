@@ -1,5 +1,6 @@
 package com.muslim_adel.sehaty.modules.appointments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +13,15 @@ import com.muslim_adel.sehaty.R
 import com.muslim_adel.sehaty.modules.base.CustomTabLayout
 import com.muslim_adel.sehaty.modules.appointments.fragments.MyOffersFragments
 import com.muslim_adel.sehaty.modules.appointments.fragments.bookingsFragments
+import com.muslim_adel.sehaty.modules.register.LoginActivity
+import com.muslim_adel.sehaty.modules.splash.SplashActivity
+import com.muslim_adel.sehaty.utiles.ComplexPreferences
+import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.appointments_fragment.*
 
 class AppointmentsFragment : Fragment() {
+    var preferences: ComplexPreferences? = null
+
     val listFragments = ArrayList<Fragment>()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.appointments_fragment, container, false)
@@ -25,8 +32,8 @@ class AppointmentsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        addFragment()
-        setupViewPager()
+        preferences = ComplexPreferences.getComplexPreferences(context as FragmentActivity, Q.PREF_FILE, Q.MODE_PRIVATE)
+        viewSelector()
 
     }
 
@@ -63,5 +70,20 @@ class AppointmentsFragment : Fragment() {
         listFragments.add(bookingsFragments())
         listFragments.add(MyOffersFragments())
 
+    }
+    private fun viewSelector(){
+        if(preferences!!.getBoolean(Q.IS_LOGIN, false)){
+            bookings_lay.visibility=View.VISIBLE
+            booking_alet_lay.visibility=View.GONE
+            addFragment()
+            setupViewPager()
+        }else{
+            bookings_lay.visibility=View.GONE
+            booking_alet_lay.visibility=View.VISIBLE
+            login_nave.setOnClickListener {
+                val intent = Intent(context, LoginActivity::class.java)
+                startActivity(intent)
+            }
+        }
     }
 }

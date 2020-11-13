@@ -171,6 +171,7 @@
     <string name="search_for_pharmacy">البحث عن الصيدليات</string>
     <string name="ph_search_name">ابحث بأسم الصيدلية</string>
     <string name="pharmacy_details">تفاصيل الصيدلية</string>
+    <string name="bookin_alert">لعرض الحجوزات الرجاء تسجيل الدخول</string>
 
 
 </resources>
