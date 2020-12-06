@@ -21,7 +21,6 @@ import kotlinx.android.synthetic.main.appointments_fragment.*
 
 class AppointmentsFragment : Fragment() {
     var preferences: ComplexPreferences? = null
-
     val listFragments = ArrayList<Fragment>()
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
         inflater.inflate(R.layout.appointments_fragment, container, false)
