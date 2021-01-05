@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.labs
+package com.sehakhanah.patientapp.modules.labs
 
 import android.content.Context
 import android.content.Intent
@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.LaboratoryServices
-import com.muslim_adel.sehaty.data.remote.objects.Reagons
-import com.muslim_adel.sehaty.modules.doctors.dates.DatesActivity
-import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
-import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.LaboratoryServices
+import com.sehakhanah.patientapp.data.remote.objects.Reagons
+import com.sehakhanah.patientapp.modules.doctors.dates.DatesActivity
+import com.sehakhanah.patientapp.modules.doctors.doctorsList.DoctorsListActivity
+import com.sehakhanah.patientapp.modules.doctors.reagons.ReagonsActivity
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.reagon_item.view.*
 

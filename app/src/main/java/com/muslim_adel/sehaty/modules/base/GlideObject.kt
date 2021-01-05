@@ -1,10 +1,10 @@
-package com.muslim_adel.sehaty.modules.base
+package com.sehakhanah.patientapp.modules.base
 
 import android.content.Context
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.muslim_adel.sehaty.R
+import com.sehakhanah.patientapp.R
 
 object GlideObject {
 

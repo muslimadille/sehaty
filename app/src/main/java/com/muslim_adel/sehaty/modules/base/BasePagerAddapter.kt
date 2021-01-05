@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.base
+package com.sehakhanah.patientapp.modules.base
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

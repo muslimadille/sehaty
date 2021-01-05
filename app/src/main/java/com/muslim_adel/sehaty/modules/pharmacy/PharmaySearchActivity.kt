@@ -1,16 +1,16 @@
-package com.muslim_adel.sehaty.modules.pharmacy
+package com.sehakhanah.patientapp.modules.pharmacy
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
-import com.muslim_adel.sehaty.modules.doctors.search.SearchByNameActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.modules.labs.LabsListActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.doctors.reagons.ReagonsActivity
+import com.sehakhanah.patientapp.modules.doctors.search.SearchByNameActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.modules.labs.LabsListActivity
 import kotlinx.android.synthetic.main.activity_labs.*
 import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.android.synthetic.main.home_fragment.search_name_btn

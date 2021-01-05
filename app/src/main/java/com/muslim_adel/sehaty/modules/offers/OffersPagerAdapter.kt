@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.offers
+package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Context
 import android.view.View
@@ -7,9 +7,9 @@ import android.widget.ImageView
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.modules.home.MainActivity
 
 class OffersPagerAdapter(mContext:Context,list:MutableList<String>) :PagerAdapter(){
     private val mContext=mContext

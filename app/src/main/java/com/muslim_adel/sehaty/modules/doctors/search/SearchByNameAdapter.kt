@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.search
+package com.sehakhanah.patientapp.modules.doctors.search
 
 import android.content.Context
 import android.content.Intent
@@ -10,12 +10,12 @@ import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.Doctor
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
-import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
-import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.Doctor
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DoctorProfile
+import com.sehakhanah.patientapp.modules.doctors.doctorsList.DoctorsListActivity
+import com.sehakhanah.patientapp.modules.doctors.reagons.ReagonsActivity
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.doctors_list_item.view.*
 
@@ -45,7 +45,7 @@ class SearchByNameAdapter(
             holder.doctor_gender.text = mContext.getString(R.string.doctor)
             holder.doctor_specialty.text = doctor.profissionalTitle_ar
             holder.description.text = doctor.aboutDoctor_ar
-            holder.address.text = doctor.streetName_ar
+            holder.address.text = doctor.address_ar
             holder.cost.text = doctor.price.toString()
             holder.waiting.text=doctor.waiting_time
             holder.ratingBar.rating=doctor.rating.toFloat()
@@ -55,7 +55,7 @@ class SearchByNameAdapter(
             holder.doctor_gender.text = mContext.getString(R.string.doctor)
             holder.doctor_specialty.text = doctor.profissionalTitle_en
             holder.description.text = doctor.aboutDoctor_en
-            holder.address.text = doctor.streetName_en
+            holder.address.text = doctor.address_en
             holder.cost.text = doctor.price.toString()
             holder.waiting.text=doctor.waiting_time
             holder.ratingBar.rating=doctor.rating.toFloat()
@@ -71,10 +71,7 @@ class SearchByNameAdapter(
             intent.putExtra("lastName_en",doctor.lastName_en)
             intent.putExtra("aboutDoctor_ar",doctor.aboutDoctor_ar)
             intent.putExtra("aboutDoctor_en",doctor.aboutDoctor_en)
-            intent.putExtra("apartmentNum_ar",doctor.apartmentNum_ar)
-            intent.putExtra("apartmentNum_en",doctor.apartmentNum_en)
             intent.putExtra("area_id",doctor.area_id)
-            intent.putExtra("buildingNum_ar",doctor.buildingNum_ar)
             intent.putExtra("featured",doctor.featured)
             intent.putExtra("gender_id",doctor.gender_id)
             intent.putExtra("doctor_id",doctor.id)
@@ -86,14 +83,12 @@ class SearchByNameAdapter(
             intent.putExtra("profissionalDetails_id",doctor.profissionalDetails_id)
             intent.putExtra("profissionalTitle_ar",doctor.profissionalTitle_ar)
             intent.putExtra("profissionalTitle_en",doctor.profissionalTitle_en)
-            intent.putExtra("role",doctor.role)
             intent.putExtra("rating",doctor.rating)
             intent.putExtra("speciality_id",doctor.speciality_id)
-            intent.putExtra("streetName_ar",doctor.streetName_ar)
-            intent.putExtra("streetName_en",doctor.streetName_en)
+            intent.putExtra("address_ar",doctor.address_ar)
+            intent.putExtra("address_en",doctor.address_en)
             intent.putExtra("visitor_num",doctor.visitor_num)
             intent.putExtra("waiting_time",doctor.waiting_time)
-            intent.putExtra("buildingNum_en",doctor.buildingNum_en)
             mContext.startActivity(intent)
 
         }

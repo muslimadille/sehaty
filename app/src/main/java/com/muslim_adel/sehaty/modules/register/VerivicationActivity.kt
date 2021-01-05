@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.register
+package com.sehakhanah.patientapp.modules.register
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,13 +7,13 @@ import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.*
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.*
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.login_progrss_lay
 import kotlinx.android.synthetic.main.activity_login.username
@@ -34,7 +34,7 @@ class VerivicationActivity : BaseActivity() {
         setContentView(R.layout.activity_verivication)
         phone=intent.getStringExtra("phone")!!
         type=intent.getStringExtra("type")!!
-        sendVerOrder()
+        onResendClicked()
         onSendClicked()
     }
     private fun onObserveStart() {
@@ -48,7 +48,8 @@ class VerivicationActivity : BaseActivity() {
     private fun onObservefaled() {
         ver_progrss_lay.visibility = View.GONE
     }
-    private fun sendVerOrder(){
+
+    private fun onResendClicked(){
         retry_btn.setOnClickListener {
             onObserveStart()
             apiClient = ApiClient()
@@ -81,10 +82,9 @@ class VerivicationActivity : BaseActivity() {
 
                 })
         }
-
     }
     private  fun sendNumber(){
-        if (message_tf.text.isNotEmpty()&&message_tf.text.length==4){
+        if (message_tf.text.isNotEmpty()){
             onObserveStart()
             apiClient = ApiClient()
             sessionManager = SessionManager(this)
@@ -99,7 +99,7 @@ class VerivicationActivity : BaseActivity() {
                         response: Response<BaseResponce<Verification>>
                     ) {
                         val registerResponse = response.body()
-                        if (registerResponse!!.success) {
+                        if (response.code()!=500&&registerResponse!!.success) {
                             onObserveSuccess()
                             val intent =
                                 Intent(this@VerivicationActivity, MainActivity::class.java)
@@ -111,7 +111,7 @@ class VerivicationActivity : BaseActivity() {
                             onObservefaled()
                             Toast.makeText(
                                 this@VerivicationActivity,
-                                "فشل في التسجبل",
+                                "من فضلك أدخل رقم صحيح",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }

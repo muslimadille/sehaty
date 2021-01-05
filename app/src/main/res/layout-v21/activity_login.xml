@@ -56,128 +56,20 @@
                     android:layout_marginEnd="30dp"
                     android:orientation="vertical">
 
-                    <androidx.cardview.widget.CardView
+                    <com.facebook.login.widget.LoginButton
+                        android:id="@+id/fb_login_button"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="#0333C8"
-                        app:cardCornerRadius="5dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="#0333C8"
-                            android:orientation="horizontal"
-
-                            >
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="match_parent"
-                                android:padding="5dp"
-                                android:src="@drawable/fb_ic" />
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="#fff" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/login_facebook"
-                                android:textColor="#fff"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
+                        android:layout_height="60dp"
+                        android:backgroundTint="@color/blue"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="20dp" />
 
 
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
 
-                    <androidx.cardview.widget.CardView
+                    <com.google.android.gms.common.SignInButton
+                        android:id="@+id/goole_sign_in_button"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="#7998FB"
-                        app:cardCornerRadius="5dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="#7998FB"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="match_parent"
-                                android:padding="8dp"
-                                android:src="@drawable/twitter" />
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="#fff" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/login_twitter"
-                                android:textColor="#fff"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:layout_marginBottom="5dp"
-                        android:background="#F44336"
-                        app:cardCornerRadius="5dp">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="40dp"
-                            android:background="#F44336"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="40dp"
-                                android:layout_height="match_parent"
-                                android:padding="5dp"
-                                android:src="@drawable/google_ic" />
-
-                            <View
-                                android:layout_width="1dp"
-                                android:layout_height="match_parent"
-                                android:background="#fff" />
-
-                            <TextView
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_marginStart="5dp"
-                                android:layout_marginEnd="5dp"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="@string/login_google"
-                                android:textColor="#fff"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-
-                        </LinearLayout>
-                    </androidx.cardview.widget.CardView>
-
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 

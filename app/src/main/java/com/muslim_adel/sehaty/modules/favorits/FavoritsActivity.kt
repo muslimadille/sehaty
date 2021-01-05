@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.favorits
+package com.sehakhanah.patientapp.modules.favorits
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,15 +9,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.appointments.AppointmentesPagerAddapter
-import com.muslim_adel.sehaty.modules.appointments.fragments.MyOffersFragments
-import com.muslim_adel.sehaty.modules.appointments.fragments.bookingsFragments
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.base.CustomTabLayout
-import com.muslim_adel.sehaty.modules.favorits.fragments.DoctorsFragment
-import com.muslim_adel.sehaty.modules.favorits.fragments.OffersFragment
-import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.appointments.AppointmentesPagerAddapter
+import com.sehakhanah.patientapp.modules.appointments.fragments.MyOffersFragments
+import com.sehakhanah.patientapp.modules.appointments.fragments.bookingsFragments
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.base.CustomTabLayout
+import com.sehakhanah.patientapp.modules.favorits.fragments.DoctorsFragment
+import com.sehakhanah.patientapp.modules.favorits.fragments.OffersFragment
+import com.sehakhanah.patientapp.modules.home.MainActivity
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_about_us.bottomNavigationView
 import kotlinx.android.synthetic.main.activity_favorits.*

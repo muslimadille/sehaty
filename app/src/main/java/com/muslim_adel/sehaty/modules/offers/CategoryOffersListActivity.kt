@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.offers
+package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,14 +9,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.Offer
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
+import com.sehakhanah.patientapp.data.remote.objects.Offer
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_category_offers_list.*
 import kotlinx.android.synthetic.main.activity_change_language.*

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.offers
+package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Context
 import android.content.Intent
@@ -8,11 +8,11 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.Date
-import com.muslim_adel.sehaty.data.remote.objects.Offer
-import com.muslim_adel.sehaty.modules.doctors.dates.DatesActivity
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.Date
+import com.sehakhanah.patientapp.data.remote.objects.Offer
+import com.sehakhanah.patientapp.modules.doctors.dates.DatesActivity
+import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DoctorProfile
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.doctor_dates_item.view.*
 
@@ -62,15 +62,10 @@ class OfferDatesAdapter(
                 intent.putExtra("price",offer[0].doctor.price)
                 intent.putExtra("profissionalTitle_ar",offer[0].doctor.profissionalTitle_ar)
                 intent.putExtra("profissionalTitle_en",offer[0].doctor.profissionalTitle_en)
-                intent.putExtra("streetName_ar",offer[0].doctor.streetName_ar)
-                intent.putExtra("streetName_en",offer[0].doctor.streetName_en)
-                intent.putExtra("apartmentNum_ar",offer[0].doctor.apartmentNum_ar)
-                intent.putExtra("apartmentNum_en",offer[0].doctor.apartmentNum_en)
+                intent.putExtra("address_ar",offer[0].doctor.address_ar)
+                intent.putExtra("address_en",offer[0].doctor.address_en)
                 intent.putExtra("landmark_ar",offer[0].doctor.landmark_ar)
                 intent.putExtra("landmark_en",offer[0].doctor.landmark_en)
-                intent.putExtra("buildingNum_ar",offer[0].doctor.buildingNum_ar)
-                intent.putExtra("role",offer[0].doctor.role)
-                intent.putExtra("buildingNum_en",offer[0].doctor.buildingNum_en)
                 intent.putExtra("offer_id",offer[0].id)
                 intent.putExtra("key",1)
                 mContext.startActivity(intent)

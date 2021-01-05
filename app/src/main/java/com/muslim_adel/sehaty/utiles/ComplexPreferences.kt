@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.utiles
+package com.sehakhanah.patientapp.utiles
 
 import android.annotation.SuppressLint
 import android.content.Context

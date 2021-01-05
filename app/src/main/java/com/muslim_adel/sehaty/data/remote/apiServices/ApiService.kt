@@ -1,7 +1,9 @@
-package com.muslim_adel.sehaty.data.remote.apiServices
+package com.sehakhanah.patientapp.data.remote.apiServices
 
-import com.muslim_adel.sehaty.data.remote.objects.*
-import com.muslim_adel.sehaty.utiles.Q
+import com.muslim_adel.sehaty.data.remote.objects.GenerateToken
+import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
+import com.sehakhanah.patientapp.data.remote.objects.*
+import com.sehakhanah.patientapp.utiles.Q
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -116,8 +118,22 @@ interface ApiService {
                       @Query("gender_id") gender_id:String,
                       @Query("birthday") birthday:String): Call<BaseResponce<User>>
     @POST(Q.SEND_CODE_API)
-    fun sendVerificationNum(@Query("phonenumber") phonenumber:String,
-                      @Query("user_type") user_type:String,
-                      @Query("code") code:String): Call<BaseResponce<Verification>>
+    @FormUrlEncoded
+    fun sendVerificationNum(@Field("phonenumber") phonenumber:String,
+                      @Field("user_type") user_type:String,
+                      @Field("code") code:String): Call<BaseResponce<Verification>>
+
+    @POST(Q.GET_TOKEN_API)
+    @FormUrlEncoded
+    fun generateToken(
+        @Field("grant_type") grant_type:String,
+        @Field("client_id") client_id:String,
+        @Field("client_secret") client_secret:String,
+        @Field("scope") scope:String): Call<GenerateToken>
+    @POST(Q.SOCIAL_LOGIN_API)
+    @FormUrlEncoded
+    fun socialLogin(
+        @Field("accessToken") email:String,
+        @Field("provider") provider:String): Call<BaseResponce<SocialLoginRespose>>
 
 }

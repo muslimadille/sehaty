@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.appointments
+package com.sehakhanah.patientapp.modules.appointments
 
 import android.content.Context
 import android.content.Intent
@@ -8,16 +8,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.AppointmentData
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.Doctor
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.AppointmentData
+import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
+import com.sehakhanah.patientapp.data.remote.objects.Doctor
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.modules.doctors.doctorsList.DoctorsListActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.appointment_item.view.*
 import retrofit2.Call
@@ -68,7 +68,7 @@ class AppointmentsAdapter(
                 holder.gendare_txt.text=mContext!!.getString(R.string.doctorah)
             }
             holder.speciality_txt.text=appointmentData.doctor.profissionalTitle_ar
-            holder.location_txt.text=appointmentData.doctor.apartmentNum_ar+","+appointmentData.doctor.buildingNum_ar+","+appointmentData.doctor.streetName_ar+","+appointmentData.doctor.landmark_ar
+            holder.location_txt.text=appointmentData.doctor.address_ar+","+appointmentData.doctor.landmark_ar
         }
         else{
             holder.date_name_txt.text=appointmentData.booking_date
@@ -79,7 +79,7 @@ class AppointmentsAdapter(
                 holder.gendare_txt.text=mContext!!.getString(R.string.doctorah)
             }
             holder.speciality_txt.text=appointmentData.doctor.profissionalTitle_en
-            holder.location_txt.text=appointmentData.doctor.apartmentNum_en+","+appointmentData.doctor.buildingNum_en+","+appointmentData.doctor.streetName_en+","+appointmentData.doctor.landmark_en
+            holder.location_txt.text=appointmentData.doctor.address_en+","+appointmentData.doctor.landmark_en
         }
         GlideObject.GlideProfilePic(mContext,appointmentData.doctor.featured,holder.image_doc)
         holder.cancel_btn.setOnClickListener {

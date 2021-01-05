@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.labs
+package com.sehakhanah.patientapp.modules.labs
 
 import android.content.Context
 import android.content.Intent
@@ -13,12 +13,12 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.Doctor
-import com.muslim_adel.sehaty.data.remote.objects.Laboratory
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.utiles.ComplexPreferences
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.Doctor
+import com.sehakhanah.patientapp.data.remote.objects.Laboratory
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.utiles.ComplexPreferences
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.labs_item.view.*
 

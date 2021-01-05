@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.booking
+package com.sehakhanah.patientapp.modules.doctors.booking
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,16 +7,16 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.Booking
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
+import com.sehakhanah.patientapp.data.remote.objects.Booking
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DoctorProfile
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_booking.*
 import kotlinx.android.synthetic.main.activity_booking.bottomNavigationView
@@ -44,18 +44,13 @@ class BookingActivity : BaseActivity() {
     var profissionalTitle_ar = ""
     var profissionalTitle_en = ""
     var ratingnum = 0F
-    var streetName_ar = ""
-    var streetName_en = ""
+    var address_ar = ""
+    var address_en = ""
     var datename = ""
     var time = ""
 
-    var apartmentNum_ar = ""
-    var apartmentNum_en = ""
     var landmark_ar = ""
     var landmark_en = ""
-    var buildingNum_ar = ""
-    var role = ""
-    var buildingNum_en = ""
     var key = 0
 
 
@@ -85,20 +80,13 @@ class BookingActivity : BaseActivity() {
         profissionalTitle_ar=intent.getStringExtra("profissionalTitle_ar")!!
         profissionalTitle_en=intent.getStringExtra("profissionalTitle_en")!!
         ratingnum=intent.getFloatExtra("rating", 0F)
-        streetName_ar= intent.getStringExtra("streetName_ar")!!
-        streetName_en=intent.getStringExtra("streetName_en")!!
+        address_ar= intent.getStringExtra("address_ar")!!
+        address_en=intent.getStringExtra("address_en")!!
         date_id=intent.getLongExtra("date_id", -1)
         datename=intent.getStringExtra("datename")!!
         time=intent.getStringExtra("timename")!!
-
-        apartmentNum_ar = intent.getStringExtra("apartmentNum_ar")!!
-        apartmentNum_en =intent.getStringExtra("apartmentNum_en")!!
         landmark_ar = intent.getStringExtra("landmark_ar")!!
         landmark_en = intent.getStringExtra("landmark_en")!!
-        buildingNum_ar = intent.getStringExtra("buildingNum_ar")!!
-        role =intent.getStringExtra("role")!!
-        buildingNum_en =intent.getStringExtra("buildingNum_en")!!
-        buildingNum_en =intent.getStringExtra("buildingNum_en")!!
         key=intent.getIntExtra("key",0)!!
 
 
@@ -111,14 +99,14 @@ class BookingActivity : BaseActivity() {
             doc_specialty_txt.text=profissionalTitle_ar
             date_name_txt.text=datename
             time_txt.text=time
-            street_txt.text=streetName_ar
+            street_txt.text=address_ar
             price_txt.text=price.toString()
         }else{
             doc_name_txt.text=firstName_en+" "+lastName_en
             doc_specialty_txt.text=profissionalTitle_en
             date_name_txt.text=datename
             time_txt.text=time
-            street_txt.text=streetName_en
+            street_txt.text=address_en
             price_txt.text=price.toString()+" "+getString(R.string.derham)
         }
 
@@ -144,7 +132,7 @@ class BookingActivity : BaseActivity() {
         }else{
             chec=0
         }
-        if(!name.isInt()&&name.isNotEmpty()&&phone.isInt()&&phone.length==10){
+        if(!name.isInt()&&name.isNotEmpty()&&phone.length==10){
             apiClient = ApiClient()
             sessionManager = SessionManager(this)
             apiClient.getApiService(this).sendBook(name,email,phone,doctor_id.toInt(),chec,booking_date)
@@ -231,19 +219,14 @@ class BookingActivity : BaseActivity() {
         intent.putExtra("firstName_en",firstName_en)
         intent.putExtra("lastName_ar",lastName_ar)
         intent.putExtra("lastName_en",lastName_en)
-        intent.putExtra("apartmentNum_ar",apartmentNum_ar)
-        intent.putExtra("apartmentNum_en",apartmentNum_en)
-        intent.putExtra("buildingNum_ar",buildingNum_ar)
         intent.putExtra("landmark_ar",landmark_ar)
         intent.putExtra("landmark_en",landmark_en)
         intent.putExtra("phonenumber",phonenumber)
         intent.putExtra("price",price)
         intent.putExtra("profissionalTitle_ar",profissionalTitle_ar)
         intent.putExtra("profissionalTitle_en",profissionalTitle_en)
-        intent.putExtra("role",role)
-        intent.putExtra("streetName_ar",streetName_ar)
-        intent.putExtra("streetName_en",streetName_en)
-        intent.putExtra("buildingNum_en",buildingNum_en)
+        intent.putExtra("address_ar",address_ar)
+        intent.putExtra("address_en",address_en)
         intent.putExtra("datename",datename)!!
         intent.putExtra("timename",time)!!
 

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.data.remote.apiServices
+package com.sehakhanah.patientapp.data.remote.apiServices
 
 import android.content.Context
 import okhttp3.Interceptor

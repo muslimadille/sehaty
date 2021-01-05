@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.splash
+package com.sehakhanah.patientapp.modules.splash
 
 
 import android.content.Intent
@@ -6,12 +6,12 @@ import android.os.Bundle
 import android.os.Handler
 import android.widget.Toast
 import androidx.core.os.ConfigurationCompat
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.modules.introSlider.IntroWizardActivity
-import com.muslim_adel.sehaty.modules.register.LoginActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.modules.introSlider.IntroWizardActivity
+import com.sehakhanah.patientapp.modules.register.LoginActivity
+import com.sehakhanah.patientapp.utiles.Q
 import java.util.*
 
 class SplashActivity : BaseActivity() {

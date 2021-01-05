@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.introSlider
+package com.sehakhanah.patientapp.modules.introSlider
 
 import android.content.Intent
 import android.os.Build
@@ -6,15 +6,15 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import androidx.fragment.app.Fragment
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.modules.introSlider.adapters.IntroPagerAdapter
-import com.muslim_adel.sehaty.modules.introSlider.fragments.Intro1Fragment
-import com.muslim_adel.sehaty.modules.introSlider.fragments.Intro2Fragment
-import com.muslim_adel.sehaty.modules.introSlider.fragments.Intro3Fragment
-import com.muslim_adel.sehaty.modules.register.LoginActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.modules.introSlider.adapters.IntroPagerAdapter
+import com.sehakhanah.patientapp.modules.introSlider.fragments.Intro1Fragment
+import com.sehakhanah.patientapp.modules.introSlider.fragments.Intro2Fragment
+import com.sehakhanah.patientapp.modules.introSlider.fragments.Intro3Fragment
+import com.sehakhanah.patientapp.modules.register.LoginActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_intro_wizerd.*
 import java.util.*
 import kotlin.collections.ArrayList

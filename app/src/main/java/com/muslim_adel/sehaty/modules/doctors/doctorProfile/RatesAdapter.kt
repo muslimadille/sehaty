@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.doctorProfile
+package com.sehakhanah.patientapp.modules.doctors.doctorProfile
 
 import android.content.Context
 import android.content.Intent
@@ -9,8 +9,8 @@ import android.widget.LinearLayout
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.Rates
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.Rates
 import kotlinx.android.synthetic.main.rate_item.view.*
 
 class RatesAdapter(
@@ -50,8 +50,8 @@ class RatesAdapter(
             intent.putExtra("price", mContext.price)
             intent.putExtra("profissionalTitle_ar", mContext.profissionalTitle_ar)
             intent.putExtra("profissionalTitle_en", mContext.profissionalTitle_en)
-            intent.putExtra("streetName_ar", mContext.streetName_ar)
-            intent.putExtra("streetName_en", mContext.streetName_en)
+            intent.putExtra("address_ar", mContext.address_ar)
+            intent.putExtra("address_en", mContext.address_en)
             mContext.startActivity(intent)
         }*/
 

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.dates
+package com.sehakhanah.patientapp.modules.doctors.dates
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.*
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DatesAdapter
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.*
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DatesAdapter
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_dates.*
@@ -40,21 +40,13 @@ class DatesActivity : BaseActivity() {
     var profissionalTitle_ar = ""
     var profissionalTitle_en = ""
     var ratingnum = 0F
-    var streetName_ar = ""
-    var streetName_en = ""
+    var address_ar = ""
+    var address_en = ""
     var datename = ""
     var key =0
     var dateVal=""
-
-
-
-    var apartmentNum_ar = ""
-    var apartmentNum_en = ""
     var landmark_ar = ""
     var landmark_en = ""
-    var buildingNum_ar = ""
-    var role = ""
-    var buildingNum_en = ""
     var id=0L
 
     var lab_id =0L
@@ -287,17 +279,12 @@ class DatesActivity : BaseActivity() {
         profissionalTitle_ar=intent.getStringExtra("profissionalTitle_ar")!!
         profissionalTitle_en=intent.getStringExtra("profissionalTitle_en")!!
         ratingnum=intent.getFloatExtra("rating", 0F)
-        streetName_ar= intent.getStringExtra("streetName_ar")!!
-        streetName_en=intent.getStringExtra("streetName_en")!!
+        address_ar= intent.getStringExtra("address_ar")!!
+        address_en=intent.getStringExtra("address_en")!!
         date_id=intent.getLongExtra("date_id", -1)
 
-         apartmentNum_ar = intent.getStringExtra("apartmentNum_ar")!!
-         apartmentNum_en =intent.getStringExtra("apartmentNum_en")!!
          landmark_ar = intent.getStringExtra("landmark_ar")!!
          landmark_en = intent.getStringExtra("landmark_en")!!
-         buildingNum_ar = intent.getStringExtra("buildingNum_ar")!!
-         role =intent.getStringExtra("role")!!
-         buildingNum_en =intent.getStringExtra("buildingNum_en")!!
 
 
     }

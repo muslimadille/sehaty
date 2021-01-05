@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.register
+package com.sehakhanah.patientapp.modules.register
 
 class LoginRepo() {
 }

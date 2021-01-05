@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.favorits.fragments
+package com.sehakhanah.patientapp.modules.favorits.fragments
 
 import android.app.Activity
 import android.content.Context
@@ -11,12 +11,12 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.*
-import com.muslim_adel.sehaty.modules.favorits.FavDoctorAdapter
-import com.muslim_adel.sehaty.modules.favorits.FavoritsActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.*
+import com.sehakhanah.patientapp.modules.favorits.FavDoctorAdapter
+import com.sehakhanah.patientapp.modules.favorits.FavoritsActivity
 import kotlinx.android.synthetic.main.fragment_bookings_fragments.no_search_lay
 import kotlinx.android.synthetic.main.fragment_bookings_fragments.progrss_lay
 import kotlinx.android.synthetic.main.fragment_doctors.*

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.register
+package com.sehakhanah.patientapp.modules.register
 
 import android.app.DatePickerDialog
 import android.content.Intent
@@ -7,15 +7,15 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.LoginData
-import com.muslim_adel.sehaty.data.remote.objects.LoginResponce
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
+import com.sehakhanah.patientapp.data.remote.objects.LoginData
+import com.sehakhanah.patientapp.data.remote.objects.LoginResponce
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_doctors_list.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_registeration.*
@@ -78,7 +78,7 @@ class RegisterationActivity : BaseActivity() {
                     username.text.toString(),
                     email.text.toString(),
                     password.text.toString(),
-                    "+${ phon_num.text}",
+                    "+964${phon_num.text}",
                     date_of_birth.text.toString(),
                     gender.toString()
                 )
@@ -156,7 +156,7 @@ class RegisterationActivity : BaseActivity() {
             cal.set(Calendar.MONTH, monthOfYear)
             cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
 
-            val myFormat = "yyyy-dd-MM" // mention the format you need
+            val myFormat = "yyyy-MM-dd" // mention the format you need
             val sdf = SimpleDateFormat(myFormat, Locale.US)
             textView.setText(sdf.format(cal.time))
 

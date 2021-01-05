@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.home.fragments
+package com.sehakhanah.patientapp.modules.home.fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,14 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.doctors.reagons.ReagonsActivity
-import com.muslim_adel.sehaty.modules.doctors.search.SearchByNameActivity
-import com.muslim_adel.sehaty.modules.doctors.search.SearchBySpecialityActivity
-import com.muslim_adel.sehaty.modules.labs.LabsActivity
-import com.muslim_adel.sehaty.modules.labs.LabsListActivity
-import com.muslim_adel.sehaty.modules.pharmacy.PharmacyOffersActivity
-import com.muslim_adel.sehaty.modules.pharmacy.PharmaySearchActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.doctors.reagons.ReagonsActivity
+import com.sehakhanah.patientapp.modules.doctors.search.SearchByNameActivity
+import com.sehakhanah.patientapp.modules.doctors.search.SearchBySpecialityActivity
+import com.sehakhanah.patientapp.modules.labs.LabsActivity
+import com.sehakhanah.patientapp.modules.labs.LabsListActivity
+import com.sehakhanah.patientapp.modules.pharmacy.PharmacyOffersActivity
+import com.sehakhanah.patientapp.modules.pharmacy.PharmaySearchActivity
 import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment() {

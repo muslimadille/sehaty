@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.appointments
+package com.sehakhanah.patientapp.modules.appointments
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,14 +9,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.base.CustomTabLayout
-import com.muslim_adel.sehaty.modules.appointments.fragments.MyOffersFragments
-import com.muslim_adel.sehaty.modules.appointments.fragments.bookingsFragments
-import com.muslim_adel.sehaty.modules.register.LoginActivity
-import com.muslim_adel.sehaty.modules.splash.SplashActivity
-import com.muslim_adel.sehaty.utiles.ComplexPreferences
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.base.CustomTabLayout
+import com.sehakhanah.patientapp.modules.appointments.fragments.MyOffersFragments
+import com.sehakhanah.patientapp.modules.appointments.fragments.bookingsFragments
+import com.sehakhanah.patientapp.modules.register.LoginActivity
+import com.sehakhanah.patientapp.modules.splash.SplashActivity
+import com.sehakhanah.patientapp.utiles.ComplexPreferences
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.appointments_fragment.*
 
 class AppointmentsFragment : Fragment() {

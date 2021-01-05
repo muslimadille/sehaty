@@ -1,15 +1,15 @@
-package com.muslim_adel.sehaty.modules.settings
+package com.sehakhanah.patientapp.modules.settings
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.modules.register.LoginActivity
-import com.muslim_adel.sehaty.modules.splash.SplashActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.modules.register.LoginActivity
+import com.sehakhanah.patientapp.modules.splash.SplashActivity
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_change_language.*
 

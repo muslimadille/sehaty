@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.favorits.fragments
+package com.sehakhanah.patientapp.modules.favorits.fragments
 
 import android.app.Activity
 import android.content.Context
@@ -7,8 +7,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.favorits.FavoritsActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.favorits.FavoritsActivity
 
 
 class OffersFragment : Fragment() {

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.offers
+package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Context
 import android.content.Intent
@@ -13,13 +13,13 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.Offer
-import com.muslim_adel.sehaty.data.remote.objects.OffersCategory
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.ComplexPreferences
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.Offer
+import com.sehakhanah.patientapp.data.remote.objects.OffersCategory
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.ComplexPreferences
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.offer_category_first_item.view.*
 import kotlinx.android.synthetic.main.offer_item.view.*
@@ -58,7 +58,7 @@ class OfferAdapter(
         }
         if (preferences!!.getString("language","")=="Arabic"){
             holder.descound_txt!!.text=" خصم ${offer.discount.toString()}"+"%"
-            holder.doc_data_txt!!.text=docGendar+" "+offer.doctor.firstName_ar +" "+ offer.doctor.lastName_ar +"-"+offer.doctor.streetName_ar
+            holder.doc_data_txt!!.text=docGendar+" "+offer.doctor.firstName_ar +" "+ offer.doctor.lastName_ar +"-"+offer.doctor.address_ar
             holder.offer_title_txt!!.text=offer.title_ar
             holder.offer_subtitle_txt!!.text=offer.device_name_ar
             holder.offer_ratingBar!!.rating=offer.rating.toFloat()
@@ -67,7 +67,7 @@ class OfferAdapter(
             holder.final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+mContext.getString(R.string.derham)
         }else{
             holder.descound_txt!!.text=" ${mContext.getString(R.string.discount)} ${offer.discount.toString()}"+"%"
-            holder.doc_data_txt!!.text=docGendar+" "+offer.doctor.firstName_en +" "+ offer.doctor.lastName_en +"-"+offer.doctor.streetName_en
+            holder.doc_data_txt!!.text=docGendar+" "+offer.doctor.firstName_en +" "+ offer.doctor.lastName_en +"-"+offer.doctor.address_en
             holder.offer_title_txt!!.text=offer.title_en
             holder.offer_subtitle_txt!!.text=offer.device_name_en
             holder.offer_ratingBar!!.rating=offer.rating.toFloat()

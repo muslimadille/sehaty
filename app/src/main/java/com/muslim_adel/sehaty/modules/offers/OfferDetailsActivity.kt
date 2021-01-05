@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.offers
+package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Intent
 import android.graphics.Paint
@@ -11,17 +11,17 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.*
-import com.muslim_adel.sehaty.data.remote.objects.Date
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DatesAdapter
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.RatesAdapter
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.*
+import com.sehakhanah.patientapp.data.remote.objects.Date
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DatesAdapter
+import com.sehakhanah.patientapp.modules.doctors.doctorProfile.RatesAdapter
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*

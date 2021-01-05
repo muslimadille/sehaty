@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.home.fragments
+package com.sehakhanah.patientapp.modules.home.fragments
 
 import android.content.Context
 import android.content.Intent
@@ -7,17 +7,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.modules.contactUs.AboutUsActivity
-import com.muslim_adel.sehaty.modules.contactUs.ContactUsActivity
-import com.muslim_adel.sehaty.modules.favorits.FavoritsActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.modules.introSlider.IntroWizardActivity
-import com.muslim_adel.sehaty.modules.register.LoginActivity
-import com.muslim_adel.sehaty.modules.settings.SettingsActivity
-import com.muslim_adel.sehaty.modules.splash.SplashActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.modules.contactUs.AboutUsActivity
+import com.sehakhanah.patientapp.modules.contactUs.ContactUsActivity
+import com.sehakhanah.patientapp.modules.favorits.FavoritsActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.modules.introSlider.IntroWizardActivity
+import com.sehakhanah.patientapp.modules.register.LoginActivity
+import com.sehakhanah.patientapp.modules.settings.SettingsActivity
+import com.sehakhanah.patientapp.modules.splash.SplashActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.extras_fragment.*
 import kotlinx.android.synthetic.main.settings_activity.*
 

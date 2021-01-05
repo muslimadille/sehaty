@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.register
+package com.sehakhanah.patientapp.modules.register
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
-import com.muslim_adel.sehaty.R
+import com.sehakhanah.patientapp.R
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.

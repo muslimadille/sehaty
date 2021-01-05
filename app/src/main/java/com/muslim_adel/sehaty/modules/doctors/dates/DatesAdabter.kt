@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.dates
+package com.sehakhanah.patientapp.modules.doctors.dates
 
 import android.content.Context
 import android.content.Intent
@@ -10,13 +10,13 @@ import android.widget.BaseExpandableListAdapter
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.Date
-import com.muslim_adel.sehaty.data.remote.objects.Dates
-import com.muslim_adel.sehaty.data.remote.objects.Times
-import com.muslim_adel.sehaty.modules.doctors.booking.BookingActivity
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
-import com.muslim_adel.sehaty.modules.labs.LabBookActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.Date
+import com.sehakhanah.patientapp.data.remote.objects.Dates
+import com.sehakhanah.patientapp.data.remote.objects.Times
+import com.sehakhanah.patientapp.modules.doctors.booking.BookingActivity
+import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DoctorProfile
+import com.sehakhanah.patientapp.modules.labs.LabBookActivity
 import kotlinx.android.synthetic.main.date_item_row.view.*
 import kotlinx.android.synthetic.main.doctor_dates_item.view.*
 import kotlinx.android.synthetic.main.time_item.view.*
@@ -59,17 +59,12 @@ class DatesAdabter(
                     intent.putExtra("price",mContext.price)
                     intent.putExtra("profissionalTitle_ar",mContext.profissionalTitle_ar)
                     intent.putExtra("profissionalTitle_en",mContext.profissionalTitle_en)
-                    intent.putExtra("streetName_ar",mContext.streetName_ar)
-                    intent.putExtra("streetName_en",mContext.streetName_en)
+                    intent.putExtra("address_ar",mContext.address_ar)
+                    intent.putExtra("address_en",mContext.address_en)
                     intent.putExtra("datename",mContext.datename)
                     intent.putExtra("timename",time.time)
-                    intent.putExtra("apartmentNum_ar",mContext.apartmentNum_ar)
-                    intent.putExtra("apartmentNum_en",mContext.apartmentNum_en)
                     intent.putExtra("landmark_ar",mContext.landmark_ar)
                     intent.putExtra("landmark_en",mContext.landmark_en)
-                    intent.putExtra("buildingNum_ar",mContext.buildingNum_ar)
-                    intent.putExtra("role",mContext.role)
-                    intent.putExtra("buildingNum_en",mContext.buildingNum_en)
                     intent.putExtra("offer_id",mContext.id)
                     if(mContext.key==1){
                         intent.putExtra("key",1)

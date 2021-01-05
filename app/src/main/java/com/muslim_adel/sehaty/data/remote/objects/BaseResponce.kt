@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.data.remote.objects
+package com.sehakhanah.patientapp.data.remote.objects
 
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable

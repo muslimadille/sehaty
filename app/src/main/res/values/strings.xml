@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">seha khanah</string>
+    <string name="app_name"> صحة خانة</string>
+    <string name="facebook_app_id">3282205678555332</string>
+    <string name="fb_login_protocol_scheme">fb3282205678555332</string>
+    <string name="server_client_id">862112895081-a7a9u6vrovg0fbuo4pl0393tcal0dg9i.apps.googleusercontent.com</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
     <string name="contact_us">إتصل بنا</string>
@@ -27,9 +30,9 @@
     <string name="full_name">الأسم بالكامل</string>
     <string name="add_message">أضف رسالة</string>
 
-    <string name="mobile_number">رقم الجوال</string>
+    <string name="mobile_number"> رقم الموبايل بدون..0</string>
     <string name="e_mail">البريد الإلكتروني</string>
-    <string name="e_mail_or_mobile"> البريد الإلكتروني أو رقم الجوال</string>
+    <string name="e_mail_or_mobile"> البريد الإلكتروني أو رقم الموبايل</string>
 
     <string name="password">رمز الدخول</string>
     <string name="date_of_birth">تاريخ الميلاد</string>
@@ -46,6 +49,7 @@
     <string name="login_google">الدخول عن طريق جوجل</string>
     <string name="fav_doc">الأطباء</string>
     <string name="fav_offers">العروض</string>
+    <string name="continue_with_google">متابعة باستخدام جوجل</string>
 
 
     <string name="or">أو</string>
@@ -115,9 +119,6 @@
     <string name="done">تم حجزك بنجاح</string>
     <string name="derham">دينار</string>
     <string name="price">السعر</string>
-
-    <string name="building_num">مبنى رقم:</string>
-    <string name="Apartment_num">شقة رقم:</string>
     <string name="help">طلب المساعدة</string>
     <string name="cancel">إلغاء</string>
     <string name="map">الخريطة</string>
@@ -140,8 +141,6 @@
     <string name="pharmacy_offers_title">عروض الصيدليات</string>
     <string name="pharmacy">صيدلية: </string>
     <string name="type">الصنف: </string>
-
-
     <string name="labs_lists">قائمة المختبرات</string>
     <string name="search_by_reagon">بحث حسب المنطقة</string>
     <string name="search_for_labs">البحث عن مختبر</string>

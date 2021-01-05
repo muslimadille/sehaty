@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.base
+package com.sehakhanah.patientapp.modules.base
 
 
 
@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.muslim_adel.sehaty.R
+import com.sehakhanah.patientapp.R
 
 class CustomTabLayout @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

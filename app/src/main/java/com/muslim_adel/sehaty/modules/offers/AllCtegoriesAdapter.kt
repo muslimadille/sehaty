@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.offers
+package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Context
 import android.graphics.Typeface
@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseExpandableListAdapter
 import android.widget.TextView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.OffersCategory
-import com.muslim_adel.sehaty.data.remote.objects.OffersSubGategory
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.OffersCategory
+import com.sehakhanah.patientapp.data.remote.objects.OffersSubGategory
 import kotlinx.android.synthetic.main.activity_change_language.*
 
 import java.util.HashMap

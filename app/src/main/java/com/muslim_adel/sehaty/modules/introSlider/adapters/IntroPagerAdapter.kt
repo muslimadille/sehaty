@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.introSlider.adapters
+package com.sehakhanah.patientapp.modules.introSlider.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.home.fragments
+package com.sehakhanah.patientapp.modules.home.fragments
 
 import android.app.Activity
 import android.content.Context
@@ -20,18 +20,18 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.BaseResponce
-import com.muslim_adel.sehaty.data.remote.objects.Offer
-import com.muslim_adel.sehaty.data.remote.objects.OfferSlider
-import com.muslim_adel.sehaty.data.remote.objects.OffersCategory
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.modules.offers.AllCtegoriesActivity
-import com.muslim_adel.sehaty.modules.offers.CategoriesAdapter
-import com.muslim_adel.sehaty.modules.offers.OfferAdapter
-import com.muslim_adel.sehaty.modules.offers.OffersPagerAdapter
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
+import com.sehakhanah.patientapp.data.remote.objects.Offer
+import com.sehakhanah.patientapp.data.remote.objects.OfferSlider
+import com.sehakhanah.patientapp.data.remote.objects.OffersCategory
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.modules.offers.AllCtegoriesActivity
+import com.sehakhanah.patientapp.modules.offers.CategoriesAdapter
+import com.sehakhanah.patientapp.modules.offers.OfferAdapter
+import com.sehakhanah.patientapp.modules.offers.OffersPagerAdapter
 import kotlinx.android.synthetic.main.offers_fragment.*
 import me.relex.circleindicator.CircleIndicator
 import retrofit2.Call
@@ -164,7 +164,7 @@ class OffersFragment : Fragment() {
 
                             }
                         } else {
-                            Toast.makeText(mContext, "faid", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(mContext, "failed", Toast.LENGTH_SHORT).show()
 
                         }
 
@@ -199,11 +199,13 @@ class OffersFragment : Fragment() {
                                     offersListAddapter!!.notifyDataSetChanged()
                                     onObserveSuccess()
                                 } else {
+                                    onObservefaled()
                                     Toast.makeText(mContext, "empty", Toast.LENGTH_SHORT).show()
                                 }
 
                             }
                         } else {
+                            onObservefaled()
                             Toast.makeText(mContext, "faid", Toast.LENGTH_SHORT).show()
 
                         }

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.offers
+package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,10 +7,10 @@ import android.view.ViewGroup
 import android.widget.RatingBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.Offer
-import com.muslim_adel.sehaty.data.remote.objects.Rates
-import com.muslim_adel.sehaty.modules.doctors.doctorProfile.DoctorProfile
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.Offer
+import com.sehakhanah.patientapp.data.remote.objects.Rates
+import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DoctorProfile
 import kotlinx.android.synthetic.main.rate_item.view.*
 
 
@@ -52,8 +52,8 @@ class OfferRatingsAdapter(
              intent.putExtra("price", mContext.price)
              intent.putExtra("profissionalTitle_ar", mContext.profissionalTitle_ar)
              intent.putExtra("profissionalTitle_en", mContext.profissionalTitle_en)
-             intent.putExtra("streetName_ar", mContext.streetName_ar)
-             intent.putExtra("streetName_en", mContext.streetName_en)
+             intent.putExtra("address_ar", mContext.address_ar)
+             intent.putExtra("address_en", mContext.address_en)
              mContext.startActivity(intent)
          }*/
 

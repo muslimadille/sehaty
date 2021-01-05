@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.pharmacy
+package com.sehakhanah.patientapp.modules.pharmacy
 
 import android.content.Intent
 import android.net.Uri
@@ -11,13 +11,13 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.*
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.*
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_offer_details.*
 import kotlinx.android.synthetic.main.activity_pharmacy_profile.*
 import kotlinx.android.synthetic.main.offers_fragment.*
@@ -42,12 +42,12 @@ class PharmacyProfileActivity : BaseActivity() {
     private fun setPageData(pharm:PharmacyOffer){
         if (preferences!!.getString("language","")=="Arabic"){
             pharm_title_txt!!.text=pharm.pharmacy.pharmacy_name_ar
-            address!!.text=pharm.pharmacy.buildingNum_ar+"-"+pharm.pharmacy.streetName_ar
+            address!!.text=pharm.pharmacy.address_ar
             pharm_info_txt.text=pharm.pharmacy.about_ar
             pharm_doc_name.text=pharm.pharmacy.firstName_ar+" "+pharm.pharmacy.lastName_ar
         }else{
             pharm_title_txt!!.text=pharm.pharmacy.pharmacy_name_en
-            address!!.text=pharm.pharmacy.buildingNum_en+"-"+pharm.pharmacy.streetName_en
+            address!!.text=pharm.pharmacy.address_en
             pharm_info_txt.text=pharm.pharmacy.about_en
             pharm_doc_name.text=pharm.pharmacy.firstName_en+" "+pharm.pharmacy.lastName_en
 

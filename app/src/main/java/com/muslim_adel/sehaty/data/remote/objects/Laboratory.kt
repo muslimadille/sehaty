@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.data.remote.objects
+package com.sehakhanah.patientapp.data.remote.objects
 
 import com.google.gson.annotations.SerializedName
 
@@ -25,20 +25,7 @@ class Laboratory (
     var laboratory_name_en: String,
     @SerializedName("laboratory_name_ar")
     var laboratory_name_ar: String,
-    @SerializedName("streetName_en")
-    var streetName_en: String,
-    @SerializedName("streetName_ar")
-    var streetName_ar: String,
-    @SerializedName("buildingNum_en")
-    var buildingNum_en: String,
-    @SerializedName("buildingNum_ar")
-    var buildingNum_ar: String,
-    @SerializedName("role")
-    var role: String,
-    @SerializedName("apartmentNum_en")
-    var apartmentNum_en: String,
-    @SerializedName("apartmentNum_ar")
-    var apartmentNum_ar: String,
+
     @SerializedName("landmark_en")
     var landmark_en: String,
     @SerializedName("landmark_ar")

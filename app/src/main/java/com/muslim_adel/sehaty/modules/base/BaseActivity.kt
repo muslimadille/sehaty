@@ -1,13 +1,13 @@
-package com.muslim_adel.sehaty.modules.base
+package com.sehakhanah.patientapp.modules.base
 
 import android.content.DialogInterface
 import android.content.res.Configuration
 import android.view.ContextThemeWrapper
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.utiles.ComplexPreferences
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.utiles.ComplexPreferences
+import com.sehakhanah.patientapp.utiles.Q
 import java.lang.Error
 import java.util.*
 

@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.pharmacy
+package com.sehakhanah.patientapp.modules.pharmacy
 
 import android.content.Context
 import android.content.Intent
@@ -15,14 +15,14 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.objects.Offer
-import com.muslim_adel.sehaty.data.remote.objects.PharmacyOffer
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.modules.labs.LabsActivity
-import com.muslim_adel.sehaty.modules.offers.OfferDetailsActivity
-import com.muslim_adel.sehaty.utiles.ComplexPreferences
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.objects.Offer
+import com.sehakhanah.patientapp.data.remote.objects.PharmacyOffer
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.modules.labs.LabsActivity
+import com.sehakhanah.patientapp.modules.offers.OfferDetailsActivity
+import com.sehakhanah.patientapp.utiles.ComplexPreferences
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.offer_item.view.*
 import kotlinx.android.synthetic.main.offer_item.view.doc_data_txt

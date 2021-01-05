@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty
+package com.sehakhanah.patientapp
 
 import org.junit.Test
 

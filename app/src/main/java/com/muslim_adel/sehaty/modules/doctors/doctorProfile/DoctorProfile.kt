@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.doctorProfile
+package com.sehakhanah.patientapp.modules.doctors.doctorProfile
 
 import android.content.Intent
 import android.net.Uri
@@ -9,15 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.data.remote.apiServices.ApiClient
-import com.muslim_adel.sehaty.data.remote.apiServices.SessionManager
-import com.muslim_adel.sehaty.data.remote.objects.*
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.modules.doctors.doctorsList.DoctorsListAdapter
-import com.muslim_adel.sehaty.modules.home.MainActivity
-import com.muslim_adel.sehaty.utiles.Q
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
+import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
+import com.sehakhanah.patientapp.data.remote.objects.*
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.modules.doctors.doctorsList.DoctorsListAdapter
+import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
@@ -34,10 +34,7 @@ class DoctorProfile : BaseActivity() {
      var lastName_en = ""
      var aboutDoctor_ar = ""
      var aboutDoctor_en = ""
-     var apartmentNum_ar = ""
-     var apartmentNum_en = ""
      var area_id = -1L
-     var buildingNum_ar = ""
      var featured = ""
      var gender_id = -1
      var id = -1L
@@ -49,14 +46,12 @@ class DoctorProfile : BaseActivity() {
      var profissionalDetails_id = -1L
      var profissionalTitle_ar = ""
      var profissionalTitle_en = ""
-     var role = ""
      var rating = 0F
      var speciality_id = -1L
-     var streetName_ar = ""
-     var streetName_en = ""
+     var address_ar = ""
+     var address_en = ""
      var visitor_num = -1
      var waiting_time = ""
-     var buildingNum_en = ""
     var lat=0.0
     var lng=0.0
 
@@ -191,9 +186,7 @@ class DoctorProfile : BaseActivity() {
         lastName_en = intent.getStringExtra("lastName_en")!!
         aboutDoctor_ar = intent.getStringExtra("aboutDoctor_ar")!!
         aboutDoctor_en = intent.getStringExtra("aboutDoctor_en")!!
-        apartmentNum_ar = intent.getStringExtra("apartmentNum_ar")!!
-        apartmentNum_en = intent.getStringExtra("apartmentNum_en")!!
-        buildingNum_ar = intent.getStringExtra("buildingNum_ar")!!
+
         area_id = intent.getLongExtra("area_id", -1)
         featured=intent.getStringExtra("featured")!!
         gender_id=intent.getIntExtra("gender_id", -1)
@@ -206,14 +199,12 @@ class DoctorProfile : BaseActivity() {
         profissionalDetails_id=intent.getLongExtra("profissionalDetails_id", -1)
         profissionalTitle_ar=intent.getStringExtra("profissionalTitle_ar")!!
         profissionalTitle_en=intent.getStringExtra("profissionalTitle_en")!!
-        role= intent.getStringExtra("role")!!
         rating=intent.getFloatExtra("rating", 0F)
         speciality_id=intent.getLongExtra("speciality_id", -1)
-        streetName_ar= intent.getStringExtra("streetName_ar")!!
-        streetName_en=intent.getStringExtra("streetName_en")!!
+        address_ar= intent.getStringExtra("address_ar")!!
+        address_en=intent.getStringExtra("address_en")!!
         visitor_num=intent.getIntExtra("visitor_num", -1)
         waiting_time=intent.getStringExtra("waiting_time")!!
-        buildingNum_en=intent.getStringExtra("buildingNum_en")!!
         lat=intent.getDoubleExtra("lat",0.0)
         lng=intent.getDoubleExtra("lng",0.0)
     }
@@ -233,7 +224,7 @@ class DoctorProfile : BaseActivity() {
             visitors.text=visitor_num.toString()
             waiting_time_txt.text=waiting_time
             cost_txt.text=price.toString()
-            street_txt.text=streetName_ar
+            street_txt.text=address_ar
             doctor_info_txt.text=aboutDoctor_ar
         }else{
             viewed_num.text=visitor_num.toString()
@@ -243,7 +234,7 @@ class DoctorProfile : BaseActivity() {
             visitors.text=visitor_num.toString()
             waiting_time_txt.text=waiting_time
             cost_txt.text=price.toString()
-            street_txt.text=streetName_en
+            street_txt.text=address_en
             doctor_info_txt.text=aboutDoctor_en
         }
 

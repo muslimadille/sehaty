@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.modules.doctors.booking
+package com.sehakhanah.patientapp.modules.doctors.booking
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,10 @@ import android.os.Bundle
 import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
-import com.muslim_adel.sehaty.R
-import com.muslim_adel.sehaty.modules.base.BaseActivity
-import com.muslim_adel.sehaty.modules.base.GlideObject
-import com.muslim_adel.sehaty.modules.home.MainActivity
+import com.sehakhanah.patientapp.R
+import com.sehakhanah.patientapp.modules.base.BaseActivity
+import com.sehakhanah.patientapp.modules.base.GlideObject
+import com.sehakhanah.patientapp.modules.home.MainActivity
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_booking_success.*
 import kotlinx.android.synthetic.main.activity_booking_success.bottomNavigationView
@@ -29,18 +29,12 @@ class BookingSuccessActivity : BaseActivity() {
     var profissionalTitle_ar = ""
     var profissionalTitle_en = ""
     var ratingnum = 0F
-    var streetName_ar = ""
-    var streetName_en = ""
+    var address_ar = ""
+    var address_en = ""
     var datename = ""
     var time = ""
-
-    var apartmentNum_ar = ""
-    var apartmentNum_en = ""
     var landmark_ar = ""
     var landmark_en = ""
-    var buildingNum_ar = ""
-    var role = ""
-    var buildingNum_en = ""
     var key=0
 
     var booking_date=""
@@ -74,18 +68,12 @@ class BookingSuccessActivity : BaseActivity() {
         doctor_id=intent.getLongExtra("doctor_id", -1)
         phonenumber=intent.getLongExtra("phonenumber", -1)
         price=intent.getLongExtra("price", -1)
-        streetName_ar= intent.getStringExtra("streetName_ar")!!
-        streetName_en=intent.getStringExtra("streetName_en")!!
+        address_ar= intent.getStringExtra("address_ar")!!
+        address_en=intent.getStringExtra("address_en")!!
         datename=intent.getStringExtra("datename")!!
         time=intent.getStringExtra("timename")!!
-
-        apartmentNum_ar = intent.getStringExtra("apartmentNum_ar")!!
-        apartmentNum_en =intent.getStringExtra("apartmentNum_en")!!
         landmark_ar = intent.getStringExtra("landmark_ar")!!
         landmark_en = intent.getStringExtra("landmark_en")!!
-        buildingNum_ar = intent.getStringExtra("buildingNum_ar")!!
-        role =intent.getStringExtra("role")!!
-        buildingNum_en =intent.getStringExtra("buildingNum_en")!!
 
 
     }
@@ -102,13 +90,13 @@ class BookingSuccessActivity : BaseActivity() {
             doc_name.text=firstName_ar+" "+lastName_ar
             time_txt.text=time
             date_txt.text=datename
-            address_txt.text=streetName_ar+"-"+landmark_ar+"-"+getString(R.string.building_num)+buildingNum_ar+"-"+getString(R.string.Apartment_num)+apartmentNum_ar
+            address_txt.text=address_ar+"-"+landmark_ar
             costt_txt.text=price.toString()+" "+getString(R.string.derham)
         }else{
             doc_name.text=firstName_en+" "+lastName_en
             time_txt.text=time
             date_txt.text=datename
-            address_txt.text=streetName_en+"-"+landmark_en+"-"+getString(R.string.building_num)+buildingNum_en+"-"+getString(R.string.Apartment_num)+apartmentNum_en
+            address_txt.text=address_en+"-"+landmark_en
             costt_txt.text=price.toString()+" "+getString(R.string.derham)
         }
 

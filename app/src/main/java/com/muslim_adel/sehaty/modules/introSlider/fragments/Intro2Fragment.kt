@@ -1,11 +1,11 @@
-package com.muslim_adel.sehaty.modules.introSlider.fragments
+package com.sehakhanah.patientapp.modules.introSlider.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.muslim_adel.sehaty.R
+import com.sehakhanah.patientapp.R
 
 
 class Intro2Fragment : Fragment() {

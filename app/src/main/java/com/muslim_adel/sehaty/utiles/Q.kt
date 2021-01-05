@@ -1,4 +1,4 @@
-package com.muslim_adel.sehaty.utiles
+package com.sehakhanah.patientapp.utiles
 
 import java.util.*
 
@@ -6,6 +6,8 @@ object Q {
     /*************** Locales  ***********/
     /**..................api......................................***/
     const val BASE_URL = "https://laravelapi.sehakhanah.com/api/"
+    const val BASE_URL2 = "https://laravelapi.sehakhanah.com/"
+
     const val LOGIN_API = "login"
     const val REGISTER_API = "register"
     const val VERIFICATION_API = "send-message"
@@ -36,19 +38,8 @@ object Q {
     const val UPDATE_PROFILE_API="user/update"
     const val SEND_CODE_API="verify-user"
     const val GET_PHARM_BY_ID_API="pharmacy/offer/show"
-
-
-
-
-
-
-
-
-
-
-
-
-
+    const val GET_TOKEN_API="oauth/token"
+    const val SOCIAL_LOGIN_API="social"
     const val AVATAR_PATH="https://www.obank.itcomunity.com/"
     /*****************************************************************/
 
