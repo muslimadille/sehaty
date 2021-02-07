@@ -138,6 +138,16 @@
                     </LinearLayout>
                 </LinearLayout>
 
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/hart_border"
+                    app:layout_constraintBottom_toBottomOf="@+id/offer_data_lay"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/offer_data_lay"
+                    app:layout_constraintVertical_bias="0.507" />
+
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.cardview.widget.CardView

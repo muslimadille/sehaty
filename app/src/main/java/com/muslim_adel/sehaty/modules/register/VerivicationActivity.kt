@@ -32,7 +32,7 @@ class VerivicationActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verivication)
-        phone=intent.getStringExtra("phone")!!
+        phone="+"+intent.getStringExtra("phone")!!
         type=intent.getStringExtra("type")!!
         onResendClicked()
         onSendClicked()

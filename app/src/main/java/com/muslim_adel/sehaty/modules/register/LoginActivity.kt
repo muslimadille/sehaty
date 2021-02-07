@@ -79,6 +79,12 @@ class LoginActivity : BaseActivity() {
                             response: Response<LoginResponce>
                         ) {
                             val loginResponse = response.body()
+                            if(loginResponse!!.message.equals("User not verified")){
+                                val intent =
+                                    Intent(this@LoginActivity, VerificationPhonActivity::class.java)
+                                startActivity(intent)
+                                finish()
+                            }
                             if (loginResponse!!.success) {
                                 if (loginResponse?.data!!.status == 200 && loginResponse.data.user != null) {
                                     username.text.clear()
@@ -119,7 +125,9 @@ class LoginActivity : BaseActivity() {
                                     startActivity(intent)
                                     finish()
                                 }
-                            } else {
+                            }
+
+                            else {
                                 onObservefaled()
                                 username.text.clear()
                                 login_password.text.clear()
