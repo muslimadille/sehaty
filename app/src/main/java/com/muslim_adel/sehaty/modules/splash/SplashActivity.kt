@@ -1,16 +1,13 @@
-package com.sehakhanah.patientapp.modules.splash
+package com.muslim_adel.sehaty.modules.splash
 
 
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.widget.Toast
-import androidx.core.os.ConfigurationCompat
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
 import com.sehakhanah.patientapp.modules.introSlider.IntroWizardActivity
-import com.sehakhanah.patientapp.modules.register.LoginActivity
 import com.sehakhanah.patientapp.utiles.Q
 import java.util.*
 

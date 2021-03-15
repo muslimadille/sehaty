@@ -1,5 +1,6 @@
 package com.sehakhanah.patientapp.data.remote.apiServices
 
+import com.muslim_adel.sehaty.data.remote.objects.CreateCodeModel
 import com.muslim_adel.sehaty.data.remote.objects.GenerateToken
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
 import com.sehakhanah.patientapp.data.remote.objects.*
@@ -135,5 +136,23 @@ interface ApiService {
     fun socialLogin(
         @Field("accessToken") email:String,
         @Field("provider") provider:String): Call<BaseResponce<SocialLoginRespose>>
+
+    @POST(Q.GET_CODE)
+    @FormUrlEncoded
+    fun createCode(@Field("phonenumber") phonenumber:String,
+                   @Field("user_type") user_type:String): Call<BaseResponce<CreateCodeModel>>
+    @POST(Q.VERIFY_CODE)
+    fun verifyCode(@Query("phonenumber") phonenumber:String,
+                   @Query("user_type") user_type:String,
+                   @Query("code") code:String): Call<LoginResponce>
+    @GET
+    fun verifyToken(@Url url: String): Call<BaseResponce<SocialLoginRespose>>
+    @POST(Q.PASSWORD_RESET)
+    @FormUrlEncoded
+    fun passwordReset(@Field("phonenumber") phonenumber:String,
+                      @Field("user_type") user_type:String,
+                      @Field("token") token:String,
+                      @Field("password") password:String,
+                      @Field("password_confirmation") password_confirmation:String,): Call<BaseResponce<CreateCodeModel>>
 
 }

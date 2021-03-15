@@ -26,7 +26,6 @@ class ComplexPreferences @SuppressLint("CommitPrefEdits") constructor(context: C
 
     companion object {
         private var complexPreferences: ComplexPreferences? = null
-
         fun getComplexPreferences(context: Context,
                                   namePreferences: String, mode: Int): ComplexPreferences {
 

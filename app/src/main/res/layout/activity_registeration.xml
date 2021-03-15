@@ -164,6 +164,38 @@
                </com.google.android.material.textfield.TextInputLayout>
 
            </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginStart="10dp"
+               android:layout_marginEnd="10dp"
+               android:layout_marginBottom="10dp"
+               android:orientation="horizontal">
+
+               <com.google.android.material.textfield.TextInputLayout
+                   android:id="@+id/repassword_input_layout"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="@color/white"
+                   android:backgroundTint="@color/white"
+                   app:passwordToggleEnabled="true"
+                   app:startIconDrawable="@drawable/password_ic">
+
+                   <EditText
+                       android:textSize="14sp"
+                       android:id="@+id/repassword"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:layout_centerHorizontal="true"
+                       android:layout_centerVertical="true"
+                       android:backgroundTint="@color/white"
+                       android:ems="10"
+                       android:hint="@string/con_password"
+                       android:inputType="textPassword" />
+
+               </com.google.android.material.textfield.TextInputLayout>
+
+           </LinearLayout>
 
            <LinearLayout
                android:id="@+id/date_lay"
@@ -255,6 +287,16 @@
                android:textColor="#fff"
                android:textSize="16sp"
                android:textStyle="bold" />
+           <TextView
+               android:id="@+id/privacy_btn"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:gravity="center"
+               android:layout_marginTop="20dp"
+               android:padding="5dp"
+               android:text="@string/rouls_conditions"
+               android:textColor="@color/colorPrimary"
+               android:textSize="14sp" />
        </LinearLayout>
    </ScrollView>
     <include layout="@layout/progress_layout"

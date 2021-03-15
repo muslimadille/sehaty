@@ -12,6 +12,7 @@ import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.data.remote.objects.Verification
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.register.VerivicationActivity
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_verification_phon.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -22,11 +23,17 @@ class VerificationPhonActivity : BaseActivity() {
     private lateinit var apiClient: ApiClient
     private var phone =""
     private var type =""
+    private var email =""
+    private var password =""
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verification_phon)
         //phone=intent.getStringExtra("phone")!!
-        type="clint"
+        email=intent.getStringExtra("email")!!
+        password=intent.getStringExtra("password")!!
+        type="client"
         onResendClicked()
     }
     private fun onObserveStart() {
@@ -64,7 +71,9 @@ class VerificationPhonActivity : BaseActivity() {
                             val intent =
                                 Intent(this@VerificationPhonActivity, VerivicationActivity::class.java)
                             intent.putExtra("phone","+964"+message_tf.text.toString())
-                            intent.putExtra("type","clint")
+                            intent.putExtra("type","client")
+                            intent.putExtra("email",email)
+                            intent.putExtra("password",password)
                             startActivity(intent)
                             finish()
 

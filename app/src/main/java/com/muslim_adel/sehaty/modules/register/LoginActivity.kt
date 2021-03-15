@@ -23,7 +23,9 @@ import com.google.gson.JsonSyntaxException
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClientnew
 import com.muslim_adel.sehaty.data.remote.objects.GenerateToken
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
+import com.muslim_adel.sehaty.modules.register.ForgetPasswordActivity
 import com.muslim_adel.sehaty.modules.register.VerificationPhonActivity
+import com.muslim_adel.sehaty.modules.register.resetpassword.AddPhoneActivity
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
@@ -33,6 +35,8 @@ import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
 import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_login.username
+import kotlinx.android.synthetic.main.activity_registeration.*
 import org.json.JSONException
 import org.json.JSONObject
 import retrofit2.Call
@@ -57,6 +61,7 @@ class LoginActivity : BaseActivity() {
         setContentView(R.layout.activity_login)
         initGoogleLogin()
         initFaceBookLogin()
+        onForgetPWclicked()
         registration_btn.setOnClickListener {
             val intent = Intent(this@LoginActivity, RegisterationActivity::class.java)
             startActivity(intent)
@@ -82,6 +87,8 @@ class LoginActivity : BaseActivity() {
                             if(loginResponse!!.message.equals("User not verified")){
                                 val intent =
                                     Intent(this@LoginActivity, VerificationPhonActivity::class.java)
+                                intent.putExtra("email",username.text.toString())
+                                intent.putExtra("password",login_password.text.toString())
                                 startActivity(intent)
                                 finish()
                             }
@@ -396,6 +403,8 @@ class LoginActivity : BaseActivity() {
                             Intent(this@LoginActivity, VerivicationActivity::class.java)
                         intent.putExtra("phone", "")
                         intent.putExtra("type", "client")
+                        intent.putExtra("email",loginResponse!!.body()!!.data!!.user.email)
+                        intent.putExtra("password",loginResponse!!.body()!!.data!!.user.id.toString())
                         startActivity(intent)
                         finish()
                     } else {
@@ -424,5 +433,13 @@ private fun gotToSocialVerification(){
     startActivity(intent)
     finish()
 }
+  private fun onForgetPWclicked(){
+      forget_pw_btn.setOnClickListener {
+          val intent =
+              Intent(this@LoginActivity, AddPhoneActivity::class.java)
+          startActivity(intent)
+      }
+
+    }
 
 }

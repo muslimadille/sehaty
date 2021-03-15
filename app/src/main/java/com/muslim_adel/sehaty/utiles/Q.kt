@@ -41,6 +41,14 @@ object Q {
     const val GET_TOKEN_API="oauth/token"
     const val SOCIAL_LOGIN_API="social"
     const val AVATAR_PATH="https://www.obank.itcomunity.com/"
+    const val GET_CODE="password/create"
+    const val VERIFY_CODE="password/verify"
+    const val VERIFY_TOKEN="password/find/"
+    const val PASSWORD_RESET="password/reset"
+
+
+
+
     /*****************************************************************/
 
 

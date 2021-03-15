@@ -98,14 +98,6 @@
                     android:textSize="16sp"
                     android:textStyle="bold" />
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="5dp"
-                    android:text="@string/rouls_conditions"
-                    android:textColor="@color/colorPrimary"
-                    android:textSize="14sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -120,7 +112,7 @@
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:backgroundTint="@color/white"
-                        app:startIconDrawable="@drawable/phone_blue_ic">
+                        app:startIconDrawable="@drawable/email_ic">
 
                         <EditText
                             android:id="@+id/username"
@@ -130,7 +122,7 @@
                             android:layout_centerVertical="true"
                             android:backgroundTint="@color/white"
                             android:ems="10"
-                            android:hint="@string/e_mail_or_mobile"
+                            android:hint="@string/e_mail"
                             android:inputType="text" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -184,6 +176,7 @@
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/forget_pw_btn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"

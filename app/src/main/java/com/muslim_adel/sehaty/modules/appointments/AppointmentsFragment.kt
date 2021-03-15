@@ -14,7 +14,6 @@ import com.sehakhanah.patientapp.modules.base.CustomTabLayout
 import com.sehakhanah.patientapp.modules.appointments.fragments.MyOffersFragments
 import com.sehakhanah.patientapp.modules.appointments.fragments.bookingsFragments
 import com.sehakhanah.patientapp.modules.register.LoginActivity
-import com.sehakhanah.patientapp.modules.splash.SplashActivity
 import com.sehakhanah.patientapp.utiles.ComplexPreferences
 import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.appointments_fragment.*

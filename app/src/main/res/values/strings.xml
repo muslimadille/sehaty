@@ -31,7 +31,7 @@
     <string name="add_message">أضف رسالة</string>
 
     <string name="mobile_number"> رقم الموبايل بدون..0</string>
-    <string name="e_mail">البريد الإلكتروني</string>
+    <string name="e_mail">  البريد الإلكتروني أو رقم الموبايل 10 أرقام بدون 0</string>
     <string name="e_mail_or_mobile"> البريد الإلكتروني أو رقم الموبايل</string>
 
     <string name="password">رمز الدخول</string>
@@ -95,6 +95,12 @@
     <string name="doctorah">دكتورة:</string>
     <string name="lab_search_hint">ابحث باسم المختبر</string>
     <string name="discount">خصم</string>
+    <string name="select_type">أختر نوع الحساب</string>
+
+    <string name="PATIENT">مريض</string>
+    <string name="DOCTOR">طبيب</string>
+    <string name="LAB">مختبر</string>
+    <string name="PHARM">صيدلية</string>
 
 
     <string name="doctors_list">قائمة الأطباء</string>
@@ -171,6 +177,10 @@
     <string name="ph_search_name">ابحث بأسم الصيدلية</string>
     <string name="pharmacy_details">تفاصيل الصيدلية</string>
     <string name="bookin_alert">لعرض الحجوزات الرجاء تسجيل الدخول</string>
+    <string name="con_password">تأكيد رمز الدخول</string>
+    <string name="forget_pw">نسيت كلمة المرور</string>
+    <string name="pw">كلمة المرور</string>
+    <string name="repass">إعادة ضبط كلمة المرور</string>
 
 
 </resources>

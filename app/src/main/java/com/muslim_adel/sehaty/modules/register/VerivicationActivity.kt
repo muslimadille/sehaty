@@ -7,6 +7,9 @@ import android.widget.Toast
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
+import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
+import com.muslim_adel.sehaty.modules.register.ForgetPasswordActivity
+import com.muslim_adel.sehaty.modules.register.VerificationPhonActivity
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
@@ -28,12 +31,34 @@ class VerivicationActivity : BaseActivity() {
     private lateinit var apiClient: ApiClient
     private var phone =""
     private var type =""
+    private var email =""
+    private var password =""
+    private var key =0
+    var selectedType="client"
+    var token=""
+    var code=""
+
+
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_verivication)
-        phone="+"+intent.getStringExtra("phone")!!
-        type=intent.getStringExtra("type")!!
+
+        key=intent.getIntExtra("key",0)
+        if(key!=1){
+            type=intent.getStringExtra("type")!!
+            email=intent.getStringExtra("email")!!
+            password=intent.getStringExtra("password")!!
+            phone=intent.getStringExtra("phone")!!
+
+        }else{
+            phone=intent.getStringExtra("phone")!!
+            phone=intent.getStringExtra("phone")!!
+            code=intent.getStringExtra("code")!!
+        }
+
         onResendClicked()
         onSendClicked()
     }
@@ -101,17 +126,19 @@ class VerivicationActivity : BaseActivity() {
                         val registerResponse = response.body()
                         if (response.code()!=500&&registerResponse!!.success) {
                             onObserveSuccess()
+                            //login()
                             val intent =
-                                Intent(this@VerivicationActivity, MainActivity::class.java)
+                                Intent(this@VerivicationActivity, LoginActivity::class.java)
                             startActivity(intent)
                             finish()
                         } else {
+
                             //username.text.clear()
                             //login_password.text.clear()
                             onObservefaled()
                             Toast.makeText(
                                 this@VerivicationActivity,
-                                "من فضلك أدخل رقم صحيح",
+                                "${registerResponse!!.message}",
                                 Toast.LENGTH_SHORT
                             ).show()
                         }
@@ -130,7 +157,94 @@ class VerivicationActivity : BaseActivity() {
     }
     private fun onSendClicked(){
         send_message_btn.setOnClickListener {
-            sendNumber()
+
+            if(key!=null&&key==1){
+                verifyCode()
+            }else{
+                sendNumber()
+            }
         }
     }
+    private fun verifyCode() {
+
+        if (message_tf.text.isNotEmpty() ) {
+            onObserveStart()
+            apiClient = ApiClient()
+            sessionManager = SessionManager(this)
+            apiClient.getApiService(this).verifyCode(phone, selectedType,code)
+                .enqueue(object : Callback<LoginResponce> {
+                    override fun onFailure(call: Call<LoginResponce>, t: Throwable) {
+                        alertNetwork(true)
+                    }
+                    override fun onResponse(
+                        call: Call<LoginResponce>,
+                        response: Response<LoginResponce>
+                    ) {
+
+                        val registerResponse = response.body()
+                        if (registerResponse!!.success) {
+                            if (!registerResponse!!.message.toString().contains("success -> not verified")&&registerResponse.data!!.token!=null){}
+                            token=registerResponse.data!!.token.toString()
+                            verifyToken()
+                        } else {
+                            onObservefaled()
+                            Toast.makeText(
+                                this@VerivicationActivity,
+                                "فشل العملية حاول مرة أخرى",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+                    }
+                })
+        } else {
+            Toast.makeText(
+                this@VerivicationActivity,
+                "من فضلك أكمل البيانات ",
+                Toast.LENGTH_SHORT
+            ).show()
+        }
+
+    }
+    private fun verifyToken() {
+        var url= Q.VERIFY_TOKEN+token
+        onObserveStart()
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
+        apiClient.getApiService(this).verifyToken(url)
+            .enqueue(object : Callback<BaseResponce<SocialLoginRespose>> {
+                override fun onFailure(call: Call<BaseResponce<SocialLoginRespose>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<SocialLoginRespose>>,
+                    response: Response<BaseResponce<SocialLoginRespose>>
+                ) {
+                    val registerResponse = response.body()
+                    if (registerResponse!!.success) {
+                        sessionManager.saveAuthToken(token)
+                        val intent =
+                            Intent(this@VerivicationActivity, ForgetPasswordActivity::class.java)
+                        intent.putExtra("key",1)
+                        intent.putExtra("phone",phone)
+                        intent.putExtra("token",token)
+                        startActivity(intent)
+                            //resetPassword()
+                    } else {
+                        onObservefaled()
+                        Toast.makeText(
+                            this@VerivicationActivity,
+                            "فشل العملية حاول مرة أخرى",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                }
+
+
+            })
+
+
+    }
+    
 }

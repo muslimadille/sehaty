@@ -12,7 +12,9 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.muslim_adel.sehaty.modules.register.VerificationPhonActivity"></activity>
+        <activity android:name="com.muslim_adel.sehaty.modules.register.resetpassword.AddPhoneActivity"></activity>
+        <activity android:name="com.muslim_adel.sehaty.modules.register.ForgetPasswordActivity" />
+        <activity android:name="com.muslim_adel.sehaty.modules.register.VerificationPhonActivity" />
         <activity android:name=".modules.pharmacy.PharmacyProfileActivity" />
         <activity android:name=".modules.pharmacy.PharmaySearchActivity" />
         <activity
@@ -70,7 +72,7 @@
         </activity>
         <activity android:name=".modules.introSlider.IntroWizardActivity" />
         <activity android:name=".modules.home.MainActivity" />
-        <activity android:name=".modules.splash.SplashActivity">
+        <activity android:name="com.muslim_adel.sehaty.modules.splash.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

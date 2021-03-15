@@ -2,7 +2,6 @@ package com.sehakhanah.patientapp.modules.settings
 
 import android.app.DatePickerDialog
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
@@ -16,16 +15,13 @@ import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.data.remote.objects.User
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.modules.register.LoginActivity
-import com.sehakhanah.patientapp.modules.splash.SplashActivity
+import com.muslim_adel.sehaty.modules.splash.SplashActivity
 import com.sehakhanah.patientapp.utiles.Q
-import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_edit_profile.*
 import kotlinx.android.synthetic.main.activity_edit_profile.date_of_birth
 import kotlinx.android.synthetic.main.activity_edit_profile.email
 import kotlinx.android.synthetic.main.activity_edit_profile.phon_num
 import kotlinx.android.synthetic.main.activity_edit_profile.username
-import kotlinx.android.synthetic.main.activity_registeration.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

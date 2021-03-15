@@ -8,7 +8,7 @@ data class User (
     @SerializedName("name")
     var name: String,
     @SerializedName("phonenumber")
-    var phonenumber: Long,
+    var phonenumber: String,
     @SerializedName("email")
     var email: String,
     @SerializedName("gender_id")
@@ -18,6 +18,9 @@ data class User (
     @SerializedName("created_at")
     var created_at: String,
     @SerializedName("updated_at")
-    var updated_at: String
+    var updated_at: String,
+    @SerializedName("code")
+    var code: Long
+
 
 )
