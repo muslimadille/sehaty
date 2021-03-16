@@ -50,7 +50,6 @@ class LabsAppointmentsAdapter(
         val zoom=10
         var lable=appointmentData.laboratory.firstName_ar
         val intent= Intent(Intent.ACTION_VIEW)
-        holder.call_lay.visibility=View.GONE
         holder.map_btn.setOnClickListener {
             intent.data= Uri.parse("geo:0,0?z=$zoom&q=$lat,$lng,$lable")
             if(intent.resolveActivity(mContext.packageManager)!=null){
@@ -62,22 +61,14 @@ class LabsAppointmentsAdapter(
         if (mContext.preferences!!.getString("language","")=="Arabic"){
             holder.date_name_txt.text=appointmentData.booking_date
             holder.name_txt.text=appointmentData.laboratory.laboratory_name_ar
-            if(appointmentData.laboratory.gender_id==1){
-               // holder.gendare_txt.text=mContext!!.getString(R.string.laboratory)
-            }else{
-              //  holder.gendare_txt.text=mContext!!.getString(R.string.laboratoryah)
-            }
+            holder.status_txt.text=appointmentData.status.name_ar
             holder.speciality_txt.visibility=View.GONE
             holder.location_txt.text=appointmentData.laboratory.address_ar+","+appointmentData.laboratory.landmark_ar
         }
         else{
             holder.date_name_txt.text=appointmentData.booking_date
             holder.name_txt.text=appointmentData.laboratory.laboratory_name_en
-            if(appointmentData.laboratory.gender_id==1){
-               // holder.gendare_txt.text=mContext!!.getString(R.string.laboratory)
-            }else{
-               // holder.gendare_txt.text=mContext!!.getString(R.string.laboratoryah)
-            }
+            holder.status_txt.text=appointmentData.status.name_en
             holder.speciality_txt.visibility=View.GONE
             holder.location_txt.text=appointmentData.laboratory.address_en+","+appointmentData.laboratory.landmark_en
         }
@@ -94,14 +85,12 @@ class LabsAppointmentsAdapter(
         val date_name_txt: TextView = view.date_name_txt
         val name_txt: TextView =view.name_txt
         val speciality_txt: TextView =view.speciality_txt
-        val gendare_txt: TextView =view.gendare_txt
+        val status_txt: TextView =view.status_txt
         val location_txt: TextView =view.location_txt
         val map_btn: LinearLayout =view.map_btn
         val cancel_btn: LinearLayout =view.cancel_btn
         val help_btn: LinearLayout =view.help_btn
-        val phone_btn: ImageView =view.phone_btn
         val image_doc: ImageView =view.image_doc
-        val call_lay:LinearLayout=view.call_lay
 
 
 

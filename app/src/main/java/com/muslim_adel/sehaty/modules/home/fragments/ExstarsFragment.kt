@@ -1,11 +1,13 @@
 package com.sehakhanah.patientapp.modules.home.fragments
 
 import android.content.Context
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
@@ -20,6 +22,7 @@ import com.muslim_adel.sehaty.modules.splash.SplashActivity
 import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.extras_fragment.*
 import kotlinx.android.synthetic.main.settings_activity.*
+import java.lang.Error
 
 
 class ExstarsFragment : Fragment() {
@@ -51,19 +54,26 @@ class ExstarsFragment : Fragment() {
     }
     private fun onLogoutClicked(){
         logout_btn.setOnClickListener {
-            sessionManager.saveAuthToken("")
-            mContext!!.preferences!!.putBoolean(Q.IS_FIRST_TIME,true)
-            mContext!!.preferences!!.putBoolean(Q.IS_LOGIN,false)
-            mContext!!.preferences!!.putInteger(Q.USER_ID,-1)
-            mContext!!.preferences!!.putString(Q.USER_NAME,"")
-            mContext!!.preferences!!.putString(Q.USER_EMAIL,"")
-            mContext!!.preferences!!.putString(Q.USER_PHONE,"")
-            mContext!!.preferences!!.putInteger(Q.USER_GENDER,-1)
-            mContext!!.preferences!!.commit()
-            val intent = Intent(mContext, SplashActivity::class.java)
-            startActivity(intent)
-            mContext!!.finish()
+            if(!mContext!!.preferences!!.getBoolean(Q.IS_LOGIN,false)){
+                logout()
+            }else{
+                logoutAlert()
+            }
         }
+    }
+    private fun logout(){
+        sessionManager.saveAuthToken("")
+        mContext!!.preferences!!.putBoolean(Q.IS_FIRST_TIME,true)
+        mContext!!.preferences!!.putBoolean(Q.IS_LOGIN,false)
+        mContext!!.preferences!!.putInteger(Q.USER_ID,-1)
+        mContext!!.preferences!!.putString(Q.USER_NAME,"")
+        mContext!!.preferences!!.putString(Q.USER_EMAIL,"")
+        mContext!!.preferences!!.putString(Q.USER_PHONE,"")
+        mContext!!.preferences!!.putInteger(Q.USER_GENDER,-1)
+        mContext!!.preferences!!.commit()
+        val intent = Intent(mContext, SplashActivity::class.java)
+        startActivity(intent)
+        mContext!!.finish()
     }
     private fun onSettingsClicked(){
         setting_btn.setOnClickListener {
@@ -107,5 +117,19 @@ class ExstarsFragment : Fragment() {
     override fun onDetach() {
         super.onDetach()
         mContext = context as MainActivity
+    }
+    private fun logoutAlert() {
+        val alertBuilder = AlertDialog.Builder(mContext!!)
+        //alertBuilder.setTitle(R.string.error)
+        alertBuilder.setMessage(R.string.logout_alert)
+            alertBuilder.setPositiveButton(R.string.yes) { dialog: DialogInterface, _: Int -> logout() }
+        alertBuilder.setNegativeButton(R.string.no) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
+
+
+
+        alertBuilder.show()
+
+
+
     }
 }

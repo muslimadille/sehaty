@@ -120,6 +120,24 @@
                 android:layout_marginBottom="10dp"
                 android:orientation="vertical"
                 />
+            <androidx.cardview.widget.CardView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="5dp">
+                <TextView
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:id="@+id/no_offers_txt"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/no_offers_fonded"
+                    android:textSize="16sp"/>
+
+            </androidx.cardview.widget.CardView>
+
         </LinearLayout>
     </ScrollView>
     <include layout="@layout/progress_layout"

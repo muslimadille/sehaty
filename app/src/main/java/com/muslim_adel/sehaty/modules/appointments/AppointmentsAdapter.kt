@@ -62,22 +62,14 @@ class AppointmentsAdapter(
         if (mContext.preferences!!.getString("language","")=="Arabic"){
             holder.date_name_txt.text=appointmentData.booking_date
             holder.name_txt.text=appointmentData.doctor.firstName_ar+" "+appointmentData.doctor.lastName_ar
-            if(appointmentData.doctor.gender_id==1){
-                holder.gendare_txt.text=mContext!!.getString(R.string.doctor)
-            }else{
-                holder.gendare_txt.text=mContext!!.getString(R.string.doctorah)
-            }
+            holder.status_txt.text=appointmentData.status.name_ar
             holder.speciality_txt.text=appointmentData.doctor.profissionalTitle_ar
             holder.location_txt.text=appointmentData.doctor.address_ar+","+appointmentData.doctor.landmark_ar
         }
         else{
             holder.date_name_txt.text=appointmentData.booking_date
             holder.name_txt.text=appointmentData.doctor.firstName_en+" "+appointmentData.doctor.lastName_en
-            if(appointmentData.doctor.gender_id==1){
-                holder.gendare_txt.text=mContext!!.getString(R.string.doctor)
-            }else{
-                holder.gendare_txt.text=mContext!!.getString(R.string.doctorah)
-            }
+            holder.status_txt.text=appointmentData.status.name_en
             holder.speciality_txt.text=appointmentData.doctor.profissionalTitle_en
             holder.location_txt.text=appointmentData.doctor.address_en+","+appointmentData.doctor.landmark_en
         }
@@ -94,12 +86,11 @@ class AppointmentsAdapter(
         val date_name_txt: TextView = view.date_name_txt
         val name_txt: TextView =view.name_txt
         val speciality_txt: TextView =view.speciality_txt
-        val gendare_txt: TextView =view.gendare_txt
+        val status_txt: TextView =view.status_txt
         val location_txt: TextView =view.location_txt
         val map_btn: LinearLayout =view.map_btn
         val cancel_btn: LinearLayout =view.cancel_btn
         val help_btn: LinearLayout =view.help_btn
-        val phone_btn: ImageView =view.phone_btn
         val image_doc: ImageView =view.image_doc
 
 

@@ -45,7 +45,7 @@ class SplashActivity : BaseActivity() {
     private fun handelSpalash(){
 
         Handler().postDelayed({
-            if (isFristTime) {
+            if (true) {
                 preferences!!.putString("language", "Arabic")
                 preferences!!.commit()
                 val intent = Intent(this@SplashActivity, IntroWizardActivity::class.java)

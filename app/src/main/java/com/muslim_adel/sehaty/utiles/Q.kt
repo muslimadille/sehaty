@@ -21,6 +21,9 @@ object Q {
     const val BOOKING_API = "reservation"
     const val GET_BOOKING_API="user/booking"
     const val GET_LAB_BOOKINGS_API="user/laboratory/booking"
+    const val GET_OFFERS_BOOKINGS_API="user/offer/booking"
+
+
 
 
     const val BOOKING_CANCEL_API="user/booking/cancle"

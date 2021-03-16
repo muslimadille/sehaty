@@ -15,6 +15,9 @@
     <string name="register_txt">تسجيل الدخول</string>
     <string name="search_item">أبحث</string>
     <string name="offers_item">العروض</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+
     <string name="date_item">المواعيد</string>
     <string name="settings">الاعدادات</string>
     <string name="edite_password">تعديل كلمة الرور</string>
@@ -31,7 +34,7 @@
     <string name="add_message">أضف رسالة</string>
 
     <string name="mobile_number"> رقم الموبايل بدون..0</string>
-    <string name="e_mail">  البريد الإلكتروني أو رقم الموبايل 10 أرقام بدون 0</string>
+    <string name="e_mail">  البريد الإلكتروني</string>
     <string name="e_mail_or_mobile"> البريد الإلكتروني أو رقم الموبايل</string>
 
     <string name="password">رمز الدخول</string>
@@ -88,6 +91,7 @@
     <string name="progress_txt">الرجاء الإنتظار</string>
 
     <string name="no_internet">لا يوجد إتصال بشبكة الإنترنت</string>
+    <string name="logout_alert">هل تريد تسجيل الخروج؟</string>
     <string name="exit">خروج</string>
     <string name="dismiss">إخفاء</string>
     <string name="search_doctor_hint">ابحث باسم الطبيب</string>
@@ -112,7 +116,7 @@
     <string name="waiting_time">مدة الإنتظار</string>
     <string name="cost_amount">سعر الكشف</string>
     <string name="date_hint">الدخول في ميعاد الحجز المحدد</string>
-    <string name="booking_hint">احجز الآن وسيتم أرسالتفاصيل العنوان بالكامل ورقم العيادة</string>
+    <string name="booking_hint">احجز الآن وسيتم أرسال تفاصيل العنوان بالكامل ورقم العيادة</string>
     <string name="rating">التقييم العام من</string>
     <string name="seen">مشاهدة</string>
     <string name="doctor_info">معلومات عن الطبيب</string>
@@ -184,6 +188,7 @@
     <string name="forget_pw">نسيت كلمة المرور</string>
     <string name="pw">كلمة المرور</string>
     <string name="repass">إعادة ضبط كلمة المرور</string>
+    <string name="no_offers_fonded">لا يوجد عروض </string>
 
 
 </resources>

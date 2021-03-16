@@ -19,6 +19,11 @@ class AppointmentData (
     var laboratory_id: Int,
     @SerializedName("laboratory")
     var laboratory: Laboratory,
+    @SerializedName("offer_id")
+    var offer_id: Int,
+    @SerializedName("status")
+    var status: Specialties,
+
 
 
 )

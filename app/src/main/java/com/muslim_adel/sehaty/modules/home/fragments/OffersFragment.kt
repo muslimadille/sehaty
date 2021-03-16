@@ -199,7 +199,14 @@ class OffersFragment : Fragment() {
                                     offersListAddapter!!.notifyDataSetChanged()
                                     onObserveSuccess()
                                 } else {
-                                    onObservefaled()
+                                    //onObservefaled()
+                                    no_offers_txt.visibility=View.VISIBLE
+                                    offers_rv.visibility=View.GONE
+                                    progrss_lay?.let {
+                                        it.visibility= View.GONE
+                                    }
+                                    offer_lay.visibility= View.VISIBLE
+
                                     Toast.makeText(mContext, "empty", Toast.LENGTH_SHORT).show()
                                 }
 
