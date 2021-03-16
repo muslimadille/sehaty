@@ -20,6 +20,9 @@ object Q {
     const val DOCTOR_BY_ID_API="doctor/show"
     const val BOOKING_API = "reservation"
     const val GET_BOOKING_API="user/booking"
+    const val GET_LAB_BOOKINGS_API="user/laboratory/booking"
+
+
     const val BOOKING_CANCEL_API="user/booking/cancle"
     const val ABOUT_US_API="admin/aboutUs"
     const val OFFER_SLIDER_IMAGES_API="offer/slideshow"

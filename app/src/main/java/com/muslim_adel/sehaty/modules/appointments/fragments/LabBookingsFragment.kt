@@ -1,25 +1,24 @@
-package com.sehakhanah.patientapp.modules.appointments.fragments
+package com.muslim_adel.sehaty.modules.appointments.fragments
 
 import android.app.Activity
 import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.muslim_adel.sehaty.modules.appointments.LabsAppointmentsAdapter
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
-import com.sehakhanah.patientapp.data.remote.objects.*
-import com.sehakhanah.patientapp.modules.appointments.AppointmentsAdapter
+import com.sehakhanah.patientapp.data.remote.objects.Appointment
+import com.sehakhanah.patientapp.data.remote.objects.AppointmentData
+import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.utiles.Q
-import kotlinx.android.synthetic.main.activity_doctors_list.no_search_lay
-import kotlinx.android.synthetic.main.activity_doctors_list.progrss_lay
 import kotlinx.android.synthetic.main.fragment_bookings_fragments.*
 import kotlinx.android.synthetic.main.no_search_layout.*
 import retrofit2.Call
@@ -27,10 +26,10 @@ import retrofit2.Callback
 import retrofit2.Response
 
 
-class bookingsFragments : Fragment() {
+class LabBookingsFragment : Fragment() {
     private var appointmentsList: MutableList<AppointmentData> = ArrayList()
 
-    private var appointmentsAddapter: AppointmentsAdapter? = null
+    private var appointmentsAddapter: LabsAppointmentsAdapter? = null
     private lateinit var sessionManager: SessionManager
     private lateinit var apiClient: ApiClient
 
@@ -66,7 +65,7 @@ class bookingsFragments : Fragment() {
         apiClient = ApiClient()
         sessionManager = SessionManager(mContext!!)
         onObserveStart()
-        apiClient.getApiService(mContext!!).fitchBookingList()
+        apiClient.getApiService(mContext!!).fitchLabBookingList()
             .enqueue(object : Callback<BaseResponce<Appointment>> {
                 override fun onFailure(call: Call<BaseResponce<Appointment>>, t: Throwable) {
                     alertNetwork(true)
@@ -115,7 +114,7 @@ class bookingsFragments : Fragment() {
     private fun initRVAdapter() {
         val layoutManager = LinearLayoutManager(mContext, RecyclerView.VERTICAL, false)
         appointment_rv.layoutManager = layoutManager
-        appointmentsAddapter = AppointmentsAdapter(mContext!!,appointmentsList)
+        appointmentsAddapter = LabsAppointmentsAdapter(mContext!!,appointmentsList)
         appointment_rv.adapter = appointmentsAddapter
     }
 

@@ -85,7 +85,9 @@
 
     <string name="PATIENT">client</string>
     <string name="DOCTOR">doctor</string>
+    <string name="DOCTORS">doctors</string>
     <string name="LAB">laboratory</string>
+    <string name="LABS">laboratories</string>
     <string name="PHARM">pharmacy</string>
 
 

@@ -99,7 +99,10 @@
 
     <string name="PATIENT">مريض</string>
     <string name="DOCTOR">طبيب</string>
+    <string name="DOCTORS">أطباء</string>
     <string name="LAB">مختبر</string>
+    <string name="LABS">مختبرات</string>
+
     <string name="PHARM">صيدلية</string>
 
 

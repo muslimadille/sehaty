@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
+import com.muslim_adel.sehaty.modules.appointments.fragments.LabBookingsFragment
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.modules.base.CustomTabLayout
 import com.sehakhanah.patientapp.modules.appointments.fragments.MyOffersFragments
@@ -44,12 +45,15 @@ class AppointmentsFragment : Fragment() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             when (position) {
                 0 -> {
-                    tab.text =getString(R.string.appointments)
+                    tab.text =getString(R.string.DOCTORS)
 
                 }
                 1 -> {
-                    tab.text = getString(R.string.offers_item)
+                    tab.text = getString(R.string.LABS)
 
+                }
+                2 ->{
+                    tab.text = getString(R.string.offers_item)
                 }
 
             }
@@ -66,6 +70,7 @@ class AppointmentsFragment : Fragment() {
 
     fun addFragment() {
         listFragments.add(bookingsFragments())
+        listFragments.add(LabBookingsFragment())
         listFragments.add(MyOffersFragments())
 
     }

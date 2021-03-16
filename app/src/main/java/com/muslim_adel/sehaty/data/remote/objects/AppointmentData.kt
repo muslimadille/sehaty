@@ -14,6 +14,11 @@ class AppointmentData (
     @SerializedName("doctor_id")
     var doctor_id: Long,
     @SerializedName("doctor")
-    var doctor: Doctor
+    var doctor: Doctor,
+    @SerializedName("laboratory_id")
+    var laboratory_id: Int,
+    @SerializedName("laboratory")
+    var laboratory: Laboratory,
+
 
 )
