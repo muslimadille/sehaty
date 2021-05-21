@@ -1,14 +1,13 @@
 package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
@@ -16,12 +15,7 @@ import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.data.remote.objects.Offer
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.utiles.Q
-import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_category_offers_list.*
-import kotlinx.android.synthetic.main.activity_change_language.*
-import kotlinx.android.synthetic.main.offers_fragment.*
-import kotlinx.android.synthetic.main.offers_fragment.offer_lay
 import kotlinx.android.synthetic.main.offers_fragment.progrss_lay
 import retrofit2.Call
 import retrofit2.Callback

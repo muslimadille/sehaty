@@ -84,6 +84,7 @@ class BookingSuccessActivity : BaseActivity() {
         laboratoryServices = intent.getStringExtra("laboratoryServices")!!
         lab_name=intent.getStringExtra("lab_name")!!
         lab_location=intent.getStringExtra("lab_location")!!
+        time=intent.getStringExtra("time")!!
     }
     private fun setData(){
         if (preferences!!.getString("language","")=="Arabic"){

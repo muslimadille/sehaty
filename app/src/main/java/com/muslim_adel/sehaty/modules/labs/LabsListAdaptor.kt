@@ -5,7 +5,6 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.RatingBar
 import android.widget.TextView
@@ -13,13 +12,11 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
-import com.sehakhanah.patientapp.data.remote.objects.Doctor
 import com.sehakhanah.patientapp.data.remote.objects.Laboratory
 import com.sehakhanah.patientapp.modules.base.GlideObject
 import com.sehakhanah.patientapp.utiles.ComplexPreferences
-import com.sehakhanah.patientapp.utiles.Q
-import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.labs_item.view.*
 
 
@@ -45,7 +42,7 @@ class LabsListAdaptor(
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         var imgUrl=""
         val lab = list[position]
-        if(lab.laboratory_photos!=null){
+        if(lab.laboratory_photos!=null&&lab.laboratory_photos.isNotEmpty()){
              imgUrl=lab.laboratory_photos[0].featured
         }else{
              imgUrl=""

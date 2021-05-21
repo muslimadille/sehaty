@@ -4,11 +4,11 @@ package com.muslim_adel.sehaty.modules.splash
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
 import com.sehakhanah.patientapp.modules.introSlider.IntroWizardActivity
-import com.sehakhanah.patientapp.utiles.Q
 import java.util.*
 
 class SplashActivity : BaseActivity() {

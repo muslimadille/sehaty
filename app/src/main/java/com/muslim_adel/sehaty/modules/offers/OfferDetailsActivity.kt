@@ -2,7 +2,6 @@ package com.sehakhanah.patientapp.modules.offers
 
 import android.content.Intent
 import android.graphics.Paint
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
@@ -11,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
@@ -18,19 +18,14 @@ import com.sehakhanah.patientapp.data.remote.objects.*
 import com.sehakhanah.patientapp.data.remote.objects.Date
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.base.GlideObject
-import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DatesAdapter
-import com.sehakhanah.patientapp.modules.doctors.doctorProfile.RatesAdapter
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
-import kotlinx.android.synthetic.main.activity_doctor_profile.bottomNavigationView
 import kotlinx.android.synthetic.main.activity_offer_details.*
 import kotlinx.android.synthetic.main.activity_offer_details.dates_rv
 import kotlinx.android.synthetic.main.activity_offer_details.rates_rv
 import kotlinx.android.synthetic.main.offers_fragment.*
-import kotlinx.android.synthetic.main.offers_fragment.offer_lay
 import kotlinx.android.synthetic.main.offers_fragment.offers_pager_Slider
 import kotlinx.android.synthetic.main.offers_fragment.progrss_lay
 import retrofit2.Call

@@ -68,7 +68,7 @@ class AllCtegoriesActivity : BaseActivity() {
                                     initAdapter(it,myMap)
 
                                 } else {
-                                    Toast.makeText(this@AllCtegoriesActivity, "empty", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(this@AllCtegoriesActivity, "", Toast.LENGTH_SHORT).show()
                                 }
 
                             }

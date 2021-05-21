@@ -160,6 +160,7 @@
     <string name="pw">Password</string>
     <string name="repass">reset password</string>
     <string name="no_offers_fonded">no offers fonded</string>
+    <string name="helptext">contact for help</string>
 
 
 </resources>

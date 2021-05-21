@@ -2,22 +2,20 @@ package com.sehakhanah.patientapp.modules.doctors.doctorProfile
 
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
 import com.sehakhanah.patientapp.data.remote.objects.*
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.base.GlideObject
-import com.sehakhanah.patientapp.modules.doctors.doctorsList.DoctorsListAdapter
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.activity_doctor_profile.*
@@ -80,7 +78,7 @@ class DoctorProfile : BaseActivity() {
         setProfilrData()
         apiClient = ApiClient()
         sessionManager = SessionManager(this)
-        val url =Q.DOCTORS_DATES_API + "/${id}"
+        val url = Q.DOCTORS_DATES_API + "/${id}"
         apiClient.getApiService(this).fitchDoctorDatesList(url)
             .enqueue(object : Callback<BaseResponce<Dates>> {
                 override fun onFailure(call: Call<BaseResponce<Dates>>, t: Throwable) {
@@ -104,7 +102,7 @@ class DoctorProfile : BaseActivity() {
                                 } else {
                                     Toast.makeText(
                                         this@DoctorProfile,
-                                        "data empty",
+                                        "",
                                         Toast.LENGTH_SHORT
                                     ).show()
 
@@ -125,7 +123,7 @@ class DoctorProfile : BaseActivity() {
             })
     }
     private fun doctorRatesObserver() {
-        val url =Q.DOCTORS_RATES_API + "/${id}"
+        val url = Q.DOCTORS_RATES_API + "/${id}"
         apiClient.getApiService(this).fitchDoctorRatesList(url)
             .enqueue(object : Callback<BaseResponce<List<Rates>>> {
                 override fun onFailure(call: Call<BaseResponce<List<Rates>>>, t: Throwable) {
@@ -145,7 +143,7 @@ class DoctorProfile : BaseActivity() {
                                 } else {
                                     Toast.makeText(
                                         this@DoctorProfile,
-                                        "data empty",
+                                        "",
                                         Toast.LENGTH_SHORT
                                     ).show()
 

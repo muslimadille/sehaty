@@ -7,13 +7,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
 import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.data.remote.objects.LoginData
 import com.sehakhanah.patientapp.modules.base.BaseActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_doctors_list.*
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_registeration.*

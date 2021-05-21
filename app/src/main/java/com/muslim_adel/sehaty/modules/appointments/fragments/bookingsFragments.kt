@@ -17,7 +17,6 @@ import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
 import com.sehakhanah.patientapp.data.remote.objects.*
 import com.sehakhanah.patientapp.modules.appointments.AppointmentsAdapter
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_doctors_list.no_search_lay
 import kotlinx.android.synthetic.main.activity_doctors_list.progrss_lay
 import kotlinx.android.synthetic.main.fragment_bookings_fragments.*

@@ -13,18 +13,11 @@ import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.objects.Offer
-import com.sehakhanah.patientapp.data.remote.objects.OffersCategory
-import com.sehakhanah.patientapp.modules.base.GlideObject
-import com.sehakhanah.patientapp.modules.home.MainActivity
 import com.sehakhanah.patientapp.utiles.ComplexPreferences
-import com.sehakhanah.patientapp.utiles.Q
-import kotlinx.android.synthetic.main.activity_change_language.*
-import kotlinx.android.synthetic.main.offer_category_first_item.view.*
 import kotlinx.android.synthetic.main.offer_item.view.*
-import kotlinx.android.synthetic.main.offers_second_item.view.*
-
 
 
 class OfferAdapter(

@@ -60,7 +60,6 @@ class VerificationPhonActivity : BaseActivity() {
                     override fun onFailure(call: Call<BaseResponce<Verification>>, t: Throwable) {
                         alertNetwork(true)
                     }
-
                     override fun onResponse(
                         call: Call<BaseResponce<Verification>>,
                         response: Response<BaseResponce<Verification>>

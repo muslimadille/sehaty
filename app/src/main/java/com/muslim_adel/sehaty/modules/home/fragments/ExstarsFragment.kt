@@ -16,13 +16,10 @@ import com.sehakhanah.patientapp.modules.contactUs.ContactUsActivity
 import com.sehakhanah.patientapp.modules.favorits.FavoritsActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
 import com.sehakhanah.patientapp.modules.introSlider.IntroWizardActivity
-import com.sehakhanah.patientapp.modules.register.LoginActivity
 import com.sehakhanah.patientapp.modules.settings.SettingsActivity
 import com.muslim_adel.sehaty.modules.splash.SplashActivity
-import com.sehakhanah.patientapp.utiles.Q
+import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.extras_fragment.*
-import kotlinx.android.synthetic.main.settings_activity.*
-import java.lang.Error
 
 
 class ExstarsFragment : Fragment() {

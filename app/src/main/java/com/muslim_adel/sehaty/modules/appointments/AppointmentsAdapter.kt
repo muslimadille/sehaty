@@ -8,17 +8,15 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
 import com.sehakhanah.patientapp.data.remote.objects.AppointmentData
 import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
-import com.sehakhanah.patientapp.data.remote.objects.Doctor
 import com.sehakhanah.patientapp.modules.base.GlideObject
-import com.sehakhanah.patientapp.modules.doctors.doctorsList.DoctorsListActivity
+import com.sehakhanah.patientapp.modules.contactUs.ContactUsActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.utiles.Q
-import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.appointment_item.view.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -78,6 +76,10 @@ class AppointmentsAdapter(
             bookingCancelObserver(appointmentData.id.toInt())
             removeMember(position)
         }
+       holder.help_btn.setOnClickListener {
+           val intent=Intent(mContext,ContactUsActivity::class.java)
+           mContext.startActivity(intent)
+       }
 
 
     }

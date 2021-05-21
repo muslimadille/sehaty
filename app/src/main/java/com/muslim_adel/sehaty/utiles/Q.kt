@@ -1,8 +1,6 @@
-package com.sehakhanah.patientapp.utiles
+package com.muslim_adel.sehaty.utiles
 
-import java.util.*
-
-object Q {
+ object Q {
     /*************** Locales  ***********/
     /**..................api......................................***/
     const val BASE_URL = "https://laravelapi.sehakhanah.com/api/"
@@ -51,6 +49,11 @@ object Q {
     const val VERIFY_CODE="password/verify"
     const val VERIFY_TOKEN="password/find/"
     const val PASSWORD_RESET="password/reset"
+    const val PROBLEMS_LIST="problems"
+    const val CONTACT_US="sendemail/contactus"
+
+
+
 
 
 

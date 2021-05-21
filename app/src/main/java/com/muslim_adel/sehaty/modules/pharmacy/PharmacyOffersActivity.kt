@@ -17,7 +17,6 @@ import com.sehakhanah.patientapp.data.remote.objects.PharmacyOffer
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
 import com.sehakhanah.patientapp.modules.offers.OfferAdapter
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_category_offers_list.*
 import kotlinx.android.synthetic.main.activity_category_offers_list.no_search_lay

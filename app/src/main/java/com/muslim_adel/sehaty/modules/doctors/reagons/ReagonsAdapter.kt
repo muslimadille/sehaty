@@ -17,7 +17,6 @@ import com.sehakhanah.patientapp.modules.doctors.doctorsList.DoctorsListActivity
 import com.sehakhanah.patientapp.modules.labs.LabsListActivity
 import com.sehakhanah.patientapp.modules.pharmacy.PharmacyOffersActivity
 import com.sehakhanah.patientapp.modules.register.LoginActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.reagon_item.view.*
 import kotlinx.android.synthetic.main.specialties_list_item.view.*

@@ -28,6 +28,7 @@
         android:layout_weight="1">
 
         <ScrollView
+            android:layout_margin="10dp"
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -74,6 +75,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:layout_margin="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
@@ -95,7 +97,7 @@
                     android:padding="10dp"
                     android:text="@string/new_acount"
                     android:textColor="#676161"
-                    android:textSize="16sp"
+                    android:textSize="14sp"
                     android:textStyle="bold" />
 
 
@@ -122,6 +124,7 @@
                             android:layout_centerVertical="true"
                             android:backgroundTint="@color/white"
                             android:ems="10"
+                            android:textSize="14sp"
                             android:hint="@string/e_mail_or_mobile"
                             android:inputType="text" />
 
@@ -151,7 +154,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerHorizontal="true"
-
+                            android:textSize="14sp"
                             android:layout_centerVertical="true"
                             android:backgroundTint="@color/white"
                             android:hint="@string/password"

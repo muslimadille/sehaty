@@ -116,7 +116,7 @@ class OffersFragment : Fragment() {
                                         sliderAddapter!!.notifyDataSetChanged()
                                     }
                                 } else {
-                                    Toast.makeText(mContext, "empty", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(mContext, "", Toast.LENGTH_SHORT).show()
                                 }
 
                             }
@@ -159,7 +159,7 @@ class OffersFragment : Fragment() {
                                     categoriesList.addAll(it)
                                     categoriesListAddapter!!.notifyDataSetChanged()
                                 } else {
-                                    Toast.makeText(mContext, "empty", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(mContext, "", Toast.LENGTH_SHORT).show()
                                 }
 
                             }
@@ -207,7 +207,7 @@ class OffersFragment : Fragment() {
                                     }
                                     offer_lay.visibility= View.VISIBLE
 
-                                    Toast.makeText(mContext, "empty", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(mContext, "", Toast.LENGTH_SHORT).show()
                                 }
 
                             }

@@ -4,22 +4,15 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
 import com.muslim_adel.sehaty.modules.register.ForgetPasswordActivity
-import com.muslim_adel.sehaty.modules.register.VerificationPhonActivity
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
 import com.sehakhanah.patientapp.data.remote.objects.*
 import com.sehakhanah.patientapp.modules.base.BaseActivity
-import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_login.login_progrss_lay
-import kotlinx.android.synthetic.main.activity_login.username
 import kotlinx.android.synthetic.main.activity_registeration.*
 import kotlinx.android.synthetic.main.activity_verivication.*
 import retrofit2.Call
@@ -37,9 +30,6 @@ class VerivicationActivity : BaseActivity() {
     var selectedType="client"
     var token=""
     var code=""
-
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

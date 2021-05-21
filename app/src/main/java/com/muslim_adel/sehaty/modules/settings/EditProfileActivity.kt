@@ -16,7 +16,7 @@ import com.sehakhanah.patientapp.data.remote.objects.User
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
 import com.muslim_adel.sehaty.modules.splash.SplashActivity
-import com.sehakhanah.patientapp.utiles.Q
+import com.muslim_adel.sehaty.utiles.Q
 import kotlinx.android.synthetic.main.activity_edit_profile.*
 import kotlinx.android.synthetic.main.activity_edit_profile.date_of_birth
 import kotlinx.android.synthetic.main.activity_edit_profile.email
@@ -162,8 +162,8 @@ class EditProfileActivity : BaseActivity() {
     }
 
     private fun handelRdioStates() {
-        mail_btn.isChecked = true
-        gender = 1
+        //mail_btn.isChecked = true
+        //gender = 1
         mail_btn.setOnClickListener {
             mail_btn.isChecked = true
             femail_btn.isChecked = false

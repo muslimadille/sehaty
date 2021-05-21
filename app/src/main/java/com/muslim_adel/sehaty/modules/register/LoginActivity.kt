@@ -3,13 +3,11 @@ package com.sehakhanah.patientapp.modules.register
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import com.facebook.*
 import com.facebook.login.LoginResult
-import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -17,15 +15,14 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.Scopes
 import com.google.android.gms.common.SignInButton
 import com.google.android.gms.common.api.ApiException
-import com.google.android.gms.common.api.GoogleApiClient
 import com.google.android.gms.common.api.Scope
 import com.google.gson.JsonSyntaxException
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClientnew
 import com.muslim_adel.sehaty.data.remote.objects.GenerateToken
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
-import com.muslim_adel.sehaty.modules.register.ForgetPasswordActivity
 import com.muslim_adel.sehaty.modules.register.VerificationPhonActivity
 import com.muslim_adel.sehaty.modules.register.resetpassword.AddPhoneActivity
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
@@ -33,7 +30,6 @@ import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.data.remote.objects.LoginResponce
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.username
 import kotlinx.android.synthetic.main.activity_registeration.*
@@ -84,7 +80,7 @@ class LoginActivity : BaseActivity() {
                             response: Response<LoginResponce>
                         ) {
                             val loginResponse = response.body()
-                            if(loginResponse!!.message.equals("User not verified")){
+                            if(loginResponse!=null&&loginResponse!!.message.equals("User not verified")){
                                 val intent =
                                     Intent(this@LoginActivity, VerificationPhonActivity::class.java)
                                 intent.putExtra("email",username.text.toString())
@@ -92,7 +88,7 @@ class LoginActivity : BaseActivity() {
                                 startActivity(intent)
                                 finish()
                             }
-                            if (loginResponse!!.success) {
+                            if (loginResponse!=null&&loginResponse!!.success) {
                                 if (loginResponse?.data!!.status == 200 && loginResponse.data.user != null) {
                                     username.text.clear()
                                     login_password.text.clear()
@@ -198,9 +194,10 @@ class LoginActivity : BaseActivity() {
                 jObject?.let {
                     var id = if (jObject.isNull("id")) "" else jObject.getString("id")
                     var name = if (jObject.isNull("name")) "" else jObject.getString("name")
+                    var email= jObject.getString("first_name")+"@sehaa.com"
                     socialToken = if (jObject.isNull("access_token")) "" else jObject.getString("email")
                     socialProvider = "facebook"
-                    gotToSocialVerification()
+                    gotToSocialVerification(email.toString(),email.toString())
                     //generatTokenObserver()
 
                     //val gender = jObject.getString("gender")
@@ -271,7 +268,8 @@ class LoginActivity : BaseActivity() {
 
     }
     private fun handleGoogleSignInResult(account: GoogleSignInAccount?) {
-        gotToSocialVerification()
+        var email=account?.email ?: ""
+        gotToSocialVerification(email,email)
         //generatTokenObserver()
         //socialToken=account!!.idToken.toString()
        // socialProvider="google"
@@ -320,14 +318,14 @@ class LoginActivity : BaseActivity() {
                         if (loginResponse!!.isSuccessful && loginResponse.body()!!.access_token != null) {
                             onObserveSuccess()
                             sessionManager.saveAuthToken(loginResponse.body()!!.access_token)
-                            // preferences!!.putBoolean(Q.IS_FIRST_TIME,false)
-                            // preferences!!.putBoolean(Q.IS_LOGIN,true)
-                            // preferences!!.putInteger(Q.USER_ID,registerResponse.data!!.user.id.toInt())
-                            // preferences!!.putString(Q.USER_NAME,registerResponse.data!!.user.name)
-                            //preferences!!.putString(Q.USER_EMAIL,registerResponse.data!!.user.email)
-                            // preferences!!.putString(Q.USER_PHONE,registerResponse.data!!.user.phonenumber.toString())
-                            // preferences!!.putInteger(Q.USER_GENDER,registerResponse.data!!.user.gender_id)
-                            // preferences!!.putString(Q.USER_BIRTH,registerResponse.data!!.user.birthday)
+                            // preferences!!.putBoolean(com.muslim_adel.sehaty.utiles.Q.IS_FIRST_TIME,false)
+                            // preferences!!.putBoolean(com.muslim_adel.sehaty.utiles.Q.IS_LOGIN,true)
+                            // preferences!!.putInteger(com.muslim_adel.sehaty.utiles.Q.USER_ID,registerResponse.data!!.user.id.toInt())
+                            // preferences!!.putString(com.muslim_adel.sehaty.utiles.Q.USER_NAME,registerResponse.data!!.user.name)
+                            //preferences!!.putString(com.muslim_adel.sehaty.utiles.Q.USER_EMAIL,registerResponse.data!!.user.email)
+                            // preferences!!.putString(com.muslim_adel.sehaty.utiles.Q.USER_PHONE,registerResponse.data!!.user.phonenumber.toString())
+                            // preferences!!.putInteger(com.muslim_adel.sehaty.utiles.Q.USER_GENDER,registerResponse.data!!.user.gender_id)
+                            // preferences!!.putString(com.muslim_adel.sehaty.utiles.Q.USER_BIRTH,registerResponse.data!!.user.birthday)
                             //  preferences!!.commit()
                             onObserveSuccess()
                             socialLoginObserver()
@@ -424,12 +422,14 @@ class LoginActivity : BaseActivity() {
     }
 
 
-private fun gotToSocialVerification(){
+private fun gotToSocialVerification(email:String,password:String){
     preferences!!.putBoolean(Q.IS_FIRST_TIME, false)
     preferences!!.putBoolean(Q.IS_LOGIN, true)
     preferences!!.commit()
     val intent =
         Intent(this@LoginActivity, VerificationPhonActivity::class.java)
+    intent.putExtra("email",email)
+    intent.putExtra("password",password)
     startActivity(intent)
     finish()
 }

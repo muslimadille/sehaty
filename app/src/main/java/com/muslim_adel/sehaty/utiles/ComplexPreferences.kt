@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
+import com.muslim_adel.sehaty.utiles.Q
 
 class ComplexPreferences @SuppressLint("CommitPrefEdits") constructor(context: Context, namePreferences: String?, mode: Int) {
 
@@ -38,7 +39,7 @@ class ComplexPreferences @SuppressLint("CommitPrefEdits") constructor(context: C
         }
     }
 
-   // fun isAppEnglish(): Boolean = getInteger(Q.SELECTED_LOCALE_PREF, Q.LOCALE_AR_INDEX) == Q.LOCALE_EN_INDEX
+   // fun isAppEnglish(): Boolean = getInteger(com.muslim_adel.sehaty.utiles.Q.SELECTED_LOCALE_PREF, com.muslim_adel.sehaty.utiles.Q.LOCALE_AR_INDEX) == com.muslim_adel.sehaty.utiles.Q.LOCALE_EN_INDEX
 
     fun putObject(key: String, `object`: Any?) {
         if (`object` == null) {

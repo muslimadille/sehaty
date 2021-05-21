@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import androidx.fragment.app.Fragment
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
@@ -14,7 +15,6 @@ import com.sehakhanah.patientapp.modules.introSlider.fragments.Intro1Fragment
 import com.sehakhanah.patientapp.modules.introSlider.fragments.Intro2Fragment
 import com.sehakhanah.patientapp.modules.introSlider.fragments.Intro3Fragment
 import com.sehakhanah.patientapp.modules.register.LoginActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_intro_wizerd.*
 import java.util.*
 import kotlin.collections.ArrayList

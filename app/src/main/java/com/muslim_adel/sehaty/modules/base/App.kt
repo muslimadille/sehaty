@@ -1,8 +1,8 @@
 package com.sehakhanah.patientapp.modules.base
 
 import android.app.Application
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.utiles.ComplexPreferences
-import com.sehakhanah.patientapp.utiles.Q
 import java.util.*
 
 class App : Application() {

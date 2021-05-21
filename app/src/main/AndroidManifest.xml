@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.muslim_adel.sehaty.modules.register.resetpassword.AddPhoneActivity"></activity>
+        <activity android:name="com.muslim_adel.sehaty.modules.contactUs.ProblemsActivity"></activity>
+        <activity android:name="com.muslim_adel.sehaty.modules.register.resetpassword.AddPhoneActivity" />
         <activity android:name="com.muslim_adel.sehaty.modules.register.ForgetPasswordActivity" />
         <activity android:name="com.muslim_adel.sehaty.modules.register.VerificationPhonActivity" />
         <activity android:name=".modules.pharmacy.PharmacyProfileActivity" />

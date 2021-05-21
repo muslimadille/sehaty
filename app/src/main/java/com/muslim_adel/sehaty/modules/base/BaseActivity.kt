@@ -5,9 +5,9 @@ import android.content.res.Configuration
 import android.view.ContextThemeWrapper
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.utiles.ComplexPreferences
-import com.sehakhanah.patientapp.utiles.Q
 import java.lang.Error
 import java.util.*
 

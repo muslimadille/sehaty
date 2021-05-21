@@ -28,6 +28,7 @@
         android:layout_weight="1">
 
         <ScrollView
+            android:layout_margin="10dp"
             android:id="@+id/scrollView2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

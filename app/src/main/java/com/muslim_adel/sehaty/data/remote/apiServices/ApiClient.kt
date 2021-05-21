@@ -1,8 +1,7 @@
 package com.sehakhanah.patientapp.data.remote.apiServices
 
 import android.content.Context
-import android.icu.util.TimeUnit
-import com.sehakhanah.patientapp.utiles.Q
+import com.muslim_adel.sehaty.utiles.Q
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

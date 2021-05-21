@@ -17,7 +17,6 @@ import com.sehakhanah.patientapp.modules.appointments.AppointmentsFragment
 import com.sehakhanah.patientapp.modules.home.fragments.ExstarsFragment
 import com.sehakhanah.patientapp.modules.home.fragments.HomeFragment
 import com.sehakhanah.patientapp.modules.home.fragments.OffersFragment
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback

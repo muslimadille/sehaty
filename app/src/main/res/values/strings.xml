@@ -189,6 +189,7 @@
     <string name="pw">كلمة المرور</string>
     <string name="repass">إعادة ضبط كلمة المرور</string>
     <string name="no_offers_fonded">لا يوجد عروض </string>
+    <string name="helptext">طلب المساعدة</string>
 
 
 </resources>

@@ -13,7 +13,6 @@ import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.objects.Specialties
 import com.sehakhanah.patientapp.modules.base.GlideObject
 import com.sehakhanah.patientapp.modules.doctors.reagons.ReagonsActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_change_language.*
 import kotlinx.android.synthetic.main.specialties_list_item.view.*
 

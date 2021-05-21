@@ -3,8 +3,8 @@ package com.sehakhanah.patientapp.data.remote.apiServices
 import com.muslim_adel.sehaty.data.remote.objects.CreateCodeModel
 import com.muslim_adel.sehaty.data.remote.objects.GenerateToken
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.data.remote.objects.*
-import com.sehakhanah.patientapp.utiles.Q
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -158,5 +158,14 @@ interface ApiService {
                       @Field("token") token:String,
                       @Field("password") password:String,
                       @Field("password_confirmation") password_confirmation:String,): Call<BaseResponce<CreateCodeModel>>
+    @GET(Q.PROBLEMS_LIST)
+    fun getProblemsList():Call<BaseResponce<Dates>>
+
+    @POST(Q.CONTACT_US)
+    @FormUrlEncoded
+    fun sendContactUs(@Field("name") name:String,
+                   @Field("phone") phone:String,
+                  @Field("email") email:String,
+                  @Field("comments") comments:String): Call<BaseResponce<Any>>
 
 }

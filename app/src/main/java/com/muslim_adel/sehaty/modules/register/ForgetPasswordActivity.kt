@@ -1,24 +1,20 @@
 package com.muslim_adel.sehaty.modules.register
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.AdapterView
 import android.widget.Toast
 import com.muslim_adel.sehaty.data.remote.objects.CreateCodeModel
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
 import com.muslim_adel.sehaty.modules.base.SpinnerAdapterCustomFont
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
 import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.data.remote.objects.LoginResponce
-import com.sehakhanah.patientapp.data.remote.objects.User
 import com.sehakhanah.patientapp.modules.base.BaseActivity
-import com.sehakhanah.patientapp.modules.home.MainActivity
 import com.sehakhanah.patientapp.modules.register.LoginActivity
-import com.sehakhanah.patientapp.utiles.Q
 import kotlinx.android.synthetic.main.activity_edit_profile.*
 import kotlinx.android.synthetic.main.activity_forget_password.*
 import kotlinx.android.synthetic.main.activity_forget_password.view.*
