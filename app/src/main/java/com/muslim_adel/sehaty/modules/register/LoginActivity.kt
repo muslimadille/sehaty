@@ -164,8 +164,8 @@ class LoginActivity : BaseActivity() {
     private fun initFaceBookLogin(){
         fbCallBackManager=CallbackManager.Factory.create()
         fb_login_button.registerCallback(fbCallBackManager, object : FacebookCallback<LoginResult> {
-            override fun onSuccess(result: LoginResult?) {
-                handleFacebookAccessToken(result!!.accessToken)
+            override fun onSuccess(result: LoginResult) {
+                handleFacebookAccessToken(result.accessToken)
                /* Toast.makeText(
                     this@LoginActivity,
                     "${result?.accessToken?.userId}",
@@ -181,9 +181,11 @@ class LoginActivity : BaseActivity() {
                 Toast.makeText(this@LoginActivity, "fb login canceled", Toast.LENGTH_SHORT).show()
             }
 
-            override fun onError(error: FacebookException?) {
+            override fun onError(error: FacebookException) {
                 Toast.makeText(this@LoginActivity, "fb login error", Toast.LENGTH_SHORT).show()
             }
+
+
 
         })
     }
