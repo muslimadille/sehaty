@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
@@ -50,7 +51,7 @@ class VerificationPhonActivity : BaseActivity() {
 
     private fun onResendClicked(){
         send_message_btn.setOnClickListener {
-            phone="+964"+message_tf.text.toString()
+            phone= Q.PHONE_KEY+message_tf.text.toString()
             onObserveStart()
             apiClient = ApiClient()
             sessionManager = SessionManager(this)
@@ -69,7 +70,7 @@ class VerificationPhonActivity : BaseActivity() {
                             onObserveSuccess()
                             val intent =
                                 Intent(this@VerificationPhonActivity, VerivicationActivity::class.java)
-                            intent.putExtra("phone","+964"+message_tf.text.toString())
+                            intent.putExtra("phone",Q.PHONE_KEY+message_tf.text.toString())
                             intent.putExtra("type","client")
                             intent.putExtra("email",email)
                             intent.putExtra("password",password)

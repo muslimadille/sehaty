@@ -78,7 +78,7 @@ class RegisterationActivity : BaseActivity() {
                         username.text.toString(),
                         email.text.toString(),
                         password.text.toString(),
-                        "+964${phon_num.text}",
+                        "${Q.PHONE_KEY}${phon_num.text}",
                         date_of_birth.text.toString(),
                         gender.toString()
                     )
@@ -141,7 +141,7 @@ class RegisterationActivity : BaseActivity() {
                                         intent.putExtra("type", "client")
                                         intent.putExtra("email",email.text.toString())
                                         intent.putExtra("password",password.text.toString())
-                                        intent.putExtra("phone","+964${phon_num.text}")
+                                        intent.putExtra("phone","${Q.PHONE_KEY}${phon_num.text}")
 
                                         startActivity(intent)
                                         finish()

@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.base.GlideObject
@@ -92,13 +93,13 @@ class BookingSuccessActivity : BaseActivity() {
             time_txt.text=time
             date_txt.text=datename
             address_txt.text=address_ar+"-"+landmark_ar
-            costt_txt.text=price.toString()+" "+getString(R.string.derham)
+            costt_txt.text=price.toString()+" "+ Q.CURNCY_NAME_AR
         }else{
             doc_name.text=firstName_en+" "+lastName_en
             time_txt.text=time
             date_txt.text=datename
             address_txt.text=address_en+"-"+landmark_en
-            costt_txt.text=price.toString()+" "+getString(R.string.derham)
+            costt_txt.text=price.toString()+" "+Q.CURNCY_NAME_EN
         }
 
     }

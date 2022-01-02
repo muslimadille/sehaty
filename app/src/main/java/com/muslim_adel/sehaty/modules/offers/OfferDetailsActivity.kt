@@ -65,8 +65,8 @@ class OfferDetailsActivity : BaseActivity() {
             offer_subtitle_txt!!.text=offer.device_name_ar
             offer_ratingBar!!.rating=offer.rating.toFloat()
             initial_cost!!.paintFlags =initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-            initial_cost!!.text=offer.price.toString()+" "+getString(R.string.derham)
-            final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+getString(R.string.derham)
+            initial_cost!!.text=offer.price.toString()+" "+Q.CURNCY_NAME_AR
+            final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+Q.CURNCY_NAME_AR
             offer_info_txt.text=offer.description_ar
             GlideObject.GlideProfilePic(this,offer.doctor.featured,offer_doc_img)
             offer_doc_name.text=gendar+" "+offer.doctor.firstName_ar+" "+offer.doctor.lastName_ar
@@ -77,8 +77,8 @@ class OfferDetailsActivity : BaseActivity() {
             offer_subtitle_txt!!.text=offer.device_name_en
             offer_ratingBar!!.rating=offer.rating.toFloat()
             initial_cost!!.paintFlags =initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-            initial_cost!!.text=offer.price.toString()+" "+getString(R.string.derham)
-            final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+getString(R.string.derham)
+            initial_cost!!.text=offer.price.toString()+" "+Q.CURNCY_NAME_EN
+            final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+Q.CURNCY_NAME_EN
             offer_info_txt.text=offer.description_en
             GlideObject.GlideProfilePic(this,offer.doctor.featured,offer_doc_img)
             offer_doc_name.text=gendar+" "+offer.doctor.firstName_en+" "+offer.doctor.lastName_en

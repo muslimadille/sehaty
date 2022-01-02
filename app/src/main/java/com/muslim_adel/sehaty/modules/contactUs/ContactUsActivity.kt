@@ -122,7 +122,7 @@ class ContactUsActivity : BaseActivity() {
     private  fun validateData(){
         name= preferences!!.getString(Q.USER_NAME,"user")
         email= preferences!!.getString(Q.USER_EMAIL,"user@email.com")
-        phone= preferences!!.getString(Q.USER_PHONE, "07703454657").replace("+964","0")
+        phone= preferences!!.getString(Q.USER_PHONE, "07703454657").replace(Q.PHONE_KEY,"0")
         comment=message_tf.text.toString()
         messageSend()
     }

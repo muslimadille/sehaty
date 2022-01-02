@@ -99,14 +99,14 @@ class BookingActivity : BaseActivity() {
             date_name_txt.text=datename
             time_txt.text=time
             street_txt.text=address_ar
-            price_txt.text=price.toString()
+            price_txt.text=price.toString()+" "+Q.CURNCY_NAME_AR
         }else{
             doc_name_txt.text=firstName_en+" "+lastName_en
             doc_specialty_txt.text=profissionalTitle_en
             date_name_txt.text=datename
             time_txt.text=time
             street_txt.text=address_en
-            price_txt.text=price.toString()+" "+getString(R.string.derham)
+            price_txt.text=price.toString()+" "+Q.CURNCY_NAME_EN
         }
 
     }

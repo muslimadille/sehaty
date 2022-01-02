@@ -30,14 +30,18 @@ class SplashActivity : BaseActivity() {
         handelSpalash()
 
     }
+
     private fun setLocalization(){
         val language = preferences!!.getString("language", "en")
         if (language =="Arabic") {
             change="ar"
+            Q.CURRENT_LANG="ar"
         } else if (language=="English" ) {
             change = "en"
-        }else {
-            change =""
+            Q.CURRENT_LANG="en"
+        }else if(language=="Kurdish") {
+            change ="ku"
+            Q.CURRENT_LANG="ku"
         }
         dLocale = Locale(change) //set any locale you want here
 

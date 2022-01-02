@@ -79,9 +79,11 @@ package com.muslim_adel.sehaty.utiles
     var USER_BIRTH="USER_BIRTH"
 
 
-
-
-
     const val FIRST_TIME_PREF = "ADW_first_time"
+    var CURRENT_LANG=""
+    //CONTRY VALUES
+    var PHONE_KEY="+964"
+    var CURNCY_NAME_AR="دينار"
+    var CURNCY_NAME_EN="IQD"
 
 }

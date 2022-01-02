@@ -56,8 +56,8 @@ class OfferAdapter(
             holder.offer_subtitle_txt!!.text=offer.device_name_ar
             holder.offer_ratingBar!!.rating=offer.rating.toFloat()
             holder.initial_cost!!.paintFlags = holder.initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-            holder.initial_cost!!.text=offer.price.toString()+" "+mContext.getString(R.string.derham)
-            holder.final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+mContext.getString(R.string.derham)
+            holder.initial_cost!!.text=offer.price.toString()+" "+Q.CURNCY_NAME_AR
+            holder.final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+Q.CURNCY_NAME_AR
         }else{
             holder.descound_txt!!.text=" ${mContext.getString(R.string.discount)} ${offer.discount.toString()}"+"%"
             holder.doc_data_txt!!.text=docGendar+" "+offer.doctor.firstName_en +" "+ offer.doctor.lastName_en +"-"+offer.doctor.address_en
@@ -65,8 +65,8 @@ class OfferAdapter(
             holder.offer_subtitle_txt!!.text=offer.device_name_en
             holder.offer_ratingBar!!.rating=offer.rating.toFloat()
             holder.initial_cost!!.paintFlags = holder.initial_cost!!.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
-            holder.initial_cost!!.text=offer.price.toString()+" "+mContext.getString(R.string.derham)
-            holder.final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+mContext.getString(R.string.derham)
+            holder.initial_cost!!.text=offer.price.toString()+" "+Q.CURNCY_NAME_EN
+            holder.final_cost!!.text=((offer.price*((100-offer.discount))/100)).toString()+Q.CURNCY_NAME_EN
 
         }
 

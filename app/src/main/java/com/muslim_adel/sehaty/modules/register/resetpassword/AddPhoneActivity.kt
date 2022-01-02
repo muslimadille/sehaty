@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.muslim_adel.sehaty.data.remote.objects.CreateCodeModel
+import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
@@ -37,7 +38,7 @@ class AddPhoneActivity : BaseActivity() {
     private fun getCode() {
 
         if (message_tf.text.isNotEmpty() &&message_tf.text.toString().length==10 ) {
-            phone="+964"+message_tf.text
+            phone= Q.PHONE_KEY+message_tf.text
             apiClient = ApiClient()
             sessionManager = SessionManager(this)
             apiClient.getApiService(this).createCode(phone, selectedType)

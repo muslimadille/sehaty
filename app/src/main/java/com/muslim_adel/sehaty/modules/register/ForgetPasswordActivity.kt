@@ -81,7 +81,7 @@ class ForgetPasswordActivity : BaseActivity() {
                 onObserveStart()
                 apiClient = ApiClient()
                 sessionManager = SessionManager(this)
-                apiClient.getApiService(this).createCode("+964"+phone, selectedType)
+                apiClient.getApiService(this).createCode(Q.PHONE_KEY+phone, selectedType)
                     .enqueue(object : Callback<BaseResponce<CreateCodeModel>> {
                         override fun onFailure(call: Call<BaseResponce<CreateCodeModel>>, t: Throwable) {
                             alertNetwork(true)
