@@ -56,6 +56,7 @@ class AppointmentsAdapter(
             }
         }
 
+        holder.appointment_ratingBar.rating=appointmentData.doctor.rating.toFloat()
 
         if (mContext.preferences!!.getString("language","")=="Arabic"){
             holder.date_name_txt.text=appointmentData.booking_date
@@ -94,6 +95,7 @@ class AppointmentsAdapter(
         val cancel_btn: LinearLayout =view.cancel_btn
         val help_btn: LinearLayout =view.help_btn
         val image_doc: ImageView =view.image_doc
+        val appointment_ratingBar:RatingBar=view.appointment_ratingBar
 
 
 

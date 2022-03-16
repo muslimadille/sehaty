@@ -8,7 +8,7 @@
     android:gravity="center_horizontal"
     tools:replace="android:supportsRtl"
     android:background="#ddd"
-    tools:context=".modules.register.LoginActivity">
+    tools:context="com.muslim_adel.sehaty.modules.register.LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -33,168 +33,115 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical">
-            <androidx.cardview.widget.CardView
-                android:id="@+id/edit_profile_btn"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                >
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
                     >
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginStart="10dp"
-                        >
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/blue_persson_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:layout_height="match_parent"
-                        android:text="@string/edit_profile"
-                        android:textSize="14sp"
-                        />
                     <ImageView
-                        tools:replace="android:supportsRtl"
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/arrow"/>
-
-
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/blue_persson_ic"/>
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/edit_profile_btn"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent"
+                    android:text="@string/edit_profile"
+                    android:textSize="14sp"
+                    />
 
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/edit_password_btn"
+
+
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                >
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
                     >
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginStart="10dp"
-                        >
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/blue_password_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:layout_height="match_parent"
-                        android:text="@string/change_password"
-                        android:textSize="14sp"
-                        />
                     <ImageView
-
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/arrow"/>
-
-
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/blue_password_ic"/>
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/edit_password_btn"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent"
+                    android:text="@string/change_password"
+                    android:textSize="14sp"
+                    />
 
-            </androidx.cardview.widget.CardView>
-            <androidx.cardview.widget.CardView
-                android:id="@+id/stn_language_btn"
+
+
+
+            </LinearLayout>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="8dp"
-                android:layout_margin="5dp"
-                android:orientation="vertical">
+                android:layout_height="50dp"
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                >
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="15dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="10dp"
                     >
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_marginStart="10dp"
-                        >
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="0dp"
-                            android:layout_weight="1"
-                            android:src="@drawable/blue_language_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
-                    </LinearLayout>
-                    <TextView
-                        android:layout_marginStart="10dp"
-                        android:layout_marginEnd="5dp"
-                        android:layout_width="0dp"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:layout_height="match_parent"
-                        android:text="@string/change_language"
-                        android:textSize="14sp"
-                        />
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/arrow"/>
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_weight="1"
+                        android:src="@drawable/blue_language_ic"/>
 
                 </LinearLayout>
+                <TextView
+                    android:id="@+id/stn_language_btn"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:layout_height="match_parent"
+                    android:text="@string/change_language"
+                    android:textSize="14sp"
+                    />
 
-            </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 

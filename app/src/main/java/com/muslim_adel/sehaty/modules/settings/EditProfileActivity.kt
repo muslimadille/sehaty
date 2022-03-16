@@ -192,7 +192,7 @@ class EditProfileActivity : BaseActivity() {
     }
 
     private fun logOut() {
-        sessionManager.saveAuthToken("")
+        sessionManager.saveAuthToken("",0)
         preferences!!.putBoolean(Q.IS_FIRST_TIME, true)
         preferences!!.putBoolean(Q.IS_LOGIN, false)
         preferences!!.putInteger(Q.USER_ID, -1)

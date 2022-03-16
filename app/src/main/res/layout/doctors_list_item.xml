@@ -18,16 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@color/cardview_light_background">
+            android:padding="2dp"
+            android:background="@drawable/green_btn_porder">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:background="@color/gray_light">
-                <de.hdodenhof.circleimageview.CircleImageView
+                <ImageView
                     android:id="@+id/doctor_image"
                     android:layout_width="50dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="50dp"
                     android:layout_marginBottom="8dp"
                     android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
@@ -80,34 +81,46 @@
                             android:text="specialty" />
 
                     </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-                        <RatingBar
-                            android:id="@+id/ratingBar"
-                            android:theme="@style/RatingBar"
-                            style="?android:attr/ratingBarStyleSmall"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginRight="8dp"
-                            android:layout_marginTop="5dp"
-                            android:numStars="5"
-                            android:stepSize=".1"
-                            />
-                        <TextView
-                            android:textSize="12dp"
-                            android:id="@+id/visitor_num"
-                            android:layout_marginStart="5dp"
-                            android:gravity="center_vertical"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:text="visitors" />
-                    </LinearLayout>
                 </LinearLayout>
+                <LinearLayout
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/gray"
+                        android:text="التقييم"
+                        android:textSize="12sp"
+                        android:gravity="center"
+                        android:layout_gravity="center"/>
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:theme="@style/RatingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginTop="5dp"
+                        android:numStars="5"
+                        android:stepSize=".1"
+                        />
+                    <TextView
+                        android:visibility="gone"
+                        android:textSize="12dp"
+                        android:id="@+id/visitor_num"
+                        android:layout_marginStart="5dp"
+                        android:gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="visitors" />
+                </LinearLayout>
+
+
 
             </LinearLayout>
             <LinearLayout
@@ -122,7 +135,7 @@
                         android:layout_margin="5dp"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/doctor"/>
+                        android:src="@drawable/person_ic"/>
                     <TextView
                         android:textSize="12dp"
                         android:id="@+id/description"
@@ -140,7 +153,7 @@
                         android:layout_margin="5dp"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/home"/>
+                        android:src="@drawable/ic_location"/>
                     <TextView
                         android:textSize="12dp"
                         android:id="@+id/address"
@@ -157,7 +170,7 @@
                         android:layout_margin="5dp"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/money"/>
+                        android:src="@drawable/ic_price"/>
                     <TextView
                         android:textSize="12dp"
                         android:layout_width="wrap_content"
@@ -180,7 +193,7 @@
                         android:layout_margin="5dp"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
-                        android:src="@drawable/time"/>
+                        android:src="@drawable/ic_time_green"/>
                     <TextView
                         android:textSize="12dp"
                         android:layout_width="wrap_content"
@@ -206,15 +219,14 @@
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:gravity="center"
-                        android:background="@color/gray_light"
                         android:layout_height="match_parent"
-                        android:text="@string/avilable_dates"
+                        android:text=""
                         android:layout_marginTop="5dp"
                         android:layout_marginBottom="5dp"/>
                     <Button
                         android:id="@+id/booking_btn"
                         android:layout_marginEnd="10dp"
-                        android:backgroundTint="@color/red"
+                        android:backgroundTint="@color/colorAccent"
                         android:text="@string/book_now"
                         android:textSize="14sp"
                         android:layout_width="wrap_content"

@@ -42,6 +42,8 @@
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:background="@drawable/green_btn_porder"
+                android:layout_margin="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -129,6 +131,7 @@
                 android:layout_marginBottom="10dp">
 
                 <LinearLayout
+                    android:background="@drawable/green_btn_porder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -212,60 +215,44 @@
 
                            </LinearLayout>
                        </LinearLayout>
-                       <androidx.cardview.widget.CardView
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:background="@color/white"
-                           android:layout_marginStart="3dp"
-                           android:elevation="5dp"
+                       <LinearLayout
                            app:layout_constraintBottom_toBottomOf="parent"
                            app:layout_constraintEnd_toEndOf="parent"
-                           app:layout_constraintTop_toTopOf="parent">
-
-                           <LinearLayout
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_marginStart="3dp"
-                               android:layout_marginTop="12dp"
-                               android:layout_marginEnd="3dp"
-                               android:layout_marginBottom="12dp"
-                               android:gravity="center">
-
-                               <ImageView
-                                   android:layout_width="28dp"
-                                   android:layout_height="28dp"
-                                   android:src="@drawable/ic_arrow_right_24">
-
-                               </ImageView>
-                           </LinearLayout>
-                       </androidx.cardview.widget.CardView>
-                       <androidx.cardview.widget.CardView
+                           app:layout_constraintTop_toTopOf="parent"
                            android:layout_width="wrap_content"
                            android:layout_height="wrap_content"
-                           android:background="@color/white"
+                           android:layout_marginStart="3dp"
+                           android:layout_marginTop="12dp"
                            android:layout_marginEnd="3dp"
-                           android:elevation="5dp"
+                           android:layout_marginBottom="12dp"
+                           android:gravity="center">
+
+                           <ImageView
+                               android:layout_width="28dp"
+                               android:layout_height="28dp"
+                               android:src="@drawable/ic_arrow_right_24">
+
+                           </ImageView>
+                       </LinearLayout>
+                       <LinearLayout
                            app:layout_constraintBottom_toBottomOf="parent"
                            app:layout_constraintStart_toStartOf="parent"
-                           app:layout_constraintTop_toTopOf="parent">
+                           app:layout_constraintTop_toTopOf="parent"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:layout_marginStart="3dp"
+                           android:layout_marginTop="12dp"
+                           android:layout_marginEnd="3dp"
+                           android:layout_marginBottom="12dp"
+                           android:gravity="center">
 
-                           <LinearLayout
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:layout_marginStart="3dp"
-                               android:layout_marginTop="12dp"
-                               android:layout_marginEnd="3dp"
-                               android:layout_marginBottom="12dp"
-                               android:gravity="center">
+                           <ImageView
+                               android:layout_width="28dp"
+                               android:layout_height="28dp"
+                               android:src="@drawable/ic_arrow_left_24">
 
-                               <ImageView
-                                   android:layout_width="28dp"
-                                   android:layout_height="28dp"
-                                   android:src="@drawable/ic_arrow_left_24">
-
-                               </ImageView>
-                           </LinearLayout>
-                       </androidx.cardview.widget.CardView>
+                           </ImageView>
+                       </LinearLayout>
                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -280,6 +267,7 @@
                 android:layout_marginBottom="10dp">
 
                 <LinearLayout
+                    android:background="@drawable/green_btn_porder"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -293,7 +281,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_margin="15dp"
-                            app:srcCompat="@drawable/star_borde"
+                            app:srcCompat="@drawable/ic_star_rate"
                             tools:ignore="VectorDrawableCompat" />
 
 
@@ -536,12 +524,11 @@
         android:layout_margin="10dp"
         android:orientation="vertical">
         <LinearLayout
+            android:background="@drawable/green_btn_porder"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:orientation="horizontal"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="5dp"
+            android:padding="10dp"
             >
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -554,12 +541,7 @@
                     android:layout_height="0dp"
                     android:layout_weight="1"
                     android:src="@drawable/ic_location"/>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_marginStart="5dp"
-                    android:background="@color/red"/>
+
             </LinearLayout>
             <TextView
                 android:layout_marginStart="10dp"

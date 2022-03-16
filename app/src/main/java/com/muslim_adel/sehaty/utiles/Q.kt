@@ -1,6 +1,9 @@
 package com.muslim_adel.sehaty.utiles
 
- object Q {
+import com.sehakhanah.patientapp.data.remote.objects.CountryModel
+import java.util.ArrayList
+
+object Q {
     /*************** Locales  ***********/
     /**..................api......................................***/
     const val BASE_URL = "https://laravelapi.sehakhanah.com/api/"
@@ -51,6 +54,7 @@ package com.muslim_adel.sehaty.utiles
     const val PASSWORD_RESET="password/reset"
     const val PROBLEMS_LIST="problems"
     const val CONTACT_US="sendemail/contactus"
+    const val COUNTRIES_API = "country"
 
 
 
@@ -85,5 +89,7 @@ package com.muslim_adel.sehaty.utiles
     var PHONE_KEY="+964"
     var CURNCY_NAME_AR="دينار"
     var CURNCY_NAME_EN="IQD"
+    var countriesList= ArrayList<CountryModel>()
+    lateinit var selectedCountry:CountryModel
 
 }

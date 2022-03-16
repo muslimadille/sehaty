@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">صحة خانة</string>
+    <string name="app_name">عناية</string>
     <string name="facebook_app_id">3282205678555332</string> <string name="fb_login_protocol_scheme">fb3282205678555332</string>
     <string name="continue_with_google">Continue with Google</string>
     <string name="server_client_id">862112895081-a7a9u6vrovg0fbuo4pl0393tcal0dg9i.apps.googleusercontent.com</string>
@@ -19,7 +19,7 @@
     <string name="settings_title">Settings</string>
     <string name="appoint_now_txt">Book Now</string>
     <string name="register_txt">Log In</string>
-    <string name="search_item">Search</string>
+    <string name="search_item">Home</string>
     <string name="offers_item">Offers</string>
     <string name="date_item">Appointments</string>
     <string name="search_by_name">Search By Name</string>
@@ -161,6 +161,13 @@
     <string name="repass">reset password</string>
     <string name="no_offers_fonded">no offers fonded</string>
     <string name="helptext">contact for help</string>
+    <string name="register">register</string>
+    <string name="select_country">Select Country</string>
+    <string name="select_language">Select Language</string>
+    <string name="next" translatable="true">Next</string>
+    <string name="previous" translatable="true">Previous</string>
+    <string name="dont_have_account">Don\'t have an account? Register here</string>
+    <string name="name_title">الاسم:</string>
 
 
 </resources>

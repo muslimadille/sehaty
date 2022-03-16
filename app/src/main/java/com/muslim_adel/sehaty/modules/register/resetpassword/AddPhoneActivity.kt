@@ -1,7 +1,6 @@
 package com.muslim_adel.sehaty.modules.register.resetpassword
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.muslim_adel.sehaty.data.remote.objects.CreateCodeModel
@@ -11,7 +10,6 @@ import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
 import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
 import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.modules.base.BaseActivity
-import com.sehakhanah.patientapp.modules.register.LoginActivity
 import com.sehakhanah.patientapp.modules.register.VerivicationActivity
 import kotlinx.android.synthetic.main.activity_add_phone.*
 import retrofit2.Call

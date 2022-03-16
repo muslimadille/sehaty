@@ -23,9 +23,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:background="@drawable/green_btn_porder"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="10dp"
+            android:padding="3dp"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -127,7 +129,7 @@
                             android:layout_marginEnd="10dp"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
-                            android:src="@drawable/time"/>
+                            android:src="@drawable/ic_time"/>
                         <TextView
                             android:text="@string/Shift"
                             android:layout_width="wrap_content"

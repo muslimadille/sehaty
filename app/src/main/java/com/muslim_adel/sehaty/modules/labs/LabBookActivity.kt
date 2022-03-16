@@ -1,4 +1,4 @@
-package com.sehakhanah.patientapp.modules.labs
+package com.muslim_adel.sehaty.modules.labs
 
 import android.content.Intent
 import android.os.Bundle

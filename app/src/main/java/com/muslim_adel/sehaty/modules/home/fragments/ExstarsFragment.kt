@@ -59,7 +59,7 @@ class ExstarsFragment : Fragment() {
         }
     }
     private fun logout(){
-        sessionManager.saveAuthToken("")
+        sessionManager.saveAuthToken("",0)
         mContext!!.preferences!!.putBoolean(Q.IS_FIRST_TIME,true)
         mContext!!.preferences!!.putBoolean(Q.IS_LOGIN,false)
         mContext!!.preferences!!.putInteger(Q.USER_ID,-1)

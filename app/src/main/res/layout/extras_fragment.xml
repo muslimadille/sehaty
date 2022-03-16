@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:replace="android:supportsRtl"
-    tools:context=".modules.register.LoginActivity">
+    tools:context="com.muslim_adel.sehaty.modules.register.LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -26,6 +26,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/gray_light"
         android:layout_weight="1">
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,12 +57,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/settings_blue_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
+
                     </LinearLayout>
                     <TextView
                         android:layout_marginStart="10dp"
@@ -73,20 +69,12 @@
                         android:text="@string/settings"
                         android:textSize="14sp"
                         />
-                    <ImageView
-                        tools:replace="android:supportsRtl"
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/arrow"/>
+
 
 
 
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="#DDB5AFAF"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -112,12 +100,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/phone_blue_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
+
                     </LinearLayout>
                     <TextView
                         android:layout_marginStart="10dp"
@@ -129,20 +112,12 @@
                         android:text="@string/contact_us"
                         android:textSize="14sp"
                         />
-                    <ImageView
 
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/arrow"/>
 
 
 
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="#DDB5AFAF"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -168,12 +143,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/about_us_blue_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
+
                     </LinearLayout>
                     <TextView
                         android:layout_marginStart="10dp"
@@ -185,19 +155,12 @@
                         android:text="@string/about_us"
                         android:textSize="14sp"
                         />
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/arrow"/>
+
 
 
 
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="#DDB5AFAF"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -223,12 +186,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/blue_refresh_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
+
                     </LinearLayout>
                     <TextView
                         android:layout_marginStart="10dp"
@@ -240,19 +198,12 @@
                         android:text="@string/how_it_work"
                         android:textSize="14sp"
                         />
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/arrow"/>
+
 
 
 
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="#DDB5AFAF"/>
+
             </LinearLayout>
             <LinearLayout
                 android:id="@+id/fav_lay"
@@ -280,12 +231,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/stare_blue_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
+
                     </LinearLayout>
                     <TextView
                         android:layout_marginStart="10dp"
@@ -297,19 +243,12 @@
                         android:text="@string/prefrances"
                         android:textSize="14sp"
                         />
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="match_parent"
-                        android:src="@drawable/arrow"/>
+
 
 
 
                 </LinearLayout>
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginEnd="15dp"
-                    android:background="#DDB5AFAF"/>
+
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -334,12 +273,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/logout_blue_ic"/>
-                        <View
-                            android:layout_width="match_parent"
-                            android:layout_height="1dp"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:background="@color/red"/>
+
                     </LinearLayout>
                     <TextView
                         android:id="@+id/logout_txt"

@@ -7,7 +7,6 @@ import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
-import com.sehakhanah.patientapp.modules.register.LoginActivity
 import com.muslim_adel.sehaty.modules.splash.SplashActivity
 import kotlinx.android.synthetic.main.activity_about_us.*
 import kotlinx.android.synthetic.main.activity_change_language.*

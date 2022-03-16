@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name"> صحة خانة</string>
+    <string name="app_name"> عناية</string>
     <string name="facebook_app_id">3282205678555332</string>
     <string name="fb_login_protocol_scheme">fb3282205678555332</string>
     <string name="server_client_id">862112895081-a7a9u6vrovg0fbuo4pl0393tcal0dg9i.apps.googleusercontent.com</string>
@@ -13,7 +13,7 @@
     <string name="settings_title">الإعدادات</string>
     <string name="appoint_now_txt">أحجز الآن</string>
     <string name="register_txt">تسجيل الدخول</string>
-    <string name="search_item">أبحث</string>
+    <string name="search_item">الرئيسية</string>
     <string name="offers_item">العروض</string>
     <string name="yes">نعم</string>
     <string name="no">لا</string>
@@ -144,7 +144,7 @@
     <string name="formorcontact">للمزيد اتصل ب</string>
     <string name="send_message">إرسال</string>
     <string name="cu">إتصل بنا</string>
-    <string name="by_gategory">ابحث حسب الفئة</string>
+    <string name="by_gategory">أقسام العروض</string>
     <string name="show_all">شاهد الكل</string>
     <string name="most_viewed">الأكثر طلباً</string>
     <string name="offer_details">بيانات العرض</string>
@@ -169,8 +169,8 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label" translatable="false">First Fragment</string>
     <string name="second_fragment_label" translatable="false">Second Fragment</string>
-    <string name="next" translatable="false">Next</string>
-    <string name="previous" translatable="false">Previous</string>
+    <string name="next" translatable="true">التالي</string>
+    <string name="previous" translatable="true">السابق</string>
 
     <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
     <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
@@ -190,6 +190,11 @@
     <string name="repass">إعادة ضبط كلمة المرور</string>
     <string name="no_offers_fonded">لا يوجد عروض </string>
     <string name="helptext">طلب المساعدة</string>
+    <string name="register">تسجيل</string>
+    <string name="select_country">اختر الدولة</string>
+    <string name="select_language">اختر اللغة</string>
+    <string name="dont_have_account">ليس لديك حساب؟سجل من هنا</string>
+    <string name="name_title">الاسم:</string>
 
 
 </resources>

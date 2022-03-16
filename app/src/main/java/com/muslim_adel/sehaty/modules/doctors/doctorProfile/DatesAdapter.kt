@@ -35,11 +35,13 @@ class DatesAdapter(
         val date = list[position]
         if (date.status==1){
             if (mContext.preferences!!.getString("language","")=="Arabic"){
-                holder.day_txt.text=date.day_ar+"\n ${date.date}"
+                holder.day_txt.text=date.day_ar
+                holder.day_date_txt.text="${date.date}"
                 holder.start_time_txt.text=date.times[0].time
                 holder.end_time_txt.text=date.times[date.times.size-1].time
             }else{
-                holder.day_txt.text=date.day_en+"\n ${date.date}"
+                holder.day_txt.text=date.day_en
+                holder.day_date_txt.text="${date.date}"
                 holder.start_time_txt.text=date.times[0].time
                 holder.end_time_txt.text=date.times[date.times.size-1].time
             }
@@ -72,5 +74,6 @@ class DatesAdapter(
         val start_time_txt: TextView =view.start_time_txt
         val end_time_txt: TextView =view.end_time_txt
         val book_btn: LinearLayout =view.book_btn
+        val day_date_txt:TextView=view.day_date_txt
     }
 }

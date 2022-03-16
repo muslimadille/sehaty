@@ -14,7 +14,6 @@ import com.sehakhanah.patientapp.data.remote.apiServices.SessionManager
 import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.data.remote.objects.LoginResponce
 import com.sehakhanah.patientapp.modules.base.BaseActivity
-import com.sehakhanah.patientapp.modules.register.LoginActivity
 import kotlinx.android.synthetic.main.activity_edit_profile.*
 import kotlinx.android.synthetic.main.activity_forget_password.*
 import kotlinx.android.synthetic.main.activity_forget_password.view.*
@@ -178,7 +177,7 @@ class ForgetPasswordActivity : BaseActivity() {
                     ) {
                         val registerResponse = response.body()
                         if (registerResponse!!.success) {
-                            sessionManager.saveAuthToken(token)
+                            sessionManager.saveAuthToken(token,registerResponse!!.data!!.user!!.country_id!!)
                             resetPassword()
                         } else {
                             onObservefaled()

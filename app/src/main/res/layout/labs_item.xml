@@ -23,6 +23,8 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:background="@drawable/green_btn_porder"
+            android:padding="3dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingBottom="10dp"
@@ -49,7 +51,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="136dp"
                     android:src="@drawable/person_ic"
-                    app:civ_border_color="@color/white"
+                    app:civ_border_color="@color/colorAccent"
                     app:civ_border_width="1dp"
                     app:layout_constraintEnd_toEndOf="@+id/lab_slider_images"
                     app:layout_constraintHorizontal_bias="0.042"

@@ -1,4 +1,4 @@
-package com.sehakhanah.patientapp.modules.register
+package com.muslim_adel.sehaty.modules.register
 
 import android.app.Activity
 import android.content.Intent
@@ -20,7 +20,6 @@ import com.google.gson.JsonSyntaxException
 import com.muslim_adel.sehaty.data.remote.apiServices.ApiClientnew
 import com.muslim_adel.sehaty.data.remote.objects.GenerateToken
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
-import com.muslim_adel.sehaty.modules.register.VerificationPhonActivity
 import com.muslim_adel.sehaty.modules.register.resetpassword.AddPhoneActivity
 import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
@@ -30,6 +29,8 @@ import com.sehakhanah.patientapp.data.remote.objects.BaseResponce
 import com.sehakhanah.patientapp.data.remote.objects.LoginResponce
 import com.sehakhanah.patientapp.modules.base.BaseActivity
 import com.sehakhanah.patientapp.modules.home.MainActivity
+import com.sehakhanah.patientapp.modules.register.RegisterationActivity
+import com.sehakhanah.patientapp.modules.register.VerivicationActivity
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_login.username
 import kotlinx.android.synthetic.main.activity_registeration.*
@@ -69,7 +70,7 @@ class LoginActivity : BaseActivity() {
                 apiClient = ApiClient()
                 sessionManager = SessionManager(this)
                 apiClient.getApiService(this)
-                    .login(username.text.toString(), login_password.text.toString())
+                    .login("${Q.selectedCountry.phoneCode}"+username.text.toString(), login_password.text.toString())
                     .enqueue(object : Callback<LoginResponce> {
                         override fun onFailure(call: Call<LoginResponce>, t: Throwable) {
                             alertNetwork(true)
@@ -92,7 +93,7 @@ class LoginActivity : BaseActivity() {
                                 if (loginResponse?.data!!.status == 200 && loginResponse.data.user != null) {
                                     username.text.clear()
                                     login_password.text.clear()
-                                    sessionManager.saveAuthToken(loginResponse.data.token)
+                                    sessionManager.saveAuthToken(loginResponse.data.token,loginResponse!!.data!!.user!!.country_id!!)
                                     preferences!!.putBoolean(Q.IS_FIRST_TIME, false)
                                     preferences!!.putBoolean(Q.IS_LOGIN, true)
                                     preferences!!.putInteger(
@@ -319,7 +320,7 @@ class LoginActivity : BaseActivity() {
                         val loginResponse = response
                         if (loginResponse!!.isSuccessful && loginResponse.body()!!.access_token != null) {
                             onObserveSuccess()
-                            sessionManager.saveAuthToken(loginResponse.body()!!.access_token)
+                            sessionManager.saveAuthToken(loginResponse.body()!!.access_token,0)
                             // preferences!!.putBoolean(com.muslim_adel.sehaty.utiles.Q.IS_FIRST_TIME,false)
                             // preferences!!.putBoolean(com.muslim_adel.sehaty.utiles.Q.IS_LOGIN,true)
                             // preferences!!.putInteger(com.muslim_adel.sehaty.utiles.Q.USER_ID,registerResponse.data!!.user.id.toInt())
@@ -370,7 +371,7 @@ class LoginActivity : BaseActivity() {
                     val loginResponse = response
                     if (loginResponse!!.isSuccessful && loginResponse.body()!!.data != null) {
                         onObserveSuccess()
-                        sessionManager.saveAuthToken(loginResponse.body()!!.data!!.token)
+                        sessionManager.saveAuthToken(loginResponse.body()!!.data!!.token,0)
                         preferences!!.putBoolean(Q.IS_FIRST_TIME, false)
                         preferences!!.putBoolean(Q.IS_LOGIN, true)
                         preferences!!.putInteger(

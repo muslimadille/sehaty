@@ -1,0 +1,199 @@
+<resources>
+    <string name="app_name"> عناية</string>
+    <string name="facebook_app_id">3282205678555332</string>
+    <string name="fb_login_protocol_scheme">fb3282205678555332</string>
+    <string name="server_client_id">862112895081-a7a9u6vrovg0fbuo4pl0393tcal0dg9i.apps.googleusercontent.com</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="contact_us">پهیوهندیمان پێوه بکه</string>
+    <string name="about_us">سهبارهت به کاربهرنامه</string>
+    <string name="prefrances">پهسهندترین</string>
+    <string name="log_out">پشکنین</string>
+    <string name="more_title">زیاتر</string>
+    <string name="settings_title">ڕێکبهندهکان</string>
+    <string name="appoint_now_txt">ئێستا پهڕتووک</string>
+    <string name="register_txt">چوونهژوورهوه</string>
+    <string name="search_item">ماڵهوه</string>
+    <string name="offers_item">ئۆفهرهکان</string>
+    <string name="yes">بهڵێ</string>
+    <string name="no">نهخێر</string>
+
+    <string name="date_item">ژوانهکان</string>
+    <string name="settings">ڕێکبهندهکان</string>
+    <string name="edite_password">بژارکردنی وشهی رۆور</string>
+
+    <string name="search">گهڕان</string>
+
+    <string name="search_by_name">سهیری ناوی دکتۆرهکه بکه</string>
+    <string name="search_by_spicialist">توێژینهوه به پسپۆڕیی</string>
+    <string name="pharmacy_search">گهڕان بۆ دهرمانخانهکان</string>
+    <string name="flag_txt">چونکه تهندروستیت بۆ ئێمه گرنگه</string>
+    <string name="labs_search">گهڕانی تاقیگه</string>
+    <string name="registration_title">ئێستا تۆماربکه.</string>
+    <string name="full_name">ههموو ناوهکه</string>
+    <string name="add_message">زیادکردنی نامه</string>
+
+    <string name="mobile_number">ژمارهی مۆبایلهکه بهبێ 0</string>
+    <string name="e_mail">ئیمهیڵ</string>
+    <string name="e_mail_or_mobile">ئیمهیڵ یان ژمارهی مۆبایل</string>
+
+    <string name="password">کۆدی چوونه ژورهوه</string>
+    <string name="date_of_birth">بهرواری لهدایکبوون</string>
+    <string name="gender">سێکس</string>
+    <string name="female">مێ</string>
+    <string name="male">نێر</string>
+    <string name="save">ئێستا تۆماربکه.</string>
+    <string name="login">چوونهژوورهوه</string>
+    <string name="forget_password">نهێنوشهکهت لهبیرچووه؟</string>
+    <string name="rouls_conditions"> مهرجهکان</string>
+    <string name="new_acount">ئهژمێرێکی نوێ پێکبهێنه</string>
+    <string name="login_facebook">چوونهژوورهوه له ڕێگهی فهیسبووکهوه</string>
+    <string name="login_twitter">الدخول عن طريق تويتر</string>
+    <string name="login_google">چوونهژوورهوه له ڕێگهی گووگڵهوه</string>
+    <string name="fav_doc">دکتۆرهکان</string>
+    <string name="fav_offers">ئۆفهرهکان</string>
+    <string name="continue_with_google">بهدواکهوتن به بهکارهێنانی گووگڵ</string>
+
+    <string name="or">یان</string>
+    <string name="title_activity_settings" translatable="false">ڕێکبهندهکان</string>
+
+    <!-- Preference Titles -->
+    <string name="messages_header" translatable="false">Messages</string>
+    <string name="sync_header" translatable="false">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title" translatable="false">Your signature</string>
+    <string name="reply_title" translatable="false">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title" translatable="false">Sync email periodically</string>
+    <string name="attachment_title" translatable="false">Download incoming attachments</string>
+    <string name="attachment_summary_on" translatable="false">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off" translatable="false">Only download attachments when manually requested</string>
+    <string name="how_it_work">چۆن کاربهرنامه کاردهکات</string>
+    <string name="change_language">زمان بگۆڕه</string>
+    <string name="change_password">بژارکردنی نهێنوشه</string>
+    <string name="edit_profile">ڕێکخستنی داتای ئهژمێر</string>
+    <string name="appointments">ژوانهکانم</string>
+    <string name="favorites">پهسهندترین</string>
+
+    <string name="no_offers">ئۆفهرت نیه</string>
+    <string name="no_appointments">تۆ حجزت نیه.</string>
+    <string name="chose_doctor">دکتۆر ههڵبژێره</string>
+    <string name="no_search_results">هیچ ئهنجامێک نیه.</string>
+    <string name="select_reagon">ناوچهکه ههڵبژێره</string>
+    <string name="cost">تێچوون:</string>
+    <string name="waiting">کاتی چاوهڕوانی:</string>
+    <string name="book_now">پهڕتووک ئێستا</string>
+    <string name="chose_specialty">تایبهتمهندێتی ههڵبژێره</string>
+    <string name="progress_txt">تکایه چاوهڕوان بکه.</string>
+
+    <string name="no_internet">هیچ پهیوهندیهکی ئینتهرنێت نیه.</string>
+    <string name="logout_alert">دهتهوێت بپشکنیت؟</string>
+    <string name="exit">دهرچوون</string>
+    <string name="dismiss">شاردنهوه</string>
+    <string name="search_doctor_hint">ناوی دکتۆرهکه بگهڕه.</string>
+    <string name="doctor">دکتۆر:</string>
+    <string name="doctorah">دکتۆر:</string>
+    <string name="lab_search_hint">به ناوی تاقیگهکه بگهڕێ</string>
+    <string name="discount">کهمکردنهوه</string>
+    <string name="select_type">جۆری ئهژمێر ههڵبژێره</string>
+
+    <string name="PATIENT">نهخۆش</string>
+    <string name="DOCTOR">دکتۆر</string>
+    <string name="DOCTORS">پزیشکهکان</string>
+    <string name="LAB">تاقیگه</string>
+    <string name="LABS">تاقیگهکان</string>
+
+    <string name="PHARM">دهرمانخانه</string>
+
+
+    <string name="doctors_list">پێڕستی دکتۆرهکان</string>
+    <string name="visitors">سهردانکهر</string>
+    <string name="profile">داتاکانی دکتۆر</string>
+    <string name="waiting_time">کاتی چاوهڕوانی</string>
+    <string name="cost_amount">نرخی ئاشکراکردن</string>
+    <string name="date_hint">داخڵکردن له خشته</string>
+    <string name="booking_hint">پهڕتووک ئێستا و وردهکاری تهواوی ناونیشان و ژمارهی نۆرینگه دهنێردرێت</string>
+    <string name="rating">ههڵسهنگاندنی گشتی له</string>
+    <string name="seen">بینینهکان</string>
+    <string name="doctor_info">زانیاری دکتۆر</string>
+    <string name="more">زیاتر</string>
+    <string name="less">کهمتر</string>
+    <string name="booking_dates">بهرواری پهڕتووککردن</string>
+    <string name="booking_order">داواکردن بۆ پهڕتووککردن</string>
+    <string name="booking_check">من نهخۆشێکی تر تۆمار دهکهم</string>
+    <string name="language_setting">ڕێکخستنی زمان</string>
+    <string name="lang_btn">پاراستن</string>
+    <string name="ratings">ههڵسهنگاندنهکان</string>
+    <string name="thanks">سوپاس بۆ تۆ</string>
+    <string name="done">تۆ به سهرکهوتوویی تۆمارت کرد.</string>
+    <string name="derham">دينار</string>
+    <string name="price">نرخ</string>
+    <string name="help">داوای یارمهتی بکه</string>
+    <string name="cancel">ههڵوهشاندنهوه</string>
+    <string name="map">نهخشه</string>
+    <string name="new_password">نهێنوشهی نوێ</string>
+    <string name="old_password">نهێنوشهی کۆن</string>
+    <string name="please_enter_new_password">نهێنوشه نوێکه تێبنووسه</string>
+    <string name="edit_password">ئێمه نهێنوشهکه ڕێک دهخات.</string>
+    <string name="save_btn">پاراستن</string>
+    <string name="contactus_txt">خۆشحاڵین به وهرگرتنی پرسیار و پێشنیارهکانی ئێوه</string>
+    <string name="formorcontact">بۆ پهیوهندی زیاتر </string>
+    <string name="send_message">ناردن</string>
+    <string name="cu">پهیوهندیمان پێوه بکه</string>
+    <string name="by_gategory">گهڕان بهپێی بابهت</string>
+    <string name="show_all">ههموو کهس ببینه</string>
+    <string name="most_viewed">زۆرترین داواکراوً</string>
+    <string name="offer_details">داتا پیشان بده</string>
+    <string name="info">زانیاری</string>
+    <string name="offer_provider_data">داتای دابینکهری خزمهتگوزاری</string>
+    <string name="all_categoris_title">گهڕان بهپێی بابهت</string>
+    <string name="pharmacy_offers_title">پێشنیارهکانی دهرمانخانه</string>
+    <string name="pharmacy">دهرمانخانه: </string>
+    <string name="type">بڕگه: </string>
+    <string name="labs_lists">پێڕستی تاقیگهکان</string>
+    <string name="search_by_reagon">گهڕان بهپێی ههرێم</string>
+    <string name="search_for_labs">گهڕان بۆ تاقیگه</string>
+    <string name="search_by_nam_labs">به ناوی تاقیگهکه بگهڕێ</string>
+    <string name="address">ناونیشان:</string>
+    <string name="laboratory_details">داتای تاقیگه</string>
+    <string name="test_typs">جۆری شیکردنهوه ههڵبژێره</string>
+    <string name="avilable_dates">ژوانهکانی بهردهست</string>
+    <string name="to">بۆ ناو</string>
+    <string name="pay_cash_in_clinic">پارهدانی کاش له نۆرینگهکه</string>
+    <string name="go_to_location">بڕۆ بۆ سایتهکه</string>
+    <string name="title_activity_verivication" translatable="false">VerivicationActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="true">دواتر</string>
+    <string name="previous" translatable="true">پێشوو</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="verivication">چالاککردنی ئهژمێر</string>
+    <string name="try_again">دووباره تاقی بکهوه.</string>
+    <string name="not_recieved">نامهکه وهرنهگیراوه.</string>
+    <string name="ver_hint">کۆدی دووپاتکردنهوه به SMS دهنێردرێت</string>
+    <string name="Shift">دهرمانخانهی خهفره</string>
+    <string name="houre"> کاتژمێر</string>
+    <string name="search_for_pharmacy">دهرمانخانهکان بدۆزهوه</string>
+    <string name="ph_search_name">سهیری ناوی دهرمانخانه بکه</string>
+    <string name="pharmacy_details">وردهکاریهکانی دهرمانخانه</string>
+    <string name="bookin_alert">بۆ بینینی پهڕتووکهکان، تکایه بچۆ ژوورهوه</string>
+    <string name="con_password">پشتڕاستکردنهوهی کۆدی چوونه ژورهوه</string>
+    <string name="forget_pw">نهێنوشهکهم لهبیر چوو.</string>
+    <string name="pw">نهێنوشه</string>
+    <string name="repass">ڕیسێتکردنی نهێنوشه</string>
+    <string name="no_offers_fonded">هیچ ئۆفهرێک نیه </string>
+    <string name="helptext">داوای یارمهتی بکه</string>
+    <string name="register">چوونهژوورهوه</string>
+    <string name="select_country">وڵات ههڵبژێره</string>
+    <string name="select_language">زمانهکه ههڵبژێره</string>
+    <string name="dont_have_account">تۆ حیسابت نیه؟</string>
+    <string name="name_title">ناو:</string>
+
+
+</resources>

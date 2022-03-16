@@ -18,8 +18,7 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:padding="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:background="@drawable/green_btn_porder"
             android:orientation="vertical">
             <RatingBar
                 android:id="@+id/rating_rate"
@@ -43,7 +42,7 @@
                 android:layout_height="wrap_content"
                 android:text="comment"
                 android:textColor="@color/gray"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 android:textStyle="bold"/>
             <TextView
                 android:id="@+id/rating_name"
@@ -51,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:text="name"
                 android:textColor="@color/gray"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 />
             <TextView
                 android:id="@+id/rating_date"
@@ -59,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:text="name"
                 android:textColor="@color/gray"
-                android:textSize="14sp"
+                android:textSize="12sp"
                 />
         </LinearLayout>
 

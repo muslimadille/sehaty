@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    tools:context=".modules.register.LoginActivity">
+    tools:context="com.muslim_adel.sehaty.modules.register.LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -45,9 +45,9 @@
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="120dp"
+                    android:layout_width="match_parent"
                     android:layout_height="120dp"
-                    android:src="@drawable/logo" />
+                    android:src="@drawable/new_logo_dark" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -60,8 +60,8 @@
                     <com.facebook.login.widget.LoginButton
                         android:id="@+id/fb_login_button"
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
-                        android:backgroundTint="@color/blue"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="#04379E"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginBottom="20dp" />
 
@@ -113,7 +113,8 @@
                         android:layout_height="wrap_content"
                         android:background="@color/white"
                         android:backgroundTint="@color/white"
-                        app:startIconDrawable="@drawable/email_ic">
+                        app:startIconTint="@color/colorAccent"
+                        app:startIconDrawable="@drawable/phone_blue_ic">
 
                         <EditText
                             android:textSize="12sp"
@@ -124,7 +125,7 @@
                             android:layout_centerVertical="true"
                             android:backgroundTint="@color/white"
                             android:ems="10"
-                            android:hint="@string/e_mail_or_mobile"
+                            android:hint="@string/mobile_number"
                             android:inputType="text" />
 
                     </com.google.android.material.textfield.TextInputLayout>
@@ -146,6 +147,8 @@
                         android:background="@color/white"
                         android:backgroundTint="@color/white"
                         app:passwordToggleEnabled="true"
+                        app:passwordToggleTint="@color/colorAccent"
+                        app:startIconTint="@color/colorAccent"
                         app:startIconDrawable="@drawable/password_ic">
 
                         <EditText

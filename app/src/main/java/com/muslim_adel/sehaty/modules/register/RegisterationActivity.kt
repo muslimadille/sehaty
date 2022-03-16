@@ -99,7 +99,7 @@ class RegisterationActivity : BaseActivity() {
                                     val s = response.body()!!.data.toString()
                                     //Toast.makeText(this@RegisterationActivity, s, Toast.LENGTH_SHORT).show()
                                     if (registerResponse?.data!!.status == 200 && registerResponse.data!!.user != null) {
-                                        sessionManager.saveAuthToken(registerResponse.data!!.token)
+                                        sessionManager.saveAuthToken(registerResponse.data!!.token,registerResponse!!.data!!.user!!.country_id!!)
                                         preferences!!.putBoolean(Q.IS_FIRST_TIME, false)
                                         preferences!!.putBoolean(Q.IS_LOGIN, true)
                                         preferences!!.putInteger(

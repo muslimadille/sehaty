@@ -6,6 +6,7 @@ import android.view.View
 import android.widget.Toast
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
 import com.muslim_adel.sehaty.modules.register.ForgetPasswordActivity
+import com.muslim_adel.sehaty.modules.register.LoginActivity
 import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
@@ -212,7 +213,7 @@ class VerivicationActivity : BaseActivity() {
                 ) {
                     val registerResponse = response.body()
                     if (registerResponse!!.success) {
-                        sessionManager.saveAuthToken(token)
+                        sessionManager.saveAuthToken(token,0)
                         val intent =
                             Intent(this@VerivicationActivity, ForgetPasswordActivity::class.java)
                         intent.putExtra("key",1)

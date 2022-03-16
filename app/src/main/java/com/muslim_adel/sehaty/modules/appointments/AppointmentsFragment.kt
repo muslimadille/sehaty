@@ -15,7 +15,7 @@ import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.modules.base.CustomTabLayout
 import com.sehakhanah.patientapp.modules.appointments.fragments.MyOffersFragments
 import com.sehakhanah.patientapp.modules.appointments.fragments.bookingsFragments
-import com.sehakhanah.patientapp.modules.register.LoginActivity
+import com.muslim_adel.sehaty.modules.register.LoginActivity
 import com.sehakhanah.patientapp.utiles.ComplexPreferences
 import kotlinx.android.synthetic.main.appointments_fragment.*
 
@@ -50,6 +50,7 @@ class AppointmentsFragment : Fragment() {
                 }
                 1 -> {
                     tab.text = getString(R.string.LABS)
+
 
                 }
                 2 ->{

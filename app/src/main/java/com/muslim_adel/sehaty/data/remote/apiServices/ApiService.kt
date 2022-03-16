@@ -9,6 +9,8 @@ import retrofit2.Call
 import retrofit2.http.*
 
 interface ApiService {
+    @GET(Q.COUNTRIES_API)
+    fun getAllCountriesList(): Call<BaseResponce<List<CountryModel>>>
     @POST(Q.LOGIN_API)
     fun login(@Query("email")email:String, @Query("password")password:String): Call<LoginResponce>
 

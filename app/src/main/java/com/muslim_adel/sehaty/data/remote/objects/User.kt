@@ -20,7 +20,9 @@ data class User (
     @SerializedName("updated_at")
     var updated_at: String,
     @SerializedName("code")
-    var code: Long
+    var code: Long,
+    @SerializedName("country_id")
+    var country_id: Int,
 
 
 )

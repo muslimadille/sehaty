@@ -12,23 +12,33 @@
         android:layout_margin="5dp"
         app:cardElevation="3dp">
         <LinearLayout
+            android:background="@drawable/green_btn_porder"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
             <ImageView
+                android:layout_margin="4dp"
                 android:id="@+id/category_img"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
                 android:src="@drawable/person_ic"/>
-            <TextView
-                android:textSize="14sp"
-                android:id="@+id/category_title_txt"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="title"
-                android:gravity="center"
-                android:layout_margin="5dp"/>
+                android:background="@color/colorAccent"
+                >
+                <TextView
+                    android:textSize="14sp"
+                    android:id="@+id/category_title_txt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="title"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:layout_margin="5dp"/>
+
+            </LinearLayout>
         </LinearLayout>
 
 

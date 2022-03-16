@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/bg"
+    android:background="@drawable/new_bg_dark"
     tools:context=".modules.pharmacy.PharmaySearchActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,44 +32,42 @@
         android:gravity="center"
         android:orientation="vertical"
         >
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:src="@drawable/new_logo_white"/>
         <androidx.cardview.widget.CardView
             android:id="@+id/search_name_btn"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            app:cardCornerRadius="2dp"
+            app:cardCornerRadius="8dp"
             app:cardElevation="5dp"
             android:layout_marginBottom="10dp">
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:gravity="center"
                 android:background="#fff"
                 >
                 <ImageView
                     android:padding="5dp"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/search_ic"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:src="@drawable/pharmaci_ic"/>
                 <TextView
-
-                    android:textColor="@color/blue"
-                    android:layout_marginStart="5dp"
-                    android:layout_marginEnd="5dp"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:textColor="@color/gray"
+                    android:layout_width="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/ph_search_name"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
                     />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/solid_arrow"
-                    android:layout_marginEnd="10dp"/>
+
 
 
 
@@ -78,42 +76,38 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/search_region_btn"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="120dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            cardCornerRadius="2dp"
+            cardCornerRadius="8dp"
             app:cardElevation="5dp"
             android:layout_marginBottom="10dp">
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
+                android:layout_width="150dp"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
                 android:background="#fff"
                 >
                 <ImageView
                     android:padding="5dp"
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/search_ic"/>
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/search_gray_ic"/>
                 <TextView
-                    android:textColor="@color/blue"
+                    android:textColor="@color/gray"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:text="@string/search_by_reagon"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
 
                     />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/solid_arrow"
-                    android:layout_marginEnd="10dp"/>
+
 
 
 
@@ -122,40 +116,38 @@
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
             android:id="@+id/show_all_btn"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_width="150dp"
+            android:layout_height="120dp"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
-            cardCornerRadius="2dp"
+            cardCornerRadius="8dp"
             app:cardElevation="5dp"
             android:layout_marginBottom="10dp">
             <LinearLayout
+                android:padding="10dp"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:orientation="horizontal"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center"
                 android:background="#fff">
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
                     android:src="@drawable/pharmaci_ic"/>
                 <TextView
-                    android:textColor="@color/blue"
+                    android:textColor="@color/gray"
                     android:layout_marginStart="5dp"
                     android:layout_marginEnd="5dp"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+
                     android:text="@string/show_all"
-                    android:textSize="14sp"
+                    android:textSize="12sp"
                     android:textStyle="bold"
 
                     />
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="match_parent"
-                    android:src="@drawable/solid_arrow"
-                    android:layout_marginEnd="10dp"/>
+
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>

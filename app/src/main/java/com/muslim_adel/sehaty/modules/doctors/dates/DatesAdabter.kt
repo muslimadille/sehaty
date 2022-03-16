@@ -2,22 +2,15 @@ package com.sehakhanah.patientapp.modules.doctors.dates
 
 import android.content.Context
 import android.content.Intent
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseExpandableListAdapter
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.sehakhanah.patientapp.R
-import com.sehakhanah.patientapp.data.remote.objects.Date
-import com.sehakhanah.patientapp.data.remote.objects.Dates
 import com.sehakhanah.patientapp.data.remote.objects.Times
 import com.sehakhanah.patientapp.modules.doctors.booking.BookingActivity
-import com.sehakhanah.patientapp.modules.doctors.doctorProfile.DoctorProfile
-import com.sehakhanah.patientapp.modules.labs.LabBookActivity
-import kotlinx.android.synthetic.main.date_item_row.view.*
+import com.muslim_adel.sehaty.modules.labs.LabBookActivity
 import kotlinx.android.synthetic.main.doctor_dates_item.view.*
 import kotlinx.android.synthetic.main.time_item.view.*
 import kotlinx.android.synthetic.main.time_item_row.view.*
