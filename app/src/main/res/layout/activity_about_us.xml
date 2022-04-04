@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorAccent"
+    android:background="@color/white"
     tools:context=".modules.contactUs.AboutUsActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,8 +28,9 @@
         android:orientation="vertical">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/logo"/>
+            android:layout_height="70dp"
+            android:layout_margin="10dp"
+            android:src="@mipmap/ic_launcher"/>
        <ScrollView
            android:layout_width="match_parent"
            android:layout_height="0dp"
@@ -39,8 +40,8 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:textSize="14sp"
-               android:textStyle="bold"
-               android:textColor="@color/white"
+               android:textStyle="normal"
+               android:textColor="@color/gray"
                android:layout_margin="10dp"/>
        </ScrollView>
 

@@ -153,7 +153,7 @@ class OfferDetailsActivity : BaseActivity() {
 
                                 }
                                 it.dates.forEach {date:Date->
-                                    if(date.status==1){
+                                    if(date.status==1&&date.times.isNotEmpty()){
                                         offerDatesList.add(date)
                                     }
                                 }

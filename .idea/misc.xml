@@ -31,6 +31,8 @@
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/drawable/top_rounded_blue_bg.xml" value="0.20833333333333334" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout-land/activity_pharmay_search.xml" value="0.16822916666666668" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout-v21/activity_login.xml" value="0.1921875" />
+        <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/activity_about_us.xml" value="0.1921875" />
+        <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/activity_change_language.xml" value="0.1921875" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/activity_doctor_profile.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/activity_lab_details.xml" value="0.1921875" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/activity_labs.xml" value="0.1921875" />
@@ -43,7 +45,7 @@
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/appointments_fragment.xml" value="0.10648148148148148" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/doctor_dates_item.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/doctors_list_item.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/extras_fragment.xml" value="0.1921875" />
+        <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/extras_fragment.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/home_fragment.xml" value="0.1921875" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/labs_item.xml" value="0.1921875" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/offer_category_first_item.xml" value="0.1921875" />
@@ -52,9 +54,10 @@
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/offers_second_item.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/pharmacy_offer_item.xml" value="0.1921875" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/rate_item.xml" value="0.1921875" />
-        <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/settings_activity.xml" value="0.1921875" />
+        <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/settings_activity.xml" value="0.33" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/layout/time_item.xml" value="0.1921875" />
         <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/menu/navigation.xml" value="0.1921875" />
+        <entry key="..\:/AndroidStudioProjects/sehaty/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.20833333333333334" />
       </map>
     </option>
   </component>

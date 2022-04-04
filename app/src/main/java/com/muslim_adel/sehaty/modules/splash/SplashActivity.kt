@@ -20,6 +20,7 @@ class SplashActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
+        isLogin=preferences!!.getBoolean(Q.IS_LOGIN,false)
         isFristTime=preferences!!.getBoolean(Q.IS_FIRST_TIME, Q.FIRST_TIME)
         if (isFristTime) {
             preferences!!.putString("language", "Arabic")
@@ -50,11 +51,18 @@ class SplashActivity : BaseActivity() {
 
         Handler().postDelayed({
             if (true) {
-                preferences!!.putString("language", "Arabic")
-                preferences!!.commit()
-                val intent = Intent(this@SplashActivity, IntroWizardActivity::class.java)
-                startActivity(intent)
-                finish()
+                if(isLogin){
+                    val intent = Intent(this@SplashActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }else{
+                    preferences!!.putString("language", "Arabic")
+                    preferences!!.commit()
+                    val intent = Intent(this@SplashActivity, IntroWizardActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+
             } else {
                 val intent = Intent(this@SplashActivity, MainActivity::class.java)
                 startActivity(intent)

@@ -26,7 +26,7 @@ class AuthInterceptor(context: Context) : Interceptor {
             }
         }
         //handle country id
-        if(sessionManager.fetchCountryId()==null){
+        if(sessionManager.fetchCountryId()==0){
             var countryId=preferences!!.getInteger("COUNTRY_ID",1)
             requestBuilder.addHeader("Country-id", countryId.toString())
         }else{

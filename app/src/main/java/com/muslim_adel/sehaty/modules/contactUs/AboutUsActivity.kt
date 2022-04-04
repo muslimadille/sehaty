@@ -54,9 +54,9 @@ class AboutUsActivity : BaseActivity() {
                             response.body()!!.data!!.let {
                                 val language = preferences!!.getString("language", "en")
                                 if (language == "Arabic") {
-                                    abut_us_txt.text =  HtmlCompat.fromHtml(it[0].aboutUs_en, 0)
+                                    abut_us_txt.text =  HtmlCompat.fromHtml(it[0].aboutUs_ar, 0)
                                 } else {
-                                    abut_us_txt.text = it[0].aboutUs_en
+                                    abut_us_txt.text = HtmlCompat.fromHtml(it[0].aboutUs_en, 0)
                                 }
                             }
                         } else {
