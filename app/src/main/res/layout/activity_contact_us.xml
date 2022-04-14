@@ -110,7 +110,7 @@
                                     android:gravity="center"
                                     android:textColor="@color/blue"
                                     android:textStyle="bold"
-                                    android:text="16711"/>
+                                    android:text=""/>
                             </LinearLayout>
 
 

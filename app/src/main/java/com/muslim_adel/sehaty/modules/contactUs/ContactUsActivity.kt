@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.Toast
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
+import com.muslim_adel.sehaty.modules.settings.ContactUsModel
 import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.R
 import com.sehakhanah.patientapp.data.remote.apiServices.ApiClient
@@ -38,6 +39,7 @@ class ContactUsActivity : BaseActivity() {
         setContentView(R.layout.activity_contact_us)
         initBottomNavigation()
         onSendClicked()
+        getContactUsData()
     }
     private fun initBottomNavigation(){
 
@@ -110,6 +112,38 @@ class ContactUsActivity : BaseActivity() {
         }
 
     }
+    fun getContactUsData(){
+        apiClient = ApiClient()
+        sessionManager = SessionManager(this)
+        apiClient.getApiService(this)
+            .contactUsData()
+            .enqueue(object : Callback<BaseResponce<List<ContactUsModel>>> {
+                override fun onFailure(call: Call<BaseResponce<List<ContactUsModel>>>, t: Throwable) {
+                    alertNetwork(true)
+                }
+
+                override fun onResponse(
+                    call: Call<BaseResponce<List<ContactUsModel>>>,
+                    response: Response<BaseResponce<List<ContactUsModel>>>
+                ) {
+                    val myResponse = response.body()
+                    if (myResponse!!.success) {
+                        phone_num_btn.setText(myResponse.data!![0].phonenum.toString())
+                    } else {
+
+                        Toast.makeText(
+                            this@ContactUsActivity,
+                            "Error:${myResponse.data}",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+
+                }
+
+
+            })
+    }
+
     private fun onSendClicked(){
         send_message_btn.setOnClickListener { 
             if(message_tf.text.toString().isNotEmpty()){

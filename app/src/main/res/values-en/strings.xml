@@ -166,8 +166,10 @@
     <string name="select_language">Select Language</string>
     <string name="next" translatable="true">Next</string>
     <string name="previous" translatable="true">Previous</string>
-    <string name="dont_have_account">Don\'t have an account? Register here</string>
+    <string name="dont_have_account">Don\'t have an account? </string>
+
     <string name="name_title">الاسم:</string>
+    <string name="register_here">Register here</string>
 
 
 </resources>

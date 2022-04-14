@@ -55,6 +55,8 @@ object Q {
     const val PROBLEMS_LIST="problems"
     const val CONTACT_US="sendemail/contactus"
     const val COUNTRIES_API = "country"
+    const val CONTACT_US_Data = "admin/contactUs"
+
 
 
 
@@ -71,6 +73,8 @@ object Q {
 
     const val LOCALE_AR_INDEX = 0
     const val LOCALE_EN_INDEX = 1
+    var CONTACT_US_PHONE:Long=0
+
     var FIRST_TIME = true
     var IS_FIRST_TIME = "first_time"
 

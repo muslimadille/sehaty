@@ -3,6 +3,7 @@ package com.sehakhanah.patientapp.data.remote.apiServices
 import com.muslim_adel.sehaty.data.remote.objects.CreateCodeModel
 import com.muslim_adel.sehaty.data.remote.objects.GenerateToken
 import com.muslim_adel.sehaty.data.remote.objects.SocialLoginRespose
+import com.muslim_adel.sehaty.modules.settings.ContactUsModel
 import com.muslim_adel.sehaty.utiles.Q
 import com.sehakhanah.patientapp.data.remote.objects.*
 import retrofit2.Call
@@ -169,5 +170,7 @@ interface ApiService {
                    @Field("phone") phone:String,
                   @Field("email") email:String,
                   @Field("comments") comments:String): Call<BaseResponce<Any>>
+    @GET(Q.CONTACT_US_Data)
+    fun contactUsData(): Call<BaseResponce<List<ContactUsModel>>>
 
 }

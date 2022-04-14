@@ -193,8 +193,9 @@
     <string name="register">تسجيل</string>
     <string name="select_country">اختر الدولة</string>
     <string name="select_language">اختر اللغة</string>
-    <string name="dont_have_account">ليس لديك حساب؟سجل من هنا</string>
+    <string name="dont_have_account">ليس لديك حساب؟</string>
     <string name="name_title">الاسم:</string>
+    <string name="register_here">سجل من هنا</string>
 
 
 </resources>

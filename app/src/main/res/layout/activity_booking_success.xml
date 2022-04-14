@@ -55,7 +55,7 @@
                                android:layout_width="100dp"
                                android:layout_marginBottom="10dp"
                                android:layout_height="100dp"
-                               android:src="@drawable/true_green"/>
+                               android:src="@drawable/ic_check_circl"/>
                            <TextView
                                android:layout_width="wrap_content"
                                android:layout_height="wrap_content"
@@ -104,7 +104,7 @@
                                    <ImageView
                                        android:layout_width="30dp"
                                        android:layout_height="wrap_content"
-                                       android:src="@drawable/time"/>
+                                       android:src="@drawable/ic_time"/>
                                </LinearLayout>
                                <LinearLayout
                                    android:layout_width="0dp"
@@ -184,7 +184,7 @@
                                    <ImageView
                                        android:layout_width="30dp"
                                        android:layout_height="30dp"
-                                       android:src="@drawable/money"/>
+                                       android:src="@drawable/ic_cost"/>
                                </LinearLayout>
                                <LinearLayout
                                    android:layout_width="wrap_content"

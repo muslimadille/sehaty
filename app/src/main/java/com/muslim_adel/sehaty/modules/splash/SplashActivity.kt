@@ -47,6 +47,7 @@ class SplashActivity : BaseActivity() {
         dLocale = Locale(change) //set any locale you want here
 
     }
+
     private fun handelSpalash(){
 
         Handler().postDelayed({
