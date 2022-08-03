@@ -1,0 +1,132 @@
+package com.muslim_adel.enaya.modules.home.fragments
+
+import android.content.Context
+import android.content.DialogInterface
+import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.Fragment
+import com.muslim_adel.enaya.R
+import com.muslim_adel.enaya.data.remote.apiServices.SessionManager
+import com.muslim_adel.enaya.modules.contactUs.AboutUsActivity
+import com.muslim_adel.enaya.modules.contactUs.ContactUsActivity
+import com.muslim_adel.enaya.modules.favorits.FavoritsActivity
+import com.muslim_adel.enaya.modules.home.MainActivity
+import com.muslim_adel.enaya.modules.introSlider.IntroWizardActivity
+import com.muslim_adel.enaya.modules.settings.SettingsActivity
+import com.muslim_adel.enaya.modules.splash.SplashActivity
+import com.muslim_adel.enaya.utiles.Q
+import kotlinx.android.synthetic.main.extras_fragment.*
+
+
+class ExstarsFragment : Fragment() {
+    private lateinit var sessionManager: SessionManager
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
+        inflater.inflate(R.layout.extras_fragment, container, false)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        sessionManager = SessionManager(mContext!!)
+
+        onLogoutClicked()
+        onSettingsClicked()
+        onFavoritesClicked()
+        onContactUsClicked()
+        onAboutUsClicked()
+        onHowAppWorkClicked()
+        initLay()
+    }
+
+    private fun initLay(){
+        if(!mContext!!.preferences!!.getBoolean(Q.IS_LOGIN,false)){
+            logout_txt.text=mContext!!.getString(R.string.login)
+            fav_lay.visibility=View.GONE
+        }else{
+            fav_lay.visibility=View.VISIBLE
+            logout_txt.text=mContext!!.getString(R.string.log_out)
+        }
+
+    }
+    private fun onLogoutClicked(){
+        logout_btn.setOnClickListener {
+            if(!mContext!!.preferences!!.getBoolean(Q.IS_LOGIN,false)){
+                logout()
+            }else{
+                logoutAlert()
+            }
+        }
+    }
+    private fun logout(){
+        sessionManager.saveAuthToken("",0)
+        mContext!!.preferences!!.putBoolean(Q.IS_FIRST_TIME,true)
+        mContext!!.preferences!!.putBoolean(Q.IS_LOGIN,false)
+        mContext!!.preferences!!.putInteger(Q.USER_ID,-1)
+        mContext!!.preferences!!.putString(Q.USER_NAME,"")
+        mContext!!.preferences!!.putString(Q.USER_EMAIL,"")
+        mContext!!.preferences!!.putString(Q.USER_PHONE,"")
+        mContext!!.preferences!!.putInteger(Q.USER_GENDER,-1)
+        mContext!!.preferences!!.commit()
+        val intent = Intent(mContext, SplashActivity::class.java)
+        startActivity(intent)
+        mContext!!.finish()
+    }
+    private fun onSettingsClicked(){
+        setting_btn.setOnClickListener {
+            val intent = Intent(context, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun onFavoritesClicked(){
+        favorites_btn.setOnClickListener {
+            val intent = Intent(context, FavoritsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun onContactUsClicked(){
+        contact_us_btn.setOnClickListener {
+            val intent = Intent(context, ContactUsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+    private fun onHowAppWorkClicked(){
+        how_aap_works_btn.setOnClickListener {
+            val intent = Intent(context, IntroWizardActivity::class.java)
+            intent.putExtra("key",true)
+            startActivity(intent)
+        }
+    }
+
+
+    private fun onAboutUsClicked(){
+        about_us_btn.setOnClickListener {
+            val intent = Intent(context, AboutUsActivity::class.java)
+            startActivity(intent)
+        }
+    }
+
+    var mContext: MainActivity? = null
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context as MainActivity
+    }
+    override fun onDetach() {
+        super.onDetach()
+        mContext = context as MainActivity
+    }
+    private fun logoutAlert() {
+        val alertBuilder = AlertDialog.Builder(mContext!!)
+        //alertBuilder.setTitle(R.string.error)
+        alertBuilder.setMessage(R.string.logout_alert)
+            alertBuilder.setPositiveButton(R.string.yes) { dialog: DialogInterface, _: Int -> logout() }
+        alertBuilder.setNegativeButton(R.string.no) { dialog: DialogInterface, _: Int -> dialog.dismiss() }
+
+
+
+        alertBuilder.show()
+
+
+
+    }
+}

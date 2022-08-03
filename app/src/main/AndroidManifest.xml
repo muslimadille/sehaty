@@ -1,8 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.sehakhanah.patientapp">
+    package="com.muslim_adel.enaya">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <queries>
+            <package android:name="com.google.android.apps.maps" />
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.PICK" />
+            <data android:mimeType="image/*" />
+        </intent>
+    </queries>
+
 
     <application
         android:name=".modules.base.App"
@@ -13,19 +34,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.muslim_adel.sehaty.modules.selectCuntry.SelectCountryActivity"
+            android:name="com.muslim_adel.enaya.modules.selectCuntry.SelectCountryActivity"
             android:exported="false" />
-        <activity android:name="com.muslim_adel.sehaty.modules.contactUs.ProblemsActivity"></activity>
-        <activity android:name="com.muslim_adel.sehaty.modules.register.resetpassword.AddPhoneActivity" />
-        <activity android:name="com.muslim_adel.sehaty.modules.register.ForgetPasswordActivity" />
-        <activity android:name="com.muslim_adel.sehaty.modules.register.VerificationPhonActivity" />
+        <activity android:name="com.muslim_adel.enaya.modules.contactUs.ProblemsActivity"></activity>
+        <activity android:name="com.muslim_adel.enaya.modules.register.resetpassword.AddPhoneActivity" />
+        <activity android:name="com.muslim_adel.enaya.modules.register.ForgetPasswordActivity" />
+        <activity android:name="com.muslim_adel.enaya.modules.register.VerificationPhonActivity" />
         <activity android:name=".modules.pharmacy.PharmacyProfileActivity" />
         <activity android:name=".modules.pharmacy.PharmaySearchActivity" />
         <activity
             android:name=".modules.register.VerivicationActivity"
             android:label="@string/title_activity_verivication"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name="com.muslim_adel.sehaty.modules.labs.LabBookActivity" />
+        <activity android:name="com.muslim_adel.enaya.modules.labs.LabBookActivity" />
         <activity android:name=".modules.labs.LabServicesActivity" />
         <activity android:name=".modules.labs.LabDetailsActivity" />
         <activity android:name=".modules.labs.LabsActivity" />
@@ -35,7 +56,7 @@
         <activity android:name=".modules.offers.CategoryOffersListActivity" />
         <activity android:name=".modules.offers.OfferDetailsActivity" />
         <activity android:name=".modules.contactUs.AboutUsActivity" />
-        <activity android:name=".modules.contactUs.ContactUsActivity" />
+        <activity android:name="com.muslim_adel.enaya.modules.contactUs.ContactUsActivity" />
         <activity android:name=".modules.favorits.FavoritsActivity" />
         <activity android:name=".modules.settings.EditProfileActivity" />
         <activity android:name=".modules.settings.ChangePasswordActivity" />
@@ -52,7 +73,7 @@
             android:name=".modules.settings.SettingsActivity"
             android:label="@string/title_activity_settings" />
         <activity android:name=".modules.register.RegisterationActivity" />
-        <activity android:name="com.muslim_adel.sehaty.modules.register.LoginActivity" />
+        <activity android:name="com.muslim_adel.enaya.modules.register.LoginActivity" />
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"
@@ -71,12 +92,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="@string/fb_login_protocol_scheme" />
+                <data android:scheme="fb328220567855533" />
             </intent-filter>
         </activity>
         <activity android:name=".modules.introSlider.IntroWizardActivity" />
         <activity android:name=".modules.home.MainActivity" />
-        <activity android:name="com.muslim_adel.sehaty.modules.splash.SplashActivity"
+        <activity android:name="com.muslim_adel.enaya.modules.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -84,6 +105,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.muslim_adel.enaya.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
     </application>
 
 </manifest>

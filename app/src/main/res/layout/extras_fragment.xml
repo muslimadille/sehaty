@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:replace="android:supportsRtl"
-    tools:context="com.muslim_adel.sehaty.modules.register.LoginActivity">
+    tools:context="com.muslim_adel.enaya.modules.register.LoginActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

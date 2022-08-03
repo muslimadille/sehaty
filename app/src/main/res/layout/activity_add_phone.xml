@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.muslim_adel.sehaty.modules.register.resetpassword.AddPhoneActivity">
+    tools:context="com.muslim_adel.enaya.modules.register.resetpassword.AddPhoneActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
